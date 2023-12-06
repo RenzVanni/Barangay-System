@@ -38,10 +38,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Set $householdHead to the name of the household head marked as 'yes'
         // $householdHead = ($_POST['householdHead'][$i+1] === 'yes') ? 'yes' : $householdHeadName;
             // Check if the current person is the household head
-        if (isset($_POST['householdHead'][$i+1]) && $_POST['householdHead'][$i+1] === 'yes') {
-            $householdHeadName = 'yes';
-        } else {
-            $householdHeadName = $_POST['firstName'][$i] . ' ' . $_POST['middleName'][$i] . ' ' . $_POST['lastName'][$i];
+        // if (isset($_POST['householdHead'][$i+1]) && $_POST['householdHead'][$i+1] === 'yes') {
+        //     $householdHeadName = 'yes';
+        // } else {
+        //     $householdHeadName = $_POST['firstName'][$i] . ' ' . $_POST['middleName'][$i] . ' ' . $_POST['lastName'][$i];
+        // }
+
+        // Check if the current person is the household head
+        // $householdHead = (isset($_POST['householdHead'][$i+1]) && $_POST['householdHead'][$i+1] === 'yes') ? 'yes' : $_POST['firstName'][$i] . ' ' . $_POST['middleName'][$i] . ' ' . $_POST['lastName'][$i];
+
+        // Check if the current person is the household head
+        $householdHead = (isset($_POST['householdHead'][$i+1]) && $_POST['householdHead'][$i+1] === 'yes') ? 'yes' : '';
+
+        // If the current person is not the household head, find the one with 'yes' and set the value
+        if ($householdHead !== 'yes') {
+            for ($j = 0; $j < $totalEntries; $j++) {
+                if (isset($_POST['householdHead'][$j+1]) && $_POST['householdHead'][$j+1] === 'yes') {
+                    $householdHead = $_POST['firstName'][$j] . ' ' . $_POST['middleName'][$j] . ' ' . $_POST['lastName'][$j];
+                    break; // Stop searching once found
+                }
+            }
         }
 
         if (!$stmt->bind_param("ssssssssssssssssssi", 
@@ -57,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['civilStatus'][$i], 
             $_POST['occupational'][$i], 
             $_POST['citizenship'][$i], 
-            $householdHeadName,
+            $householdHead,
             $_POST['ext'][$i],
             $_POST['email'][$i],
             $_POST['contact_no'][$i],

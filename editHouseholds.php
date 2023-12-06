@@ -203,9 +203,9 @@ if ($result2->num_rows > 0) {
                         </td>
                         <td><input type="text" value="<?= $row['sex'] ?>" name="sex[]" id=""></td>
                         <?php if($row['household_head'] == $headName) { ?>
-                            <td><input type="radio" name="householdHead[<?= $no?>]" id=""></td>
+                            <td><input type="radio" value="no" name="householdHead[]"></td>
                         <?php } else { ?>
-                            <td><input type="radio" checked name="householdHead[<?= $no ?>]" id=""></td>
+                            <td><input type="radio" value="yes" checked name="householdHead[]"></td>
                         <?php }?>
                         <td style="display: none;"><input type="text" value="<?= $row['place_of_birth'] ?>" name="placeBirth[]" id=""></td>
                         <td style="display: none;"><input type="text" value="<?= $row['citizenship'] ?>" name="citizenship[]" id=""></td>
