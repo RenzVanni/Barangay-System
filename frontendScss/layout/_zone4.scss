@@ -1,0 +1,54 @@
+.zone4 {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    120deg,
+    rgba(#006630, 100%),
+    rgba(#6ba024, 100%)
+  );
+  height: 8vh;
+  padding-left: 1rem;
+  min-width: 375px;
+  @media (min-width: 375px) {
+    display: none;
+  }
+
+  .layer1 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    .section1 {
+      width: 77px;
+      height: inherit;
+      .logo {
+        width: 77px;
+        height: 77px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: inherit;
+          height: inherit;
+          border-radius: inherit;
+        }
+      }
+    }
+    .brgy {
+      span {
+        color: #fff;
+        font-size: 0.8rem;
+      }
+      h2 {
+        color: #fff;
+        font-size: 1.2rem;
+        margin: 0;
+      }
+    }
+  }
+}

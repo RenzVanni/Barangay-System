@@ -1,0 +1,142 @@
+.contact-us {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  main {
+    width: clamp(300px, 100%, 1200px);
+    z-index: 1;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    .section-1 {
+      flex-grow: 1;
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      padding: 5rem 7rem;
+
+      h1 {
+        margin: 0;
+        font-size: 3rem;
+        span {
+          font-size: 3rem;
+          color: #097338;
+        }
+      }
+      span {
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      form {
+        width: 100%;
+        margin-top: 2rem;
+        input {
+          display: block;
+          padding: 0.8rem 1rem;
+          width: 100%;
+          border: none;
+          border-radius: 0.5rem;
+          margin-bottom: 1rem;
+          background-color: transparent;
+          border: 1px solid rgba($color: #000000, $alpha: 0.5);
+          outline: transparent;
+        }
+        input[type="number"] {
+          -webkit-appearance: none;
+          -moz-appearance: textfield;
+        }
+
+        textarea {
+          resize: none;
+          width: 100%;
+          border-radius: 0.5rem;
+          border: 1px solid rgba($color: #000000, $alpha: 0.5);
+          margin-bottom: 1rem;
+          height: 20vh;
+          padding: 0.8rem 1rem;
+        }
+        button {
+          background-color: #097338;
+          border: none;
+          border-radius: 0.5rem;
+          color: #fff;
+          font-weight: 700;
+          width: 100%;
+          padding: 0.8rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .contacts {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 2rem;
+
+        .container-1,
+        .container-2 {
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          gap: 1rem;
+
+          .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .info {
+            span:first-of-type {
+              text-transform: uppercase;
+            }
+            span {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .section-2 {
+      flex-grow: 2;
+      height: 100%;
+
+      iframe {
+        width: 500px;
+        height: inherit;
+        background-color: black;
+      }
+    }
+  }
+
+  @media (min-width: 375px) {
+    height: 100vh;
+    main {
+      flex-direction: row;
+      height: 80%;
+    }
+  }
+}
+
+.contact-us::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  height: 100%;
+  background-color: #097338;
+}

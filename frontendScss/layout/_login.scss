@@ -1,0 +1,98 @@
+.login_page {
+  background-color: #006630;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+
+  .section-1 {
+    width: 70%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo-container {
+      width: 500px;
+      height: 500px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: black;
+      img {
+        object-fit: cover;
+        width: inherit;
+        height: inherit;
+      }
+    }
+  }
+
+  .section-2 {
+    background-color: #f5f5f7;
+    border-radius: 2rem 0 0 2rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .close {
+      padding: 1rem;
+      text-align: end;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    form {
+      h1 {
+        color: #006630;
+        text-align: center;
+      }
+      width: 70%;
+      .username,
+      .password {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 1.5rem;
+
+        label {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          color: rgba($color: #000000, $alpha: 0.6);
+          transition: 0.2s ease-in-out;
+          padding: 0 0.2rem;
+        }
+
+        input {
+          padding: 0.5rem;
+          outline: none;
+          border: none;
+          background-color: transparent;
+          border-bottom: 1px solid rgba($color: #000000, $alpha: 0.25);
+        }
+
+        input:focus + label,
+        input:valid + label {
+          top: -10px;
+          font-size: 0.8rem;
+          color: rgba($color: #000000, $alpha: 0.35);
+          transition: 0.3s ease-in-out;
+        }
+      }
+
+      button {
+        padding: 0.5rem 2rem;
+        margin: 0 auto;
+        display: block;
+        background-color: #006630;
+        border-radius: 2rem;
+        border: none;
+        color: #f5f5f7;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.cart {
+  height: 100vh;
+  background-color: #f5f5f7;
+
+  .main-cart {
+    width: 70%;
+    margin: 5rem auto 0;
+    h1 {
+      color: #007236;
+      margin: 0 0 2rem;
+    }
+    .table-container {
+      max-height: 500px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      table {
+        width: 100%;
+        background-color: #fbfffd;
+        border-radius: 0.5rem;
+        thead {
+          position: sticky;
+          top: 0;
+
+          tr {
+            background-color: #fbfffd;
+            box-shadow: 0 2px 25px rgba(0, 0, 0, 0.05);
+            td {
+              padding: 1rem;
+
+              color: #007236;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              padding: 1rem;
+              .pending,
+              .pick-up {
+                padding: 0.5rem 1rem;
+                border-radius: 1rem;
+                border: none;
+              }
+              .pending {
+                color: #1a6c9b;
+                background-color: rgba($color: #1a6c9b, $alpha: 0.1);
+              }
+              .pick-up {
+                color: #007236;
+                background-color: rgba($color: #007236, $alpha: 0.1);
+              }
+              .cancel-container {
+                display: none;
+                background-color: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                align-items: center;
+                justify-content: center;
+                .confirm-cancel-item {
+                  background-color: #fff;
+                  border: none;
+                  border-radius: 0.5rem;
+                  overflow: hidden;
+                  width: 500px;
+
+                  .warning-context {
+                    display: flex;
+                    padding: 1.5rem;
+                    gap: 1rem;
+                    .warning-img {
+                      .container {
+                        background-color: rgba($color: red, $alpha: 0.15);
+                        padding: 0.2rem;
+                        border-radius: 100%;
+                      }
+                    }
+                    .context {
+                      h3 {
+                        margin: 0 0 0.5rem 0;
+                      }
+                      p {
+                        color: rgba($color: #000000, $alpha: 0.6);
+                        margin: 0;
+                        line-height: 150%;
+                      }
+                    }
+                  }
+
+                  .buttons {
+                    background-color: #f8f9fa;
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    gap: 1rem;
+                    padding: 0.8rem 1.5rem;
+
+                    button {
+                      padding: 0.5rem 1rem;
+                      border: none;
+                      border-radius: 0.2rem;
+                      font-weight: bold;
+                    }
+
+                    .btn1 {
+                      background-color: #e01e37;
+                      color: #fff;
+                    }
+                    .abort-cancel-item {
+                      background-color: #e9ecef;
+                    }
+                  }
+                }
+              }
+            }
+            td > a {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1680 @@
+/* ID FORM CSS */
+.modal-addIdForm {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 10% 0 0 35%;
+  display: none;
+}
+.modal-editIdForm {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 10% 0 0 35%;
+  display: none;
+}
+
+.formIdForm {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 490px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.input-label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer1 .input-label input {
+  width: 210px;
+  height: 33px;
+  padding-left: 5px;
+}
+
+.input-label .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-label .label111 input {
+  margin-right: 5px;
+}
+.input-label .label111 #house_no {
+  width: 20%;
+}
+.input-label .label111 #street {
+  width: 35%;
+}
+.input-label .label111 #subdivision {
+  width: 38%;
+}
+.input-label .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-label .label111 #applicant_suffix{
+  width: 15%;
+}
+.input-label .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+  width: 32%;
+}
+.input-label .label111 #requestor_suffix{
+  width: 15%;
+}
+/* EDIT */
+.input-label .label111 #house_no1 {
+  width: 20%;
+}
+.input-label .label111 #street1 {
+  width: 35%;
+}
+.input-label .label111 #subdivision1 {
+  width: 38%;
+}
+.input-label .label111 #applicant_fname1, #applicant_mname1, #applicant_lname1 {
+  width: 32%;
+}
+.input-label .label111 #applicant_suffix1{
+  width: 15%;
+}
+.input-label .label111 #requestor_fname1, #requestor_mname1, #requestor_lname1 {
+  width: 32%;
+}
+.input-label .label111 #requestor_suffix1{
+  width: 15%;
+}
+
+.modal-layer1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.modal-layer1 select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-layer1 input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+#submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: #FFFF;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+#submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+
+/* BRGY CLEARANCE CSS */
+.modal-addBrgyClearance {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 12% 0 0 35%;
+  display: none;
+}
+.modal-editBrgyClearance {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 12% 0 0 35%;
+  display: none;
+}
+
+.formBrgyClearance {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.input-brgy-clearance {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-brgyClearance .input-brgy-clearance input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-brgy-clearance .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-brgy-clearance .label111 input {
+  margin-right: 5px;
+  
+}
+.input-brgy-clearance .label111 #house_no {
+  width: 25%;
+}
+.input-brgy-clearance .label111 #street {
+  width: 35%;
+}
+.input-brgy-clearance .label111 #subdivision {
+  width: 40%;
+}
+.input-brgy-clearance .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-brgy-clearance .label111 #applicant_suffix{
+  width: 15%;
+}
+/* EDIT */
+.input-brgy-clearance .label111 #house_no1 {
+  width: 25%;
+}
+.input-brgy-clearance .label111 #street1 {
+  width: 35%;
+}
+.input-brgy-clearance .label111 #subdivision1 {
+  width: 40%;
+}
+.input-brgy-clearance .label111 #applicant_fname1, #applicant_mname1, #applicant_lname1 {
+  width: 32%;
+}
+.input-brgy-clearance .label111 #applicant_suffix1{
+  width: 15%;
+}
+
+/* E CERT */
+.modal-addEcert_forself {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editEcert_forself {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
+
+.formEcert_forself {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-e-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-endorsement-self .input-e-self input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-e-self .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-e-self .label111 input {
+  margin-right: 5px;
+}
+.input-e-self .label111 #house_no_self {
+  width: 25%;
+}
+.input-e-self .label111 #street_self {
+  width: 35%;
+}
+.input-e-self .label111 #subdivision_self {
+  width: 40%;
+}
+.input-e-self .label111 #applicant_fname_self, #applicant_mname_self, #applicant_lname_self {
+  width: 32%;
+}
+.input-e-self .label111 #applicant_suffix_self{
+  width: 15%;
+}
+/* EDIT */
+.input-e-self .label111 #house_no_self1 {
+  width: 25%;
+}
+.input-e-self .label111 #street_self1 {
+  width: 35%;
+}
+.input-e-self .label111 #subdivision_self1 {
+  width: 40%;
+}
+.input-e-self .label111 #applicant_fname_self1, #applicant_mname_self1, #applicant_lname_self1 {
+  width: 32%;
+}
+.input-e-self .label111 #applicant_suffix_self1{
+  width: 15%;
+}
+
+.modal-addEcert_forsomeone {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editEcert_forsomeone {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
+
+.formEcert_forsomeone {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-e-someone {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-endorsement-someone .input-e-someone input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-e-someone .label111 {
+  display: flex;
+  flex-direction: row;
+ 
+}
+.input-e-someone .label111 input {
+  margin-right: 5px;
+}
+.input-e-someone .label111 #house_no_someone {
+  width: 25%;
+}
+.input-e-someone .label111 #street_someone {
+  width: 35%;
+}
+.input-e-someone .label111 #subdivision_someone {
+  width: 40%;
+}
+.input-e-someone .label111 #applicant_fname_someone, #applicant_mname_someone, #applicant_lname_someone {
+  width: 32%;
+}
+.input-e-someone .label111 #applicant_suffix_someone{
+  width: 15%;
+}
+.input-e-someone .label111 #requestor_fname_someone, #requestor_mname_someone, #requestor_lname_someone {
+  width: 32%;
+}
+.input-e-someone .label111 #requestor_suffix_someone{
+  width: 15%;
+}
+/* EDIT */
+.input-e-someone .label111 #house_no_someone1 {
+  width: 25%;
+}
+.input-e-someone .label111 #street_someone1 {
+  width: 35%;
+}
+.input-e-someone .label111 #subdivision_someone1 {
+  width: 40%;
+}
+.input-e-someone .label111 #applicant_fname_someone1, #applicant_mname_someone1, #applicant_lname_someone1 {
+  width: 32%;
+}
+.input-e-someone .label111 #applicant_suffix_someone1{
+  width: 15%;
+}
+.input-e-someone .label111 #requestor_fname_someone1, #requestor_mname_someone1, #requestor_lname_someone1 {
+  width: 32%;
+}
+.input-e-someone .label111 #requestor_suffix_someone1{
+  width: 15%;
+}
+
+/* CERT OF INDIGENCY */
+.modal-addIndigency_forself {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editIndigency_forself {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
+.formIndigency_forself {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-indigency-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.modal-layer-indigency-self .input-indigency-self input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-indigency-self .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-indigency-self .label111 input {
+  margin-right: 5px;
+}
+.input-indigency-self .label111 #house_no_self {
+  width: 25%;
+}
+.input-indigency-self .label111 #street_self {
+  width: 35%;
+}
+.input-indigency-self .label111 #subdivision_self {
+  width: 40%;
+}
+.input-indigency-self .label111 #applicant_fname_self, #applicant_mname_self, #applicant_lname_self {
+  width: 32%;
+}
+.input-indigency-self .label111 #applicant_suffix_self{
+  width: 15%;
+}
+/* EDIT */
+.input-indigency-self .label111 #house_no_self1 {
+  width: 25%;
+}
+.input-indigency-self .label111 #street_self1 {
+  width: 35%;
+}
+.input-indigency-self .label111 #subdivision_self1{
+  width: 40%;
+}
+.input-indigency-self .label111 #applicant_fname_self1, #applicant_mname_self1, #applicant_lname_self1 {
+  width: 32%;
+}
+.input-indigency-self .label111 #applicant_suffix_self1{
+  width: 15%;
+}
+
+.modal-addIndigency_forsomeone {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editIndigency_forsomeone {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
+.formIndigency_forsomeone {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-indigency-someone {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-indigency-someone .input-indigency-someone input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-indigency-someone .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-indigency-someone .label111 input {
+  margin-right: 5px;
+}
+.input-indigency-someone .label111 #house_no_someone {
+  width: 25%;
+}
+.input-indigency-someone .label111 #street_someone {
+  width: 35%;
+}
+.input-indigency-someone .label111 #subdivision_someone {
+  width: 40%;
+}
+.input-indigency-someone .label111 #applicant_fname_someone, #applicant_mname_someone, #applicant_lname_someone {
+  width: 32%;
+}
+.input-indigency-someone .label111 #applicant_suffix_someone{
+  width: 15%;
+}
+.input-indigency-someone .label111 #requestor_fname_someone, #requestor_mname_someone, #requestor_lname_someone {
+  width: 32%;
+}
+.input-indigency-someone .label111 #requestor_suffix_someone{
+  width: 15%;
+}
+/* EDIT */
+.input-indigency-someone .label111 #house_no_someone1 {
+  width: 25%;
+}
+.input-indigency-someone .label111 #street_someone1 {
+  width: 35%;
+}
+.input-indigency-someone .label111 #subdivision_someone1 {
+  width: 40%;
+}
+.input-indigency-someone .label111 #applicant_fname_someone1, #applicant_mname_someone1, #applicant_lname_someone1 {
+  width: 32%;
+}
+.input-indigency-someone .label111 #applicant_suffix_someone1{
+  width: 15%;
+}
+.input-indigency-someone .label111 #requestor_fname_someone1, #requestor_mname_someone1, #requestor_lname_someone1 {
+  width: 32%;
+}
+.input-indigency-someone .label111 #requestor_suffix_someone1{
+  width: 15%;
+}
+/* CERT OF LBR */
+.modal-addlbr_forself {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_forself {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
+.formlbr_forself {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-lbr-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-lbr-self .input-lbr-self input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-lbr-self .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-lbr-self .label111 input {
+  margin-right: 5px;
+}
+.input-lbr-self .label111 #house_no_self {
+  width: 25%;
+}
+.input-lbr-self .label111 #street_self {
+  width: 35%;
+}
+.input-lbr-self .label111 #subdivision_self {
+  width: 40%;
+}
+.input-lbr-self .label111 #applicant_fname_self, #applicant_mname_self, #applicant_lname_self {
+  width: 32%;
+}
+.input-lbr-self .label111 #applicant_suffix_self{
+  width: 15%;
+}
+.input-lbr-self .label111 #father_fname_self, #father_mname_self, #father_lname_self, #mother_fname_self, #mother_mname_self, #mother_lname_self {
+  width: 32%;
+}
+.input-lbr-self .label111 #father_suffix_self, #mother_suffix_self{
+  width: 15%;
+}
+/* EDIT */
+.input-lbr-self .label111 #house_no_self1 {
+  width: 25%;
+}
+.input-lbr-self .label111 #street_self1 {
+  width: 35%;
+}
+.input-lbr-self .label111 #subdivision_self1 {
+  width: 40%;
+}
+.input-lbr-self .label111 #applicant_fname_self1, #applicant_mname_self1, #applicant_lname_self1 {
+  width: 32%;
+}
+.input-lbr-self .label111 #applicant_suffix_self1{
+  width: 15%;
+}
+.input-lbr-self .label111 #father_fname_self1, #father_mname_self1, #father_lname_self1, #mother_fname_self1, #mother_mname_self1, #mother_lname_self1 {
+  width: 32%;
+}
+.input-lbr-self .label111 #father_suffix_self1, #mother_suffix_self1{
+  width: 15%;
+}
+
+.modal-addlbr_forsingleparent {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_forsingleparent {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
+.formlbr_forsingleparent{
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-lbr-single-parent {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-lbr-single-parent .input-lbr-single-parent input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-lbr-single-parent .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-lbr-single-parent .label111 input {
+  margin-right: 5px;
+}
+.input-lbr-single-parent .label111 #house_no_parent {
+  width: 25%;
+}
+.input-lbr-single-parent .label111 #street_parent {
+  width: 35%;
+}
+.input-lbr-single-parent .label111 #subdivision_parent {
+  width: 40%;
+}
+.input-lbr-single-parent .label111 #requestor_fname_parent, #requestor_mname_parent, #requestor_lname_parent {
+  width: 32%;
+}
+.input-lbr-single-parent .label111 #requestor_suffix_parent{
+  width: 15%;
+}
+.input-lbr-single-parent .label111 #parent_fname_parent, #parent_mname_parent, #parent_lname_parent {
+  width: 32%;
+}
+.input-lbr-single-parent .label111 #parent_suffix_parent{
+  width: 15%;
+}
+/* EDIT */
+.input-lbr-single-parent .label111 #house_no_parent1 {
+  width: 25%;
+}
+.input-lbr-single-parent .label111 #street_parent1 {
+  width: 35%;
+}
+.input-lbr-single-parent .label111 #subdivision_parent1 {
+  width: 40%;
+}
+.input-lbr-single-parent .label111 #requestor_fname_parent1, #requestor_mname_parent1, #requestor_lname_parent1 {
+  width: 32%;
+}
+.input-lbr-single-parent .label111 #requestor_suffix_parent1{
+  width: 15%;
+}
+.input-lbr-single-parent .label111 #parent_fname_parent1, #parent_mname_parent1, #parent_lname_parent1 {
+  width: 32%;
+}
+.input-lbr-single-parent .label111 #parent_suffix_parent1{
+  width: 15%;
+}
+
+
+.modal-addlbr_fortheirchild {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_fortheirchild {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
+.formlbr_fortheirchild{
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-lbr-for-child {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-lbr-for-child .input-lbr-for-child input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-lbr-for-child .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-lbr-for-child .label111 input {
+  margin-right: 5px;
+}
+.input-lbr-for-child .label111 #house_no_child {
+  width: 25%;
+}
+.input-lbr-for-child .label111 #street_child {
+  width: 35%;
+}
+.input-lbr-for-child .label111 #subdivision_child {
+  width: 40%;
+}
+.input-lbr-for-child .label111 #requestor_fname_child, #requestor_mname_child, #requestor_lname_child {
+  width: 32%;
+}
+.input-lbr-for-child .label111 #requestor_suffix_child{
+  width: 15%;
+}
+.input-lbr-for-child .label111 #father_fname_child, #father_mname_child, #father_lname_child, #mother_fname_child, #mother_mname_child, #mother_lname_child {
+  width: 32%;
+}
+.input-lbr-for-child .label111 #father_suffix_child, #mother_suffix_child{
+  width: 15%;
+}
+/* EDIT */
+.input-lbr-for-child .label111 #house_no_child1 {
+  width: 25%;
+}
+.input-lbr-for-child .label111 #street_child1 {
+  width: 35%;
+}
+.input-lbr-for-child .label111 #subdivision_child1 {
+  width: 40%;
+}
+.input-lbr-for-child .label111 #requestor_fname_child1, #requestor_mname_child1, #requestor_lname_child1 {
+  width: 32%;
+}
+.input-lbr-for-child .label111 #requestor_suffix_child1{
+  width: 15%;
+}
+.input-lbr-for-child .label111 #father_fname_child1, #father_mname_child1, #father_lname_child1, #mother_fname_child1, #mother_mname_child1, #mother_lname_child1 {
+  width: 32%;
+}
+.input-lbr-for-child .label111 #father_suffix_child1, #mother_suffix_child1{
+  width: 15%;
+}
+
+/* BUSINESS CLEARANCE */
+
+.modal-addClearance {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 17% 0 0 35%;
+  display: none;
+}
+
+.formaddClearance { 
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-b-clearance {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-b-clearance .input-b-clearance input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-b-clearance .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-b-clearance .label111 input {
+  margin-right: 5px;
+}
+.input-b-clearance .label111 #house_no {
+  width: 25%;
+}
+.input-b-clearance .label111 #street {
+  width: 35%;
+}
+.input-b-clearance .label111 #subdivision {
+  width: 40%;
+}
+.input-b-clearance .label111 #business_owner_fname, #business_owner_mname, #business_owner_lname {
+  width: 32%;
+}
+.input-b-clearance .label111 #business_owner_suffix{
+  width: 15%;
+}
+.modal-addClosure {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 17% 0 0 35%;
+  display: none;
+}
+
+.formaddClosure { 
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-b-closure {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-b-closure .input-b-closure input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-b-closure .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-b-closure .label111 input {
+  margin-right: 5px;
+}
+.input-b-closure .label111 #house_no {
+  width: 25%;
+}
+.input-b-closure .label111 #street {
+  width: 35%;
+}
+.input-b-closure .label111 #subdivision {
+  width: 40%;
+}
+.input-b-closure .label111 #business_owner_fname, #business_owner_mname, #business_owner_lname {
+  width: 32%;
+}
+.input-b-closure .label111 #business_owner_suffix{
+  width: 15%;
+}
+
+/* MODAL EDIT MEMBER IN HOUSEHOLD */
+
+
+.Edit_Member {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 17% 0 0 10%;
+  display: none;
+}
+.formEditMember {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #F8F8F8;
+  width: 85%;
+  height: auto;
+  
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.Edit_Member .headerInfo {
+  border-radius: 10px 10px 0px 0px;
+  background: #007236;
+  box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+}
+.Edit_Member .headerInfo p {
+  color: #FFF;
+
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  padding: 10px 15px;
+}
+.Edit_Member .headerInfo img {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.Edit_Member .bodyInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.Edit_Member .bodyInfo .leftInfo {
+  display: flex;
+  width: 50%;
+  padding: 20px 20px;
+  flex-wrap: wrap;
+}
+.Edit_Member .bodyInfo .leftInfo .inputFullname {
+  margin-bottom: 10px;
+}
+.Edit_Member .bodyInfo .leftInfo .inputFullname p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .leftInfo .inputFullname p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.Edit_Member .bodyInfo .leftInfo .inputFullname input {
+  width: 25%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+.Edit_Member .bodyInfo .leftInfo .inputFullname .suffix {
+  width: 10%;
+}
+.Edit_Member .bodyInfo .leftInfo .inputDob {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.Edit_Member .bodyInfo .leftInfo .inputDob p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputDob p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .leftInfo .inputDob input {
+  width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputPob {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.Edit_Member .bodyInfo .leftInfo .inputPob p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputPob p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .leftInfo .inputPob input {
+  width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputCitizenship {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.Edit_Member .bodyInfo .leftInfo .inputCitizenship p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputCitizenship p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .leftInfo .inputCitizenship input {
+  width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputPhoneNo {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.Edit_Member .bodyInfo .leftInfo .inputPhoneNo p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputPhoneNo input {
+  width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputEmail {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.Edit_Member .bodyInfo .leftInfo .inputEmail p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.Edit_Member .bodyInfo .leftInfo .inputEmail input {
+  width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+
+.Edit_Member .bodyInfo .rightInfo {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  padding: 20px 20px;
+}
+
+.Edit_Member .bodyInfo .rightInfo .inputAddress {
+  margin-bottom: 10px;
+}
+.Edit_Member .bodyInfo .rightInfo .inputAddress p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .rightInfo .inputAddress p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.Edit_Member .bodyInfo .rightInfo .inputAddress input {
+  width: 35%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+.Edit_Member .bodyInfo .rightInfo .inputAddress .houseNo {
+  width: 17%;
+}
+
+.Edit_Member .bodyInfo .rightInfo .inputOccupation {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.Edit_Member .bodyInfo .rightInfo .inputOccupation p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .rightInfo .inputOccupation p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.Edit_Member .bodyInfo .rightInfo .inputOccupation input {
+  width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+
+
+.Edit_Member .bodyInfo .rightInfo .inputSex {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.Edit_Member .bodyInfo .rightInfo .inputSex p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .rightInfo .inputSex p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.Edit_Member .bodyInfo .rightInfo .inputSex select {
+  width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+  
+}
+
+
+.Edit_Member .bodyInfo .rightInfo .inputCivilStatus {
+  margin-bottom: 10px;
+  margin-right: 3px;
+  width: 20%;
+}
+.Edit_Member .bodyInfo .rightInfo .inputCivilStatus p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .rightInfo .inputCivilStatus p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.Edit_Member .bodyInfo .rightInfo .inputCivilStatus select {
+  width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+.Edit_Member .bodyInfo .rightInfo .inputVoterStatus {
+  margin-bottom: 10px;
+  margin-right: 3px;
+  width: 20%;
+}
+.Edit_Member .bodyInfo .rightInfo .inputVoterStatus p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .rightInfo .inputVoterStatus p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.Edit_Member .bodyInfo .rightInfo .inputVoterStatus select {
+ width: 100%;
+  height: 28.5px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+.Edit_Member .bodyInfo .rightInfo .inputProfile {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.Edit_Member .bodyInfo .rightInfo .inputProfile p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Edit_Member .bodyInfo .rightInfo .inputProfile p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.Edit_Member .bodyInfo .rightInfo .inputProfile input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+}
+
+.Edit_Member .footerInfo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Edit_Member .footerInfo .addSaTable {
+  width: auto;
+  padding: 5px 25px;
+  height: 30.836px;
+  color: #007236;
+  border: none;
+  border-radius: 5px;
+  background: #FFF;
+  border: solid 1px #007236;
+  cursor: pointer;
+
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+.Edit_Member .footerInfo .addSaTable:hover {
+  background-color: #007236;
+  color: wheat;
+}
+
+/* .modal-editDescription {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 10% 0 0 17%;
+  display: none;
+}
+
+.modal-editDescription .formEditDescription {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  
+  width: 1000px;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editDescription .formEditDescription .mb-3 {
+  background: #F8F8F8;
+  border-radius: 5px;
+
+}
+.modal-editDescription .formEditDescription .mb-3 textarea{
+  background: #F8F8F8;
+  width: auto;
+  height: auto; */
+/* } */
+.mb-3 {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+}
+
+
+
+
+

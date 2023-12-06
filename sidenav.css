@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+  background-color: #252525;
+  
+}
+
+::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #252525;
+}
+
+::-webkit-scrollbar-thumb
+{
+  
+  background-color: #474747;
+  
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
+
+.layer1,
+.layer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layer1 {
+  z-index: 2;
+  background: linear-gradient(180deg, #057435 49.41%, #F6EB13 211.08%);
+  width: 100%;
+  height: 85px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 118px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #FFFFFF;
+}
+
+.layer2 {
+  display: flex;
+  justify-content: flex-end;
+  justify-self: center;  
+  margin-top: 16px;
+  width: 100%;
+  z-index: 2;
+  max-width: 2000px;
+  height: 69px;
+}
+
+.sidebar {
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  width: 75px;
+  height: 100%;
+  background: linear-gradient(180.45deg, #007236 10.56%, #92BA21 43.84%, #62A228 71.84%, #007236 100.06%);
+  position: fixed;
+  transition: width 0.3s;
+}
+.sidebar:hover {
+  width: 300px;
+}
+.slayer1 {
+  width: 25%;
+  position: relative;
+}
+.slayer1 .vector-side {
+  width: 60px;
+  height: 580px;
+  margin-top: 150px;
+  position: absolute;
+  z-index: 0;
+}
+
+.slayer1 .db-icon {
+  position: absolute;
+  margin-top: 240px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+}
+.slayer1 .bo-icon {
+  position: absolute;
+  margin-top:295px;
+  margin-left: 8px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.slayer1 .ri-icon {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+  
+}
+
+.slayer1 .cc-icon {
+  position: absolute;
+  margin-top: 415px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.slayer1 .rs-icon {
+  position: absolute;
+  margin-top: 465px;
+  margin-left: 8px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.slayer1 .um-icon {
+  position: absolute;
+  margin-top: 520px;
+  margin-left: 13px;
+  width: 32px;
+  cursor: pointer;
+}
+.slayer1 .cm-icon {
+  position: absolute;
+  margin-top: 580px;
+  margin-left: 13px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.slayer2 {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  height: auto;
+  width: 75%;
+  margin-top: 225px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  /* identical to box height */
+  visibility: hidden;
+  transition: visibility 0.1s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.slayer2 a {
+  width: 100%;
+  margin-top: 25px;
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
+}
+
+.sidebar:hover .slayer2 {
+  visibility: visible;
+  opacity: 1;
+}
+.slayer2 a:hover {
+  width: 190px;
+  height: 30px;
+  background: rgba(152, 204, 177, 0.34);
+  border-radius: 5px;  
+}
+.slayer2 .residentInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .household {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .businessInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .idform {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .b-clearance {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .e-certificate {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .c-indigency {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .c-latebirth {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .bb-clearance {
+  margin-left: 15px;
+  margin-top: -1px;
+  margin-bottom: -20px;
+  display: none;
+}
+.slayer2 .blotter1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .complain1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .awareness1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  margin-bottom: -20px;
+  display: none;
+}
+.slayer2 .users {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  margin-bottom: -20px;
+  display: none;
+}
+.slayer2 .b-information {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+.slayer2 .announcement {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+.slayer2 .requested{
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+.slayer2 .backup {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+.slayer2 .restore {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+.slayer2 .request {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  margin-bottom: -20px;
+  display: none;
+}
+

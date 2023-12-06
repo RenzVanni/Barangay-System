@@ -1,0 +1,4464 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.import-container,
+.restore-container {
+  background-color: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+.import-container form,
+.restore-container form {
+  border: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+.import-container form .cons,
+.restore-container form .cons {
+  width: auto;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.import-container form input[type=submit],
+.restore-container form input[type=submit] {
+  padding: 1.1rem;
+  border-top: 2px solid #fff;
+  background-color: #03045e;
+  border-radius: 0 0.5rem 0.5rem 0;
+  border: none;
+  color: #fff;
+}
+
+.active_account {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 100vh;
+  width: clamp(275px, 100%, 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.active_account form {
+  background-color: #fff;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 250px;
+  width: clamp(250px, 25%, 25%);
+}
+.active_account form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.active_account form div label {
+  margin-bottom: 0.5rem;
+}
+.active_account form div input {
+  padding: 0.2rem;
+}
+.active_account form button {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+}
+
+.printing-container-endorsement {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-endorsement .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-endorsement .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-endorsement .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-endorsement .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-endorsement .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-endorsement .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-endorsement .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-endorsement .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-endorsement .print-title .left-title {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-endorsement .print-title .left-title button {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 35px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-endorsement .print-title .left-title button:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-endorsement .print-title .left-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  font-family: Poppins;
+  font-size: 14px;
+  color: #007236;
+  padding: 10px 35px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-endorsement .print-title .left-title a:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-endorsement .form-container {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-endorsement .form-container .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+.printing-container-endorsement .form-container .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-endorsement .form-container .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-endorsement .form-container .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-endorsement .form-container .paper .body-container {
+  width: 100%;
+  height: auto;
+}
+.printing-container-endorsement .form-container .paper .body-container .title-body {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .body-container .to {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+.printing-container-endorsement .form-container .paper .body-container .to span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .body-container .governor {
+  color: #000;
+  font-family: Caladea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 85px;
+}
+.printing-container-endorsement .form-container .paper .body-container .greet {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+  margin-left: 105px;
+}
+.printing-container-endorsement .form-container .paper .body-container .first-p {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 85px;
+}
+.printing-container-endorsement .form-container .paper .body-container .first-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-endorsement .form-container .paper .body-container .second-p {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 85px;
+}
+.printing-container-endorsement .form-container .paper .body-container .second-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-endorsement .form-container .paper .body-container .third-p {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 85px;
+}
+.printing-container-endorsement .form-container .paper .body-container .third-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-endorsement .form-container .paper .body-container .date-time {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 40px;
+  margin-left: 105px;
+}
+.printing-container-endorsement .form-container .paper .body-container .ending-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 40px;
+  margin-left: 105px;
+}
+.printing-container-endorsement .form-container .paper .body-container .from {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 450px;
+}
+.printing-container-endorsement .form-container .paper .body-container .captain-name {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 450px;
+}
+.printing-container-endorsement .form-container .paper .body-container .captain-name span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 30px;
+}
+
+.watermark-cont {
+  position: relative;
+  margin-top: -580px;
+  margin-left: 140px;
+}
+.watermark-cont img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.modal-editEcert_forself {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editEcert_forself .formEcert_forself {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editEcert_forself .formEcert_forself .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editEcert_forself .formEcert_forself .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editEcert_forself .formEcert_forself .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self .label111 #house_no1 {
+  width: 24%;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self .label111 #street1 {
+  width: 36%;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self .label111 #subdivision1 {
+  width: 38%;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self .label111 #applicant_fname_self1, .modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self #applicant_mname_self1, .modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self #applicant_lname_self1 {
+  width: 27%;
+}
+.modal-editEcert_forself .formEcert_forself .modal-layer-endorsement-self .input-e-self .label111 #applicant_suffix_self1 {
+  width: 16%;
+}
+.modal-editEcert_forself .formEcert_forself #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editEcert_forself .formEcert_forself #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.modal-editEcert_forsomeone {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone .label111 #house_no_someone1 {
+  width: 24%;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone .label111 #street_someone1 {
+  width: 36%;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone .label111 #subdivision_someone1 {
+  width: 38%;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone .label111 #applicant_fname_someone1, .modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone #applicant_mname_someone1, .modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone #applicant_lname_someone1 {
+  width: 27%;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone .label111 #applicant_suffix_someone1 {
+  width: 16%;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone .label111 #requestor_fname_someone1, .modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone #requestor_mname_someone1, .modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone #requestor_lname_someone1 {
+  width: 27%;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone .modal-layer-endorsement-someone .input-e-someone .label111 #requestor_suffix_someone1 {
+  width: 16%;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editEcert_forsomeone .formEcert_forsomeone #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.printing-container-brgyClearance {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-brgyClearance .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-brgyClearance .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-brgyClearance .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-brgyClearance .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-brgyClearance .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-brgyClearance .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-brgyClearance .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-brgyClearance .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-brgyClearance .print-title .left-title {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-brgyClearance .print-title .left-title button {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 35px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-brgyClearance .print-title .left-title button:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-brgyClearance .print-title .left-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  font-family: Poppins;
+  font-size: 14px;
+  color: #007236;
+  padding: 10px 35px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-brgyClearance .print-title .left-title a:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-brgyClearance .form-container-brgyClearance {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  border: 1px solid #000000;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont {
+  width: 30%;
+  background: linear-gradient(180deg, #ECEADF 0%, #C9C29F 100%);
+  display: flex;
+  flex-direction: column;
+  height: 832px;
+  padding-right: 40px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-captain {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .k-title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-councilor {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-councilor span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-councilor1 {
+  margin-left: 10px;
+  margin-top: 35px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-councilor1 span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont {
+  width: 70%;
+  padding: 10px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .greet {
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 15px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .certify {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .name {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .name input {
+  width: 300px;
+  margin-left: 110px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .address {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .address input {
+  width: 300px;
+  margin-left: 90px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .dob {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .dob input {
+  width: 300px;
+  margin-left: 52px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .pob {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .pob input {
+  width: 300px;
+  margin-left: 45px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .purpose {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .purpose input {
+  width: 300px;
+  margin-left: 90px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .certNo {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .certNo input {
+  width: 300px;
+  margin-left: 60px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .dateIssue {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .dateIssue input {
+  width: 300px;
+  margin-left: 56px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .findings {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .findings span {
+  width: 300px;
+  margin-left: 90px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 12px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .signature-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 12px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .signature-cont .signature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+  margin-right: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .signature-cont .thumb-mark {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 120px;
+  height: 90px;
+  margin-right: 40px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .signature-cont .thumb-mark span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .from {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 130px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 70px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .b-captain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 220px;
+  margin-top: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .validity {
+  width: 210px;
+  margin-top: 30px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .watermark-cont-brgyClearance {
+  position: relative;
+  margin-top: -680px;
+  margin-left: 20px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .watermark-cont-brgyClearance img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.modal-editBrgyClearance {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editBrgyClearance .formBrgyClearance {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editBrgyClearance .formBrgyClearance .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editBrgyClearance .formBrgyClearance .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editBrgyClearance .formBrgyClearance .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance .label111 #house_no1 {
+  width: 24%;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance .label111 #street1 {
+  width: 36%;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance .label111 #subdivision1 {
+  width: 38%;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance .label111 #applicant_fname1, .modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance #applicant_mname1, .modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance #applicant_lname1 {
+  width: 27%;
+}
+.modal-editBrgyClearance .formBrgyClearance .modal-layer-brgyClearance .input-brgy-clearance .label111 #applicant_suffix1 {
+  width: 16%;
+}
+.modal-editBrgyClearance .formBrgyClearance #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editBrgyClearance .formBrgyClearance #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.printing-container-indigency {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-indigency .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-indigency .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-indigency .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-indigency .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-indigency .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-indigency .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-indigency .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-indigency .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-indigency .print-title .left-title {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-indigency .print-title .left-title button {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 35px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-indigency .print-title .left-title button:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-indigency .print-title .left-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  font-family: Poppins;
+  font-size: 14px;
+  color: #007236;
+  padding: 10px 35px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-indigency .print-title .left-title a:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-indigency .form-container-brgyClearance {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-indigency .form-container-brgyClearance .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont {
+  width: 30%;
+  background: linear-gradient(180deg, #ECEADF 0%, #C9C29F 100%);
+  display: flex;
+  flex-direction: column;
+  height: 832px;
+  padding-right: 40px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-captain {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .k-title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-councilor {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-councilor span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-councilor1 {
+  margin-left: 10px;
+  margin-top: 35px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-councilor1 span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont {
+  width: 70%;
+  padding: 10px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .to {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .to span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .position {
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 27px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .location {
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 27px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .first-p {
+  text-indent: 40px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .first-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .second-p {
+  text-indent: 40px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .third-p {
+  text-indent: 40px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .third-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .date-time {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .b-captain1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  margin-left: 290px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .b-captain1 span {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .watermark-cont-indigency {
+  position: relative;
+  margin-top: -540px;
+  margin-left: 20px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .watermark-cont-indigency img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.modal-editIndigency_forself {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editIndigency_forself .formIndigency_forself {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editIndigency_forself .formIndigency_forself .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editIndigency_forself .formIndigency_forself .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editIndigency_forself .formIndigency_forself .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self .label111 #house_no_self1 {
+  width: 24%;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self .label111 #street_self1 {
+  width: 36%;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self .label111 #subdivision_self1 {
+  width: 38%;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self .label111 #applicant_fname_self1, .modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self #applicant_mname_self1, .modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self #applicant_lname_self1 {
+  width: 27%;
+}
+.modal-editIndigency_forself .formIndigency_forself .modal-layer-indigency-self .input-indigency-self .label111 #applicant_suffix_self1 {
+  width: 16%;
+}
+.modal-editIndigency_forself .formIndigency_forself #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editIndigency_forself .formIndigency_forself #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.modal-editIndigency_forsomeone {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone .label111 #house_no_someone1 {
+  width: 24%;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone .label111 #street_someone1 {
+  width: 36%;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone .label111 #subdivision_someone1 {
+  width: 38%;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone .label111 #applicant_fname_someone1, .modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone #applicant_mname_someone1, .modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone #applicant_lname_someone1 {
+  width: 27%;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone .label111 #applicant_suffix_someone1 {
+  width: 16%;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone .label111 #requestor_fname_someone1, .modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone #requestor_mname_someone1, .modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone #requestor_lname_someone1 {
+  width: 27%;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone .modal-layer-indigency-someone .input-indigency-someone .label111 #requestor_suffix_someone1 {
+  width: 16%;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editIndigency_forsomeone .formIndigency_forsomeone #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.printing-container-lbr {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-lbr .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-lbr .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-lbr .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-lbr .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-lbr .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-lbr .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-lbr .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-lbr .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-lbr .print-title .left-title {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-lbr .print-title .left-title button {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 35px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-lbr .print-title .left-title button:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-lbr .print-title .left-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  font-family: Poppins;
+  font-size: 14px;
+  color: #007236;
+  padding: 10px 35px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-lbr .print-title .left-title a:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-lbr .form-container {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-lbr .form-container .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+.printing-container-lbr .form-container .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-lbr .form-container .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-lbr .form-container .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr {
+  width: 100%;
+  height: auto;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .title-body {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .to {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .governor {
+  color: #000;
+  font-family: Caladea;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .greet {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p #nameRequest {
+  width: 47%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p #noData {
+  width: 53%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .second-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .second-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .second-p #nameRequest1 {
+  width: 47%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .third-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .third-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .third-p #nameRequest2 {
+  width: 47%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .third-p #noData1 {
+  width: 53%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .fourth-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .fourth-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .fourth-p #nameRequest3 {
+  width: 47%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .date-time {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 40px;
+  margin-left: 100px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .date-time span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .captain-name {
+  color: #000;
+  font-family: Caladea;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 450px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .captain-name span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 30px;
+}
+
+.watermark-cont {
+  position: relative;
+  margin-top: -580px;
+  margin-left: 140px;
+}
+.watermark-cont img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.modal-editlbr_forself {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_forself .formlbr_forself {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editlbr_forself .formlbr_forself .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editlbr_forself .formlbr_forself .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editlbr_forself .formlbr_forself .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #house_no_self1 {
+  width: 24%;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #street_self1 {
+  width: 36%;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #subdivision_self1 {
+  width: 38%;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #applicant_fname_self1, .modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self #applicant_mname_self1, .modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self #applicant_lname_self1 {
+  width: 27%;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #applicant_suffix_self1 {
+  width: 16%;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #father_fname_self1, .modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self #father_mname_self1, .modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self #father_lname_self1 {
+  width: 27%;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #father_suffix_self1 {
+  width: 16%;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #mother_fname_self1, .modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self #mother_mname_self1, .modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self #mother_lname_self1 {
+  width: 27%;
+}
+.modal-editlbr_forself .formlbr_forself .modal-layer-lbr-self .input-lbr-self .label111 #mother_suffix_self1 {
+  width: 16%;
+}
+.modal-editlbr_forself .formlbr_forself #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editlbr_forself .formlbr_forself #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.modal-editlbr_forsingleparent {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent .label111 #house_no_parent1 {
+  width: 24%;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent .label111 #street_parent1 {
+  width: 36%;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent .label111 #subdivision_parent1 {
+  width: 38%;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent .label111 #parent_fname_parent1, .modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent #parent_mname_parent1, .modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent #parent_lname_parent1 {
+  width: 27%;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent .label111 #parent_suffix_parent1 {
+  width: 16%;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent .label111 #requestor_fname_parent1, .modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent #requestor_mname_parent1, .modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent #requestor_lname_parent1 {
+  width: 27%;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent .modal-layer-lbr-single-parent .input-lbr-single-parent .label111 #requestor_suffix_parent1 {
+  width: 16%;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editlbr_forsingleparent .formlbr_forsingleparent #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.modal-editlbr_fortheirchild {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #house_no_child1 {
+  width: 24%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #street_child1 {
+  width: 36%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #subdivision_child1 {
+  width: 38%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #requestor_fname_child1, .modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child #requestor_mname_child1, .modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child #requestor_lname_child1 {
+  width: 27%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #requestor_suffix_child1 {
+  width: 16%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #father_fname_child1, .modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child #father_mname_child1, .modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child #father_lname_child1 {
+  width: 27%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #father_suffix_child1 {
+  width: 16%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #mother_fname_child1, .modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child #mother_mname_child1, .modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child #mother_lname_child1 {
+  width: 27%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild .modal-layer-lbr-for-child .input-lbr-for-child .label111 #mother_suffix_child1 {
+  width: 16%;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editlbr_fortheirchild .formlbr_fortheirchild #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.printing-container-businessClearance {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-businessClearance .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-businessClearance .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-businessClearance .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-businessClearance .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-businessClearance .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-businessClearance .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-businessClearance .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-businessClearance .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-businessClearance .print-title .left-title {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-businessClearance .print-title .left-title button {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 35px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-businessClearance .print-title .left-title button:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-businessClearance .print-title .left-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  font-family: Poppins;
+  font-size: 14px;
+  color: #007236;
+  padding: 10px 35px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-businessClearance .print-title .left-title a:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-businessClearance .form-container-businessClearance {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  border: 1px solid #000000;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont {
+  width: 30%;
+  background: linear-gradient(180deg, #ECEADF 0%, #C9C29F 100%);
+  display: flex;
+  flex-direction: column;
+  height: 832px;
+  padding-right: 40px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-captain {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .k-title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-councilor {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-councilor span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-councilor1 {
+  margin-left: 10px;
+  margin-top: 35px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-councilor1 span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business {
+  width: 70%;
+  padding: 10px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .certify {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 40px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .name {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .name input {
+  width: 300px;
+  margin-left: 50px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .address {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .address input {
+  width: 300px;
+  margin-left: 32px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .owner {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .owner input {
+  width: 300px;
+  margin-left: 42px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .given {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 100px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .signature-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 10px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 12px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .signature-cont .signature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .from {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 130px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 70px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .b-captain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 220px;
+  margin-top: 30px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .ending-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .ending-p span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .validity {
+  width: 210px;
+  margin-top: 30px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .watermark-cont-businessClearance {
+  position: relative;
+  margin-top: -680px;
+  margin-left: 20px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .watermark-cont-businessClearance img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.modal-editClearance {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editClearance .formeditClearance {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editClearance .formeditClearance .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editClearance .formeditClearance .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editClearance .formeditClearance .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance .label111 #house_no {
+  width: 24%;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance .label111 #street {
+  width: 36%;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance .label111 #subdivision {
+  width: 38%;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance .label111 #business_owner_fname, .modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance #business_owner_mname, .modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance #business_owner_lname {
+  width: 27%;
+}
+.modal-editClearance .formeditClearance .modal-layer-b-clearance .input-b-clearance .label111 #business_owner_suffix {
+  width: 16%;
+}
+.modal-editClearance .formeditClearance #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editClearance .formeditClearance #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.modal-editClosure {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editClosure .formeditClosure {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 450px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-editClosure .formeditClosure .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-editClosure .formeditClosure .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-editClosure .formeditClosure .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure input {
+  width: 194px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure .label111 #house_no {
+  width: 24%;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure .label111 #street {
+  width: 36%;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure .label111 #subdivision {
+  width: 38%;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure .label111 #business_owner_fname, .modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure #business_owner_mname, .modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure #business_owner_lname {
+  width: 27%;
+}
+.modal-editClosure .formeditClosure .modal-layer-b-closure .input-b-closure .label111 #business_owner_suffix {
+  width: 16%;
+}
+.modal-editClosure .formeditClosure #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-editClosure .formeditClosure #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+.printing-container-idForm {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-idForm .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-idForm .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-idForm .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-idForm .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-idForm .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-idForm .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-idForm .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-idForm .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-idForm .print-title .left-title {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-idForm .print-title .left-title button {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 35px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-idForm .print-title .left-title button:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-idForm .print-title .left-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  font-family: Poppins;
+  font-size: 14px;
+  color: #007236;
+  padding: 10px 35px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-idForm .print-title .left-title a:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-idForm .print-title .left-title label.label input[type=file] {
+  position: absolute;
+  top: -1000px;
+}
+.printing-container-idForm .print-title .left-title label.label input[type=file] {
+  position: absolute;
+  top: -1000px;
+}
+.printing-container-idForm .print-title .left-title .label {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-idForm .print-title .left-title .label:hover {
+  background: #007236;
+  color: white;
+}
+.printing-container-idForm .print-title .left-title .label:active {
+  background: #9fa1a0;
+}
+.printing-container-idForm .print-title .left-title .label:invalid + span {
+  color: #000000;
+}
+.printing-container-idForm .print-title .left-title .label:valid + span {
+  color: #ffffff;
+}
+.printing-container-idForm .form-container-idForm {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-idForm .form-container-idForm .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper {
+  width: 700px;
+  height: 368px;
+  border: 3px solid #000;
+  background: #FFF;
+  margin: 20px;
+  padding: 10px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .title {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left {
+  width: 500px;
+  height: 131px;
+  border: 1px solid #000;
+  background: #FFF;
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Poppins;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont {
+  width: 70%;
+  height: 130px;
+  border-right: 1px solid #000;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan {
+  display: flex;
+  flex-direction: column;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .fullname {
+  width: 100%;
+  height: 43px;
+  border-bottom: 1px solid #000;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .address {
+  width: 100%;
+  height: 43px;
+  border-bottom: 1px solid #000;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .placeStatus-cont {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .placeStatus-cont .pob {
+  width: 60%;
+  height: 44px;
+  border-right: 1px solid #000;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .placeStatus-cont .civilStatus {
+  width: 40%;
+  height: 44px;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .right-cont {
+  width: 30%;
+  height: 130px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .right-cont .kaliwa {
+  display: flex;
+  flex-direction: column;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .right-cont .kaliwa .birthDate {
+  width: 100%;
+  height: 43px;
+  border-bottom: 1px solid #000;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .right-cont .kaliwa .contactNo {
+  width: 100%;
+  height: 86px;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .right {
+  width: 156px;
+  height: 131px;
+  border: 2px solid #000;
+  background: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #000;
+  font-family: Poppins;
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .warning {
+  color: #F00;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-top: 35px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .sentence {
+  width: 426px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 10px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .sentence .signature {
+  color: #F00;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .sentence .ending-s {
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .sentence .ending-s span {
+  color: #F00;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .pirma {
+  color: #000;
+  text-align: right;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-left: 110px;
+}
+
+.modal-EditIDForm {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-EditIDForm .editIDForm {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 490px;
+  height: auto;
+  padding: 20px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.modal-EditIDForm .editIDForm .title-cont-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal-EditIDForm .editIDForm .title-cont-modal p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.modal-EditIDForm .editIDForm .title-cont-modal img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 select {
+  height: 33px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 input {
+  height: 30px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 .input-label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 .input-label input {
+  width: 215px;
+  height: 33px;
+  padding-left: 5px;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 .input-label .label111 #house_no1 {
+  width: 24%;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 .input-label .label111 #street1 {
+  width: 36%;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 .input-label .label111 #subdivision1 {
+  width: 38%;
+}
+.modal-EditIDForm .editIDForm .modal-layer1 .input-label .label111 #applicant_fname1, .modal-EditIDForm .editIDForm .modal-layer1 .input-label #applicant_mname1, .modal-EditIDForm .editIDForm .modal-layer1 .input-label #applicant_lname1 {
+  width: 32.5%;
+}
+.modal-EditIDForm .editIDForm #submit {
+  width: 89.744px;
+  height: 35.836px;
+  flex-shrink: 0;
+  color: #007236;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #007236;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal-EditIDForm .editIDForm #submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #252525;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 4;
+  justify-content: space-between;
+}
+
+.layer1,
+.layer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layer1 {
+  z-index: 2;
+  background: linear-gradient(180deg, #057435 49.41%, #f6eb13 211.08%);
+  width: 100%;
+  height: 85px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 118px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+  color: #ffffff;
+}
+
+.layer2 {
+  display: flex;
+  justify-content: flex-end;
+  justify-self: center;
+  margin-top: 16px;
+  width: 100%;
+  z-index: 2;
+  max-width: 2000px;
+  height: 69px;
+}
+
+.sidebar {
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  width: 75px;
+  height: 100%;
+  background: linear-gradient(180.45deg, #007236 10.56%, #92BA21 43.84%, #62A228 71.84%, #007236 100.06%);
+  position: fixed;
+  transition: width 0.3s;
+}
+
+.sidebar:hover {
+  width: 300px;
+}
+
+.slayer1 {
+  width: 25%;
+  position: relative;
+}
+
+.slayer1 .vector-side {
+  width: 60px;
+  height: 580px;
+  margin-top: 150px;
+  position: absolute;
+  z-index: 0;
+}
+
+.slayer1 .db-icon {
+  position: absolute;
+  margin-top: 240px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.slayer1 .bo-icon {
+  position: absolute;
+  margin-top: 295px;
+  margin-left: 8px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.slayer1 .ri-icon {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.slayer1 .cc-icon {
+  position: absolute;
+  margin-top: 415px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.slayer1 .rs-icon {
+  position: absolute;
+  margin-top: 465px;
+  margin-left: 8px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.slayer1 .um-icon {
+  position: absolute;
+  margin-top: 520px;
+  margin-left: 13px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.slayer1 .cm-icon {
+  position: absolute;
+  margin-top: 580px;
+  margin-left: 13px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.slayer2 {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  height: auto;
+  width: 75%;
+  margin-top: 225px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  /* identical to box height */
+  visibility: hidden;
+  transition: visibility 0.1s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.slayer2 a {
+  width: 100%;
+  margin-top: 25px;
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
+}
+
+.sidebar:hover .slayer2 {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slayer2 a:hover {
+  width: 190px;
+  height: 30px;
+  background: rgba(152, 204, 177, 0.34);
+  border-radius: 5px;
+}
+
+.slayer2 .residentInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .household {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .businessInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .idform {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .b-clearance {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .e-certificate {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .c-indigency {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .c-latebirth {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .bb-clearance {
+  margin-left: 15px;
+  margin-top: -1px;
+  margin-bottom: -20px;
+  display: none;
+}
+
+.slayer2 .blotter1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .complain1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .awareness1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  margin-bottom: -20px;
+  display: none;
+}
+
+.slayer2 .users {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  margin-bottom: -20px;
+  display: none;
+}
+
+.slayer2 .b-information {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+
+.slayer2 .announcement {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+
+.slayer2 .requested {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+
+.slayer2 .backup {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+
+.slayer2 .restore {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+
+.slayer2 .request {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  margin-bottom: -20px;
+  display: none;
+}/*# sourceMappingURL=generateCert.css.map */

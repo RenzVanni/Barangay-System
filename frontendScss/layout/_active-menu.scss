@@ -1,0 +1,74 @@
+.active-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba($color: #000000, $alpha: 0.15);
+  align-items: center;
+  justify-content: end;
+  z-index: 10;
+  transition: 0.4s ease-in-out;
+
+  @media (min-width: 375px) {
+    display: none;
+  }
+  .container {
+    top: 0;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    height: 100%;
+    width: 60%;
+    padding: 1rem;
+    animation: menus 0.3s ease-in;
+
+    @media (min-width: 375px) {
+      display: none;
+    }
+
+    .sub-container {
+      position: sticky;
+      top: 0;
+      @media (min-width: 375px) {
+        display: none;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        h2 {
+          width: min-content;
+          cursor: pointer;
+          margin: 0;
+          color: #fff;
+        }
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          color: #fff;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.show {
+  display: flex;
+  @media (min-width: 375px) {
+    display: none;
+  }
+}
+
+@keyframes menus {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%;
+  }
+}
