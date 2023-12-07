@@ -203,9 +203,9 @@ if ($result2->num_rows > 0) {
                         </td>
                         <td><input type="text" value="<?= $row['sex'] ?>" name="sex[]" id=""></td>
                         <?php if($row['household_head'] == $headName) { ?>
-                            <td><input type="radio" value="no" name="householdHead[]"></td>
+                            <td><input type="radio" value="yes" name="householdHead[<?= $no ?>]"></td>
                         <?php } else { ?>
-                            <td><input type="radio" value="yes" checked name="householdHead[]"></td>
+                            <td><input type="radio" value="yes" checked name="householdHead[<?= $no ?>]"></td>
                         <?php }?>
                         <td style="display: none;"><input type="text" value="<?= $row['place_of_birth'] ?>" name="placeBirth[]" id=""></td>
                         <td style="display: none;"><input type="text" value="<?= $row['citizenship'] ?>" name="citizenship[]" id=""></td>
@@ -227,6 +227,20 @@ if ($result2->num_rows > 0) {
         </form>
     </div>
 
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            // $("input[type=radio]").prop("checked", false);
+            // $("input[type=radio]:first").prop("checked", true);
+
+            $("input[type=radio]").click(function(event) {
+                $("input[type=radio]").prop("checked", false);
+                $(this).prop("checked", true);
+
+                // event.preventDefault();
+            })
+        })
+    </script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const addSaTableButton = document.querySelector('.addSaTable');

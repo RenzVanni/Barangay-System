@@ -169,6 +169,20 @@
         </form>
     </div>
 
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("input[type=radio]").prop("checked", false);
+            $("input[type=radio]:first").prop("checked", true);
+
+            $("input[type=radio]").click(function(event) {
+                $("input[type=radio]").prop("checked", false);
+                $(this).prop("checked", true);
+
+                // event.preventDefault();
+            })
+        })
+    </script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const addSaTableButton = document.querySelector('.addSaTable');

@@ -5,6 +5,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $urlId = $_POST['urlId'];
     // Assuming $conn is the connection to your database
+
+    // Check if the household exists based on firstname, middlename, and lastname
+    $stmtCheck = $conn->prepare("SELECT `id` FROM tbl_households WHERE `firstname` = ? AND `middlename` = ? AND `lastname` = ?");
+    $stmtCheck->bind_param("sss", $checkFirstName, $checkMiddleName, $checkLastName);
     
     // Prepare the statement once for efficiency
     $stmt = $conn->prepare("UPDATE tbl_households 
@@ -14,11 +18,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                `contact_no`=?, `voter_status`=?, `profile_img`=?
                            WHERE `id`=?");
 
+
+            // Prepare the statement for INSERT
+    $stmtInsert = $conn->prepare("INSERT INTO tbl_households 
+                                    (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, 
+                                    `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, 
+                                    `occupation`, `citizenship`, `household_head`, `suffix`, `email`, 
+                                    `contact_no`, `voter_status`, `profile_img`)
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
     $totalEntries = count($_POST['lastName']); // Assumes every other array has the same count
 
     $householdHeadName = '';
+    $householdHeadId = '';
 
     for ($i = 0; $i < $totalEntries; $i++) {
+
+                // Set parameters for checking existence
+        $checkFirstName = $_POST['firstName'][$i];
+        $checkMiddleName = $_POST['middleName'][$i];
+        $checkLastName = $_POST['lastName'][$i];
+
+        $stmtCheck->execute();
+        $stmtCheck->store_result();
 
         // File upload handling
         $imagePath = ""; // Initialize with a default value
@@ -55,9 +77,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             for ($j = 0; $j < $totalEntries; $j++) {
                 if (isset($_POST['householdHead'][$j+1]) && $_POST['householdHead'][$j+1] === 'yes') {
                     $householdHead = $_POST['firstName'][$j] . ' ' . $_POST['middleName'][$j] . ' ' . $_POST['lastName'][$j];
+                    $householdHeadId = $_POST['id'][$j];
                     break; // Stop searching once found
                 }
             }
+        }
+
+               // If the record does not exist, perform an INSERT
+        if ($stmtCheck->num_rows === 0) {
+
+            if(!$stmtInsert->bind_param("ssssssssssssssssss", 
+                $_POST['firstName'][$i],
+                $_POST['middleName'][$i], 
+                $_POST['lastName'][$i],
+                $_POST['sex'][$i], 
+                $_POST['no'][$i], 
+                $_POST['streetName'][$i], 
+                $_POST['subdiName'][$i], 
+                $_POST['dateBirth'][$i], 
+                $_POST['placeBirth'][$i], 
+                $_POST['civilStatus'][$i], 
+                $_POST['occupational'][$i], 
+                $_POST['citizenship'][$i], 
+                $householdHead,
+                $_POST['ext'][$i],
+                $_POST['email'][$i],
+                $_POST['contact_no'][$i],
+                $_POST['voter_status'][$i],
+                $imagePath
+            )) {
+                echo "Binding parameters failed: (" . $stmtInsert->errno . ") " . $stmtInsert->error;
+            }
+                // Execute the INSERT statement
+            if (!$stmtInsert->execute()) {
+                echo "Execute failed: (" . $stmtInsert->errno . ") " . $stmtInsert->error;
+            }
+
         }
 
         if (!$stmt->bind_param("ssssssssssssssssssi", 
@@ -65,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['middleName'][$i], 
             $_POST['lastName'][$i],
             $_POST['sex'][$i], 
-            $_POST['no'][$i], 
+            $_POST['no'][$i],   
             $_POST['streetName'][$i], 
             $_POST['subdiName'][$i], 
             $_POST['dateBirth'][$i], 
@@ -90,8 +145,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    $stmtCheck->close();
+    $stmtInsert->close();
     $stmt->close();
-    header("Location: ../editHouseholds.php?id=". $urlId);
+    header("Location: ../editHouseholds.php?id=". $householdHeadId);
     exit;
 }
 ?>
