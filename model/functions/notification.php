@@ -83,5 +83,4 @@ foreach ($newCertificates as $certificate) {
 
 // Mark certificates as read after displaying
 
-
 ?>

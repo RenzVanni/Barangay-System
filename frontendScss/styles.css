@@ -698,10 +698,9 @@ header .user {
 .services {
   width: 100%;
   height: 100vh;
-  padding: 2rem;
 }
 .services .serve {
-  padding: 1rem;
+  padding: 0 5rem;
 }
 .services .serve h2 {
   color: #097338;
@@ -723,6 +722,7 @@ header .user {
   height: calc(100vh - 30%);
   border-radius: 1rem;
   overflow: hidden;
+  padding-bottom: 2rem;
 }
 .services .swiper .container {
   height: 95%;
@@ -739,7 +739,7 @@ header .user {
   justify-content: center;
   border: none;
   border-radius: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
   padding: 2rem;
   text-align: center;
 }
@@ -832,7 +832,7 @@ header .user {
   height: 100vh;
 }
 .announcement .announce {
-  padding: 1rem;
+  padding: 0 5rem;
 }
 .announcement .announce h2 {
   color: #097338;
@@ -850,12 +850,7 @@ header .user {
   overflow: hidden;
   height: 80%;
   border-radius: 1rem;
-  background-color: red;
-}
-@media (min-width: 375px) {
-  .announcement .swiper {
-    padding: 2rem;
-  }
+  padding-bottom: 2rem;
 }
 .announcement .swiper .options {
   height: 95%;
@@ -871,16 +866,14 @@ header .user {
   align-items: center;
   justify-content: flex-start;
   border: none;
-  background-color: blue;
   border-radius: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
   overflow: hidden;
 }
 .announcement .swiper .options .card .picture {
   width: 100%;
   height: 300px;
-  background-color: pink;
 }
 .announcement .swiper .options .card .picture img {
   -o-object-fit: cover;
@@ -891,25 +884,41 @@ header .user {
 .announcement .swiper .options .card .context {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  padding: 2rem;
 }
-.announcement .swiper .options .card .context span {
+.announcement .swiper .options .card .context h3 {
+  margin: 0 0 1rem 0;
+}
+.announcement .swiper .options .card .context p {
+  font-size: 0.8rem;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  margin: 0 0 2rem 0;
+  text-align: start;
+}
+.announcement .swiper .options .card .context .more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.announcement .swiper .options .card .context .more span {
+  border: none;
+  border-radius: 0.2rem;
   background-color: #097338;
   color: #fff;
   font-size: 0.8rem;
   padding: 0.2rem 0.5rem;
 }
-.announcement .swiper .options .card .context p {
-  font-size: 1rem;
-  margin: 1rem;
-}
-.announcement .swiper .options .card .context a {
+.announcement .swiper .options .card .context .more a {
   color: #097338;
   font-weight: 700;
-  margin-bottom: 2.5rem;
 }
 .announcement .swiper-pagination-bullet {
   background-color: #097338;

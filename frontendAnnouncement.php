@@ -31,11 +31,16 @@ while($row = $result->fetch_assoc()) {
                     <div class="picture">
                         <img src="./uploads/announcement/<?= $row['image_announcement']?>" alt="image" />
                     </div>
-                    
+
                     <div class="context">
-                        <span><?= $row['date_announcement']?></span>
-                        <p>Earthquake Drill</p>
-                        <a href="./main_announcement.php?id=<?= $row['id'] ?>">Read more ></a>
+                        <h3>Title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit aliquam iste voluptatibus harum illo, atque voluptatum esse exercitationem ab aliquid corrupti maiores accusantium laborum numquam ex quia dolores excepturi nemo.
+                        Optio delectus beatae nemo neque quis, corrupti impedit dolor repellat eos alias voluptatem quod nesciunt aliquam aspernatur? Velit ex alias et eum sunt quis provident, quo ducimus accusantium veritatis autem.</p>
+
+                        <div class="more">
+                            <span><?= $row['date_announcement'] ?></span>
+                            <a href="./main_announcement.php?id=<?= $row['id'] ?>">Read more ></a>
+                        </div>
                     </div>
                 </div>
                 <?php $no++; endforeach ?>

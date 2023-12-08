@@ -152,7 +152,7 @@ function calculateAge($dob) {
 
     <div class="modal_message">
         <div class="form_message">
-            <div class="one-message">
+            <!-- <div class="one-message">
                 <div class="row_message">
                     <div class="left_message">
                         <img src="icons/message.png" alt="">
@@ -165,7 +165,8 @@ function calculateAge($dob) {
                     </div>
                 </div>
                 <div class="underline"></div>
-            </div>
+            </div> -->
+            <?php include './model/functions/notif_messages.php' ?>
         </div>
     </div>
 
@@ -189,7 +190,7 @@ function calculateAge($dob) {
                             </svg>
                         </div>
                        
-                        <a class="logout" href="#">Logout</a>
+                        <a class="logout" href="./model/logout.php">Logout</a>
                     </div>
                 </div>
                 <div class="stats">
@@ -660,6 +661,68 @@ function calculateAge($dob) {
                             console.error('Unknown notification source:',
                                 notificationSource);
                         }
+                    } else {
+                        // Handle errors if needed
+                        console.error('Error marking notification as read:', xhr
+                            .statusText);
+                    }
+                };
+                xhr.send();
+
+                // Add any other logic you need for handling the click event
+            });
+        });
+    });
+    </script>
+
+    <script>
+    // Function to fetch and display notifications
+    function fetchMessageNotif() {
+        $.ajax({
+            url: 'notif_messages.php', // Update the URL to the PHP file handling notifications
+            type: 'GET',
+            dataType: 'html',
+            success: function(data) {
+                // Update the notification container with the fetched data
+                $('#messageNotificationContainer').html(data);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching notifications:', error);
+            }
+        });
+    }
+
+    // Function to periodically fetch notifications (every 1 minute in this example)
+    function startFetchingMessageNotif() {
+        setInterval(fetchMessageNotif, 60000); // Adjust the interval as needed
+    }
+
+    $(document).ready(function() {
+        fetchMessageNotif();
+        startFetchingMessageNotif();
+    });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {        // Add click event listener to all elements with class 'clickable-notification'
+            // Start fetching notifications when the page loads
+        const clickableMessageNotif = document.querySelectorAll('.clickable-notification-message');
+        clickableMessageNotif.forEach(function(notification) {
+            notification.addEventListener('click', function() {
+                // Get the ID of the clicked notification
+                const messageId = notification.getAttribute('data-id');
+                const messageSender = notification.getAttribute('data-name');
+
+                // Send an AJAX request to mark the notification as read
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', './model/more/redirect_message_notif.php?id=' + messageId, true);
+                xhr.onload = function() {
+                    // Handle the response if needed
+                    if (xhr.status === 200) {
+                        // Redirect to the corresponding page based on the source
+                        window.location.href = 'message.php?name='+ messageSender;
+
+
                     } else {
                         // Handle errors if needed
                         console.error('Error marking notification as read:', xhr

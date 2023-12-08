@@ -25,7 +25,7 @@
                     <img src="./assets/close-login.svg" alt="close">
                 </a>
             </div>
-            <form action="./frontendModel/access_login_users.php" method="post">
+            <form action="./model/access_login.php" method="post">
                 <h1>LOGIN</h1>
                 <div class="username">
                     <input type="text" name="username" id="username" required>

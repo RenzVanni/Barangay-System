@@ -30,7 +30,7 @@
                 <img class="down-btn" src="./assets/profile-down.svg" alt="down">
             </div>
             <div class="profile-option">
-                <p><a href="./frontendModel/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></p>
+                <p><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></p>
             </div>
         <?php } else {?>
             <div class="login-div">
@@ -64,7 +64,7 @@
         <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
         <li><a href="./Cart.php">Request</a></li>
-        <li><a href="./frontendModel/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
+        <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
         <?php } else {?>
         <li class="" id=""><a href="./login_page.php">Login</a></li>
         <?php } ?>
