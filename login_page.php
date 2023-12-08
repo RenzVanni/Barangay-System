@@ -15,7 +15,7 @@
     <div class="login_page">
         <section class="section-1">
             <div class="logo-container">
-                <img src="../BACKENDMONATO/uploads/logo/<?= $brgy_logo ?>" alt="Barangay Logo">
+                <img src="./uploads/logo/<?= $brgy_logo ?>" alt="Barangay Logo">
             </div>
         </section>
 

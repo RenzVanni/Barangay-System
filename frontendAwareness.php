@@ -9,25 +9,32 @@
     </div>
 
     <div class="section-2">
-        <form action="">
+        <form action="./frontendModel/send_awareness.php" method="POST">
             <label for="">Name:</label>
             <div class="name">
-                <input type="text" name="firstname" id="" placeholder="Firstname...">
-                <input type="text" name="middlenmae" id="" placeholder="Middlename...">
-                <input type="text" name="lastname" id="" placeholder="Lastname...">
-                <input type="text" name="suffix" id="suffix" placeholder="Suffix...">
-            </div>
-
-            <label for="">Address:</label>
-            <div class="address">
-                <input type="text" name="house_no" id="" placeholder="House no...">
-                <input type="text" name="street" id="" placeholder="Street...">
-                <input type="text" name="subdivision" id="" placeholder="Subdivision...">
+                <input type="text" value="<?= $_SESSION['firstname'] ?>" name="firstname" id="" placeholder="Firstname..." required>
+                <input type="text" value="<?= $_SESSION['middlename'] ?>" name="middlename" id="" placeholder="Middlename...">
+                <input type="text" value="<?= $_SESSION['lastname'] ?>" name="lastname" id="" placeholder="Lastname..." required>
+                <input type="text" value="<?= $_SESSION['suffix'] ?>" name="suffix" id="suffix" placeholder="Suffix...">
             </div>
 
             <label for="">Details:</label>
-            <textarea name="details" id="" placeholder="Details..."></textarea>
-            <button type="submit">Submit</button>
+            <textarea name="details" id="" placeholder="Details..." required></textarea>
+            <button type="button" class="awarenessBtn">Submit</button>
+
+            <input type="hidden" value="<?= $_SESSION['house_no'] ?>" name="house_no" id="" placeholder="House no...">
+            <input type="hidden" value="<?= $_SESSION['street'] ?>" name="street" id="" placeholder="Street...">
+            <input type="hidden" value="<?= $_SESSION['subdivision'] ?>" name="subdivision" id="" placeholder="Subdivision...">
+
+            <div class="confirmAwareness">
+                <div class="main-awarenessConfirmation">
+                    <h1>Are you sure?</h1>
+                    <div class="btns">
+                        <button class="cancelAwareness">Cancel</button>
+                        <button type="submit" class="proceed">OK</button>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 </div>

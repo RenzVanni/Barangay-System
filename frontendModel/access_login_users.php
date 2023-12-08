@@ -29,6 +29,7 @@ if ($result->num_rows) {
             $_SESSION['firstname'] = $user['firstname'];
             $_SESSION['middlename'] = $user['middlename'];
             $_SESSION['lastname'] = $user['lastname'];
+            $_SESSION['suffix'] = $user['suffix'];
             $_SESSION['street'] = $user['street'];
             $_SESSION['house_no'] = $user['house_no'];
             $_SESSION['subdivision'] = $user['subdivision'];

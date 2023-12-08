@@ -4,14 +4,13 @@
   justify-content: center;
   //   background-color: #feeafa;
   height: 100vh;
-  padding: 5rem;
-  position: relative;
+  // position: relative;
 
   .section-1 {
-    // background-color: #52b788;
+    background-color: #097338;
     height: 100%;
     width: 100%;
-    padding: 2rem;
+    padding: 5rem;
 
     h1 {
       margin: 0;
@@ -28,7 +27,7 @@
   .section-2 {
     height: 80%;
     width: 100%;
-    padding: 2rem;
+    padding: 5rem;
     // background-color: #415a77;
     display: flex;
     align-items: center;
@@ -41,7 +40,7 @@
         font-weight: 600;
       }
       .name,
-      .address {
+      .location {
         display: flex;
         align-items: center;
         justify-content: start;
@@ -60,6 +59,12 @@
 
         #suffix {
           width: 100px;
+        }
+      }
+
+      .location {
+        input {
+          width: 100%;
         }
       }
       textarea {
@@ -84,17 +89,48 @@
         width: 100%;
         padding: 0.8rem;
       }
+
+      .confirmAwareness {
+        background-color: rgba($color: #000000, $alpha: 0.25);
+        backdrop-filter: blur(5px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+
+        .main-awarenessConfirmation {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 0.5rem;
+          background-color: #f8f9fa;
+          padding: 1rem;
+
+          .btns {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+          }
+        }
+      }
     }
   }
 }
 
-.awareness-page::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #097338;
-  z-index: -1;
-}
+// .awareness-page::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 50%;
+//   height: 100%;
+//   background-color: #097338;
+//   z-index: -2;
+// }

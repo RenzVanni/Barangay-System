@@ -31,7 +31,7 @@ while($row = $result->fetch_assoc()) {
                     <div class="picture">
                         <img src="./uploads/announcement/<?= $row['image_announcement']?>" alt="image" />
                     </div>
-                    <hr>
+                    
                     <div class="context">
                         <span><?= $row['date_announcement']?></span>
                         <p>Earthquake Drill</p>

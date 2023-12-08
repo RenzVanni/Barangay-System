@@ -240,3 +240,16 @@ downBtn.addEventListener("click", () => {
   profileOption.style.height = "fit-content";
   profileOption.style.padding = ".5rem";
 });
+
+// ! AWARENESS CONFIRMATION
+const awarenessBtn = document.querySelector(".awarenessBtn");
+const awarenessConfirmationCon = document.querySelector(".confirmAwareness");
+const cancelAwareness = document.querySelector(".cancelAwareness");
+
+awarenessBtn.addEventListener("click", () => {
+  awarenessConfirmationCon.style.display = "flex";
+
+  cancelAwareness.addEventListener("click", () => {
+    awarenessConfirmationCon.style.display = "none";
+  });
+});
