@@ -118,14 +118,7 @@
                             <option value="Widowed">Widowed</option>
                         </select>
                     </div>
-                    <div class="inputVoterStatus">
-                        <p>Voters Status <span></span></p>
-                        <select id="votersStatus" name="votersStatus[]">
-                            <option value=""></option>
-                            <option value="Voters">Voters</option>
-                            <option value="Non-voters">Non-voters</option>
-                        </select>
-                    </div>
+                    
 
                   
 
@@ -223,9 +216,7 @@
             const occupation = document.getElementById('occupation').value;
             const sex = document.getElementById('sex').value;
             const civilStatus = document.getElementById('civilStatus').value;
-            const votersStatus = document.getElementById('votersStatus').value;
-  
-
+       
 
             // Phone number validation for the Philippines (10 digits starting with 09)
             const phoneNoValue = document.getElementById('phoneNo').value;
@@ -265,7 +256,6 @@
                 'occupational',
                 'sex',
                 'civilStatus',
-                'votersStatus',
                 'ext'
             ];
             // Create a single set of input fields for names
@@ -385,7 +375,7 @@
 
             occupationCell.appendChild(occupationInput);
 
-            const sexCell = newRow.insertCell(7);
+            const sexCell = newRow.insertCell(8);
             const sexInput = document.createElement('input');
             sexInput.type = 'text';
             sexInput.name = 'sex[]';
@@ -393,7 +383,7 @@
 
             sexCell.appendChild(sexInput);
 
-            const civilStatusCell = newRow.insertCell(8);
+            const civilStatusCell = newRow.insertCell(9);
             civilStatusCell.style.display = 'none';
             const civilStatusInput = document.createElement('input');
             civilStatusInput.type = 'text';
@@ -402,17 +392,6 @@
 
 
             civilStatusCell.appendChild(civilStatusInput);
-
-
-            // Create a new cell for the "Voters Status" input
-            const votersStatusCell = newRow.insertCell(9); // Adjust the column index if needed
-            votersStatusCell.style.display = 'none';
-            const votersStatusInput = document.createElement('input');
-            votersStatusInput.type = 'text';
-            votersStatusInput.name = 'voter_status[]';
-            votersStatusInput.value = votersStatus
-
-            votersStatusCell.appendChild(votersStatusInput);
 
             
 
