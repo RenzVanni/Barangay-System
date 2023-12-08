@@ -164,14 +164,9 @@ function calculateAge($dob) {
                         <div class="time">3 hours ago</div>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="underline"></div>
             </div> -->
             <?php include './model/functions/notif_messages.php' ?>
-=======
-                <div class="underline"></div> -->
-            </div>
->>>>>>> 4729839a9c4a42e0e168a19c7c28faac64a56c66
         </div>
     </div>
 
