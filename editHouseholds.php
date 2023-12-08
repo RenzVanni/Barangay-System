@@ -140,14 +140,7 @@ if ($result2->num_rows > 0) {
                             <option value="Widowed">Widowed</option>
                         </select>
                     </div>
-                    <div class="inputVoterStatus">
-                        <p>Voters Status <span></span></p>
-                        <select id="votersStatus" name="votersStatus[]">
-                            <option value=""></option>
-                            <option value="Voters">Voters</option>
-                            <option value="Non-voters">Non-voters</option>
-                        </select>
-                    </div>
+                   
 
                     <div class="inputProfile">
                         <p>Image Profile</p>
@@ -187,19 +180,25 @@ if ($result2->num_rows > 0) {
                     <?php if(!empty($members)) { ?>
                         <?php $no=1; foreach($members as $row) : ?>
                     <tr>
-                        <td>
-                            <input type="text" value="<?= $row['lastname'] ?>" name="lastName[]" id="">
-                            <input type="text" value="<?= $row['firstname'] ?>" name="firstName[]" id="">
-                            <input type="text" value="<?= $row['middlename'] ?>" name="middleName[]" id="">
-                            <input type="text" value="<?= $row['suffix'] ?>" name="ext[]" id="">
+                        <td style="width: 100%; display:flex; padding-top: 8px;">
+                            <input style="width: 30%; margin-right: 5px;" type="text" value="<?= $row['lastname'] ?>" name="lastName[]" id="">
+                            <input style="width: 30%; margin-right: 5px;" type="text" value="<?= $row['firstname'] ?>" name="firstName[]" id="">
+                            <input style="width: 30%; margin-right: 5px;" type="text" value="<?= $row['middlename'] ?>" name="middleName[]" id="">
+                            <input style="width: 20%;" type="text" value="<?= $row['suffix'] ?>" name="ext[]" id="">
                         </td>
-                        <td><input type="text" value="<?= $row['date_of_birth'] ?>" name="dateBirth[]" id=""></td>
-                        <td><input type="text" value="<?= $row['contact_no'] ?>" name="contact_no[]" id=""></td>
-                        <td><input type="text" value="<?= $row['email'] ?>" name="email[]" id=""></td>
                         <td>
-                            <input type="text" value="<?= $row['house_no'] ?>" name="no[]" id="">
-                            <input type="text" value="<?= $row['street'] ?>" name="streetName[]" id="">
-                            <input type="text" value="<?= $row['subdivision'] ?>" name="subdiName[]" id="">
+                            <input type="text" value="<?= $row['date_of_birth'] ?>" name="dateBirth[]" id="">
+                        </td>
+                        <td>
+                            <input type="text" value="<?= $row['contact_no'] ?>" name="contact_no[]" id="">
+                        </td>
+                        <td>
+                            <input type="text" value="<?= $row['email'] ?>" name="email[]" id="">
+                        </td>
+                        <td style="width: 100%; display:flex; padding-top: 8px;">
+                            <input style="width: 50px; margin-right: 5px;" type="text" value="<?= $row['house_no'] ?>" name="no[]" id="">
+                            <input style="margin-right: 5px;" type="text" value="<?= $row['street'] ?>" name="streetName[]" id="">
+                            <input style="margin-right: 5px;" type="text" value="<?= $row['subdivision'] ?>" name="subdiName[]" id="">
                         </td>
                         <td><input type="text" value="<?= $row['sex'] ?>" name="sex[]" id=""></td>
                         <?php if($row['household_head'] == $headName) { ?>
@@ -207,6 +206,10 @@ if ($result2->num_rows > 0) {
                         <?php } else { ?>
                             <td><input type="radio" value="yes" checked name="householdHead[<?= $no ?>]"></td>
                         <?php }?>
+                        <td>
+                            <button class="delete" style="border:none; background: none; color: #ff0000;
+                              font-size: 10px; font-family: Poppins; font-style: normal; font-weight: 700; line-height: normal;">Delete</button>
+                        </td>
                         <td style="display: none;"><input type="text" value="<?= $row['place_of_birth'] ?>" name="placeBirth[]" id=""></td>
                         <td style="display: none;"><input type="text" value="<?= $row['citizenship'] ?>" name="citizenship[]" id=""></td>
                         <td style="display: none;"><input type="text" value="<?= $row['occupation'] ?>" name="occupational[]" id=""></td>
@@ -281,8 +284,7 @@ if ($result2->num_rows > 0) {
             const occupation = document.getElementById('occupation').value;
             const sex = document.getElementById('sex').value;
             const civilStatus = document.getElementById('civilStatus').value;
-            const votersStatus = document.getElementById('votersStatus').value;
-            const imageProfile = document.getElementById('imageProfile').files[0]
+        
 
 
             // Phone number validation for the Philippines (10 digits starting with 09)
@@ -323,7 +325,6 @@ if ($result2->num_rows > 0) {
                 'occupational',
                 'sex',
                 'civilStatus',
-                'votersStatus',
                 'ext'
             ];
             // Create a single set of input fields for names
@@ -443,7 +444,7 @@ if ($result2->num_rows > 0) {
 
             occupationCell.appendChild(occupationInput);
 
-            const sexCell = newRow.insertCell(7);
+            const sexCell = newRow.insertCell(8);
             const sexInput = document.createElement('input');
             sexInput.type = 'text';
             sexInput.name = 'sex[]';
@@ -451,7 +452,7 @@ if ($result2->num_rows > 0) {
 
             sexCell.appendChild(sexInput);
 
-            const civilStatusCell = newRow.insertCell(8);
+            const civilStatusCell = newRow.insertCell(9);
             civilStatusCell.style.display = 'none';
             const civilStatusInput = document.createElement('input');
             civilStatusInput.type = 'text';
@@ -461,32 +462,6 @@ if ($result2->num_rows > 0) {
 
             civilStatusCell.appendChild(civilStatusInput);
 
-
-            // Create a new cell for the "Voters Status" input
-            const votersStatusCell = newRow.insertCell(9); // Adjust the column index if needed
-            votersStatusCell.style.display = 'none';
-            const votersStatusInput = document.createElement('input');
-            votersStatusInput.type = 'text';
-            votersStatusInput.name = 'voter_status[]';
-            votersStatusInput.value = votersStatus
-
-            votersStatusCell.appendChild(votersStatusInput);
-
-            // Create a new cell for the "Image Profile" input
-            const imageProfileCell = newRow.insertCell(11); // Adjust the column index if needed
-            // imageProfileCell.style.display = 'none';
-            const imageProfileInput = document.createElement('input');
-            imageProfileInput.type = 'file';
-            imageProfileInput.name = 'imageProfile[]'; // Add [] for multiple file inputs
-            imageProfileInput.accept = 'image/*';
-            imageProfileInput.files[0] = imageProfile;
-            // console.log(imageProfile)
-   
-            // imageProfileInput.onchange = function() {
-            //     previewProfile(imageProfileInput); // Call the previewProfile function
-            // };
-
-            imageProfileCell.appendChild(imageProfileInput);
 
             const householdHeadCell = newRow.insertCell(10);
 
