@@ -16,11 +16,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Officials</title>
-    <link rel="stylesheet" href="style2.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="sidenav.css">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js"></script>
 
 </head>
 
@@ -100,7 +100,7 @@
         <form class="formOfficials" action="./model/add_officials.php" method="POST">
             <div class="Unang-cont">
                 <p>Create Officials</p>
-                <img src="icons/close 1.png" class="closeBtnAdd" alt="">
+                <img src="iconsBackend/close 1.png" class="closeBtnAdd" alt="">
             </div>
 
             <div class="pangalawang-cont">
@@ -160,7 +160,7 @@
         <form class="formOfficials" action="./model/edit_official.php" method="POST">
             <div class="Unang-cont">
                 <p>Create Officials</p>
-                <img src="icons/close 1.png" class="closeBtnEdit" alt="">
+                <img src="iconsBackend/close 1.png" class="closeBtnEdit" alt="">
             </div>
 
             <div class="pangalawang-cont">

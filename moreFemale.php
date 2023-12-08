@@ -24,9 +24,9 @@ function calculateAge($dob) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Total Female</title>
     <link rel="stylesheet" href="moreInfo.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="sidenav.css ">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js "></script>
 
 </head>
 
@@ -42,6 +42,12 @@ function calculateAge($dob) {
             <p>Total Female</p>
             <a href="#">Logout</a>
         </div>
+
+        <a href="dashboard.php" class="backContainer">
+            <img src="iconsBackend/back.png" alt="">
+            <p>Go Back</p>
+        </a>
+
         <div class="second_layer">
             <div class="search-cont">
                 <p>Search:</p>
@@ -56,7 +62,7 @@ function calculateAge($dob) {
                         <p class="text">TOTAL FEMALE</p>
                         <p class="number"><?= number_format($total) ?></p>
                     </div>
-                    <img src="icons/ResidentsSeeMore.png" alt="">
+                    <img src="iconsBackend/ResidentsSeeMore.png" alt="">
                 </div>
             </div>
             <div class="Second-Cont">
@@ -65,14 +71,14 @@ function calculateAge($dob) {
                         <p class="text">Infant</p>
                         <p class="number">600</p>
                     </div>
-                    <img src="icons/InfantSeeMore.png" alt="">
+                    <img src="iconsBackend/InfantSeeMore.png" alt="">
                 </div>
                 <div class="smallBoxFemale">
                     <div class="text-cont">
                         <p class="text">Child</p>
                         <p class="number">600</p>
                     </div>
-                    <img src="icons/ChildSeeMore.png" alt="">
+                    <img src="iconsBackend/ChildSeeMore.png" alt="">
                 </div>
 
                 <div class="smallBoxFemale">
@@ -80,7 +86,7 @@ function calculateAge($dob) {
                         <p class="text">Adolescents</p>
                         <p class="number">600</p>
                     </div>
-                    <img src="icons/AdolescentsSeeMore.png" alt="">
+                    <img src="iconsBackend/AdolescentsSeeMore.png" alt="">
                 </div>
 
                 <div class="smallBoxFemale">
@@ -88,7 +94,7 @@ function calculateAge($dob) {
                         <p class="text">Adults</p>
                         <p class="number">600</p>
                     </div>
-                    <img src="icons/AdultsSeeMore.png" alt="">
+                    <img src="iconsBackend/AdultsSeeMore.png" alt="">
                 </div>
 
                 <div class="smallBoxFemale">
@@ -96,7 +102,7 @@ function calculateAge($dob) {
                         <p class="text">Elderly</p>
                         <p class="number">600</p>
                     </div>
-                    <img src="icons/ElderlySeeMore.png" alt="">
+                    <img src="iconsBackend/ElderlySeeMore.png" alt="">
                 </div>
             </div>
         </div>
@@ -129,6 +135,12 @@ function calculateAge($dob) {
                 </tbody>
                 <!-- Add more rows here -->
             </table>
+
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
 
 
@@ -136,3 +148,58 @@ function calculateAge($dob) {
 </body>
 
 </html>
+
+<script>
+    // JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
+
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+</script>

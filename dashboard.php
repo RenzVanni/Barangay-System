@@ -93,10 +93,10 @@ function calculateAge($dob) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style1.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js"></script>
 
 </head>
 
@@ -119,7 +119,7 @@ function calculateAge($dob) {
             <!-- <div class="one-notif">
                 <div class="row_notif">
                     <div class="left_notif">
-                        <img src="icons/request.png" alt="">
+                        <img src="iconsBackend/request.png" alt="">
                     </div>
                     <div class="right_notif">
                         <div class="account_name">Rodwin C. Homeres</div>
@@ -134,7 +134,7 @@ function calculateAge($dob) {
             <div class="one-notif">
                 <div class="row_notif">
                     <div class="left_notif">
-                        <img src="icons/request.png" alt="">
+                        <img src="iconsBackend/request.png" alt="">
                     </div>
                     <div class="right_notif">
                         <div class="account_name">Rodwin C. Homeres</div>
@@ -164,9 +164,14 @@ function calculateAge($dob) {
                         <div class="time">3 hours ago</div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="underline"></div>
             </div> -->
             <?php include './model/functions/notif_messages.php' ?>
+=======
+                <div class="underline"></div> -->
+            </div>
+>>>>>>> 4729839a9c4a42e0e168a19c7c28faac64a56c66
         </div>
     </div>
 
@@ -177,14 +182,14 @@ function calculateAge($dob) {
                     <p>Dashboard</p>
                     <div class="container-header">
                         <div class="message-cont">
-                            <img src="icons/message.png" alt="" id="messages">
+                            <img src="iconsBackend/message.png" alt="" id="messages">
                             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
                                 <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
                             </svg>
                         </div>
                        
                         <div class="notif-cont">
-                            <img src="icons/bell.png" alt="" id="notifications">
+                            <img src="iconsBackend/bell.png" alt="" id="notifications">
                             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
                                 <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
                             </svg>
@@ -204,14 +209,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-p">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-p" id="more-population">
                             <a href="morePopulation.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -225,14 +230,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-m">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-m" id="more-male">
                             <a href="moreMale.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -246,14 +251,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-f">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-f" id="more-female">
                             <a href="moreFemale.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -266,14 +271,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-v">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-v" id="more-voters">
                             <a href="moreVoters.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div> -->
@@ -287,14 +292,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-b">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-b" id="more-blotters">
                             <a href="blotter.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -308,14 +313,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-osc">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-osc" id="more-osc">
                             <a href="moreOSC.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -329,14 +334,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-o">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-o" id="more-osy">
                             <a href="moreOSY.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -352,14 +357,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-soloP">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-soloP" id="more-soloParent">
                             <a href="moreSoloParent.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -373,14 +378,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-pw">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-pw" id="more-pwd">
                             <a href="morePWD.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -394,14 +399,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-lbr">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-lbr" id="more-labor">
                             <a href="moreLaborForce.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -415,14 +420,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-ploy">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-ploy" id="more-unemploy">
                             <a href="moreUnemployed.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -436,14 +441,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-ofw">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-ofw" id="more-ofw">
                             <a href="moreOFW.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -457,14 +462,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-student">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-student" id="more-student">
                             <a href="moreStudents.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -478,14 +483,14 @@ function calculateAge($dob) {
                             </div>
                             <div class="b2">
                                 <div class="c4-senior">
-                                    <img src="icons/people.png" alt="">
+                                    <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="a2-senior" id="more-senior">
                             <a href="moreSNR.php" class="b3">More info</a>
                             <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
+                                <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div> -->

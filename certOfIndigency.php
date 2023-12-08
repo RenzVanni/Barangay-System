@@ -15,12 +15,12 @@ while($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificate of Indigency</title>
-    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="modal.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="sidenav.css ">
+    <link rel="stylesheet" href="modal.css ">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js "></script>
 
 </head>
 
@@ -129,7 +129,7 @@ while($row = $result->fetch_assoc()) {
         <form class="formIndigency_forself" action="./model/add_certOfIndigency.php" method="post">
             <div class="title-cont-modal">
                 <p>For Self</p>
-                <img src="icons/close 1.png" class="closeForm_forself" alt="">
+                <img src="iconsBackend/close 1.png" class="closeForm_forself" alt="">
             </div>
 
             <div class="modal-layer-indigency-self">
@@ -166,7 +166,7 @@ while($row = $result->fetch_assoc()) {
         <form class="formIndigency_forself" action="./model/edit_certificates/edit_certOfIdigency.php" method="post">
             <div class="title-cont-modal">
                 <p>For Self</p>
-                <img src="icons/close 1.png" class="closeForm_forself1" alt="">
+                <img src="iconsBackend/close 1.png" class="closeForm_forself1" alt="">
             </div>
 
             <div class="modal-layer-indigency-self">
@@ -208,7 +208,7 @@ while($row = $result->fetch_assoc()) {
         <form class="formIndigency_forsomeone" action="./model/add_certOfIndigency.php" method="post">
             <div class="title-cont-modal">
                 <p>For Someone</p>
-                <img src="icons/close 1.png" class="closeForm_forsomeone" alt="">
+                <img src="iconsBackend/close 1.png" class="closeForm_forsomeone" alt="">
             </div>
 
             <div class="modal-layer-indigency-someone">
@@ -255,7 +255,7 @@ while($row = $result->fetch_assoc()) {
         <form class="formIndigency_forsomeone" action="./model/edit_certificates/edit_certOfIdigency.php" method="post">
             <div class="title-cont-modal">
                 <p>For Someone</p>
-                <img src="icons/close 1.png" class="closeForm_forsomeone1" alt="">
+                <img src="iconsBackend/close 1.png" class="closeForm_forsomeone1" alt="">
             </div>
 
             <div class="modal-layer-indigency-someone">

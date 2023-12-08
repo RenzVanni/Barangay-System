@@ -15,11 +15,11 @@ while($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Announcement</title>
-    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="sidenav.css ">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js "></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -80,7 +80,7 @@ while($row = $result->fetch_assoc()) {
             enctype="multipart/form-data">
             <div class="title-container">
                 <p>Create Announcement</p>
-                <img src="icons/close 1.png" class="closeAnnouncement" alt="">
+                <img src="iconsBackend/close 1.png" class="closeAnnouncement" alt="">
             </div>
 
             <div class="information-cont-line">
@@ -141,7 +141,7 @@ while($row = $result->fetch_assoc()) {
         <form class="formAnnouncement" action="">
             <div class="title-container">
                 <p>Edit Announcement</p>
-                <img src="icons/close 1.png" class="closeAnnouncementEdit" alt="">
+                <img src="iconsBackend/close 1.png" class="closeAnnouncementEdit" alt="">
             </div>
 
             <div class="information-cont-line">
