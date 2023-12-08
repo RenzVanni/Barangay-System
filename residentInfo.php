@@ -84,11 +84,11 @@ function calculateAge($dob) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resident Information</title>
-    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="sidenav.css">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js"></script>
 
 </head>
 
@@ -112,7 +112,7 @@ function calculateAge($dob) {
 
                 <div class="sort">
                     <div class="header-sort">
-                        <img src="icons/close 1.png" alt="" class="close-sort">
+                        <img src="iconsBackend/close 1.png" alt="" class="close-sort">
                     </div>
                     <div class="sortby-cont">
                         <p>Sort by</p>
@@ -227,7 +227,7 @@ function calculateAge($dob) {
                                 <div class="form-delete">
                                     <div class="delete-cont">
                                         <p>Delete</p>
-                                        <img src="icons/close 1.png" alt="" class="close-delete">
+                                        <img src="iconsBackend/close 1.png" alt="" class="close-delete">
                                     </div>
                                     <div class="delete-description">
                                         <p>Deleting this will remove all data
@@ -263,7 +263,7 @@ function calculateAge($dob) {
         <form class="form1" action="./model/edit_resident.php" method="POST">
             <div class="title-cont">
                 <p>Edit Resident Registration Form</p>
-                <img src="icons/close 1.png" class="closeBtnEdit" alt="">
+                <img src="iconsBackend/close 1.png" class="closeBtnEdit" alt="">
             </div>
             <div class="unang-layer">
                 <div class="input-wrapper">
