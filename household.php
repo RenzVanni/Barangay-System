@@ -21,11 +21,11 @@ function calculateAge($dob) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HouseHold</title>
-    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="sidenav.css ">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js "></script>
 </head>
 
 <body>
@@ -89,7 +89,7 @@ function calculateAge($dob) {
                                 <div class="form-delete">
                                     <div class="delete-cont">
                                         <p>Delete</p>
-                                        <img src="icons/close 1.png" alt="" class="close-delete">
+                                        <img src="iconsBackend/close 1.png" alt="" class="close-delete">
                                     </div>
                                     <div class="delete-description">
                                         <p>Deleting this will remove all data

@@ -13,12 +13,12 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <!-- //Summernote CSS - CDN Link -->
-    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="modal.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="sidenav.css ">
+    <link rel="stylesheet" href="modal.css ">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js "></script>
 
 
 
@@ -145,7 +145,7 @@
                     <div class="historical-desc">
                         <div class="description-cont">
                             <label for="history-desc">Historical Background Description</label>
-                            <img src="icons/edit.png" id="edit_description" alt="Edit">
+                            <img src="/edit.png" id="edit_description" alt="Edit">
                         </div>
                         <div class="history-center">
                             <div class="mb-3">
@@ -167,7 +167,7 @@
                         <div class="vision-cont">
                             <div class="label-cont">
                                 <label for="vision">Vision</label>
-                                <img src="icons/edit.png" id="editVision" alt="">
+                                <img src="/edit.png" id="editVision" alt="">
                             </div>
 
                             <div class="mb-3">
@@ -178,7 +178,7 @@
                         <div class="mission-cont">
                             <div class="label-cont">
                                 <label for="mission">Mission</label>
-                                <img src="icons/edit.png" id="editMission" alt="">
+                                <img src="/edit.png" id="editMission" alt="">
                             </div>
 
                             <div class="mb-3">

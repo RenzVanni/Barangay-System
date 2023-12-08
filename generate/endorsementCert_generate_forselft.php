@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate Endorsement Certificate For Self</title>
-    <link rel="stylesheet" href="../style/generateCert.css ?<?php echo time(); ?>">
-    <script src="sidebar1.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="../style/generateCert.css ">
+    <script src="sidebar1.js "></script>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
         </div>
 
         <a href="../endorsmentCert.php" class="backContainer">
-            <img src="../icons/back.png" alt="">
+            <img src="../iconsBackend/back.png" alt="">
             <p>Go Back</p>
         </a>
 
@@ -298,7 +298,7 @@
         <form class="formEcert_forself" action="../model/edit_certificates/edit_endorsementCert.php" method="post">
             <div class="title-cont-modal">
                 <p>Resident Information</p>
-                <img src="../icons/close 1.png" class="closeForm_forself1" alt="">
+                <img src="../iconsBackend/close 1.png" class="closeForm_forself1" alt="">
             </div>
 
             <div class="modal-layer-endorsement-self">

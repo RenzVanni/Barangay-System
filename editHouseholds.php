@@ -28,11 +28,11 @@ if ($result2->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECORD OF BARANGAY INHABITANTS BY HOUSEHOLD</title>
-    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="sidenav.css ">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js "></script>
 </head>
 
 <body>
@@ -48,7 +48,7 @@ if ($result2->num_rows > 0) {
             <a href="#">Logout</a>
         </div>
         <a href="residentInfo.php" class="backContainer">
-            <img src="icons/back.png" alt="">
+            <img src="iconsBackend/back.png" alt="">
             <p>Go Back</p>
         </a>
 

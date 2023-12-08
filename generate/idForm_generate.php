@@ -12,8 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate ID Form</title>
-    <link rel="stylesheet" href="../style/generateCert.css ?<?php echo time(); ?>">
-    <script src="sidebar1.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="../style/generateCert.css ">
+    <script src="sidebar1.js "></script>
 
 </head>
 
@@ -30,7 +30,7 @@
         </div>
 
         <a href="../idForm.php" class="backContainer">
-            <img src="../icons/back.png" alt="">
+            <img src="../iconsBackend/back.png" alt="">
             <p>Go Back</p>
         </a>
 
@@ -526,7 +526,7 @@
         <form action="../model/edit_certificates/edit_idForm.php" method="post" class="editIDForm">
             <div class="title-cont-modal">
                 <p>Resident Information</p>
-                <img src="../icons/close 1.png" class="closeIdForm1" alt="">
+                <img src="../iconsBackend/close 1.png" class="closeIdForm1" alt="">
             </div>
 
             <div class="modal-layer1">

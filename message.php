@@ -27,10 +27,10 @@ if(!empty($_GET['name'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages</title>
-    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="./style/generateCert.css">
+    <script src="sidebar.js "></script>
 </head>
 
 <body>
@@ -105,7 +105,7 @@ if(!empty($_GET['name'])) {
                                 line-height: normal;" maxlength="70" > </textarea>
                             
                             <button type="submit" style="margin-left: 12px; border: none; cursor: pointer;"> 
-                               <img id="send-button" src="icons/send.png" alt="" onclick="sendMessage()" style="display: flex;">
+                               <img id="send-button" src="iconsBackend/send.png" alt="" onclick="sendMessage()" style="display: flex;">
                             </button>
                            
                            
