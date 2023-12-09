@@ -81,7 +81,7 @@
                 <?php if(isset($_SESSION['username'])) { ?>
                 <li><a href="./Cart.php">Request    </a></li>
                 <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
-                <li><a href="./frontendModel/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
+                <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
                 <?php } else {?>
                 <li class="login" id="login">Login</li>
                 <?php } ?>

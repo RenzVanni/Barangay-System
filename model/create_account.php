@@ -1,5 +1,5 @@
 <?php
-require_once 'server.php'; // Include your database connection file
+include "./server/server.php";
 
 // Get user input
 $resUsername = $_POST['username'];

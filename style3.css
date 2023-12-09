@@ -1864,7 +1864,8 @@ select {
   width: 100%;
   margin: 0px auto;
   border: 1px solid #ccc;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding-top: 20px;
   height: 500px;
 }
@@ -1968,7 +1969,6 @@ select {
   padding: 10px;
 }
 
-
 .chat-cont .body-message #chat-container #user-input #send-button {
   margin-left: 10px;
   margin-top: 12px;
@@ -1976,7 +1976,6 @@ select {
   width: 25px;
   height: 25px;
   cursor: pointer;
-
 }
 
 .body-message #chatForm .user-input .submit {

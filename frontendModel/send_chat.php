@@ -1,5 +1,5 @@
 <?php
-    include "../frontendServer/server.php";
+    include "../server/server.php";
 
     if(!isset($_SESSION['username'])){
         if (isset($_SERVER["HTTP_REFERER"])) {
@@ -9,9 +9,10 @@
     if ($_POST['message'] !== "") {
         $message = $_POST['message'];
         $sender = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
+        $read = "unread";
 
-        $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `sender`) VALUES (?,?)");
-        $stmt->bind_param("ss", $message, $sender);
+        $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `sender`, `seen`) VALUES (?,?,?)");
+        $stmt->bind_param("sss", $message, $sender, $read);
         $stmt->execute();
         $stmt->close();
         $conn->close();

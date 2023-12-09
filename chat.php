@@ -43,7 +43,6 @@ if(isset($_SESSION['username'])) {
 
         <form id="chatForm" action="./frontendModel/send_chat.php" method="post">
         <div class="create-message">
-            <!-- <input type="text" name="message" id="messageInput" placeholder="Ask a question"> -->
             <textarea name="message" id="messageInput" placeholder="Ask a question"></textarea>
             <button type="submit"><img src="./assets/send-icon.svg" alt="send-icon"></button>
         </div>

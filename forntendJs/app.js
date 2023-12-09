@@ -204,7 +204,7 @@ function updateChat() {
     messagesContainer.scrollHeight - messagesContainer.clientHeight <=
     messagesContainer.scrollTop + 1;
 
-  $.get("./frontModel/get_chat.php", function (messages) {
+  $.get("./frontendModel/get_chat.php", function (messages) {
     $("#messagesContainer").html(messages);
 
     if (isScrolledToBottom) {
@@ -221,10 +221,15 @@ $("#chatForm").submit(function (e) {
   e.preventDefault();
   console.log("chat");
 
-  $.post("./frontModel/send_chat.php", $("#chatForm").serialize(), function () {
-    $("#messageInput").val("");
-    updateChat();
-  });
+  $.post(
+    "./frontendModel/send_chat.php",
+    $("#chatForm").serialize(),
+    function () {
+      $("#messageInput").val("");
+      updateChat();
+      console.log("chat2");
+    }
+  );
 });
 
 function scrollChatToBottom() {

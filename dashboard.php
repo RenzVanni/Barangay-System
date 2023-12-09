@@ -684,7 +684,7 @@ function calculateAge($dob) {
             dataType: 'html',
             success: function(data) {
                 // Update the notification container with the fetched data
-                $('#messageNotificationContainer').html(data);
+                $('#notificationContainer').html(data);
             },
             error: function(xhr, status, error) {
                 console.error('Error fetching notifications:', error);
