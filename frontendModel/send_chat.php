@@ -10,9 +10,11 @@
         $message = $_POST['message'];
         $sender = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
         $read = "unread";
+        $number = $_SESSION['contact_no'];
+        $senderId = $_SESSION['id'];
 
-        $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `sender`, `seen`) VALUES (?,?,?)");
-        $stmt->bind_param("sss", $message, $sender, $read);
+        $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `sender`, `seen`, `sender_no`, sender_id) VALUES (?,?,?,?,?)");
+        $stmt->bind_param("ssssi", $message, $sender, $read, $number, $senderId);
         $stmt->execute();
         $stmt->close();
         $conn->close();

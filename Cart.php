@@ -62,7 +62,7 @@
                             <td><?= $row['applicant_fname']. " ". $row['applicant_mname']. " ". $row['applicant_lname'] ?>
                             </td>
                             <td>
-                                <?php  if(isset($row['requestor_fname'])) {
+                                <?php  if(isset($row['requestor_fname']) && $row['source'] !== 'tbl_businessclearance') {
                              echo $row['requestor_fname']. " ". $row['requestor_mname']. " ". $row['requestor_lname']; }?>
                             </td>
                             <td>
@@ -81,6 +81,9 @@
                                 }
                                 elseif ($row['source'] === 'tbl_certofindigency') {
                                     echo "Certificate of Indigency";
+                                }
+                                elseif ($row['source'] === 'tbl_businessclearance') {
+                                    echo "Business Clearance";
                                 }
                             }
                             ?>
@@ -230,6 +233,33 @@
                                     </div>
                                 </div>
                                 <?php }
+                                elseif ($row['source'] === 'tbl_businessclearance') { ?>
+                                <a href="#" class="cancel-item">Cancel</a>
+                                <div class="cancel-container">
+                                    <div class="confirm-cancel-item">
+                                        <div class="main-container">
+                                            <div class="warning-context">
+                                                <div class="warning-img">
+                                                    <div class="container">
+                                                        <img src="./assets/warning-icon.svg" alt="warning-icon">
+                                                    </div>
+                                                </div>
+                                                <div class="context">
+                                                    <h3>Cancel Request?</h3>
+                                                    <p>Are you sure you want to cancel your request? All of your about
+                                                        this request will be permanently removed. This action cannot be
+                                                        undone.</p>
+                                                </div>
+                                            </div>
+                                            <div class="buttons">
+                                                <button type="button" class="btn1"><a
+                                                        href="./frontendModel/cancel/cancel_certOfIndigency.php?id=<?= $row['id'] ?>">Confirm</a></button>
+                                                <button type="button" class="abort-cancel-item">No</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php }
                                 ?>
                             </td>
                         </tr>
@@ -241,8 +271,8 @@
         </div>
     </div>
 
-    <script src=" ./js//jQuery-3-7-0"></script>
-    <script src="./js//app.js"></script>
+    <script src="./forntendJs//jQuery-3-7-0.js"></script>
+    <script src="./forntendJs//app.js"></script>
 </body>
 
 </html>

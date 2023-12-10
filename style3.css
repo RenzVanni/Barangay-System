@@ -1815,6 +1815,8 @@ select {
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
+  width: 250px;
+  text-overflow: ellipsis;
 }
 
 .inbox-cont .one-inbox .time-cont {

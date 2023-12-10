@@ -259,25 +259,49 @@
             </div>
             <div class="container">
                 <label for="business-owner-name">Business Owner Firstname</label>
-                <input required type="text" name="owner_fname" id="business-owner-fname"
+                <input required type="text" value="<?= $_SESSION['firstname'] ?>" name="owner_fname" id="business-owner-fname"
                     placeholder="Enter Business Owner" />
             </div>
             <div class="container">
                 <label for="business-owner-name">Business Owner Middlename</label>
-                <input required type="text" name="owner_mname" id="business-owner-mname"
+                <input type="text" value="<?= $_SESSION['middlename'] ?>" name="owner_mname" id="business-owner-mname"
                     placeholder="Enter Business Owner" />
             </div>
             <div class="container">
                 <label for="business-owner-name">Business Owner Lastname</label>
-                <input required type="text" name="owner_lname" id="business-owner-lname"
+                <input required type="text" value="<?= $_SESSION['lastname'] ?>" name="owner_lname" id="business-owner-lname"
                     placeholder="Enter Business Owner" />
             </div>
             <div class="container">
-                <label for="business-address">Address of Business</label>
-                <input required type="text" name="business_address" id="business-address"
-                    placeholder="Enter Business Address" />
+                <label for="business-owner-suffix">Business Owner Suffix</label>
+                <input type="text" value="<?= $_SESSION['suffix'] ?>" name="owner_suffix" id="business-owner-suffix"
+                    placeholder="Enter Business Suffix" />
             </div>
-            <button type="submit" class="active-service-request">Request</button>
+            <div class="container">
+                <label for="business-address">Address of Business</label>
+                <input type="text" name="house_no" id="business-house_no"
+                    placeholder="Enter House No..." />
+                <input type="text" name="street" id="business-street"
+                    placeholder="Enter Street..." />
+                <input type="text" name="subdivision" id="business-subdivision"
+                    placeholder="Enter House No..." />
+            </div>
+            <button type="button" class="fake-btn">Request</button>
+        </div>
+        <div class="confirmation">
+            <div class="main-container">
+                <div class="reminder-container">
+                    <h3>Reminder!</h3>
+                    <p>Dear residents, kindly be reminded that in order to claim your documents, please proceed to the
+                        barangay office. Be prepared for a short interview regarding the purpose of your request and
+                        ensure that you have the necessary payment ready for processing your requested documents. Thank
+                        you for your cooperation.</p>
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="active-service-request">Request</button>
+                    <button type="button" class="cancel-request">Cancel</button>
+                </div>
+            </div>
         </div>
     </form>
 </div>

@@ -85,6 +85,15 @@ $query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, request
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
 		   AND (status = 'Pending' OR status = 'For Pick-up')
+				UNION ALL
+			SELECT id, business_owner_fname AS applicant_fname, business_owner_mname AS applicant_mname, business_owner_lname AS applicant_lname, 
+					business_owner_fname AS requestor_fname, business_owner_mname AS requestor_mname, business_owner_lname AS requestor_lname, 
+					date_applied AS date_requested, status, 'tbl_businessclearance' AS source
+			FROM tbl_businessclearance
+			WHERE business_owner_fname = '$firstname'
+			AND business_owner_mname = '$middlename'
+			AND business_owner_lname = '$lastname'
+			AND (status = 'Pending' OR status = 'For Pick-up')
 		   ORDER BY date_requested DESC";
 
 $result1 = $conn->query($query1);

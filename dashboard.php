@@ -711,6 +711,7 @@ function calculateAge($dob) {
             notification.addEventListener('click', function() {
                 // Get the ID of the clicked notification
                 const messageId = notification.getAttribute('data-id');
+                const senderId = notification.getAttribute('data-senderId');
                 const messageSender = notification.getAttribute('data-name');
 
                 // Send an AJAX request to mark the notification as read
@@ -720,7 +721,7 @@ function calculateAge($dob) {
                     // Handle the response if needed
                     if (xhr.status === 200) {
                         // Redirect to the corresponding page based on the source
-                        window.location.href = 'message.php?name='+ messageSender;
+                         window.location.href = 'message.php?name=' + messageSender + '&id=' + senderId;
 
 
                     } else {

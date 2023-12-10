@@ -13,15 +13,16 @@
     $owner_fname    = $conn->real_escape_string($_POST['owner_fname']);
     $owner_mname    = $conn->real_escape_string($_POST['owner_mname']);
     $owner_lname    = $conn->real_escape_string($_POST['owner_lname']);
-    $business_address    = $conn->real_escape_string($_POST['business_address']);
-    $documentFor  = $conn->real_escape_string($_POST['documentFor']);
+    $house_no    = $conn->real_escape_string($_POST['house_no']);
+    $street    = $conn->real_escape_string($_POST['street']);
+    $subdivision    = $conn->real_escape_string($_POST['subdivision']);
     // $contactNo      = $conn->real_escape_string($_POST['contactNo']);
     // $purpose      = $conn->real_escape_string($_POST['purpose']);
     
-    if(!empty($business_name) && !empty($owner_fname) && !empty($owner_lname) && !empty($business_address)){
+    if(!empty($business_name) && !empty($owner_fname) && !empty($owner_lname)){
 
-        $insert  = "INSERT INTO tbl_businessclearance (`business_name`,`business_owner_fname`, `business_owner_mname`, `business_owner_lname`, `business_address`) 
-                    VALUES ('$business_name', '$owner_fname', '$owner_mname', '$owner_lname', '$business_address')";
+        $insert  = "INSERT INTO tbl_businessclearance (`business_name`,`business_owner_fname`, `business_owner_mname`, `business_owner_lname`, `house_no`, `street`, `subdivision`, `status`, `seen`) 
+                    VALUES ('$business_name', '$owner_fname', '$owner_mname', '$owner_lname', '$house_no', '$street', '$subdivision', 'Pending', 'unread')";
         $result  = $conn->query($insert);
 
         if($result === true){

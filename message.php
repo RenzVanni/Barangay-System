@@ -11,6 +11,7 @@ while($row = $result->fetch_assoc()) {
 
 if(!empty($_GET['name'])) {
     $name = $_GET['name'];
+    $id = $_GET['id'];
     $query2 =  "SELECT * FROM chat_messages WHERE `sender`='$name' OR `receiver`='$name'";
     $result2 = $conn->query($query2);
 
@@ -18,6 +19,15 @@ if(!empty($_GET['name'])) {
     while($row = $result2->fetch_assoc()) {
     $messages[] = $row;
     }
+
+        // Select the latest chat messages for the given sender or receiver
+    $queryv2 = "SELECT * FROM chat_messages WHERE `sender`='$name' OR `receiver`='$name' ORDER BY timestamp DESC LIMIT 1";
+    $resultv2 = $conn->query($queryv2);
+    $messagesv2 = $resultv2->fetch_assoc();
+
+    $query3 =  "SELECT * FROM tbl_users WHERE `id`='$id'";
+    $result3 = $conn->query($query3);
+    $user = $result3->fetch_assoc(); 
 }
 ?>
 
@@ -54,14 +64,24 @@ if(!empty($_GET['name'])) {
                 </div>
                 <?php if(!empty($residents)) { ?>
                     <?php $no=1; foreach($residents as $row): ?>
-                        <a href="?name=<?= $row['firstname']." ".$row['middlename']." ".$row['lastname']?>">
+                        <a href="?name=<?= $row['firstname']." ".$row['middlename']." ".$row['lastname']?>&id=<?= $row['id'] ?>">
                         <div class="one-inbox">
                             <div class="user-cont">
                                 <p class="name"><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']?></p>
-                                <p class="question">Can I ask a question?...</p>
+                                <?php   $yourName = $row['firstname']." ".$row['middlename']." ".$row['lastname'];
+                                        $queryM = "SELECT * FROM chat_messages WHERE `sender`='$yourName' OR `receiver`='$yourName' ORDER BY timestamp DESC LIMIT 1";
+                                        $resultM = $conn->query($queryM);
+                                        $messageM = $resultM->fetch_assoc();
+                                        $timestamp = isset($messageM['timestamp']) ? $messageM['timestamp'] : "";
+                                        if ($timestamp) {
+                                            $dateTime = new DateTime($timestamp);
+                                            $formattedTime = $dateTime->format('H:i'); // Format as time (hours:minutes)
+                                            $formattedDate = $dateTime->format('Y-m-d'); // Format as date (year-month-day)
+                                        } ?>
+                                <p class="question"><?= (isset($messageM['messages'])) ? $messageM['messages'] : "" ?></p>
                             </div>
                             <div class="time-cont">
-                                <p class="time">7:55 am</p>
+                                <p class="time"><?= isset($formattedDate) ? $formattedDate : "" ?></p>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
                                     <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
@@ -105,6 +125,7 @@ if(!empty($_GET['name'])) {
                                 line-height: normal;" maxlength="70" > </textarea>
                             
                             <button type="submit" style="margin-left: 12px; border: none; cursor: pointer;"> 
+                            <input type="hidden" name="contactNo" value="<?= $user['contact_no'] ?>">
                                <img id="send-button" src="iconsBackend/send.png" alt="" onclick="sendMessage()" style="display: flex;">
                             </button>
                            

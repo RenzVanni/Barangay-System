@@ -130,7 +130,7 @@ while($row = $result->fetch_assoc()) {
                 <input type="password" id="password-user" name="password" required>
 
                 <label for="usertype-user">User Type</label>
-                <select id="usertype-user" name="usertype-user" required>
+                <select id="usertype-user" name="role" required>
                     <option value="staff">Staff</option>
                     <option value="admin">Admin</option>
                     <option value="user">User</option>

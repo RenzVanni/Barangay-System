@@ -38,22 +38,22 @@
                     <div class="inputFullname">
                         <div class="name-cont">
                             <p>First Name<span>*</span></p>
-                            <input type="text" name="firstName[]" id="firstName"
+                            <input type="text" name="firstname" id="firstName"
                                 oninput="this.value = this.value.toUpperCase()" placeholder="First Name" required>
                         </div>
                         <div class="name-cont">
                             <p>Middle Name<span></span></p>  
-                            <input type="text" name="middleName[]" id="middleName"
-                                oninput="this.value = this.value.toUpperCase()" placeholder="Middle Name" required>
+                            <input type="text" name="middlename" id="middleName"
+                                oninput="this.value = this.value.toUpperCase()" placeholder="Middle Name">
                         </div>
                         <div class="name-cont">
                             <p>Last Name<span>*</span></p>
-                            <input type="text" name="lastName[]" id="lastName"
+                            <input type="text" name="lastname" id="lastName"
                                 oninput="this.value = this.value.toUpperCase()" placeholder="Last Name" required>
                         </div>
                         <div class="name-cont">
                             <p>Suffix <span></span></p>
-                            <input type="text" name="ext[]" class="suffix" id="ext"
+                            <input type="text" name="suffix" class="suffix" id="ext"
                                 oninput="this.value = this.value.toUpperCase()" placeholder="Suffix">
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="inputOccupation">
                         <p>Occupation <span>*</span></p>
                         <input type="text" name="occupation" id="occupation"
-                            oninput="this.value = this.value.toUpperCase()" required>
+                            oninput="this.value = this.value.toUpperCase()">
                     </div>
 
                     <div class="inputSex">
