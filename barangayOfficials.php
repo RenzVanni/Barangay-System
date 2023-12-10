@@ -34,7 +34,7 @@
         <div class="left_officials">
             <div class="first_layer">
                 <p>Barangay Officials</p>
-                <a href="#">Logout</a>
+              
             </div>
             <div class="second_layer">
                 <div class="text-cont">

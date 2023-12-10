@@ -22,7 +22,7 @@
     <div class="home_residents">
         <div class="first_layer">
             <p>Business List of <span id="currentYear"></span></p>
-            <a href="#">Logout</a>
+            
         </div>
         <a href="business.php" class="backContainer">
             <img src="iconsBackend/back.png" alt="">

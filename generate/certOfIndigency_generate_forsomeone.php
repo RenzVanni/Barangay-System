@@ -26,7 +26,7 @@
     <div class="printing-container-indigency">
         <div class="title-cont">
             <p>Generate Certificate of Indigency For Someone</p>
-            <a href="#">Logout</a>
+           
         </div>
 
         <a href="../certOfIndigency.php" class="backContainer">

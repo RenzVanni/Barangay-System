@@ -21,7 +21,7 @@
     <div class="home_residents">
         <div class="first_layer">
             <p>Total Voters</p>
-            <a href="#">Logout</a>
+
         </div>
         <div class="second_layer">
             <div class="search-cont">

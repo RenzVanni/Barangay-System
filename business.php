@@ -33,7 +33,7 @@ while($row = $result->fetch_assoc()) {
     <div class="home_residents">
         <div class="first_layer">
             <p>Business Records</p>
-            <a href="#">Logout</a>
+            
         </div>
         <div class="second_layer">
             <div class="search-cont">

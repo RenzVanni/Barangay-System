@@ -26,7 +26,7 @@
     <div class="printing-container-businessClearance">
         <div class="title-cont">
             <p>Generate Business Clearance</p>
-            <a href="#">Logout</a>
+           
         </div>
 
         <a href="../businessClearance.php" class="backContainer">

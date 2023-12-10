@@ -43,7 +43,7 @@ if(!empty($_GET['name'])) {
     <div class="home_residents">
         <div class="first_layer">
             <p>Messages</p>
-            <a href="#">Logout</a>
+            
         </div>
         
         <div class="messages-cont">

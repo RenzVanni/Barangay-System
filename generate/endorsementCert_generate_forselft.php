@@ -26,7 +26,7 @@
     <div class="printing-container-endorsement">
         <div class="title-cont">
             <p>Generate Endorsement Certificate For Self</p>
-            <a href="#">Logout</a>
+            
         </div>
 
         <a href="../endorsmentCert.php" class="backContainer">

@@ -40,7 +40,7 @@ function calculateAge($dob) {
     <div class="home_residents">
         <div class="first_layer">
             <p>Total Female</p>
-            <a href="#">Logout</a>
+        
         </div>
 
         <a href="dashboard.php" class="backContainer">

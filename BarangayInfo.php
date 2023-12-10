@@ -34,7 +34,7 @@
     <div class="home_residents">
         <div class="first_layer">
             <p>Barangay Information</p>
-            <a href="#">Logout</a>
+           
         </div>
 
         <form action="./model/update_brgy_information.php" method="post" enctype="multipart/form-data">

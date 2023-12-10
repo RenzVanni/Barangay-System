@@ -26,7 +26,7 @@
     <div class="printing-container-lbr">
         <div class="title-cont">
             <p>Generate Certificate of Late Birth Registration For Self</p>
-            <a href="#">Logout</a>
+           
         </div>
 
         <a href="../certOfLBR.php" class="backContainer">

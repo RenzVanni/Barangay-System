@@ -15,7 +15,7 @@ $businessClearance[] = $row;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Clearance</title>
-    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?> ">
     <link rel="stylesheet" href="style4.css ">
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="modal.css ">
@@ -33,7 +33,7 @@ $businessClearance[] = $row;
     <div class="home_residents">
         <div class="first_layer">
             <p>Business Clearance</p>
-            <a href="#">Logout</a>
+          
         </div>
         <div class="second_layer">
             <div class="search-cont">
@@ -41,6 +41,11 @@ $businessClearance[] = $row;
                 <input type="text" class="searchBar" placeholder=" Enter text here">
             </div>
             <div class="add-cont">
+                <select name="status_change" id="status_change">
+                    <option value="Pending">Pending</option>
+                    <option value="ForPickUp">For Pick-up</option>
+                    <option value="Completed">Completed</option>
+                </select>
                 <a href="#" class="add" id="addClearance">+ Clearance</a>
                 <a href="#" class="add" id="addClosure">+ Closure</a>
                 <a href="archives/ArchiveBusinessClearance.php" class="archiveResidents">Archive</a>
@@ -76,7 +81,6 @@ $businessClearance[] = $row;
                             <td>
                                 <select name="Status" id="Status" onchange="changeColor(this)">
                                     <option class="Pending" value="Pending">Pending</option>
-                                    <option class="Preparing" value="Preparing">Preparing</option>
                                     <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
                                     <option class="Completed" value="Completed">Completed</option>
                                 </select>

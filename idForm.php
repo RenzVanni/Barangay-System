@@ -15,7 +15,7 @@ while($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ID Form</title>
-    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ">
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="modal.css ">
@@ -35,14 +35,20 @@ while($row = $result->fetch_assoc()) {
     <div class="home_residents">
         <div class="first_layer">
             <p>ID Form</p>
-            <a href="#">Logout</a>
+           
         </div>
         <div class="second_layer">
             <div class="search-cont">
                 <p>Search:</p>
                 <input type="text" class="searchBar" placeholder=" Enter text here">
             </div>
+           
             <div class="add-cont">
+                <select name="status_change" id="status_change">
+                    <option value="Pending">Pending</option>
+                    <option value="ForPickUp">For Pick-up</option>
+                    <option value="Completed">Completed</option>
+                </select>
                 <a href="#" class="add" id="addIdForm">+ ID Form</a>
                 <a href="archives/ArchiveIdForm.php" class="archiveResidents">Archive</a>
             </div>
