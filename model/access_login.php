@@ -42,17 +42,18 @@ if ($result->num_rows) {
             $_SESSION['place_of_birth'] = $user['place_of_birth'];
             $_SESSION['civil'] = $user['civil_status'];
             $_SESSION['email'] = $user['email'];
+            $_SESSION['contact_no'] = $user['contact_no'];
 
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../main.php');
         } else {
-            setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login.php');
+            setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login_page.php');
         }
 
     } else {
-        setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login.php');
+        setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login_page.php');
     }
 } else {
-    setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login.php');
+    setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login_page.php');
 }
 
 $conn->close();

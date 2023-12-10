@@ -20,7 +20,7 @@ function hashPassword($password) {
 }
 
 // When account is created:
-$username = generateUsername();
+// $username = generateUsername();
 $plainPassword = generatePassword();
 $hashedPassword = hashPassword($plainPassword);
 
@@ -28,7 +28,7 @@ function setMessageAndRedirect($message, $status) {
     $_SESSION['message'] = $message;
     $_SESSION['success'] = $status;
 }
-function insertUser($conn, $username, $passwordHashed, $firstname, $middlename, $lastname, $sex, $cstatus, $street, $dbirth, $pbirth, $email, $houseNo, $subdivision) {
+function insertUser($conn, $username, $passwordHashed, $firstname, $middlename, $lastname, $sex, $cstatus, $street, $dbirth, $pbirth, $email, $houseNo, $subdivision, $contact_no) {
 $query = $conn->prepare("SELECT * FROM tbl_users WHERE username = ?");
 $query->bind_param("s", $username);
 $query->execute();
@@ -40,8 +40,8 @@ if ($result->num_rows > 0) {
 }
 
 $role = "user";
-$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname, gender, civil_status, street, house_no, subdivision, date_of_birth, place_of_birth, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$insert->bind_param("ssssssssssssss", $username, $passwordHashed, $role, $firstname, $middlename, $lastname, $sex, $cstatus, $street, $houseNo, $subdivision, $dbirth, $pbirth, $email);
+$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname, gender, civil_status, street, house_no, subdivision, date_of_birth, place_of_birth, email, contact_no) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$insert->bind_param("sssssssssssssss", $username, $passwordHashed, $role, $firstname, $middlename, $lastname, $sex, $cstatus, $street, $houseNo, $subdivision, $dbirth, $pbirth, $email, $contact_no);
 
 
 if ($insert->execute()) {

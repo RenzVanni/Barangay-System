@@ -7,14 +7,17 @@
         }
     }
     if ($_POST['reply'] !== "") {
-        $message = $_POST['reply'];
+        $adminMessage = $_POST['reply'];
         $receiver = $_POST['name'];
         $sender = $_SESSION['role'];
         $from = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
+        $senderNo = $_POST['contactNo'];
 
         $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `sender`, `receiver`) VALUES (?,?, ?)");
-        $stmt->bind_param("sss", $message, $sender, $receiver);
+        $stmt->bind_param("sss", $adminMessage, $sender, $receiver);
         $stmt->execute();
+        $smsReply = "reply";
+        include "../newSms.php";
         $stmt->close();
         $conn->close();
 

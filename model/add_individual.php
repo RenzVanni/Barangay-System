@@ -10,14 +10,14 @@
 	}
 
     $fname = $conn->real_escape_string($_POST['firstname']);
-    $mname = $conn->real_escape_string($_POST['middlename']);
+    $mname = $conn->real_escape_string(isset($_POST['middlename']) ? $_POST['middlename'] : "");
     $lname = $conn->real_escape_string($_POST['lastname']);
     $sex = $conn->real_escape_string($_POST['sex']);
     $houseNo = $conn->real_escape_string($_POST['house-no']);
     $street = $conn->real_escape_string($_POST['street']);
     $subdivision = $conn->real_escape_string($_POST['subdivision']);
     $dbirth = $conn->real_escape_string($_POST['dob']);
-    $suffix = $conn->real_escape_string($_POST['suffix']);
+    $suffix = $conn->real_escape_string(isset($_POST['suffix']) ? $_POST['suffix'] : "");
 
 	function calculateAge($dob) {
 	    $today = new DateTime();
@@ -29,8 +29,8 @@
 	$computedAge = calculateAge($dbirth);
     $pbirth = $conn->real_escape_string($_POST['pob']);
     $cstatus = $conn->real_escape_string($_POST['civil-status']);
-    $occupation = $conn->real_escape_string($_POST['occupation']);
-    $email = $conn->real_escape_string($_POST['email']);
+    $occupation = $conn->real_escape_string(isset($_POST['occupation']) ? $_POST['occupation'] : "");
+    $email = $conn->real_escape_string(isset($_POST['email']) ? $_POST['email'] : "");
     $contact = $conn->real_escape_string(isset($_POST['contact-no']) ? $_POST['contact-no'] : "");
     $vstatus = $conn->real_escape_string(isset($_POST['voter-status']) ? $_POST['voter-status'] : "");
     $citizenship = $conn->real_escape_string($_POST['citizenship']);
@@ -50,13 +50,15 @@
 		$stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `citizenship`, `household_no`, `household_head`, `suffix`, `contact_no`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssssssssssssssss", $fname, $mname, $lname, $sex, $houseNo, $street, $subdivision, $dbirth, $pbirth, $cstatus, $occupation, $email, $citizenship, $householdNo, $head, $suffix, $contact);
 
+		$username = $fname." ".$mname." ".$lname;
+		
 		if ($stmt->execute()) {
 			$_SESSION['message'] = 'Resident Information has been saved!';
 			$_SESSION['success'] = 'success';
 			include './sendAccount.php';
 		}
 
-		insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $pbirth, $email, $houseNo, $subdivision);
+		insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $pbirth, $email, $houseNo, $subdivision, $contact);
 	} else {
 		$_SESSION['message'] = 'Resident Information already exists';
 		$_SESSION['success'] = 'danger';

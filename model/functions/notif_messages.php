@@ -40,7 +40,7 @@ $newMessages = getNewMessages($conn);
 
 // Display new certificates
 foreach ($newMessages as $message) {
-    echo '<div class="one-message clickable-notification-message" data-id="'. $message['id'].'" data-name="'. $message['sender'].'">
+    echo '<div class="one-message clickable-notification-message" data-senderId="'.$message['sender_id'].'" data-id="'. $message['id'].'" data-name="'. $message['sender'].'">
         <div class="row_message">
             <div class="left_message">
                 <img src="icons/message.png" alt="">
