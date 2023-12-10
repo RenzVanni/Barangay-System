@@ -16,8 +16,11 @@
         $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `sender`, `receiver`) VALUES (?,?, ?)");
         $stmt->bind_param("sss", $adminMessage, $sender, $receiver);
         $stmt->execute();
+
         $smsReply = "reply";
-        include "../newSms.php";
+        if(!empty($senderNo)) {
+            include "../newSms.php";
+        }
         $stmt->close();
         $conn->close();
 

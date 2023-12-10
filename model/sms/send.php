@@ -13,9 +13,11 @@ $twilioPhone = '+14352134543'; // Twilio phone number
 $fromPhoneNumber = $twilioPhone;
 
 // Message to be sent
-    
+
+if($smsReply) {
     $toPhoneNumber = '+639217108178'; // Replace with the recipient's phone number
     $message = $adminMessage;
+}
 
 // Initialize Twilio client
 $twilio = new Twilio\Rest\Client($accountSid, $authToken);
