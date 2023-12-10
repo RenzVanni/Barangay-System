@@ -26,19 +26,21 @@ while($row = $result->fetch_assoc()) {
         <div class="hide swiper swiperAnnouncement" id="frontendAnnouncement">
             <div class="swiper-wrapper options">
                 <?php if(!empty($announcement)) { ?>
-                <?php $no=1; foreach($announcement as $row): ?>
+                <?php $no=1; foreach($announcement as $row):
+                    $dateTime = new DateTime($row['date_announcement']);
+                    $formattedDate = $dateTime->format('Y-m-d');  ?>
                 <div class="swiper-slide card">
                     <div class="picture">
                         <img src="./uploads/announcement/<?= $row['image_announcement']?>" alt="image" />
                     </div>
 
                     <div class="context">
-                        <h3>Title</h3>
+                        <h3><?= $row['title'] ?></h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit aliquam iste voluptatibus harum illo, atque voluptatum esse exercitationem ab aliquid corrupti maiores accusantium laborum numquam ex quia dolores excepturi nemo.
                         Optio delectus beatae nemo neque quis, corrupti impedit dolor repellat eos alias voluptatem quod nesciunt aliquam aspernatur? Velit ex alias et eum sunt quis provident, quo ducimus accusantium veritatis autem.</p>
 
                         <div class="more">
-                            <span><?= $row['date_announcement'] ?></span>
+                            <span><?= $formattedDate ?></span>
                             <a href="./main_announcement.php?id=<?= $row['id'] ?>">Read more ></a>
                         </div>
                     </div>

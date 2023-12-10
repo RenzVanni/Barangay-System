@@ -27,7 +27,7 @@
             </div>
             <form action="./model/access_login.php" method="post">
                 <h1>LOGIN</h1>
-                <span><?= $_SESSION['message'] ?></span>
+                <span><?= (isset($_SESSION['message'])) ? $_SESSION['message'] : "" ?></span>
                 <div class="username">
                     <input type="text" name="username" id="username" required>
                     <label for="username">Username</label>

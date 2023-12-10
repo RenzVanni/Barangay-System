@@ -485,6 +485,25 @@ function editAwareness(that) {
   $("#statusAwareness1").val(status);
 }
 
+// ! ANNOUNCEMENT
+function editAnnouncementSys(that) {
+  id = $(that).attr("data-id");
+  title = $(that).attr("data-title");
+  details = $(that).attr("data-details");
+  date_announcement = $(that).attr("data-date_announcement");
+  image_announcement = $(that).attr("data-image_announcement");
+  begin_date = $(that).attr("data-begin_date");
+  end_date = $(that).attr("data-until_date");
+
+  $("#announcement_id").val(id);
+  $("#title1").val(title);
+  $("#date1").val(date_announcement);
+  $("#details1").val(details);
+  $("#from1").val(begin_date);
+  $("#until1").val(end_date);
+  $("#image1").val(image_announcement);
+}
+
 function editPassword(that) {
   id = $(that).attr("data-id");
   username = $(that).attr("data-username");
@@ -672,9 +691,11 @@ function displayDetails() {
 // Function to update chat messages
 function updateChat() {
   var messagesContainer = document.getElementById("chat-container");
-  var isScrolledToBottom =
-    messagesContainer.scrollHeight - messagesContainer.clientHeight <=
-    messagesContainer.scrollTop + 1;
+  if (messagesContainer) {
+    var isScrolledToBottom =
+      messagesContainer.scrollHeight - messagesContainer.clientHeight <=
+      messagesContainer.scrollTop + 1;
+  }
 
   var urlParams = new URLSearchParams(window.location.search);
   var name = urlParams.get("name");

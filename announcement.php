@@ -7,6 +7,12 @@ $announcement = array();
 while($row = $result->fetch_assoc()) {
   $announcement[] = $row;
 }   
+
+// $id = $_GET['id'];
+// $query2 =  "SELECT image_announcement FROM tbl_announcement WHERE `id`='$id'";
+// $result2 = $conn->query($query2);
+// $imageAnn = $result2->fetch_assoc();
+// echo $imageAnn;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +26,7 @@ while($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js "></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
@@ -55,13 +61,25 @@ while($row = $result->fetch_assoc()) {
            <div class="swiper swiper-container">
                 <div class="swiper-wrapper">
                     <?php if(!empty($announcement)) { ?>
-                    <?php $no=1; foreach($announcement as $row): ?>
+                    <?php $no=1; foreach($announcement as $row):
+                            $dateTime = new DateTime($row['date_announcement']);
+                            $formattedDate = $dateTime->format('Y-m-d'); // Format as date (year-month-day)
+                     ?>
                         <div class="one-announcement swiper-slide">
                             <img src="./uploads//announcement/<?= $row['image_announcement']?>" alt="announcement-image">
-                            <div class="date"><?= $row['date_announcement']?></div>
-                            <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
-                            <a href="#" id="editAnnouncement">Edit</a> 
-                            <div class="delete">Delete</div>
+                            <div class="date"><?= $formattedDate?></div>
+                            <div class="title"><?= $row['title'] ?></div>
+                            <a href="#" id="editAnnouncement" class="editAnnouncement"
+                            onclick="editAnnouncementSys(this)"
+                            data-id="<?= $row['id']?>"
+                            data-title="<?= $row['title']?>"
+                            data-details="<?= $row['details']?>"
+                            data-date_announcement="<?= $row['date_announcement']?>"
+                            data-image_announcement="<?= $row['image_announcement']?>"
+                            data-begin_date="<?= $row['begin_date']?>"
+                            data-until_date="<?= $row['until_date']?>"
+                            >Edit</a> 
+                            <a href="./model/remove/remove_announcement.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
                         </div>
                     <?php $no++; endforeach ?>
                     <?php } ?>
@@ -92,12 +110,12 @@ while($row = $result->fetch_assoc()) {
                 <div class="title-date-cont">
                     <div class="title-cont">
                         <label for="title">Title</label>
-                        <input type="text" id="title">
+                        <input type="text" name="title" id="title">
                     </div>
-                    <div class="date-cont">
+                    <!-- <div class="date-cont">
                         <label for="date">Date</label>
-                        <input type="date" id="date">
-                    </div>
+                        <input type="date" name="date" id="date">
+                    </div> -->
                 </div>
                 
                 <div class="details-cont">
@@ -121,11 +139,11 @@ while($row = $result->fetch_assoc()) {
                 <div class="timer-cont">
                     <div class="from-cont">
                         <label for="from">Show From</label>
-                        <input type="date" id="from">
+                        <input type="date" name="begin_date" id="from">
                     </div>
                     <div class="until-cont">
                         <label for="until">Show Until</label>
-                        <input type="date" id="until">
+                        <input type="date" name="end_date" id="until">
                     </div>
                 </div>
             </div>
@@ -138,7 +156,7 @@ while($row = $result->fetch_assoc()) {
 
     <!-- START EDIT MODAL ANNOUNCEMENT -->
     <div class="modal-editAnnouncement">
-        <form class="formAnnouncement" action="">
+        <form class="formAnnouncement" action="./model/edit_announcement.php" method="post" enctype="multipart/form-data">
             <div class="title-container">
                 <p>Edit Announcement</p>
                 <img src="iconsBackend/close 1.png" class="closeAnnouncementEdit" alt="">
@@ -153,17 +171,17 @@ while($row = $result->fetch_assoc()) {
                 <div class="title-date-cont">
                     <div class="title-cont">
                         <label for="title">Title</label>
-                        <input type="text" id="title1">
+                        <input type="text" name="title" id="title1">
                     </div>
-                    <div class="date-cont1">
+                    <!-- <div class="date-cont1">
                         <label for="date">Date</label>
-                        <input type="date" id="date">
-                    </div>
+                        <input type="date" id="date1">
+                    </div> -->
                 </div>
                 
                 <div class="details-cont">
                     <label for="details">Details</label>
-                    <textarea name="details" id="details1" cols="30" rows="10"></textarea>
+                    <textarea name="details" name="details" id="details1" cols="30" rows="10"></textarea>
 
                     <p class="upload">Upload Photo:</p>
                     <label for="image" class="image">
@@ -182,20 +200,24 @@ while($row = $result->fetch_assoc()) {
                 <div class="timer-cont">
                     <div class="from-cont">
                         <label for="from">Show From</label>
-                        <input type="date" id="from1">
+                        <input type="date" name="begin_date" id="from1">
                     </div>
                     <div class="until-cont">
                         <label for="until">Show Until</label>
-                        <input type="date" id="until1">
+                        <input type="date" name="until_date" id="until1">
                     </div>
                 </div>
             </div>
 
+            <input type="hidden" name="date_announcement" id="date1">
+            <input type="hidden" name="id" id="announcement_id">
             <input class="submitAnnouncement" type="submit" value="Submit">
         </form>
     </div>
-    <!-- END EDIT MODAL ANNOUNCEMENT -->
+    <!-- END EDIT MODAL ANNOUNCEMENT -->    
 
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script src="./js//app.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
@@ -239,18 +261,20 @@ closeAnnouncement.addEventListener('click', function() {
     modalAnnouncement.style.display = 'none';
 });
 
-const editAnnouncement = document.getElementById('editAnnouncement');
+const editAnnouncement = document.querySelectorAll('.editAnnouncement');
 const modalAnnouncementEdit = document.querySelector('.modal-editAnnouncement');
 const closeAnnouncementEdit = document.querySelector('.closeAnnouncementEdit');
 
-editAnnouncement.addEventListener('click', function(event) {
-    event.preventDefault();
-    modalAnnouncementEdit.style.display = 'block';
-});
-
-closeAnnouncementEdit.addEventListener('click', function() {
-    modalAnnouncementEdit.style.display = 'none';
-});
+editAnnouncement.forEach(edit => {
+    edit.addEventListener('click', function(event) {
+        event.preventDefault();
+        modalAnnouncementEdit.style.display = 'block';
+    });
+    
+    closeAnnouncementEdit.addEventListener('click', function() {
+        modalAnnouncementEdit.style.display = 'none';
+    });
+})
 
 // Get the file input element and the preview image element
 const fileInput = document.getElementById("image");
