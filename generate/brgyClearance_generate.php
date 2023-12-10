@@ -26,7 +26,7 @@
     <div class="printing-container-brgyClearance">
         <div class="title-cont">
             <p>Generate Barangay Clearance</p>
-            <a href="#">Logout</a>
+         
         </div>
 
         <a href="../brgyClearance.php" class="backContainer">

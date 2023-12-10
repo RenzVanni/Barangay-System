@@ -22,7 +22,7 @@
     <div class="home_residents">
         <div class="first_layer">
             <p>INDIVIDUAL RECORD OF BARANGAY INHABITANT</p>
-            <a href="#">Logout</a>
+           
         </div>
         <a href="residentInfo.php" class="backContainer">
             <img src="iconsBackend/back.png" alt="">

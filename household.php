@@ -38,7 +38,7 @@ function calculateAge($dob) {
     <div class="home_residents">
         <div class="first_layer">
             <p>Household Records</p>
-            <a href="#">Logout</a>
+        
         </div>
         <div class="second_layer">
             <div class="search-cont">

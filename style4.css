@@ -487,6 +487,18 @@ tr:nth-child(even) {
   font-weight: 400;
   line-height: normal;
 }
+.input-announcement-cont .title-date-cont .date-cont1 {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  color: #000;
+
+  font-family: Poppins;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 .input-announcement-cont .title-date-cont .title-cont input {
   height: 30px;
   width: 100%;
@@ -2500,7 +2512,7 @@ td {
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
   background-color: #fff;
   width: 87%;
-  margin-top: 10px;
+  margin-top: 30px;
   height: 500px;
 }
 
@@ -2539,7 +2551,7 @@ td {
   color: white;
   background-color: #007236;
   padding: 5px 10px;
-
+  margin-right: 10px;
   text-align: center;
   font-family: Poppins;
   font-size: 10px;
@@ -2562,14 +2574,16 @@ td {
   padding: 0 10px;
 }
 
-.Swiper_anouncement .swiper-container .swiper-wrapper .one-announcement a {
+.Swiper_anouncement .swiper-container .swiper-wrapper .one-announcement #editAnnouncement {
   color: #007236;
   font-family: Poppins;
+  text-align: center;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   text-decoration: none;
+  margin-right: 10px;
   margin-top: 5px;
 }
 .Swiper_anouncement

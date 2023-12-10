@@ -26,7 +26,7 @@
     <div class="printing-container-idForm">
         <div class="title-cont">
             <p>Generate ID Form</p>
-            <a href="#">Logout</a>
+          
         </div>
 
         <a href="../idForm.php" class="backContainer">

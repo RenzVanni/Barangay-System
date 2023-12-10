@@ -15,8 +15,8 @@ while($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Announcement</title>
-    <link rel="stylesheet" href="style3.css ">
-    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?> ">
+    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?> ">
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js "></script>
@@ -60,7 +60,7 @@ while($row = $result->fetch_assoc()) {
                             <img src="./uploads//announcement/<?= $row['image_announcement']?>" alt="announcement-image">
                             <div class="date"><?= $row['date_announcement']?></div>
                             <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
-                            <a href="#">Edit</a> 
+                            <a href="#" id="editAnnouncement">Edit</a> 
                             <div class="delete">Delete</div>
                         </div>
                     <?php $no++; endforeach ?>
@@ -95,7 +95,7 @@ while($row = $result->fetch_assoc()) {
                         <input type="text" id="title">
                     </div>
                     <div class="date-cont">
-                        <label for="date">Title</label>
+                        <label for="date">Date</label>
                         <input type="date" id="date">
                     </div>
                 </div>
@@ -155,9 +155,9 @@ while($row = $result->fetch_assoc()) {
                         <label for="title">Title</label>
                         <input type="text" id="title1">
                     </div>
-                    <div class="date-cont">
-                        <label for="date">Title</label>
-                        <input type="date" id="date1">
+                    <div class="date-cont1">
+                        <label for="date">Date</label>
+                        <input type="date" id="date">
                     </div>
                 </div>
                 
@@ -239,11 +239,11 @@ closeAnnouncement.addEventListener('click', function() {
     modalAnnouncement.style.display = 'none';
 });
 
-const edit = document.getElementById('edit');
+const editAnnouncement = document.getElementById('editAnnouncement');
 const modalAnnouncementEdit = document.querySelector('.modal-editAnnouncement');
 const closeAnnouncementEdit = document.querySelector('.closeAnnouncementEdit');
 
-edit.addEventListener('click', function(event) {
+editAnnouncement.addEventListener('click', function(event) {
     event.preventDefault();
     modalAnnouncementEdit.style.display = 'block';
 });
