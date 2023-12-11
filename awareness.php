@@ -16,7 +16,7 @@ while($row = $result->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awereness Report</title>
     <link rel="stylesheet" href="style3.css ">
-    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?> ">
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js "></script>
@@ -84,8 +84,8 @@ while($row = $result->fetch_assoc()) {
                                 data-suffix="<?= $row['suffix'] ?>" data-date="<?= $row['date'] ?>"
                                 data-time="<?= $row['time'] ?>" data-location="<?= $row['location'] ?>"
                                 data-details="<?= $row['details'] ?>" data-status="<?= $row['status'] ?>">Edit</a>
-                            <a href="./model/print_awareness.php" class="print">Print</a>
-                            <a href="#" class="delete">Cancel</a>
+                            <!-- <a href="./model/print_awareness.php" class="print">Print</a> -->
+                            <a href="#" class="delete">Delete</a>
 
                             <div class="modal-delete">
                                 <div class="form-delete">

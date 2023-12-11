@@ -56,87 +56,90 @@ while($row = $result->fetch_assoc()) {
 
         <?php include './template/message.php' ?>
 
-        <div class="third_layer">
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>Applicant</th>
-                        <th>Requestor</th>
-                        <th>Address</th>
-                        <th style="display: none">Place of Birth</th>
-                        <th style="display: none">Birth Date</th>
-                        <th style="display: none">Civil Status</th>
-                        <th>Contact Number</th>
-                        <th>Document For</th>
-                        <th>Purpose</th>
-                        <th style="display: none">Date Requested</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <form action="" class="form-allCert"> 
+            <div class="third_layer">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Applicant</th>
+                            <th>Requestor</th>
+                            <th>Address</th>
+                            <th style="display: none">Place of Birth</th>
+                            <th style="display: none">Birth Date</th>
+                            <th style="display: none">Civil Status</th>
+                            <th>Contact Number</th>
+                            <th>Document For</th>
+                            <th>Purpose</th>
+                            <th style="display: none">Date Requested</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    <?php if(!empty($idForm)) { ?>
-                    <?php $no=1; foreach($idForm as $row): ?>
-                    <tr>
-                        <td><?= $row['applicant_fname'] ?> <?= $row['applicant_mname']?>
-                            <?= $row['applicant_lname']?>
-                        </td>
-                        <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname']?>
-                            <?= $row['requestor_lname']?>
-                        </td>
-                        <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
-                        <td style="display: none"><?= $row['place_of_birth']?></td>
-                        <td style="display: none"><?= $row['birth_date']?></td>
-                        <td style="display: none"><?= $row['civil_status']?></td>
-                        <td><?= $row['contact_number']?></td>
-                        <td><?= $row['documentFor'] ?></td>
-                        <td><?= $row['purpose'] ?></td>
-                        <td style="display: none"><?= $row['date_requested'] ?></td>
-                        <td>
-                            <form action="./model/update_status/update_idform.php" method="POST" class="form-allCert"
-                                id="statusForm">
-                                <select name="status" id="Status">
-                                    <!-- <option class="Pending" value="Pending">Pending</option> -->
-                                    <option class="Pending" value="Pending"
-                                        <?php echo ($row['status'] === 'Pending') ? 'selected' : ''; ?>>Pending
-                                    </option>
-                                    <option class="For_Pick_up" value="For Pick-up"
-                                        <?php echo ($row['status'] === 'For Pick-up') ? 'selected' : ''; ?>>For Pick-up
-                                    </option>
-                                    <option class="Completed" value="Completed"
-                                        <?php echo ($row['status'] === 'Completed') ? 'selected' : ''; ?>>Completed
-                                    </option>
-                                </select>
-                                <input type="hidden" name="id" value="<?= $row['id']?>">
-                                <input type="hidden" name="dateRequested" value="<?= $row['date_requested']?>">
-                            </form>
+                        <?php if(!empty($idForm)) { ?>
+                        <?php $no=1; foreach($idForm as $row): ?>
+                        <tr>
+                            <td><?= $row['applicant_fname'] ?> <?= $row['applicant_mname']?>
+                                <?= $row['applicant_lname']?>
+                            </td>
+                            <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname']?>
+                                <?= $row['requestor_lname']?>
+                            </td>
+                            <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
+                            <td style="display: none"><?= $row['place_of_birth']?></td>
+                            <td style="display: none"><?= $row['birth_date']?></td>
+                            <td style="display: none"><?= $row['civil_status']?></td>
+                            <td><?= $row['contact_number']?></td>
+                            <td><?= $row['documentFor'] ?></td>
+                            <td><?= $row['purpose'] ?></td>
+                            <td style="display: none"><?= $row['date_requested'] ?></td>
+                            <td>
+                                <form action="./model/update_status/update_idform.php" method="POST" class="form-allCert"
+                                    id="statusForm">
+                                    <select name="status" id="Status">
+                                        <!-- <option class="Pending" value="Pending">Pending</option> -->
+                                        <option class="Pending" value="Pending"
+                                            <?php echo ($row['status'] === 'Pending') ? 'selected' : ''; ?>>Pending
+                                        </option>
+                                        <option class="For_Pick_up" value="For Pick-up"
+                                            <?php echo ($row['status'] === 'For Pick-up') ? 'selected' : ''; ?>>For Pick-up
+                                        </option>
+                                        <option class="Completed" value="Completed"
+                                            <?php echo ($row['status'] === 'Completed') ? 'selected' : ''; ?>>Completed
+                                        </option>
+                                    </select>
+                                    <input type="hidden" name="id" value="<?= $row['id']?>">
+                                    <input type="hidden" name="dateRequested" value="<?= $row['date_requested']?>">
+                                </form>
 
-                        </td>
-                        <td>
-                           
-                            <?php if($row['documentFor'] === 'Self') { ?>
-                            <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">View</a>
-                            <?php } 
-                    else { ?>
-                            <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">View</a>
-                            <?php } ?>
-                
-
+                            </td>
+                            <td>
                             
-                        </td>
-                    </tr>
-                    <?php $no++; endforeach ?>
-                    <?php } ?>
+                                <?php if($row['documentFor'] === 'Self') { ?>
+                                <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">View</a>
+                                <?php } 
+                        else { ?>
+                                <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">View</a>
+                                <?php } ?>
+                    
 
-                </tbody>
-            </table>
-            <div class="pagination">
-                <button id="prevBtn">Previous</button>
-                <div id="pageNumbers" class="page-numbers"></div>
-                <button id="nextBtn">Next</button>
-            </div>
-        </div>
+                                
+                            </td>
+                        </tr>
+                        <?php $no++; endforeach ?>
+                        <?php } ?>
+
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prevBtn">Previous</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextBtn">Next</button>
+                </div>
+            </div> 
+        </form>
+        
 
     </div>
 

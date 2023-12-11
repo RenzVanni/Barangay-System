@@ -610,7 +610,10 @@ deleteLink.forEach((del, index) => {
     });
 })
 
-// JavaScript code to handle pagination
+</script>
+
+<script>
+    // JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');
 const totalRows = rows.length;
@@ -646,7 +649,8 @@ showRows(currentPage);
 updatePaginationButtons();
 
 // Previous button click event
-document.getElementById('prevBtn').addEventListener('click', () => {
+document.getElementById('prevBtn').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent form submission
     if (currentPage > 1) {
         currentPage--;
         showRows(currentPage);
@@ -655,7 +659,8 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 });
 
 // Next button click event
-document.getElementById('nextBtn').addEventListener('click', () => {
+document.getElementById('nextBtn').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent form submission
     if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
         currentPage++;
         showRows(currentPage);

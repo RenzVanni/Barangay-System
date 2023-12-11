@@ -341,7 +341,7 @@ tr:nth-child(even) {
 
 .modal-addAnnouncement {
   display: flex;
-  z-index: 4;
+  z-index: 5;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -355,7 +355,7 @@ tr:nth-child(even) {
 }
 .modal-editAnnouncement {
   display: flex;
-  z-index: 2;
+  z-index: 5;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -466,7 +466,7 @@ tr:nth-child(even) {
 .input-announcement-cont .title-date-cont .title-cont {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 91.5%;
   color: #000;
 
   font-family: Poppins;
@@ -502,6 +502,7 @@ tr:nth-child(even) {
 .input-announcement-cont .title-date-cont .title-cont input {
   height: 30px;
   width: 100%;
+  padding: 5px 5px;
 }
 .input-announcement-cont .title-date-cont .title-cont select {
   width: 100%;
@@ -735,7 +736,7 @@ tr:nth-child(even) {
 
 .modal-delete {
   display: flex;
-  z-index: 2;
+  z-index: 5;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);

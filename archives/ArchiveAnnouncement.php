@@ -22,10 +22,10 @@
     <div class="home_residents">
         <div class="first_layer">
             <p>Archives Announcement</p>
-            <a href="#">Logout</a>
+          
         </div>
         <a href="../announcement.php" class="backContainer">
-            <img src="../icons/back.png" alt="">
+            <img src="../iconsBackend/back.png" alt="">
             <p>Go Back</p>
         </a>
         <div class="second_layer">
@@ -108,6 +108,15 @@ updatePaginationButtons();
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
         showRows(currentPage);
         updatePaginationButtons();
     }

@@ -38,11 +38,11 @@ function calculateAge($dob) {
     <div class="home_residents">
         <div class="first_layer">
             <p>Archives Resident Information</p>
-            <a href="#">Logout</a>
+          
         </div>
 
         <a href="../residentInfo.php" class="backContainer">
-            <img src="../icons/back.png" alt="">
+            <img src="../iconsBackend/back.png" alt="">
             <p>Go Back</p>
         </a>
 

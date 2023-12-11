@@ -32,11 +32,11 @@ while($row = $result->fetch_assoc()) {
         <div class="left_officials">
             <div class="first_layer">
                 <p>Archives Barangay Officialss</p>
-                <a href="#">Logout</a>
+               
             </div>
 
             <a href="../barangayOfficials.php" class="backContainer">
-                <img src="../icons/back.png" alt="">
+                <img src="../iconsBackend/back.png" alt="">
                 <p>Go Back</p>
             </a>
 
@@ -59,7 +59,7 @@ while($row = $result->fetch_assoc()) {
 
 
             <div class="third_layer">
-                <table>
+                <table id="table">
                     <thead>
                         <tr>
                             <th>Full Name</th>
@@ -69,19 +69,19 @@ while($row = $result->fetch_assoc()) {
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <?php if(!empty($officials)) { ?>
-                    <?php foreach($officials as $row): ?>
-                    <tr>
-                        <td><?= $row['firstname']. " ". $row['middlename']. " ". $row['lastname']?></td>
-                        <td><?= $row['title'] ?></td>
-                        <td><?= $row['termstart'] ?></td>
-                        <td><?= $row['termend'] ?></td>
-                        <td class="status"><?= $row['status'] ?></td>
-                    </tr>
-                    <?php endforeach ?>
-                    <?php }?>
-                    <!-- Add more rows here -->
-                    <!-- Add more rows here -->
+                    <tbody>
+                        <?php if(!empty($officials)) { ?>
+                        <?php foreach($officials as $row): ?>
+                        <tr>
+                            <td><?= $row['firstname']. " ". $row['middlename']. " ". $row['lastname']?></td>
+                            <td><?= $row['title'] ?></td>
+                            <td><?= $row['termstart'] ?></td>
+                            <td><?= $row['termend'] ?></td>
+                            <td class="status"><?= $row['status'] ?></td>
+                        </tr>
+                        <?php endforeach ?>
+                        <?php }?>
+                    </tbody>
                 </table>
                 <div class="pagination">
                     <button id="prevBtn">Previous</button>
