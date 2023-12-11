@@ -1,7 +1,7 @@
 <?php include './server/server.php'?>
 
 <?php 
-$query =  "SELECT * FROM tbl_households WHERE `email`!=''";
+$query =  "SELECT * FROM tbl_users WHERE `email`!=''";
 $result = $conn->query($query);
 
 $residents = array();
@@ -9,9 +9,11 @@ while($row = $result->fetch_assoc()) {
   $residents[] = $row;
 }
 
-if(!empty($_GET['name'])) {
-    $name = $_GET['name'];
-    $id = $_GET['id'];
+if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
+    $name = $_GET['fname']." ".$_GET['mname']." ".$_GET['lname'];
+    $firstname = $_GET['fname'];
+    $middlename = $_GET['mname'];
+    $lastname = $_GET['lname'];
     $query2 =  "SELECT * FROM chat_messages WHERE `sender`='$name' OR `receiver`='$name'";
     $result2 = $conn->query($query2);
 
@@ -25,7 +27,7 @@ if(!empty($_GET['name'])) {
     $resultv2 = $conn->query($queryv2);
     $messagesv2 = $resultv2->fetch_assoc();
 
-    $query3 =  "SELECT * FROM tbl_users WHERE `id`='$id'";
+    $query3 =  "SELECT * FROM tbl_users WHERE `firstname`='$firstname' AND `middlename`='$middlename' AND `lastname`='$lastname'";
     $result3 = $conn->query($query3);
     $user = $result3->fetch_assoc(); 
 }
@@ -63,8 +65,10 @@ if(!empty($_GET['name'])) {
                     <input type="text" class="searchBar" id="search" placeholder="Search Resident Here..">
                 </div>
                 <?php if(!empty($residents)) { ?>
-                    <?php $no=1; foreach($residents as $row): ?>
-                        <a href="?name=<?= $row['firstname']." ".$row['middlename']." ".$row['lastname']?>&id=<?= $row['id'] ?>" style="text-decoration:none;">
+                    <?php $no=1; foreach($residents as $row): 
+
+                        <a href="?fname=<?= $row['firstname'] ?>&mname=<?= $row['middlename'] ?>&lname=<?= $row['lastname'] ?>">
+                          
                         <div class="one-inbox">
                             <div class="user-cont" style="padding: 5px 5px;">
                                 <p class="name" style="text-align: left;"><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']?></p>
@@ -123,7 +127,9 @@ if(!empty($_GET['name'])) {
                                 line-height: normal;
                                 border: 1px solid #ccc;" maxlength="70" > </textarea>
                             
+
                             <button type="submit" style="margin-top: 9px;margin-left: 10px; border: none; cursor: pointer;"> 
+
                             <input type="hidden" name="contactNo" value="<?= $user['contact_no'] ?>">
                                <img id="send-button" src="iconsBackend/send.png" alt="" onclick="sendMessage()" style="display: flex;">
                             </button>

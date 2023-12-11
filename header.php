@@ -30,6 +30,7 @@
                 <img class="down-btn" src="./assets/profile-down.svg" alt="down">
             </div>
             <div class="profile-option">
+                <p class="profile_link" id="">Profile</p>
                 <p><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></p>
             </div>
         <?php } else {?>

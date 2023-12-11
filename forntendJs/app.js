@@ -246,6 +246,38 @@ downBtn.addEventListener("click", () => {
   profileOption.style.padding = ".5rem";
 });
 
+const profileLink = document.querySelector(".profile_link");
+// const myProfile = document.querySelector(".myProfile");
+const closeProfile = document.querySelectorAll(".close-profile");
+const mainProfile = document.querySelector("main");
+
+const profileIcon1 = document.querySelector(".frontendProfile-icon1");
+const profileIcon2 = document.querySelector(".frontendProfile-icon2");
+
+const sectionProfile2 = document.querySelector(".profile-section2");
+const sectionProfile3 = document.querySelector(".profile-section3");
+
+let isMyProfile = false;
+profileLink.addEventListener("click", () => {
+  // myProfile.style.display = "block";
+  mainProfile.style.right = "0";
+  profileIcon1.addEventListener("click", () => {
+    console.log("icon1");
+    sectionProfile2.style.display = "block";
+    sectionProfile3.style.display = "none";
+  });
+  profileIcon2.addEventListener("click", () => {
+    sectionProfile3.style.display = "flex";
+    sectionProfile2.style.display = "none";
+  });
+  closeProfile.forEach((close) => {
+    close.addEventListener("click", () => {
+      // myProfile.style.display = "none";
+      mainProfile.style.right = "-999px";
+    });
+  });
+});
+
 // ! AWARENESS CONFIRMATION
 const awarenessBtn = document.querySelector(".awarenessBtn");
 const awarenessConfirmationCon = document.querySelector(".confirmAwareness");
