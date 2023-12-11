@@ -168,7 +168,7 @@ header .user {
     height: 100%;
   }
   header .user .profile-option {
-    background-color: red;
+    background-color: #f8f9fa;
     border-radius: 0.5rem;
     position: absolute;
     top: 80%;
@@ -179,6 +179,14 @@ header .user {
   }
   header .user .profile-option p {
     margin: 0;
+    color: #212529;
+    margin-bottom: 0.5rem;
+  }
+  header .user .profile-option p:last-of-type {
+    margin-bottom: 0;
+  }
+  header .user .profile-option a {
+    color: #212529;
   }
   header .user .login-div {
     border: none;
@@ -2213,4 +2221,148 @@ footer .com ul li {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
+}
+
+main {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 700px;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: right 0.8s ease-in-out;
+  z-index: 10;
+}
+main .section1 {
+  background: rgb(255, 255, 78);
+  background: linear-gradient(173deg, rgb(255, 255, 78) 0%, rgb(128, 255, 112) 52%, rgb(0, 221, 49) 100%);
+  width: 100px;
+  height: 100%;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+main .section1 .icon1,
+main .section1 .icon2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .section2,
+main .section3 {
+  background-color: #f8f9fa;
+  border-radius: 3rem 0 0 3rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 4rem;
+}
+main .section2 h1,
+main .section3 h1 {
+  color: #22223b;
+  margin: 0;
+  position: absolute;
+  top: -53px;
+  left: 60px;
+  font-size: 4rem;
+}
+main .section2 .close-profile,
+main .section3 .close-profile {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+main .section2 form,
+main .section3 form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+main .section2 form .form1,
+main .section3 form .form1 {
+  width: 100%;
+}
+main .section2 form .form1 label,
+main .section3 form .form1 label {
+  font-weight: 600;
+  display: block;
+  color: rgba(0, 0, 0, 0.5);
+}
+main .section2 form .form1 input,
+main .section3 form .form1 input {
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.5rem 0 0.5rem 0.1rem;
+  outline: transparent;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #097338;
+  margin-bottom: 2rem;
+  min-width: 200px;
+  max-width: 200px;
+}
+main .section2 form .form2,
+main .section3 form .form2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  position: relative;
+}
+main .section2 form .form2 .profile-img,
+main .section3 form .form2 .profile-img {
+  background-color: #22223b;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+main .section2 form .form2 .profile-img img,
+main .section3 form .form2 .profile-img img {
+  width: 100%;
+  height: 100%;
+}
+main .section2 form .form2 label,
+main .section3 form .form2 label {
+  position: absolute;
+  top: 32%;
+  left: 70%;
+  background-color: #f8f9fa;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+}
+main .section2 form .form2 input,
+main .section3 form .form2 input {
+  display: none;
+}
+main .section2 {
+  display: none;
+}
+main .section3 .key-img {
+  padding: 0.3rem;
+  border: 2px solid #212529;
+  border-radius: 0.3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=styles.css.map */

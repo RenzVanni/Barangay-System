@@ -147,7 +147,7 @@ header {
       }
 
       .profile-option {
-        background-color: red;
+        background-color: #f8f9fa;
         border-radius: 0.5rem;
         position: absolute;
         top: 80%;
@@ -158,6 +158,15 @@ header {
 
         p {
           margin: 0;
+          color: #212529;
+          margin-bottom: 0.5rem;
+        }
+
+        p:last-of-type {
+          margin-bottom: 0;
+        }
+        a {
+          color: #212529;
         }
       }
 

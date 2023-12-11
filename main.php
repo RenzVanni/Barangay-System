@@ -22,6 +22,7 @@
     <?php include './active_report.php' ?>
     <?php include './header.php' ?>
 
+    <?php include "./frontend_profile.php" ?>
     <div class="hide home" id="home">
         <div class="context">
             <h1>WELCOME TO <span><?php echo $brgy_name ?></span></h1>

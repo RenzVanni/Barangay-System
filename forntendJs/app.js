@@ -246,6 +246,24 @@ downBtn.addEventListener("click", () => {
   profileOption.style.padding = ".5rem";
 });
 
+const profileLink = document.querySelector(".profile_link");
+// const myProfile = document.querySelector(".myProfile");
+const closeProfile = document.querySelectorAll(".close-profile");
+const mainProfile = document.querySelector("main");
+
+let isMyProfile = false;
+profileLink.addEventListener("click", () => {
+  // myProfile.style.display = "block";
+  mainProfile.style.right = "0";
+
+  closeProfile.forEach((close) => {
+    close.addEventListener("click", () => {
+      // myProfile.style.display = "none";
+      mainProfile.style.right = "-999px";
+    });
+  });
+});
+
 // ! AWARENESS CONFIRMATION
 const awarenessBtn = document.querySelector(".awarenessBtn");
 const awarenessConfirmationCon = document.querySelector(".confirmAwareness");
