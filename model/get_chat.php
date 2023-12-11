@@ -7,7 +7,10 @@ if (!isset($_SESSION['username'])) {
     }
 }
 
-$name = isset($_GET['name']) ? urldecode($_GET['name']) : '';
+$fname = isset($_GET['fname']) ? urldecode($_GET['fname']) : '';
+$mname = isset($_GET['mname']) ? urldecode($_GET['mname']) : '';
+$lname = isset($_GET['lname']) ? urldecode($_GET['lname']) : '';
+$name = $fname." ".$mname." ".$lname;
 $result = $conn->query("SELECT * FROM chat_messages WHERE `sender`='$name' OR `receiver`='$name' ORDER BY timestamp ASC");
 
 $messages = array();

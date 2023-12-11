@@ -1,14 +1,14 @@
 <!-- <div class="myProfile"> -->
     <main>
         <div class="section1">
-            <div class="icon1">
+            <div class="icon1 frontendProfile-icon1">
                 <img src="./assets/default-profile.svg" alt="">
             </div>
-            <div class="icon2">
-                <img src="./assets//lock-icon.svg" alt="">
+            <div class="icon2 frontendProfile-icon2">
+                <img src="./assets/lock-icon.svg" alt="">
             </div>
         </div>
-        <div class="section2">
+        <div class="section2 profile-section2">
             <h1>Profile</h1>
             <div class="close-profile">
                 <img src="./assets/close-login.svg" alt="close-icon">
@@ -42,10 +42,21 @@
                 </div>
             </form>
         </div>
-        <div class="section3">
+        <div class="section3 profile-section3">
+            <div class="close-profile">
+                <img src="./assets/close-login.svg" alt="close-icon">
+            </div>
             <div class="key-img">
                 <img src="./assets/key-icon.svg" alt="key-icon">
             </div>
+            <h1>Change Password</h1>
+            <p>Must be at least 8 characters.</p>
+            <form action="">
+                <input type="password" name="old_password" id="" placeholder="Old Password...">
+                <input type="password" name="new_password" id="" placeholder="New Password...">
+                <input type="password" name="confirm_password" id="" placeholder="Confirm Password...">
+                <button type="submit">Continue</button>
+            </form>
         </div>
     </main>
 <!-- </div> -->

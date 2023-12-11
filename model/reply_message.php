@@ -11,16 +11,15 @@
         $receiver = $_POST['name'];
         $sender = $_SESSION['role'];
         $from = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
-        $senderNo = $_POST['contactNo'];
+        $contactNo = $_POST['contactNo'];
 
         $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `sender`, `receiver`) VALUES (?,?, ?)");
         $stmt->bind_param("sss", $adminMessage, $sender, $receiver);
         $stmt->execute();
 
-        $smsReply = "reply";
-        if(!empty($senderNo)) {
-            include "../newSms.php";
-        }
+        $smsReply = true;
+        include "./sms/send.php";
+
         $stmt->close();
         $conn->close();
 
