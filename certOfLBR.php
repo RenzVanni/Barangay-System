@@ -88,6 +88,7 @@ while($row = $result->fetch_assoc()) {
                             <td><?= $row['date_of_birth'] ?></td>
                             <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision'] ?></td>
                             <td style="display: none;"><?= $row['date_requested'] ?></td>
+                            
                             <td><?= $row['documentFor'] ?></td>
                             <td>
                                 <form action="./model/update_status/update_certoOfLBR.php" method="POST"
