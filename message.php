@@ -65,9 +65,9 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
                     <input type="text" class="searchBar" id="search" placeholder="Search Resident Here..">
                 </div>
                 <?php if(!empty($residents)) { ?>
-                    <?php $no=1; foreach($residents as $row): 
+                    <?php $no=1; foreach($residents as $row): ?>
 
-                        <a href="?fname=<?= $row['firstname'] ?>&mname=<?= $row['middlename'] ?>&lname=<?= $row['lastname'] ?>">
+                        <a href="?fname=<?= $row['firstname'] ?>&mname=<?= $row['middlename'] ?>&lname=<?= $row['lastname'] ?>" style="text-decoration:none;">
                           
                         <div class="one-inbox">
                             <div class="user-cont" style="padding: 5px 5px;">
