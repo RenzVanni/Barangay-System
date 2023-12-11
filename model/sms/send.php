@@ -1,34 +1,59 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';// Adjust the path based on your project structure
 
-// Twilio credentials
-$accountSid = 'AC079e7c0abad1a473720b7b5cb1ab5452';
-$authToken  = '5753611066612b60b214a0f02cf3a007';
-$twilioPhone = '+14352134543'; // Twilio phone number
+/**
+ * Send an SMS message by using Infobip API PHP Client.
+ *
+ * For your convenience, environment variables are already pre-populated with your account data
+ * like authentication, base URL and phone number.
+ *
+ * Please find detailed information in the readme file.
+ */
 
+require '../vendor/autoload.php';
 
-// Recipient's phone number
+use Infobip\Api\SmsApi;
+use Infobip\Configuration;
+use Infobip\Model\SmsAdvancedTextualRequest;
+use Infobip\Model\SmsDestination;
+use Infobip\Model\SmsTextualMessage;
 
-// Your Twilio phone number
-$fromPhoneNumber = $twilioPhone;
+$BASE_URL = "https://8g44zr.api.infobip.com";
+$API_KEY = "a7ab35db126480062788e69b67be281a-2d94e75b-32db-4650-ad8e-873b83d4a9a0";
 
-// Message to be sent
-
-if($smsReply) {
-    $toPhoneNumber = '+639217108178'; // Replace with the recipient's phone number
-    $message = $adminMessage;
+$SENDER = "InfoSMS";
+if($contactNo) {
+    if($smsReply) {
+        $RECIPIENT = $contactNo; // Original number
+        $MESSAGE_TEXT = $adminMessage;
+    }
 }
 
-// Initialize Twilio client
-$twilio = new Twilio\Rest\Client($accountSid, $authToken);
+// Check if the first two digits are already "63"
+if (substr($RECIPIENT, 0, 2) !== "63") {
+    // If not, replace the leading zero with "63"
+    $RECIPIENT = "63" . substr($RECIPIENT, 1);
+}
 
-// Send SMS
-$twilio->messages
-    ->create($toPhoneNumber, // to
-             [
-                 'from' => $fromPhoneNumber,
-                 'body' => $message
-             ]
-    );
+$configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);
 
-echo "SMS sent successfully!";
+$sendSmsApi = new SmsApi(config: $configuration);
+
+$destination = new SmsDestination(
+    to: $RECIPIENT
+);
+
+$message = new SmsTextualMessage(destinations: [$destination], from: $SENDER, text: $MESSAGE_TEXT);
+
+$request = new SmsAdvancedTextualRequest(messages: [$message]);
+
+try {
+    $smsResponse = $sendSmsApi->sendSmsMessage($request);
+
+    echo $smsResponse->getBulkId() . PHP_EOL;
+
+    foreach ($smsResponse->getMessages() ?? [] as $message) {
+        echo sprintf('Message ID: %s, status: %s', $message->getMessageId(), $message->getStatus()?->getName()) . PHP_EOL;
+    }
+} catch (Throwable $apiException) {
+    echo("HTTP Code: " . $apiException->getCode() . "\n");
+}

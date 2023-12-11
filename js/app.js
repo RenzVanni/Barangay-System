@@ -698,10 +698,17 @@ function updateChat() {
   }
 
   var urlParams = new URLSearchParams(window.location.search);
-  var name = urlParams.get("name");
+  var fname = urlParams.get("fname");
+  var mname = urlParams.get("mname");
+  var lname = urlParams.get("lname");
 
   $.get(
-    "./model/get_chat.php?name=" + encodeURIComponent(name),
+    "./model/get_chat.php?fname=" +
+      encodeURIComponent(fname) +
+      "&mname=" +
+      encodeURIComponent(mname) +
+      "&lname=" +
+      encodeURIComponent(lname),
     function (messages) {
       $("#chat-container").html(messages);
 
