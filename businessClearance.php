@@ -1,12 +1,37 @@
 <?php include './server/server.php'?>
 <?php
+$filterOption = $_GET["filter"] ?? null;
+$filterValue = $_GET["value"] ?? null;
+
+
+$params = [];
+$types = "";
+
 $query =  "SELECT * FROM tbl_businessClearance";
-$result = $conn->query($query);
+
+if($filterOption && $filterValue) {
+    $query .= " WHERE `$filterOption` = ?";
+    $params[] = $filterValue;
+    $types .= "s";
+} else {
+    $query .= " WHERE `status`='Pending'";
+}
+$query .= " ORDER BY id DESC";  // Move the ORDER BY clause here
+$stmt = $conn->prepare($query);
+
+if (!empty($types) && !empty($params)) {
+    $stmt->bind_param($types, ...$params);
+}
+
+$stmt->execute();
+
+$result = $stmt->get_result();
 
 $businessClearance = array();
 while($row = $result->fetch_assoc()) {
-$businessClearance[] = $row;
+  $businessClearance[] = $row;
 }
+$stmt->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,11 +66,14 @@ $businessClearance[] = $row;
                 <input type="text" class="searchBar" placeholder=" Enter text here">
             </div>
             <div class="add-cont">
-                <select name="status_change" id="status_change">
+                <a href="?filter=status&value=Pending">Pending</a>
+                <a href="?filter=status&value=for pick-up">For Pick-up</a>
+                <a href="?filter=status&value=completed">Completed</a>
+                <!-- <select name="status_change" id="status_change">
                     <option value="Pending">Pending</option>
                     <option value="ForPickUp">For Pick-up</option>
                     <option value="Completed">Completed</option>
-                </select>
+                </select> -->
                 <a href="#" class="add" id="addClearance">+ Clearance</a>
                 <a href="#" class="add" id="addClosure">+ Closure</a>
                 <a href="archives/ArchiveBusinessClearance.php" class="archiveResidents">Archive</a>
@@ -79,11 +107,23 @@ $businessClearance[] = $row;
                             <td><?= $row['date_applied'] ?></td>
                             <td><?= $row['documentFor'] ?></td>
                             <td>
-                                <select name="Status" id="Status" onchange="changeColor(this)">
-                                    <option class="Pending" value="Pending">Pending</option>
-                                    <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
-                                    <option class="Completed" value="Completed">Completed</option>
-                                </select>
+                                <form action="./model/update_status/update_businessClearance.php" method="POST" class="form-allCert"
+                                    id="statusForm">
+                                    <select name="status" id="Status">
+                                        <!-- <option class="Pending" value="Pending">Pending</option> -->
+                                        <option class="Pending" value="Pending"
+                                            <?php echo ($row['status'] === 'Pending') ? 'selected' : ''; ?>>Pending
+                                        </option>
+                                        <option class="For_Pick_up" value="For Pick-up"
+                                            <?php echo ($row['status'] === 'For Pick-up') ? 'selected' : ''; ?>>For Pick-up
+                                        </option>
+                                        <option class="Completed" value="Completed"
+                                            <?php echo ($row['status'] === 'Completed') ? 'selected' : ''; ?>>Completed
+                                        </option>
+                                    </select>
+                                    <input type="hidden" name="id" value="<?= $row['id']?>">
+                                    <input type="hidden" name="dateRequested" value="<?= $row['date_applied']?>">
+                                </form>
                             </td>
                             </td>
                             <td>
@@ -194,6 +234,12 @@ $businessClearance[] = $row;
 </html>
 
 <script>
+document.querySelectorAll('.form-allCert').forEach(function(form) {
+    form.querySelector('select[name="status"]').addEventListener('change', function() {
+        // Trigger form submission when an option is selected
+        form.submit();
+    });
+});
 const addClearanceLink = document.getElementById('addClearance');
 const modaladdClearance = document.querySelector('.modal-addClearance');
 const closeClearance = document.querySelector('.closeClearance');

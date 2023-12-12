@@ -56,6 +56,9 @@ $query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, request
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
+		   OR requestor_fname = '$firstname'
+		   AND requestor_mname = '$middlename'
+		   AND requestor_lname = '$lastname'
 		   AND (status = 'Pending' OR status = 'For Pick-up')
            UNION ALL
            SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_brgyclearance' AS source
@@ -63,6 +66,9 @@ $query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, request
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
+		   OR requestor_fname = '$firstname'
+		   AND requestor_mname = '$middlename'
+		   AND requestor_lname = '$lastname'
 		   AND (status = 'Pending' OR status = 'For Pick-up')
 		   UNION ALL
 			SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_ecertificate' AS source
@@ -70,6 +76,9 @@ $query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, request
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
+			OR requestor_fname = '$firstname'
+		   AND requestor_mname = '$middlename'
+		   AND requestor_lname = '$lastname'
 		   AND (status = 'Pending' OR status = 'For Pick-up')
 		   UNION ALL
 			SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_certoflbr' AS source
@@ -77,6 +86,9 @@ $query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, request
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
+			OR requestor_fname = '$firstname'
+		   AND requestor_mname = '$middlename'
+		   AND requestor_lname = '$lastname'
 		   AND (status = 'Pending' OR status = 'For Pick-up')
 		   UNION ALL
 		   	SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_certofindigency' AS source
@@ -84,6 +96,9 @@ $query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, request
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
+		   	OR requestor_fname = '$firstname'
+		   AND requestor_mname = '$middlename'
+		   AND requestor_lname = '$lastname'
 		   AND (status = 'Pending' OR status = 'For Pick-up')
 				UNION ALL
 			SELECT id, business_owner_fname AS applicant_fname, business_owner_mname AS applicant_mname, business_owner_lname AS applicant_lname, 

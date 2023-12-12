@@ -31,14 +31,11 @@
                 <li><a href="./index.php#about">About</a></li>
                 <li><a href="./index.php#services">Services</a></li>
                 <li><a href="./index.php#frontendAnnouncement">Announcement</a></li>
+                <li><a href=" ./index.php#frontendAwareness">Awareness</a></li>
                 <li><a href="./index.php#contact-us">Contact us!</a></li>
                 <?php if(isset($_SESSION['username'])) { ?>
                 <li><a href="#">Request</a></li>
-                <li><?php echo $_SESSION['username'];?></li>
-                <li><a href="./frontendModel/logout.php?username=<?= $_SESSION['username']  ?>">Logout</a></li>
-                <?php } else {?>
-                <li class="login" id="login">Login</li>
-                <?php } ?>
+                <?php }?>
             </ul>
         </div>
         <div class="main-cart">
@@ -48,7 +45,6 @@
                     <thead>
                         <tr>
                             <td>Name</td>
-                            <td>Requestor name</td>
                             <td>Description</td>
                             <td>Requested Date</td>
                             <td>Status</td>
@@ -59,11 +55,12 @@
                         <?php if(!empty($certs)) {?>
                         <?php foreach($certs as $row) : ?>
                         <tr>
-                            <td><?= $row['applicant_fname']. " ". $row['applicant_mname']. " ". $row['applicant_lname'] ?>
-                            </td>
+                            <!-- <td><?= $row['applicant_fname']. " ". $row['applicant_mname']. " ". $row['applicant_lname'] ?>
+                            </td> -->
                             <td>
-                                <?php  if(isset($row['requestor_fname']) && $row['source'] !== 'tbl_businessclearance') {
-                             echo $row['requestor_fname']. " ". $row['requestor_mname']. " ". $row['requestor_lname']; }?>
+                                <?php  if(!empty($row['applicant_fname']) && $row['source'] !== 'tbl_businessclearance') {
+                             echo $row['applicant_fname']. " ". $row['applicant_mname']. " ". $row['applicant_lname']; }
+                             else { echo $row['requestor_fname']. " ". $row['requestor_mname']. " ". $row['requestor_lname']; }?>
                             </td>
                             <td>
                                 <?php     

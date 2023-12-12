@@ -34,7 +34,7 @@
         </p>';
             $_SESSION['success'] = 'success';
             $certClass = "Barangay Clearance";
-            include "./received_request.php";
+            include "./received/received_request.php";
 
         }else{
             $_SESSION['message'] = 'Something went wrong!';

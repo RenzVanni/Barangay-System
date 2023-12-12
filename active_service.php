@@ -4,13 +4,13 @@
             <div class="active-service-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Barangay ID</h2>
             <div class="container requestor">
-                <label for="requestor">Requestor</label>
-                <input class="requestorName" type="text" name="requestor_fname" id="requestor"
-                    placeholder="Enter requestor firstname">
-                <input class="requestorName" type="text" name="requestor_mname" id="requestor"
-                    placeholder="Enter requestor middlename">
-                <input class="requestorName" type="text" name="requestor_lname" id="requestor"
-                    placeholder="Enter requestor lastname">
+                <label for="requestor">Applicant</label>
+                <input class="requestorName" type="text" name="applicant_fname" id="applicant"
+                    placeholder="Enter applicant firstname">
+                <input class="applicantName" type="text" name="applicant_mname" id="applicant"
+                    placeholder="Enter applicant middlename">
+                <input class="applicantName" type="text" name="applicant_lname" id="applicant"
+                    placeholder="Enter applicant lastname">
             </div>
             <div class="container">
                 <label for="contact-number">Contact Number</label>
@@ -23,15 +23,15 @@
                     <option value="Someone">For someone else</option>
                 </select>
             </div>
-            <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
-            <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
-            <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
-            <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
-            <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
-            <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
-            <input type="hidden" name="applicant_dob" value="<?php echo $_SESSION['date_of_birth'] ?>" id="">
-            <input type="hidden" name="applicant_pob" value="<?php echo $_SESSION['place_of_birth'] ?>" id="">
-            <input type="hidden" name="applicant_civilStatus" value="<?php echo $_SESSION['civil'] ?>">
+            <input type="hidden" name="requestor_fname" value="<?php echo $_SESSION['firstname']?>">
+            <input type="hidden" name="requestor_mname" value="<?php echo $_SESSION['middlename']?>">
+            <input type="hidden" name="requestor_lname" value="<?php echo $_SESSION['lastname']?>">
+            <input type="hidden" name="requestor_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
+            <input type="hidden" name="requestor_street" value="<?php echo $_SESSION['street'] ?>" id="">
+            <input type="hidden" name="requestor_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
+            <input type="hidden" name="requestor_dob" value="<?php echo $_SESSION['date_of_birth'] ?>" id="">
+            <input type="hidden" name="requestor_pob" value="<?php echo $_SESSION['place_of_birth'] ?>" id="">
+            <input type="hidden" name="requestor_civilStatus" value="<?php echo $_SESSION['civil'] ?>">
             <button type="button" class="fake-btn">Request</button>
         </div>
         <div class="confirmation">

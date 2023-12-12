@@ -145,6 +145,9 @@ function calculateAge($dob) {
 
 
     </div>
+
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
