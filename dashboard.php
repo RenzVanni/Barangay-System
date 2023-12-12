@@ -84,6 +84,7 @@ function calculateAge($dob) {
 	}
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -500,16 +501,14 @@ function calculateAge($dob) {
                     <div class="RecentLogs">Recent Logs</div>
                     <table>
                         <tr>
-                            <th>Date</th>
-                            <th>Time</th>
                             <th>User</th>
-                            <th>Information</th>
+                            <th>Activity</th>
+                            <th>Date & Time</th>
                         </tr>
                         <tr>
-                            <td>June 28, 2023</td>
-                            <td>10:00 AM</td>
-                            <td>John Doe</td>
-                            <td>Information 1</td>
+                            <td>Admin</td>
+                            <td>add a resident</td>
+                            <td>08/04/21 12:05pm</td>
                         </tr>
                     </table>
                     <div class="nextBtn">NEXT</div>

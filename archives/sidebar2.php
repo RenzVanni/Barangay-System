@@ -1,24 +1,23 @@
-<link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
  <!-- HEADER -->
-  <div class="container">
+ <div class="container">
       <div class="layer1"><?= $brgy_name. " " .$town_name." " .$province_name?>
       </div>
       <div class="layer2">
-          <img src="vector/Vector 1.png" alt="">
+          <img src="../vector/Vector 1.png" alt="">
       </div>
   </div>
 
-  <!-- SIDE BAR -->
-  <div class="sidebar">
+   <!-- SIDE BAR -->
+   <div class="sidebar">
       <div class="slayer1">
           <img class="vector-side" src="../vector/layerside.png" alt="">
-          <img class="db-icon" src="../icons/dashboard-icon.png" alt=""></img>
-          <img class="bo-icon" src="../icons/B_Officials-iocn.png" alt=""></img>
-          <img class="ri-icon" src="../icons/residents-icon.png" alt=""></img>
-          <img class="cc-icon" src="../icons/certificate-icon.png" alt=""></img>
-          <img class="rs-icon" src="../icons/blotter-icon.png" alt=""></img>
-          <img class="um-icon" src="../icons/user-icon.png" alt=""></img>
-          <img class="cm-icon" src="../icons/content-icon.png" alt=""></img>
+          <img class="db-icon" src="../iconsBackend/dashboard-icon.png" alt=""></img>
+          <img class="bo-icon" src="../iconsBackend/B_Officials-iocn.png" alt=""></img>
+          <img class="ri-icon" src="../iconsBackend/residents-icon.png" alt=""></img>
+          <img class="cc-icon" src="../iconsBackend/certificate-icon.png" alt=""></img>
+          <img class="rs-icon" src="../iconsBackend/blotter-icon.png" alt=""></img>
+          <img class="um-icon" src="../iconsBackend/user-icon.png" alt=""></img>
+          <img class="cm-icon" src="../iconsBackend/content-icon.png" alt=""></img>
           </img>
       </div>
 

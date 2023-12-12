@@ -42,7 +42,7 @@ while($row = $result->fetch_assoc()) {
     <div class="body-cont">
         <div class="first-layer">
             <p>Announcement</p>
-            <a href="#">Logout</a>
+           
         </div>
 
         <div class="second_layer">
@@ -79,8 +79,10 @@ while($row = $result->fetch_assoc()) {
                             data-begin_date="<?= $row['begin_date']?>"
                             data-until_date="<?= $row['until_date']?>"
                             >Edit</a> 
-                            <a href="./model/remove/remove_announcement.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="#" class="delete">Delete</a>
+
                         </div>
+                        
                     <?php $no++; endforeach ?>
                     <?php } ?>
                 </div>
@@ -88,8 +90,23 @@ while($row = $result->fetch_assoc()) {
               <div class="swiper-pagination"></div>
            </div>
         </div>
-        
     </div>
+    <div class="modal-delete">
+        <div class="form-delete">
+            <div class="delete-cont">
+                <p>Delete</p>
+                <img src="iconsBackend/close 1.png" alt="" class="close-delete">
+            </div>
+            <div class="delete-description">
+                <p>Deleting this will remove all data
+                    and cannot be undone.</p>
+            </div>
+            <div class="delete-submit">
+                <a href="./model/remove/remove_announcement.php?id=<?= $row['id'] ?>">Delete</a>
+            </div>
+        </div>
+    </div>
+   
     <!-- END BODY -->
 
     <!-- START MODAL ANNOUNCEMENT -->
@@ -110,7 +127,7 @@ while($row = $result->fetch_assoc()) {
                 <div class="title-date-cont">
                     <div class="title-cont">
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title">
+                        <input type="text" name="title" id="title" required>
                     </div>
                     <!-- <div class="date-cont">
                         <label for="date">Date</label>
@@ -341,4 +358,20 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 });
 </script>
 
+<script>
+    // DELETE RESIDENTS
+    const deleteLink = document.querySelectorAll('.delete');
+    const modalDelete = document.querySelectorAll('.modal-delete');
+    const closeButtonDelete = document.querySelectorAll('.close-delete');
 
+    deleteLink.forEach((del, index) => {
+    del.addEventListener('click', (e) => {
+    console.log("Delete link clicked")
+    modalDelete[index].style.display = 'block';
+    });
+
+    closeButtonDelete[index].addEventListener('click', function() {
+    modalDelete[index].style.display = 'none';
+    });
+    })
+</script>
