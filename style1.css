@@ -117,7 +117,7 @@ a {
 }
 .line-container {
   width: 100%;
-  margin: 30px;
+  margin: 25px 0px;
   display: flex;
   justify-content: center;
 }
@@ -125,7 +125,7 @@ a {
 .population {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -160,14 +160,57 @@ a {
   font-weight: 600;
   line-height: normal;
   text-align: center;
-  margin-bottom: 30px;
+  
 }
 table {
   border-collapse: collapse;
   width: 100%;
+
+}
+table .username {
+  border-top-left-radius: 10px;
+  background-color: #007236;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+table .activity {
+  background-color: #007236;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+table .date {
+  background-color: #007236;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+table .time {
+  border-top-right-radius: 10px;
+  background-color: #007236;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
-th, td {
+td {
   text-align: left;
   padding: 12px;
   text-align: center;
@@ -176,11 +219,10 @@ th, td {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
 }
 
-th {
-  background-color: #f2f2f2;
-}
+
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
@@ -290,7 +332,7 @@ tr:nth-child(even) {
 }
 
 .male {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -347,7 +389,7 @@ tr:nth-child(even) {
 }
 
 .female {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -403,7 +445,7 @@ tr:nth-child(even) {
 }
 
 .voters {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -458,8 +500,121 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 
+.complain {
+  width: 340px;
+  height: 150px;
+  margin: 10px 9px;
+  background: #F8F8F8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.a2-complain {
+  height: 15%;
+  background: #6EC677;
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.a2-complain .b3 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  color: #FFFFFF;
+}
+.a2-complain .b4 img{
+  margin-top: 4px;
+}
+.a1 .b1 .c2-complain {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 52px;
+  display: flex;
+  align-items: center;
+  
+  color: #6EC677;
+}
+.a1 .b2 .c4-complain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 35px;
+  width: 80px;
+  height: 80px;
+  background: #6EC677;
+  border-radius: 10px;
+}
+
+
+.awareness {
+  width: 340px;
+  height: 150px;
+  margin: 10px 9px;
+  background: #F8F8F8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.a2-awareness {
+  height: 15%;
+  background: #c66eb0;
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.a2-awareness .b3 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  color: #FFFFFF;
+}
+.a2-awareness .b4 img{
+  margin-top: 4px;
+}
+.a1 .b1 .c2-awareness {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 52px;
+  display: flex;
+  align-items: center;
+  
+  color: #c66eb0;
+}
+.a1 .b2 .c4-awareness {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 35px;
+  width: 80px;
+  height: 80px;
+  background: #c66eb0;
+  border-radius: 10px;
+}
+
 .nonvoters {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -514,7 +669,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .blotter {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -570,7 +725,7 @@ tr:nth-child(even) {
 }
 
 .osc {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -626,7 +781,7 @@ tr:nth-child(even) {
 }
 
 .osy {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -681,7 +836,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .pwd {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -736,7 +891,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .soloParent {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -791,7 +946,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .labor {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -846,7 +1001,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .unemploy {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -901,7 +1056,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .ofw {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -956,7 +1111,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .snr {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -1012,7 +1167,7 @@ tr:nth-child(even) {
 }
 
 .students {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -1068,7 +1223,7 @@ tr:nth-child(even) {
 }
 
 .student {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;
@@ -1125,7 +1280,7 @@ tr:nth-child(even) {
 
 
 .senior {
-  width: 320px;
+  width: 340px;
   height: 150px;
   margin: 10px 9px;
   background: #F8F8F8;

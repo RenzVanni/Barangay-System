@@ -21,13 +21,24 @@ if ($result->num_rows) {
     // Use password_verify to compare input password with hashed password from database
     if (password_verify($password, $user['password'])) {
 
+        // Insert a log entry for the user login
+        $logUsername = $user['username'];
+        $logActivity = 'Login';
+        $logDate = date('Y-m-d');
+        $logTime = date('H:i:s');
+
+        $insertLogQuery = $conn->prepare("INSERT INTO login_logs (username, activity, log_date, log_time) VALUES (?, ?, ?, ?)");
+        $insertLogQuery->bind_param("ssss", $logUsername, $logActivity, $logDate, $logTime);
+        $insertLogQuery->execute();
+        $insertLogQuery->close();
+
+        // Set session variables based on user role
         if ($user['role'] === 'admin' || $user['role'] === 'staff') {
             $_SESSION['id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../dashboard.php');
-        }
-        else if ($user['role'] === 'user') {
+        } else if ($user['role'] === 'user') {
             $_SESSION['role'] = $user['role'];
             $_SESSION['id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
@@ -64,3 +75,4 @@ function setMessageAndRedirect($message, $status, $location) {
     header("Location: $location");
     exit();
 }
+?>

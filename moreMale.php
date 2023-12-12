@@ -27,6 +27,9 @@ function calculateAge($dob) {
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js "></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.2.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
 </head>
 
@@ -49,10 +52,37 @@ function calculateAge($dob) {
             <p>Go Back</p>
         </a>
         
-        <div class="second_layer">
+        <div class="second_layer1">
             <div class="search-cont">
                 <p>Search:</p>
-                <input type="text" class="searchBar" placeholder=" Enter text here">
+                <input type="text" class="searchBar" placeholder="Enter text here" id="searchInput">
+            </div>
+
+            <div class="sorting-cont">
+                
+                <div class="label-cont">
+                <p>Sort and Filter By:</p>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="0"> Full Name</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="1"> Age</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="2"> Date of Birth</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="3"> Gender</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="4"> Civil Status</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="5"> Addres</label>
+                    <!-- Add more checkboxes for other columns -->
+                </div>
+              
+
+               <div class="order-cont">
+                <p>Order:</p>
+                    <select id="orderSelect">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+
+                <button id="sortButton">Sort</button>   
+               </div>
+
+               
             </div>
         </div>
 
@@ -66,46 +96,7 @@ function calculateAge($dob) {
                     <img src="iconsBackend/ResidentsSeeMore.png" alt="">
                 </div>
             </div>
-            <div class="Second-Cont">
-                <div class="smallBoxMale">
-                    <div class="text-cont">
-                        <p class="text">Infant</p>
-                        <p class="number">600</p>
-                    </div>
-                    <img src="iconsBackend/InfantSeeMore.png" alt="">
-                </div>
-                <div class="smallBoxMale">
-                    <div class="text-cont">
-                        <p class="text">Child</p>
-                        <p class="number">600</p>
-                    </div>
-                    <img src="iconsBackend/ChildSeeMore.png" alt="">
-                </div>
-
-                <div class="smallBoxMale">
-                    <div class="text-cont">
-                        <p class="text">Adolescents</p>
-                        <p class="number">600</p>
-                    </div>
-                    <img src="iconsBackend/AdolescentsSeeMore.png" alt="">
-                </div>
-
-                <div class="smallBoxMale">
-                    <div class="text-cont">
-                        <p class="text">Adults</p>
-                        <p class="number">600</p>
-                    </div>
-                    <img src="iconsBackend/AdultsSeeMore.png" alt="">
-                </div>
-
-                <div class="smallBoxMale">
-                    <div class="text-cont">
-                        <p class="text">Elderly</p>
-                        <p class="number">600</p>
-                    </div>
-                    <img src="iconsBackend/ElderlySeeMore.png" alt="">
-                </div>
-            </div>
+            
         </div>
 
         <div class="fourth_layer">
@@ -144,7 +135,33 @@ function calculateAge($dob) {
             </div>
         </div>
 
+        <script>
+           $(document).ready(function() {
+                var dataTable = $('#table').DataTable({
+                    "paging": false, // Disable pagination for simplicity
+                    "searching": true // Enable searching
+                });
 
+                // Enable search functionality for the DataTable
+                $('#searchInput').on('keyup', function() {
+                    dataTable.search($(this).val()).draw();
+                });
+
+                // Custom sorting and filtering
+                $('#sortButton').on('click', function() {
+                    var order = $('#orderSelect').val(); // Get the selected order
+                    var columnsToSort = [];
+
+                    // Collect columns to sort based on checked checkboxes
+                    $('.sort-checkbox:checked').each(function() {
+                        columnsToSort.push(parseInt($(this).data('column')));
+                    });
+
+                    // Perform custom sorting
+                    dataTable.order(columnsToSort.map(column => [column, order])).draw();
+                });
+            });
+        </script>
     </div>
 </body>
 

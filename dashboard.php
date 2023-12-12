@@ -94,7 +94,7 @@ function calculateAge($dob) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style1.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css">
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js"></script>
@@ -258,26 +258,47 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="voters">
+                    <div class="complain">
                         <div class="a1">
                             <div class="b1">
-                                <div class="c1">VOTERS</div>
-                                <div class="c2-v"><?= number_format($totalvoters) ?></div>
-                                <div class="c3">Total Voters</div>
+                                <div class="c1">Complain</div>
+                                <div class="c2-complain">95</div>
+                                <div class="c3">Total Complain</div>
                             </div>
                             <div class="b2">
-                                <div class="c4-v">
+                                <div class="c4-complain">
                                     <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="a2-v" id="more-voters">
-                            <a href="moreVoters.php" class="b3">More info</a>
+                        <div class="a2-complain" id="more-complain">
+                            <a href="complain.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+
+                    <div class="awareness">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">Awareness</div>
+                                <div class="c2-awareness">123</div>
+                                <div class="c3">Total Awareness</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-awareness">
+                                    <img src="iconsBackend/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-awareness" id="more-awareness">
+                            <a href="awareness.php" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="iconsBackend/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="blotter">
                         <div class="a1">
@@ -498,20 +519,39 @@ function calculateAge($dob) {
                 </div>
 
                 <div class="containerLogs">
-                    <div class="RecentLogs">Recent Logs</div>
-                    <table>
-                        <tr>
-                            <th>User</th>
-                            <th>Activity</th>
-                            <th>Date & Time</th>
-                        </tr>
-                        <tr>
-                            <td>Admin</td>
-                            <td>add a resident</td>
-                            <td>08/04/21 12:05pm</td>
-                        </tr>
+                    <div class="RecentLogs">Login Logs</div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th class="username">Username</th>
+                                <th class="activity">Activity</th>
+                                <th class="date">Date </th>
+                                <th class="time">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            // Fetch recent logs from the database
+                            $recentLogsQuery = $conn->query("SELECT * FROM login_logs ORDER BY id DESC LIMIT 10");
+
+                            while ($log = $recentLogsQuery->fetch_assoc()) {
+                                echo '<tr>';
+                                echo '<td>' . $log['username'] . '</td>';
+                                echo '<td>' . $log['activity'] . '</td>';
+                                echo '<td>' . $log['log_date'] . '</td>';
+                                echo '<td>' . $log['log_time'] . '</td>';
+                                echo '</tr>';
+                            }
+
+                            $recentLogsQuery->close();
+                            ?>
+                        </tbody>
                     </table>
-                    <div class="nextBtn">NEXT</div>
+                    <div class="pagination">
+                        <button id="prevBtn">Previous</button>
+                        <div id="pageNumbers" class="page-numbers"></div>
+                        <button id="nextBtn">Next</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -744,3 +784,58 @@ function calculateAge($dob) {
 </body>
 
 </html>
+
+<script>
+// JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr'); // Updated to select rows from tbody
+const totalRows = rows.length;
+const rowsPerPage = 5;
+let currentPage = 1;
+
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+</script>
