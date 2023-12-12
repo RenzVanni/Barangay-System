@@ -12,7 +12,26 @@ $status = $conn->real_escape_string($_POST['status']);
 
 
 if (!empty($status)) {
-     $dateRequested = isset($_POST['dateRequested']) ? $_POST['dateRequested'] : '';
+    $dateRequested = isset($_POST['dateRequested']) ? $_POST['dateRequested'] : '';
+
+        $query2 = "SELECT * FROM tbl_brgyclearance WHERE `id`='$id'";
+        $result2 = $conn->query($query2);
+        $applicant = $result2->fetch_assoc();
+
+        $fname = !empty($applicant['requestor_fname']) ? $applicant['requestor_fname'] : $applicant['applicant_fname'];
+        $mname = !empty($applicant['requestor_mname']) ? $applicant['requestor_mname'] : $applicant['applicant_mname'];
+        $lname = !empty($applicant['requestor_lname']) ? $applicant['requestor_lname'] : $applicant['applicant_lname'];
+
+        $query3 = "SELECT * FROM tbl_households WHERE `firstname`='$fname' AND `middlename`='$mname' AND `lastname`='$lname'";
+        $result3 = $conn->query($query3);
+        $resident = $result3->fetch_assoc();
+
+        $contactNo = isset($resident['contact_no']) ? $resident['contact_no'] : "";
+        
+        $certificateType = "barangay clearance";
+        $isStatus = $status == "For Pick-up" ? true : false;
+        include '../sms/certificate_sms.php';
+
     $query = "UPDATE tbl_brgyclearance SET status='$status'";
 
     // Only include the date if it is present in the form
@@ -22,9 +41,8 @@ if (!empty($status)) {
 
     $query .= " WHERE id='$id'";
     // $query = "UPDATE tbl_brgyclearance SET status='$status' WHERE id='$id'";
-
     if ($conn->query($query) === true) {
-        $_SESSION['message'] = 'Barangay Clearance status has been updated!';
+        $_SESSION['message'] = 'Barangay Clearance status has been updated!'. $fname;
         $_SESSION['success'] = 'success';
     } else {
         $_SESSION['message'] = 'Error updating Barangay Clearance status: ' . $conn->error;

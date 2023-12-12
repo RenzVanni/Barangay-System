@@ -4,10 +4,9 @@
             <h1>Contact <span>Us!</span></h1>
             <span>Do you want to contact us?</span>
 
-            <form action="">
+            <form action="./frontendModel/send_contact_us.php" method="post">
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
-                <!-- <input type="number" name="number" placeholder="Phone number"> -->
                 <textarea name="message" id="" placeholder="Message..." required></textarea>
                 <button type="submit">Submit</button>
             </form>
