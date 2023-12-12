@@ -48,6 +48,6 @@
         $_SESSION['message'] = 'Something went wrong!';
         $_SESSION['success'] = 'danger';
     }
-    header("Location: ../main.php");
+    header("Location: ../index.php");
 
 	$conn->close();

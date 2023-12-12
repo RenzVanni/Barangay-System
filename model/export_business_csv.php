@@ -7,7 +7,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 
 // Fetch data from database
-$query = "SELECT `taxpayer_name`, `business_name`, `business_address` FROM tbl_business";
+$query = "SELECT `taxpayer_fname`, `taxpayer_mname`, `taxpayer_lname`, `taxpayer_suffix`, `business_name`, `house_no`, `street`, `subdivision`, `business_status` FROM tbl_business";
 if (!$result = $conn->query($query)) {
     exit($conn->error);
 }
@@ -41,7 +41,7 @@ $headersRow = 4; // Starting the headers on the third row
 $dataStartRow = $headersRow + 1; // Data starts right after the headers
 
 // Set header
-$headers = ['Taxpayer Name', 'Business Name', 'Business Address'];
+$headers = ['Taxpayer Firstname', 'Taxpayer Middlename', 'Taxpayer Lastname', 'Taxpayer Suffix', 'Business Name', 'House_no', 'Street', 'Subdivision', 'Business Status'];
 $sheet->fromArray($headers, NULL, 'A' . $headersRow);
 
 // Populate data

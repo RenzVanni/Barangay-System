@@ -712,6 +712,9 @@ function calculateAge($dob) {
                 const messageId = notification.getAttribute('data-id');
                 const senderId = notification.getAttribute('data-senderId');
                 const messageSender = notification.getAttribute('data-name');
+                const fname = notification.getAttribute('data-fname');
+                const mname = notification.getAttribute('data-mname');
+                const lname = notification.getAttribute('data-lname');
 
                 // Send an AJAX request to mark the notification as read
                 const xhr = new XMLHttpRequest();
@@ -720,7 +723,7 @@ function calculateAge($dob) {
                     // Handle the response if needed
                     if (xhr.status === 200) {
                         // Redirect to the corresponding page based on the source
-                         window.location.href = 'message.php?name=' + messageSender + '&id=' + senderId;
+                         window.location.href = 'message.php?fname=' + fname + '&mname=' + mname + '&lname=' + lname;
 
 
                     } else {

@@ -17,6 +17,23 @@ function getNewMessages($conn) {
     } else {
         return array();
     }
+
+    // $sql2 = "SELECT * FROM tbl_users WHERE id = $id"; // Adjust the query based on your tables and criteria
+
+    // $result2 = $conn->query($sql2);
+
+    // // Check if there are new certificates
+    // if ($result2->num_rows > 0) {
+    //     // Fetch the results as an array
+    //     $user = array();
+    //     while ($row = $result->fetch_assoc()) {
+    //         $user[] = $row;
+    //     }
+
+    //     return $user;
+    // } else {
+    //     return array();
+    // }
 }
 
 
@@ -33,6 +50,20 @@ function markCertificateAsReadMessage($conn, $id) {
         echo "Error updating record: " . $conn->error;
         return false;
     }
+}
+
+function getUser($conn, $id) {
+    // Fetch new certificates from tables like idfom, brgyclearance, certoflbr, etc.
+    $sql2 = "SELECT * FROM tbl_users WHERE id = $id"; // Adjust the query based on your tables and criteria
+
+    $result2 = $conn->query($sql2);
+
+    // Check if there are new certificates
+    if ($result2->num_rows > 0) {
+        // Fetch the results as an array
+        $user = $result2->fetch_assoc();
+        }
+    return $user;
 }
 
 // Fetch new certificates

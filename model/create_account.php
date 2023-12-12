@@ -5,9 +5,9 @@ include "../server/server.php";
 $resUsername = $_POST['username'];
 $password = $_POST['password'];
 $userType = $_POST['role'];
-// $firstname = $_POST['firstname'];
-// $middlename = $_POST['middlename'];
-// $lastname = $_POST['lastname'];
+$firstname = $_POST['firstname'];
+$middlename = isset($_POST['middlename']) ? $_POST['middlename'] : "";
+$lastname = $_POST['lastname'];
 // $gender = $_POST['gender'];
 // $cstatus = $_POST['civil_status'];
 // $street = $_POST['street'];
@@ -21,14 +21,14 @@ $userType = $_POST['role'];
 $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
 // Prepare the SQL statement
-$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role) VALUES (?, ?, ?)");
+$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname) VALUES (?, ?, ?, ?, ?, ?)");
 
 // Bind parameters
-$insert->bind_param("sss", $resUsername, $passwordHashed, $userType);
+$insert->bind_param("ssssss", $resUsername, $passwordHashed, $userType, $firstname, $middlename, $lastname);
 
 // Execute the statement
 if ($insert->execute()) {
-    echo "User account created successfully";
+     header('Location: ../users.php');
 } else {
     echo "Error creating user account: " . $insert->error;
 }

@@ -1,4 +1,4 @@
-<?php include "./frontendServer/server.php" ?>
+<?php include "./server/server.php" ?>
 <?php
     $id = $_GET['id'];
     $query = "SELECT * FROM tbl_announcement WHERE `id`='$id'";
@@ -30,17 +30,15 @@
         </div>
 
         <ul class="sub-menu">
-            <li><a href="./main.php#">Home</a></li>
-            <li><a href="./main.php#about">About</a></li>
-            <li><a href="./main.php#services">Services</a></li>
-            <li><a href="./main.php#announcement">Announcement</a></li>
-            <li><a href="./main.php#contact-us">Contact us!</a></li>
+            <li><a href="./index.php#">Home</a></li>
+            <li><a href="./index.php#about">About</a></li>
+            <li><a href="./index.php#services">Services</a></li>
+            <li><a href="./index.php#announcement">Announcement</a></li>
+            <li><a href=" ./index.php#frontendAwareness">Awareness</a></li>
+            <li><a href="./index.php#contact-us">Contact us!</a></li>
             <?php if(isset($_SESSION['username'])) { ?>
-            <li><?php echo $_SESSION['username'];?></li>
-            <li><a href="../BACKENDMONATO/model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
-            <?php } else {?>
-            <li class="login" id="login">Login</li>
-            <?php } ?>
+            <li><a href="./Cart.php">Request</a></li>
+            <?php }?>
         </ul>
     </div>
 

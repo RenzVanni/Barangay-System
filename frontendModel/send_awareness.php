@@ -41,6 +41,6 @@
         $_SESSION['success'] = 'danger';
     }
 
-    header("Location: ../main.php#frontendAwareness");
+    header("Location: ../index.php#frontendAwareness");
 
 	$conn->close();

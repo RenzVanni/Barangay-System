@@ -129,11 +129,19 @@ while($row = $result->fetch_assoc()) {
                 <label for="password-user"></label>Password
                 <input type="password" id="password-user" name="password" required>
 
+                <label for="firstname">Firstname</label>
+                <input type="text" id="firstname" name="firstname" required>                
+
+                <label for="middlename">Middlename</label>
+                <input type="text" id="middlename" name="middlename"> 
+
+                <label for="lastname">Lastname</label>
+                <input type="text" id="lastname" name="lastname" required> 
+
                 <label for="usertype-user">User Type</label>
                 <select id="usertype-user" name="role" required>
                     <option value="staff">Staff</option>
                     <option value="admin">Admin</option>
-                    <option value="user">User</option>
                 </select>
             </div>
 

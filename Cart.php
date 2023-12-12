@@ -27,11 +27,11 @@
             </div>
 
             <ul class="sub-menu">
-                <li><a href="./main.php#">Home</a></li>
-                <li><a href="./main.php#about">About</a></li>
-                <li><a href="./main.php#services">Services</a></li>
-                <li><a href="./main.php#frontendAnnouncement">Announcement</a></li>
-                <li><a href="./main.php#contact-us">Contact us!</a></li>
+                <li><a href="./index.php#">Home</a></li>
+                <li><a href="./index.php#about">About</a></li>
+                <li><a href="./index.php#services">Services</a></li>
+                <li><a href="./index.php#frontendAnnouncement">Announcement</a></li>
+                <li><a href="./index.php#contact-us">Contact us!</a></li>
                 <?php if(isset($_SESSION['username'])) { ?>
                 <li><a href="#">Request</a></li>
                 <li><?php echo $_SESSION['username'];?></li>

@@ -113,8 +113,24 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['business_type']?></td>
                         <td><?= $row['business_status']?></td>
                         <td>
-                            <a href="#" class="edit">Edit</a>
+                            <a href="addBusiness.php" class="edit">Edit</a>
+
                             <a href="#" class="delete">Delete</a>
+                             <div class="modal-delete">
+                                <div class="form-delete">
+                                    <div class="delete-cont">
+                                        <p>Delete</p>
+                                        <img src="iconsBackend/close 1.png" alt="" class="close-delete">
+                                    </div>
+                                    <div class="delete-description">
+                                        <p>Deleting this will remove all data
+                                            and cannot be undone.</p>
+                                    </div>
+                                    <div class="delete-submit">
+                                        <a href="./model/remove/remove_business.php?id=<?= $row['id']?>">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <?php $no++; endforeach  ?>
@@ -129,3 +145,20 @@ while($row = $result->fetch_assoc()) {
 </body>
 
 </html>
+
+<script>
+const deleteLink = document.querySelectorAll('.delete');
+const modalDelete = document.querySelectorAll('.modal-delete');
+const closeButtonDelete = document.querySelectorAll('.close-delete');
+
+deleteLink.forEach((del, index) => {
+    del.addEventListener('click', (e) => {
+        console.log("Delete link clicked")
+        modalDelete[index].style.display = 'block';
+    });
+
+    closeButtonDelete[index].addEventListener('click', function() {
+        modalDelete[index].style.display = 'none';
+    });
+})
+</script>

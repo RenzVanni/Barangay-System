@@ -1,5 +1,5 @@
-<div class="contact-us" id="contact-us">
-    <main>
+<div class="contact-us frontend-contact-us" id="contact-us">
+    <div class="main-contact">
         <div class="section-1">
             <h1>Contact <span>Us!</span></h1>
             <span>Do you want to contact us?</span>
@@ -38,5 +38,5 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
         </div>
-    </main>
+    </div>
 </div>

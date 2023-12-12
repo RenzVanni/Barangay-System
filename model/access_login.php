@@ -44,7 +44,7 @@ if ($result->num_rows) {
             $_SESSION['email'] = $user['email'];
             $_SESSION['contact_no'] = $user['contact_no'];
 
-            setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../main.php');
+            setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../index.php');
         } else {
             setMessageAndRedirect('Username or password is incorrect!', 'danger', '../login_page.php');
         }

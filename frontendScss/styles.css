@@ -1043,7 +1043,7 @@ header .user {
   justify-content: end;
 }
 
-.contact-us {
+.frontend-contact-us {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -1051,7 +1051,7 @@ header .user {
   align-items: center;
   justify-content: center;
 }
-.contact-us main {
+.frontend-contact-us .main-contact {
   width: clamp(300px, 100%, 1200px);
   z-index: 1;
   height: -moz-fit-content;
@@ -1059,10 +1059,9 @@ header .user {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   position: relative;
 }
-.contact-us main .section-1 {
+.frontend-contact-us .main-contact .section-1 {
   flex-grow: 1;
   display: flex;
   align-items: start;
@@ -1071,23 +1070,23 @@ header .user {
   height: 100%;
   padding: 5rem 7rem;
 }
-.contact-us main .section-1 h1 {
+.frontend-contact-us .main-contact .section-1 h1 {
   margin: 0;
   font-size: 3rem;
 }
-.contact-us main .section-1 h1 span {
+.frontend-contact-us .main-contact .section-1 h1 span {
   font-size: 3rem;
   color: #097338;
 }
-.contact-us main .section-1 span {
+.frontend-contact-us .main-contact .section-1 span {
   font-size: 0.8rem;
   font-weight: 600;
 }
-.contact-us main .section-1 form {
+.frontend-contact-us .main-contact .section-1 form {
   width: 100%;
   margin-top: 2rem;
 }
-.contact-us main .section-1 form input {
+.frontend-contact-us .main-contact .section-1 form input {
   display: block;
   padding: 0.8rem 1rem;
   width: 100%;
@@ -1098,11 +1097,11 @@ header .user {
   border: 1px solid rgba(0, 0, 0, 0.5);
   outline: transparent;
 }
-.contact-us main .section-1 form input[type=number] {
+.frontend-contact-us .main-contact .section-1 form input[type=number] {
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
-.contact-us main .section-1 form textarea {
+.frontend-contact-us .main-contact .section-1 form textarea {
   resize: none;
   width: 100%;
   border-radius: 0.5rem;
@@ -1111,7 +1110,7 @@ header .user {
   height: 20vh;
   padding: 0.8rem 1rem;
 }
-.contact-us main .section-1 form button {
+.frontend-contact-us .main-contact .section-1 form button {
   background-color: #097338;
   border: none;
   border-radius: 0.5rem;
@@ -1121,47 +1120,47 @@ header .user {
   padding: 0.8rem;
   margin-bottom: 1rem;
 }
-.contact-us main .section-1 .contacts {
+.frontend-contact-us .main-contact .section-1 .contacts {
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 2rem;
 }
-.contact-us main .section-1 .contacts .container-1,
-.contact-us main .section-1 .contacts .container-2 {
+.frontend-contact-us .main-contact .section-1 .contacts .container-1,
+.frontend-contact-us .main-contact .section-1 .contacts .container-2 {
   display: flex;
   align-content: center;
   justify-content: center;
   gap: 1rem;
 }
-.contact-us main .section-1 .contacts .container-1 .icon,
-.contact-us main .section-1 .contacts .container-2 .icon {
+.frontend-contact-us .main-contact .section-1 .contacts .container-1 .icon,
+.frontend-contact-us .main-contact .section-1 .contacts .container-2 .icon {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.contact-us main .section-1 .contacts .container-1 .info span:first-of-type,
-.contact-us main .section-1 .contacts .container-2 .info span:first-of-type {
+.frontend-contact-us .main-contact .section-1 .contacts .container-1 .info span:first-of-type,
+.frontend-contact-us .main-contact .section-1 .contacts .container-2 .info span:first-of-type {
   text-transform: uppercase;
 }
-.contact-us main .section-1 .contacts .container-1 .info span,
-.contact-us main .section-1 .contacts .container-2 .info span {
+.frontend-contact-us .main-contact .section-1 .contacts .container-1 .info span,
+.frontend-contact-us .main-contact .section-1 .contacts .container-2 .info span {
   display: block;
 }
-.contact-us main .section-2 {
+.frontend-contact-us .main-contact .section-2 {
   flex-grow: 2;
   height: 100%;
 }
-.contact-us main .section-2 iframe {
+.frontend-contact-us .main-contact .section-2 iframe {
   width: 500px;
-  height: inherit;
+  height: 100%;
   background-color: black;
 }
 @media (min-width: 375px) {
-  .contact-us {
+  .frontend-contact-us {
     height: 100vh;
   }
-  .contact-us main {
+  .frontend-contact-us .main-contact {
     flex-direction: row;
     height: 80%;
   }

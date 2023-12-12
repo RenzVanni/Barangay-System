@@ -82,6 +82,22 @@ while($row = $result->fetch_assoc()) {
                             <a href="#" class="delete">Delete</a>
 
                         </div>
+
+                            <div class="modal-delete">
+                                <div class="form-delete">
+                                    <div class="delete-cont">
+                                        <p>Delete</p>
+                                        <img src="iconsBackend/close 1.png" alt="" class="close-delete">
+                                    </div>
+                                    <div class="delete-description">
+                                        <p>Deleting this will remove all data
+                                            and cannot be undone.</p>
+                                    </div>
+                                    <div class="delete-submit">
+                                        <a href="./model/remove/remove_announcement.php?id=<?= $row['id'] ?>">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
                         
                     <?php $no++; endforeach ?>
                     <?php } ?>
@@ -89,21 +105,6 @@ while($row = $result->fetch_assoc()) {
               <!-- Add Pagination -->
               <div class="swiper-pagination"></div>
            </div>
-        </div>
-    </div>
-    <div class="modal-delete">
-        <div class="form-delete">
-            <div class="delete-cont">
-                <p>Delete</p>
-                <img src="iconsBackend/close 1.png" alt="" class="close-delete">
-            </div>
-            <div class="delete-description">
-                <p>Deleting this will remove all data
-                    and cannot be undone.</p>
-            </div>
-            <div class="delete-submit">
-                <a href="./model/remove/remove_announcement.php?id=<?= $row['id'] ?>">Delete</a>
-            </div>
         </div>
     </div>
    

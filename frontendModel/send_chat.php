@@ -20,7 +20,7 @@
         $conn->close();
 
         // Redirect back to the main chat page
-        header('Location: ../main.php');
+        header('Location: ../index.php');
         exit();
     }
 ?>
