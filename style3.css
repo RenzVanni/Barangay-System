@@ -1842,6 +1842,7 @@ select {
   flex-direction: column;
   width: 75%;
   height: auto;
+  
 }
 
 .chat-cont .header-name {
@@ -1883,7 +1884,7 @@ select {
   overflow-y: scroll;
   overflow-x: hidden;
   padding-top: 20px;
-  height: 500px;
+  height: 600px;
 }
 .chat-cont .body-message #chat-container #chat-messages {
   height: fit-content;
@@ -1996,11 +1997,11 @@ select {
 
 .body-message #chatForm .user-input .submit {
   display: flex;
-  background-color: red;
+  
 }
 
 .second_layer .status-menu {
-  background-color: red;
+  
   width: 100%;
   display: flex;
   flex-direction: row;

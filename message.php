@@ -39,7 +39,7 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages</title>
-    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?> ">
     <link rel="stylesheet" href="style4.css ">
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js "></script>
@@ -66,10 +66,12 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
                 </div>
                 <?php if(!empty($residents)) { ?>
                     <?php $no=1; foreach($residents as $row): ?>
-                        <a href="?fname=<?= $row['firstname'] ?>&mname=<?= $row['middlename'] ?>&lname=<?= $row['lastname'] ?>">
+
+                        <a href="?fname=<?= $row['firstname'] ?>&mname=<?= $row['middlename'] ?>&lname=<?= $row['lastname'] ?>" style="text-decoration:none;">
+                          
                         <div class="one-inbox">
-                            <div class="user-cont">
-                                <p class="name"><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']?></p>
+                            <div class="user-cont" style="padding: 5px 5px;">
+                                <p class="name" style="text-align: left;"><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']?></p>
                                 <?php   $yourName = $row['firstname']." ".$row['middlename']." ".$row['lastname'];
                                         $queryM = "SELECT * FROM chat_messages WHERE `sender`='$yourName' OR `receiver`='$yourName' ORDER BY timestamp DESC LIMIT 1";
                                         $resultM = $conn->query($queryM);
@@ -85,9 +87,7 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
                             <div class="time-cont">
                                 <p class="time"><?= isset($formattedDate) ? $formattedDate : "" ?></p>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
-                                    <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
-                            </svg>
+                           
                         </div>
                         </a>
                     <?php $no++; endforeach ?>
@@ -102,7 +102,7 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
 
                 <div class="body-message">
 
-                    <div id="chat-container">
+                    <div id="chat-container" >
                         <?php if(!empty($messages)) { ?>
                             <?php $no=1; foreach($messages as $row) :?>
                                 <?php  $messageClass = ($row['sender'] === 'admin') ? 'admin-sender' : 'sender'; ?>
@@ -117,17 +117,20 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
 
                     <form action="./model/reply_message.php" method="post" id="chatForm">
                         <input type="hidden" name="name" value="<?= $name ?>">
-                        <div id="user-input" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                        <div id="user-input" style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;">
                             <textarea type="text" name="reply" id="user-message" placeholder="Type your message..."
-                                style="width: 900px; height: 32px; padding: 5px 5px; margin: 15px 0px; text-align: start;
+                                style="width: 1090px; height: 42px; border-radius: 10px; margin-top: 10px; padding: 9px 5px;  text-align: start;
                                 font-family: Poppins;
-                                font-size: 12px;
+                                font-size: 15px;
                                 font-style: normal;
                                 font-weight: 600;
-                                line-height: normal;" maxlength="70" > </textarea>
+                                line-height: normal;
+                                border: 1px solid #ccc;" maxlength="70" > </textarea>
                             
+
+                            <button type="submit" style="margin-top: 9px;margin-left: 10px; border: none; cursor: pointer;"> 
+
                             <input type="hidden" name="contactNo" value="<?= $user['contact_no'] ?>">
-                            <button type="submit" style="margin-left: 12px; border: none; cursor: pointer;"> 
                                <img id="send-button" src="iconsBackend/send.png" alt="" onclick="sendMessage()" style="display: flex;">
                             </button>
                            
