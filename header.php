@@ -65,10 +65,7 @@
         <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
         <li><a href="./Cart.php">Request</a></li>
-        <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
-        <?php } else {?>
-        <li class="" id=""><a href="./login_page.php">Login</a></li>
-        <?php } ?>
+        <?php }?>
     </ul>
 </div>
 

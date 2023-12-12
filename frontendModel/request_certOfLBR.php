@@ -44,7 +44,8 @@
         </p>';
             $_SESSION['success'] = 'success';
             $certClass = "Certificate of Late Birth Registration";
-            include "./received_request.php";
+            include "./received/received_request.php";
+
 
         }else{
             $_SESSION['message'] = 'Something went wrong daw!';

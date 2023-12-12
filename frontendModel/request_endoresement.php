@@ -20,10 +20,10 @@
     $applicant_subdivision      = $conn->real_escape_string($_POST['applicant_subdivision']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
 
-    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
+    if(!empty($applicant_fname) || !empty($requestor_fname)){
 
         $insert  = "INSERT INTO tbl_ecertificate (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `documentFor`, `status`, `seen`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision',  '$documentFor', 'Pending', 'unread')";
+                    VALUES ('$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_fname', '$applicant_mname', '$applicant_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision',  '$documentFor', 'Pending', 'unread')";
         $result  = $conn->query($insert);
 
         if($result === true){
@@ -33,7 +33,7 @@
         </p>';
             $_SESSION['success'] = 'success';
             $certClass = "Endorsement Certificate";
-            include "./received_request.php";
+            include "./received/received_request.php";
 
         }else{
             $_SESSION['message'] = 'Something went wrong!';

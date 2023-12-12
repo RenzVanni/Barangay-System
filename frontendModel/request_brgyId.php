@@ -9,25 +9,27 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
     
-    $applicant_fname    = $conn->real_escape_string($_POST['applicant_fname']);
-    $applicant_mname    = $conn->real_escape_string($_POST['applicant_mname']);
-    $applicant_lname    = $conn->real_escape_string($_POST['applicant_lname']);
     $requestor_fname    = $conn->real_escape_string($_POST['requestor_fname']);
     $requestor_mname    = $conn->real_escape_string($_POST['requestor_mname']);
     $requestor_lname    = $conn->real_escape_string($_POST['requestor_lname']);
-    $applicant_houseNo      = $conn->real_escape_string($_POST['applicant_houseNo']);
-    $applicant_street      = $conn->real_escape_string($_POST['applicant_street']);
-    $applicant_subdivision      = $conn->real_escape_string($_POST['applicant_subdivision']);
-    $applicant_dob      = $conn->real_escape_string($_POST['applicant_dob']);
-    $applicant_pob      = $conn->real_escape_string($_POST['applicant_pob']);
-    $applicant_civilStatus      = $conn->real_escape_string($_POST['applicant_civilStatus']);
+
+    $applicant_fname    = $conn->real_escape_string($_POST['applicant_fname']);
+    $applicant_mname    = $conn->real_escape_string($_POST['applicant_mname']);
+    $applicant_lname    = $conn->real_escape_string($_POST['applicant_lname']);
+
+    $requestor_houseNo      = $conn->real_escape_string($_POST['requestor_houseNo']);
+    $requestor_street      = $conn->real_escape_string($_POST['requestor_street']);
+    $requestor_subdivision      = $conn->real_escape_string($_POST['requestor_subdivision']);
+    $requestor_dob      = $conn->real_escape_string($_POST['requestor_dob']);
+    $requestor_pob      = $conn->real_escape_string($_POST['requestor_pob']);
+    $requestor_civilStatus      = $conn->real_escape_string($_POST['requestor_civilStatus']);
     $contactNo      = $conn->real_escape_string($_POST['contactNo']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
     
-    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
+    if(!empty($applicant_fname) || !empty($requestor_fname)){
 
         $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `status`, `seen`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision', '$applicant_pob', '$applicant_dob', '$applicant_civilStatus','$contactNo', '$documentFor', 'Pending', 'unread')";
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_houseNo', '$requestor_street', '$requestor_subdivision', '$requestor_pob', '$requestor_dob', '$requestor_civilStatus','$contactNo', '$documentFor', 'Pending', 'unread')";
         $result  = $conn->query($insert);
 
         if($result === true){
@@ -37,7 +39,7 @@
         </p>';
             $_SESSION['success'] = 'success';
             $certClass = "Identification";
-            include "./received_request.php";
+            include "./received/received_request.php";
 
         }else{
             $_SESSION['message'] = 'Something went wrong daw!';

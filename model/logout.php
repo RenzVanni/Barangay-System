@@ -22,7 +22,7 @@ if (isset($_SESSION['role'])) {
 $username = $conn->real_escape_string($_GET['username']);
 
 if (!empty($username)) {
-    header('location: ../main.php');
+    header('location: ../index.php');
 } else {
     header('location: ../login_page.php');
 }

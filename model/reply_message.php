@@ -17,8 +17,8 @@
         $stmt->bind_param("sss", $adminMessage, $sender, $receiver);
         $stmt->execute();
 
-        $smsReply = true;
-        include "./sms/send.php";
+        // $smsReply = true;
+        // include "./sms/send.php";
 
         $stmt->close();
         $conn->close();

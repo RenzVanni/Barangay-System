@@ -1,12 +1,38 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tbl_idform ORDER BY id DESC";
-$result = $conn->query($query);
+$filterOption = $_GET["filter"] ?? null;
+$filterValue = $_GET["value"] ?? null;
+
+
+$params = [];
+$types = "";
+
+$query =  "SELECT * FROM tbl_idform";
+
+if($filterOption && $filterValue) {
+    $query .= " WHERE `$filterOption` = ?";
+    $params[] = $filterValue;
+    $types .= "s";
+} else {
+    $query .= " WHERE `status`='Pending'";
+}
+$query .= " ORDER BY id DESC";  // Move the ORDER BY clause here
+$stmt = $conn->prepare($query);
+
+if (!empty($types) && !empty($params)) {
+    $stmt->bind_param($types, ...$params);
+}
+
+$stmt->execute();
+
+$result = $stmt->get_result();
 
 $idForm = array();
 while($row = $result->fetch_assoc()) {
   $idForm[] = $row;
 }
+$stmt->close();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,11 +70,14 @@ while($row = $result->fetch_assoc()) {
             </div>
            
             <div class="add-cont">
-                <select name="status_change" id="status_change">
-                    <option value="Pending">Pending</option>
-                    <option value="ForPickUp">For Pick-up</option>
-                    <option value="Completed">Completed</option>
-                </select>
+                <a href="?filter=status&value=Pending">Pending</a>
+                <a href="?filter=status&value=for pick-up">For Pick-up</a>
+                <a href="?filter=status&value=completed">Completed</a>
+                <!-- <select name="status_change" id="status_change">
+                    <option value="Pending"><a href="?filter=status&value=pending">Pending</a></option>
+                    <option value="ForPickUp"><a href="?filter=status&value=for pick-up">For Pick-up</a></option>
+                    <option value="Completed"><a href="?filter=status&value=completed">Completed</a></option>
+                </select> -->
                 <a href="#" class="add" id="addIdForm">+ ID Form</a>
                 <a href="archives/ArchiveIdForm.php" class="archiveResidents">Archive</a>
             </div>
