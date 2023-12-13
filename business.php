@@ -113,7 +113,18 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['business_type']?></td>
                         <td><?= $row['business_status']?></td>
                         <td>
-                            <a href="addBusiness.php" class="edit">Edit</a>
+                            <a href="addBusiness.php" class="edit"
+                            data-fname="<?= $row['taxpayer_fname'] ?>"
+                            data-mname="<?= $row['taxpayer_mname'] ?>"
+                            data-lname="<?= $row['taxpayer_lname'] ?>"
+                            data-suffix="<?= $row['taxpayer_suffix'] ?>"
+                            data-business_name="<?= $row['taxpayer_business_name'] ?>"
+                            data-house_no="<?= $row['taxpayer_house_no'] ?>"
+                            data-street="<?= $row['taxpayer_street'] ?>"
+                            data-subdivision="<?= $row['taxpayer_subdivision'] ?>"
+                            data-business_type="<?= $row['taxpayer_business_type'] ?>"
+                            data-business_started="<?= $row['taxpayer_business_started'] ?>"
+                            >Edit</a>
 
                             <a href="#" class="delete">Delete</a>
                              <div class="modal-delete">

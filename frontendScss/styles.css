@@ -1515,15 +1515,14 @@ footer .com ul li {
   }
 }
 .announcement_context .image-container {
-  background-color: red;
   width: 100%;
   height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .announcement_context .image-container img {
   width: 100%;
-  height: inherit;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 100%;
 }
 .announcement_context h2,
 .announcement_context p {

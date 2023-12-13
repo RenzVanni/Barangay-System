@@ -20,13 +20,12 @@
   }
 
   .image-container {
-    background-color: red;
     width: 100%;
     height: 600px;
+    object-fit: cover;
     img {
       width: 100%;
-      height: inherit;
-      object-fit: cover;
+      height: 100%;
     }
   }
   h2,

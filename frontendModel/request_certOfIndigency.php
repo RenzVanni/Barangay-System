@@ -53,6 +53,6 @@
         $_SESSION['message'] = 'Something went wrong!';
         $_SESSION['success'] = 'danger';
     }
-    header("Location: ../index.php");
+    header("Location: ../index.php#services");
 
 	$conn->close();

@@ -43,22 +43,15 @@
     </div>
 
     <div class="announcement_title">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, doloremque?</h1>
+        <h1><?= $announcement['title'] ?></h1>
     </div>
 
     <section class="announcement_context">
         <section class="image-container">
-            <img src="../BACKENDMONATO/uploads/announcement/<?= $announcement['image_announcement']?>" alt="image" />
+            <img src="./uploads/announcement/<?= $announcement['image_announcement']?>" alt="image" />
         </section>
-        <h2>NUTRITION MONTH 2023</h2>
-        <p>
-            This month of July we celebrate Nutrition Month with the theme
-            "Healthy Diet gawing affordable for all” which aims to preserve and
-            maintain the health and wellness of our bodies. A healthy diet and
-            focus on our physical well-being will benefit both our bodies and
-            minds. Let's celebrate and strive together to make healthy diet
-            affordable for everyone! #NutritionMonth2023 #SulongNaSulongPa
-        </p>
+        <h2><?= $announcement['title'] ?></h2>
+        <p><?= $announcement['details'] ?></p>
     </section>
 
 

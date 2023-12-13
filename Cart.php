@@ -54,6 +54,7 @@
                     <tbody>
                         <?php if(!empty($certs)) {?>
                         <?php foreach($certs as $row) : ?>
+                        <?php if($row['status'] !== "Completed") {?>
                         <tr>
                             <!-- <td><?= $row['applicant_fname']. " ". $row['applicant_mname']. " ". $row['applicant_lname'] ?>
                             </td> -->
@@ -96,7 +97,7 @@
                             </td>
                             <td>
                                 <?php
-                                if ($row['source'] === 'tbl_idform') { ?>
+                                if ($row['source'] === 'tbl_idform' && $row['status'] == "Pending") { ?>
                                 <a href="#" class="cancel-item">Cancel</a>
                                 <div class="cancel-container">
                                     <div class="confirm-cancel-item">
@@ -122,7 +123,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php } elseif ($row['source'] === 'tbl_brgyclearance') { ?>
+                                <?php } elseif ($row['source'] === 'tbl_brgyclearance' && $row['status'] == "Pending") { ?>
                                 <a href="#" class="cancel-item">Cancel</a>
                                 <div class="cancel-container">
                                     <div class="confirm-cancel-item">
@@ -260,6 +261,7 @@
                                 ?>
                             </td>
                         </tr>
+                        <?php } ?>
                         <?php  endforeach  ?>
                         <?php } ?>
                     </tbody>
