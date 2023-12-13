@@ -272,7 +272,7 @@ function calculateAge($dob) {
                             </div>
                         </div>
                         <div class="a2-complain" id="more-complain">
-                            <a href="complain.php" class="b3">More info</a>
+                            <a href="moreComplain.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
@@ -293,7 +293,7 @@ function calculateAge($dob) {
                             </div>
                         </div>
                         <div class="a2-awareness" id="more-awareness">
-                            <a href="awareness.php" class="b3">More info</a>
+                            <a href="moreAwareness.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
@@ -314,7 +314,7 @@ function calculateAge($dob) {
                             </div>
                         </div>
                         <div class="a2-b" id="more-blotters">
-                            <a href="blotter.php" class="b3">More info</a>
+                            <a href="moreBlotter.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="iconsBackend/down-arrow.png" alt="">
                             </div>

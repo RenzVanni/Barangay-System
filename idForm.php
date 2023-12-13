@@ -75,7 +75,7 @@ $stmt->close();
                 <a class="add1" href="?filter=status&value=for pick-up">For Pick-up</a>
                 <a class="add1" href="?filter=status&value=completed">Completed</a>
                
-                g
+                
                 <a href="archives/ArchiveIdForm.php" class="archiveResidents">Archive</a>
             </div>
         </div>
