@@ -1,12 +1,12 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tbl_households WHERE sex='Female' ORDER BY id DESC";
+$query =  "SELECT * FROM tbl_complain WHERE status='active' ORDER BY id DESC";
 $result = $conn->query($query);
 $total = $result->num_rows;
 
-$residents = array();
+$complain = array();
 while($row = $result->fetch_assoc()) {
-  $residents[] = $row;
+  $complain[] = $row;
 }
 
 function calculateAge($dob) {
@@ -107,11 +107,21 @@ function calculateAge($dob) {
                         <th>Date</th>
                         <th>Time</th>
                         <th>Location</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php if(!empty($complain)) { ?>
+                        <?php $no=1; foreach($complain as $row): ?>
+                            <tr>
+                                <td><?= $row['complainant_fname']." ".$row['complainant_mname']." ".$row['complainant_lname']." ".$row['complainant_suffix']?>
+                                </td>
+                                <td><?= $row['details']?></td>
+                                <td><?= $row['date'] ?></td>
+                                <td><?= $row['time'] ?></td>
+                                <td><?= $row['location'] ?></td>
+                            </tr>
+                        <?php $no++; endforeach ?>
+                    <?php } ?>  
                 </tbody>
                 <!-- Add more rows here -->
             </table>

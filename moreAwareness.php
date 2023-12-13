@@ -112,14 +112,14 @@ function calculateAge($dob) {
                 <tbody>
                     <?php if(!empty($awareness)) { ?>
                         <?php $no=1; foreach($awareness as $row): ?>
-                        <tr>
-                            <td><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']." ".$row['suffix']?>
-                            </td>
-                            <td><?= $row['details']?></td>
-                            <td><?= $row['date'] ?></td>
-                            <td><?= $row['time'] ?></td>
-                            <td><?= $row['location'] ?></td>
-                        </tr>
+                            <tr>
+                                <td><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']." ".$row['suffix']?>
+                                </td>
+                                <td><?= $row['details']?></td>
+                                <td><?= $row['date'] ?></td>
+                                <td><?= $row['time'] ?></td>
+                                <td><?= $row['location'] ?></td>
+                            </tr>
                         <?php $no++; endforeach ?>
                     <?php } ?>             
                 </tbody>

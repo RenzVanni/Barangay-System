@@ -29,11 +29,25 @@ function calculateAge($dob) {
   $query5 = "SELECT * FROM tbl_blotter";
 	$blotter = $conn->query($query5)->num_rows;
 
-  $query6 = "SELECT * FROM tbl_households WHERE osy='OSY'";
-	$osy = $conn->query($query6)->num_rows;
+    $eighteenYearsAgo = date('Y-m-d', strtotime('-24 years'));
+
+    $startDate = date('Y-m-d', strtotime('-24 years'));
+    $endDate = date('Y-m-d', strtotime('-15 years'));
+    // Fetch residents who are 18 years old and below based on their birthday
+    $select = $conn->prepare("SELECT * FROM tbl_households WHERE date_of_birth BETWEEN ? AND ? ");
+    $select->bind_param("ss", $startDate, $endDate);
+    $select->execute();
+    $result = $select->get_result();
+    $osy = $result->num_rows;
 
   $query7 = "SELECT * FROM tbl_households WHERE pwd='PWD'";
 	$pwd = $conn->query($query7)->num_rows;
+
+    $query8 =  "SELECT * FROM tbl_awareness WHERE status='active' ORDER BY timestamp DESC";
+    $awareness = $conn->query($query8)->num_rows;
+
+    $query9 =  "SELECT * FROM tbl_complain WHERE status='active' ORDER BY id DESC";
+    $complain = $conn->query($query9)->num_rows;
 
 //   $query8 = "SELECT * FROM tblresidents WHERE age>=60";
 // 	$snr = $conn->query($query8)->num_rows;
@@ -262,7 +276,7 @@ function calculateAge($dob) {
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">Complain</div>
-                                <div class="c2-complain">95</div>
+                                <div class="c2-complain"><?= number_format($complain) ?></div>
                                 <div class="c3">Total Complain</div>
                             </div>
                             <div class="b2">
@@ -283,7 +297,7 @@ function calculateAge($dob) {
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">Awareness</div>
-                                <div class="c2-awareness">123</div>
+                                <div class="c2-awareness"><?= number_format($awareness) ?></div>
                                 <div class="c3">Total Awareness</div>
                             </div>
                             <div class="b2">
