@@ -78,6 +78,7 @@ $stmt->close();
                     <option value="ForPickUp"><a href="?filter=status&value=for pick-up">For Pick-up</a></option>
                     <option value="Completed"><a href="?filter=status&value=completed">Completed</a></option>
                 </select> -->
+              
                 <a href="#" class="add" id="addIdForm">+ ID Form</a>
                 <a href="archives/ArchiveIdForm.php" class="archiveResidents">Archive</a>
             </div>
