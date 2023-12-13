@@ -91,6 +91,40 @@ function editResident(that) {
   $("#ext").val(ext);
 }
 
+// ! BUSINESS
+function editBusiness(that) {
+  id = $(that).attr("data-id");
+  taxpayer_fname = $(that).attr("data-fname");
+  taxpayer_mname = $(that).attr("data-mname");
+  taxpayer_lname = $(that).attr("data-lname");
+  taxpayer_suffix = $(that).attr("data-suffix");
+
+  business_name = $(that).attr("data-business_name");
+
+  house_no = $(that).attr("data-house_no");
+  street = $(that).attr("data-street");
+  subdivision = $(that).attr("data-subdivision");
+
+  business_type = $(that).attr("data-business_type");
+  business_status = $(that).attr("data-business_status");
+  business_started = $(that).attr("data-business_started");
+
+  $("#business_id").val(id);
+  $("#taxPayer_lname").val(taxpayer_fname);
+  $("#taxPayer_mname").val(taxpayer_mname);
+  $("#taxPayer_lname").val(taxpayer_lname);
+  $("#taxPayer_suffix").val(taxpayer_suffix);
+
+  $("#taxPayer_houseNo").val(houseNo);
+  $("#taxPayer_street").val(street);
+  $("#taxPayer_subdivision").val(subdivision);
+
+  $("#businessType").val(business_type);
+  $("#business_name").val(business_name);
+  $("#date_started").val(business_started);
+  $("#businessStatus").val(business_status);
+}
+
 // ! EDIT IDFORM
 function editIdForm(that) {
   id = $(that).attr("data-id");

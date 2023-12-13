@@ -73,7 +73,7 @@
 
                         <label for="date">Start Date</label>
                         <div class="input_business" required>
-                            <input type="date" name="date_started">
+                            <input type="date" id="date_started" name="date_started">
                         </div>
 
                         <label for="businessStatus">Business Status</label>
