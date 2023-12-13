@@ -321,6 +321,27 @@ function calculateAge($dob) {
                         </div>
                     </div>
 
+                    <div class="osy">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">OSY (15-24)</div>
+                                <div class="c2-o"><?= number_format($osy) ?></div>
+                                <div class="c3">Total Out of School Youth</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-o">
+                                    <img src="iconsBackend/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-o" id="more-osy">
+                            <a href="moreOSY.php" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="iconsBackend/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- <div class="osc">
                         <div class="a1">
                             <div class="b1">

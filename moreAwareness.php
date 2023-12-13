@@ -1,12 +1,12 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tbl_households WHERE sex='Female' ORDER BY id DESC";
+$query =  "SELECT * FROM tbl_awareness WHERE status='active' ORDER BY timestamp DESC";
 $result = $conn->query($query);
 $total = $result->num_rows;
 
-$residents = array();
+$awareness = array();
 while($row = $result->fetch_assoc()) {
-  $residents[] = $row;
+  $awareness[] = $row;
 }
 
 function calculateAge($dob) {
@@ -107,11 +107,21 @@ function calculateAge($dob) {
                         <th>Date</th>
                         <th>Time</th>
                         <th>Location</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php if(!empty($awareness)) { ?>
+                        <?php $no=1; foreach($awareness as $row): ?>
+                        <tr>
+                            <td><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']." ".$row['suffix']?>
+                            </td>
+                            <td><?= $row['details']?></td>
+                            <td><?= $row['date'] ?></td>
+                            <td><?= $row['time'] ?></td>
+                            <td><?= $row['location'] ?></td>
+                        </tr>
+                        <?php $no++; endforeach ?>
+                    <?php } ?>             
                 </tbody>
                 <!-- Add more rows here -->
             </table>
