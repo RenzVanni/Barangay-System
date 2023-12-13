@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <?php include "./frontendTemplate/message.php" ?>
     <?php include "./frontendModel/fetch_brgy_information.php" ?>
 
     <div class="cart">

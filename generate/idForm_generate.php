@@ -38,10 +38,14 @@
         <div class="print-title">
             <p>ID Form</p>
             <div class="left-title">
-                <label class="label">
-                    <input type="file" id="image-input" accept="image/*">
-                    <span>Select 2v2 Picture</span>
-                </label>
+                <form id="imageForm" action="../model/generate_edit/edit_idform_img.php" method="post" enctype="multipart/form-data">
+                    <label class="label">
+                        <input type="file" name="image" id="image-input" accept="image/*" onchange="submitForm()">
+                        <span>Select 2v2 Picture</span>
+                    </label>
+                    <input type="hidden" name="id" value="<?= $idForm['id'] ?>">
+                    <input type="submit" value="" style="display: none;">
+                </form>
                 <button type="button" id="edit" onclick="editIdForm(this)"
                     data-id="<?= $idForm['id']?>"
                     data-applicant_fname="<?= $idForm['applicant_fname']?>"
@@ -225,11 +229,11 @@
                             font-size: 7px;
                             font-style: normal;
                             font-weight: 600;
-                            line-height: normal;">
-                            <img id="image-preview1" style="width: 130px;
-                                height: 127px;
-                                border: none;
-                                display:none;">
+                            line-height: normal;
+                            object-fit: cover;">
+                            <img src="../uploads/idImage/<?= $idForm['image'] ?>" style="width: 100%;
+                                height: 100%;
+                                border: none;">
                         </div>
                     </div>
 
@@ -450,11 +454,11 @@
                             font-size: 7px;
                             font-style: normal;
                             font-weight: 600;
-                            line-height: normal;">
-                            <img id="image-preview2" style="width: 130px;
-                                height: 127px;
-                                border: none;
-                                display:none;">
+                            line-height: normal;
+                            object-fit: cover;">
+                            <img src="../uploads/idImage/<?= $idForm['image'] ?>" style="width: 100%;
+                                height: 100%;
+                                border: none;">
                         </div>
                     </div>
 
@@ -589,6 +593,25 @@
 </html>
 
 <script>
+      function submitForm() {
+            document.getElementById('imageForm').submit();
+        }
+
+        // Optional: Add image preview functionality as in the previous example
+        function previewImage() {
+            var input = document.getElementById('image-input');
+            var preview = document.getElementById('mainImagePreview');
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                // reader.onload = function (e) {
+                //     preview.src = e.target.result;
+                // };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 document.getElementById('image-input').addEventListener('change', function(event) {
     const input = event.target;
 
@@ -625,4 +648,5 @@ editLink.addEventListener('click', function(event) {
 closeIdForm.addEventListener('click', function() {
     modaleditLink.style.display = 'none';
 });
+
 </script>

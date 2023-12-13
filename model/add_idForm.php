@@ -28,7 +28,7 @@
     $documentFor      = $conn->real_escape_string($_POST['documentFor']);
     $purpose          = $conn->real_escape_string($_POST['purpose']);
 
-    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($applicant_lname) || !empty($requestor_lname) && !empty($documentFor)) {
+    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($applicant_lname) && !empty($documentFor)) {
 
         $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `applicant_suffix`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `requestor_suffix`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `purpose`, `status`) 
                     VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$applicant_suffix', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_suffix', '$house_no', '$street', '$subdivision', '$pob', '$dob', '$civil_status', '$contact_no', '$documentFor', '$purpose', 'Pending')";

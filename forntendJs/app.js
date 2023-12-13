@@ -290,3 +290,59 @@ awarenessBtn.addEventListener("click", () => {
     awarenessConfirmationCon.style.display = "none";
   });
 });
+
+// ! id image
+function displayImage() {
+  const input = document.getElementById("idImage");
+  const label = document.querySelector(".idLabel");
+  const preview = document.getElementById("previewImage");
+
+  // Check if a file is selected
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      // Display the image preview
+      preview.innerHTML =
+        '<img src="' + e.target.result + '" alt="Image Preview">';
+    };
+
+    // Read the selected file as a data URL
+    reader.readAsDataURL(input.files[0]);
+
+    // Update the label text to indicate the file name
+    label.textContent = input.files[0].name;
+  } else {
+    // No file selected, reset label and preview
+    label.textContent = "Image";
+    preview.innerHTML = "";
+  }
+}
+
+// ! PROFILE IMAGE
+function updateProfileImg() {
+  const profileImgInput = document.getElementById("yourImage");
+  const label = document.querySelector(".idLabel");
+  const profileImgPreview = document.getElementById("profile-preview");
+
+  // Check if a file is selected
+  if (profileImgInput.files && profileImgInput.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      // Display the image preview
+      profileImgPreview.innerHTML =
+        '<img src="' + e.target.result + '" alt="Image Preview">';
+    };
+
+    // Read the selected file as a data URL
+    reader.readAsDataURL(profileImgInput.files[0]);
+
+    // Update the label text to indicate the file name
+    label.textContent = profileImgInput.files[0].name;
+  } else {
+    // No file selected, reset label and preview
+    label.textContent = "Image";
+    profileImgPreview.innerHTML = "";
+  }
+}

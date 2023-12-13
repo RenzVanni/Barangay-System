@@ -39,7 +39,7 @@ header {
     background-size: cover;
     height: 40vh;
     padding: 5rem;
-    min-width: 780px;
+    min-width: 1100px;
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -85,20 +85,16 @@ header .logo-container {
   z-index: 3;
 }
 header .logo-container img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
+  width: inherit;
+  height: inherit;
   border-radius: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 @media (min-width: 375px) {
   header .logo-container {
-    width: 181px;
-    height: 181px;
+    width: 150px;
+    height: 150px;
     margin: 0;
   }
 }
@@ -142,8 +138,8 @@ header .user {
   header .user .profile-img {
     border: none;
     border-radius: 100%;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     -o-object-fit: cover;
        object-fit: cover;
     padding: 0.2rem;
@@ -152,6 +148,9 @@ header .user {
   header .user .profile-img img {
     width: 100%;
     height: 100%;
+  }
+  header .user p {
+    color: #f8f9fa;
   }
   header .user .profile-down {
     border: none;
@@ -1042,11 +1041,19 @@ header .user {
   align-items: center;
   justify-content: end;
 }
+@media (max-width: 1200px) {
+  .awareness-page {
+    flex-direction: column;
+  }
+  .awareness-page .section-1,
+  .awareness-page .section-2 {
+    padding: 1rem;
+  }
+}
 
 .frontend-contact-us {
   position: relative;
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1439,11 +1446,17 @@ footer .com ul li {
   width: 100%;
 }
 .login_page .section-2 form {
+  text-align: center;
   width: 70%;
 }
 .login_page .section-2 form h1 {
   color: #006630;
   text-align: center;
+  position: absolute;
+}
+.login_page .section-2 form span {
+  color: #e01e37;
+  font-size: 0.8rem;
 }
 .login_page .section-2 form .username,
 .login_page .section-2 form .password {
@@ -1455,7 +1468,7 @@ footer .com ul li {
 .login_page .section-2 form .username label,
 .login_page .section-2 form .password label {
   position: absolute;
-  top: 10px;
+  top: 7px;
   left: 10px;
   color: rgba(0, 0, 0, 0.6);
   transition: 0.2s ease-in-out;
@@ -1473,9 +1486,9 @@ footer .com ul li {
 .login_page .section-2 form .username input:valid + label,
 .login_page .section-2 form .password input:focus + label,
 .login_page .section-2 form .password input:valid + label {
-  top: -10px;
+  top: -11px;
   font-size: 0.8rem;
-  color: rgba(0, 0, 0, 0.35);
+  color: rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in-out;
 }
 .login_page .section-2 form button {
@@ -1836,6 +1849,29 @@ footer .com ul li {
   height: 100px;
   resize: none;
 }
+.active-service form .main-form .container .idImage-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+}
+.active-service form .main-form .container .idImage-container input[type=file] {
+  max-width: 250px;
+}
+.active-service form .main-form .container .idImage-container .previewImage {
+  aspect-ratio: 2/2;
+  width: 100px;
+  border: 2px solid black;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.active-service form .main-form .container .idImage-container .previewImage img {
+  width: 100%;
+  height: 100%;
+}
 .active-service form .main-form .container select {
   width: 30%;
 }
@@ -2019,10 +2055,17 @@ footer .com ul li {
   margin: 0 auto;
   background-color: #057435;
   border: 4px solid #fff;
+  border-radius: 1rem;
   color: #fff;
   padding: 1rem;
   text-align: center;
-  width: calc(100% - 30px);
+  width: clamp(250px, 100% - 30px, 350px);
+}
+.active-success .container h2 {
+  margin: 0;
+}
+.active-success .container p {
+  margin: 1rem 0 0 0 0;
 }
 @media (min-width: 375px) {
   .active-success .container {
@@ -2038,6 +2081,9 @@ footer .com ul li {
   display: flex;
   align-items: center;
   justify-content: end;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .chat-container {
@@ -2350,7 +2396,18 @@ main .section2 form .form2 input,
 main .section3 form .form2 input {
   display: none;
 }
+main .section2 form .form2 button,
+main .section3 form .form2 button {
+  margin-top: 1rem;
+  border: none;
+  background-color: #097338;
+  border-radius: 0.2rem;
+  color: #f8f9fa;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
 main .section3 {
+  background-color: #212529;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2367,7 +2424,7 @@ main .section3 .close-profile {
 }
 main .section3 .key-img {
   padding: 0.3rem;
-  border: 2px solid #212529;
+  border: 2px solid #f8f9fa;
   border-radius: 0.3rem;
   width: -moz-fit-content;
   width: fit-content;
@@ -2377,11 +2434,13 @@ main .section3 .key-img {
   margin-bottom: 2rem;
 }
 main .section3 h1 {
+  color: #f8f9fa;
   position: static;
   font-size: 1.5rem;
   margin: 0;
 }
 main .section3 p {
+  color: #f8f9fa;
   font-size: 0.7rem;
   margin: 0;
 }
@@ -2396,19 +2455,21 @@ main .section3 form {
   margin-top: 1rem;
 }
 main .section3 form input {
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(248, 249, 250, 0.5);
   border-radius: 0.3rem;
+  background-color: transparent;
   width: 100%;
-  padding: 0.5rem 0.2rem;
+  padding: 0.5rem 0.3rem;
   outline: transparent;
   margin-bottom: 1rem;
+  color: #f8f9fa;
 }
 main .section3 form button {
-  background-color: #097338;
+  background-color: #f8f9fa;
   border-radius: 0.3rem;
   border: none;
-  color: #f8f9fa;
-  font-weight: 500;
+  color: #097338;
+  font-weight: 600;
   width: 100%;
   padding: 0.5rem;
 }

@@ -25,11 +25,18 @@
     $requestor_civilStatus      = $conn->real_escape_string($_POST['requestor_civilStatus']);
     $contactNo      = $conn->real_escape_string($_POST['contactNo']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
-    
-    if(!empty($applicant_fname) || !empty($requestor_fname)){
+    $image = $_FILES['image']['name'];
 
-        $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `status`, `seen`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_houseNo', '$requestor_street', '$requestor_subdivision', '$requestor_pob', '$requestor_dob', '$requestor_civilStatus','$contactNo', '$documentFor', 'Pending', 'unread')";
+
+// File upload handling
+    $targetDirectory = "../uploads/idImage/";
+    $targetAnnouncement = $targetDirectory . basename($_FILES['image']['name']);
+    $validAnnouncementImage = move_uploaded_file($_FILES['image']['tmp_name'], $targetAnnouncement);
+    
+    if(!empty($applicant_fname) && !empty($applicant_lname)){
+
+        $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `status`, `seen`, `image`) 
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_houseNo', '$requestor_street', '$requestor_subdivision', '$requestor_pob', '$requestor_dob', '$requestor_civilStatus','$contactNo', '$documentFor', 'Pending', 'unread', '$image')";
         $result  = $conn->query($insert);
 
         if($result === true){
@@ -46,7 +53,27 @@
             $_SESSION['success'] = 'danger';
         }
 
-    }else{
+    } else if(!empty($requestor_fname) && !empty($requestor_lname)) {
+
+        $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `status`, `seen`, `image`) 
+                    VALUES ('$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_houseNo', '$requestor_street', '$requestor_subdivision', '$requestor_pob', '$requestor_dob', '$requestor_civilStatus','$contactNo', '$documentFor', 'Pending', 'unread', '$image')";
+        $result  = $conn->query($insert);
+
+        if($result === true){
+            $_SESSION['message'] = 'Identification requested successfully!';
+            $_SESSION['sub_message'] = '     <p>Thank you for your request. We are working on it! To check your request status, please go to <a
+                href="Cart.php">"Request Status"</a> page.
+        </p>';
+            $_SESSION['success'] = 'success';
+            $certClass = "Identification";
+            include "./received/received_request.php";
+
+        }else{
+            $_SESSION['message'] = 'Something went wrong daw!';
+            $_SESSION['success'] = 'danger';
+        }
+
+    } else{
 
         $_SESSION['message'] = 'Please fill up the form completely!';
         $_SESSION['success'] = 'danger';

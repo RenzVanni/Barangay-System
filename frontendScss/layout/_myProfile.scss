@@ -134,11 +134,22 @@ main {
         input {
           display: none;
         }
+
+        button {
+          margin-top: 1rem;
+          border: none;
+          background-color: #097338;
+          border-radius: 0.2rem;
+          color: #f8f9fa;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+        }
       }
     }
   }
 
   .section3 {
+    background-color: #212529;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,7 +165,7 @@ main {
     }
     .key-img {
       padding: 0.3rem;
-      border: 2px solid #212529;
+      border: 2px solid #f8f9fa;
       border-radius: 0.3rem;
       width: fit-content;
       display: flex;
@@ -163,11 +174,13 @@ main {
       margin-bottom: 2rem;
     }
     h1 {
+      color: #f8f9fa;
       position: static;
       font-size: 1.5rem;
       margin: 0;
     }
     p {
+      color: #f8f9fa;
       font-size: 0.7rem;
       margin: 0;
     }
@@ -182,20 +195,22 @@ main {
       height: fit-content;
       margin-top: 1rem;
       input {
-        border: 1px solid rgba($color: #000000, $alpha: 0.5);
+        border: 1px solid rgba($color: #f8f9fa, $alpha: 0.5);
         border-radius: 0.3rem;
+        background-color: transparent;
         width: 100%;
-        padding: 0.5rem 0.2rem;
+        padding: 0.5rem 0.3rem;
         outline: transparent;
         margin-bottom: 1rem;
+        color: #f8f9fa;
       }
 
       button {
-        background-color: #097338;
+        background-color: #f8f9fa;
         border-radius: 0.3rem;
         border: none;
-        color: #f8f9fa;
-        font-weight: 500;
+        color: #097338;
+        font-weight: 600;
         width: 100%;
         padding: 0.5rem;
       }

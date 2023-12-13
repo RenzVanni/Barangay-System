@@ -122,6 +122,15 @@
       }
     }
   }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+
+    .section-1,
+    .section-2 {
+      padding: 1rem;
+    }
+  }
 }
 
 // .awareness-page::before {
