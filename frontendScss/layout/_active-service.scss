@@ -56,6 +56,31 @@
           height: 100px;
           resize: none;
         }
+        .idImage-container {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 1rem;
+
+          input[type="file"] {
+            max-width: 250px;
+          }
+
+          .previewImage {
+            aspect-ratio: 2/2;
+            width: 100px;
+            border: 2px solid black;
+            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
         select {
           width: 30%;
         }

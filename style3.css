@@ -189,6 +189,22 @@
   margin-right: 20px;
   display: flex;
 }
+.second_layer .add-cont .add1 {
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #005072;
+  background: #fff;
+  color: #005072;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding: 5px 10px;
+  border-radius: 20px;
+  justify-content: center;
+  margin-right: 20px;
+  display: flex;
+}
 .second_layer .add-cont select {
   height: 39px;
   display: flex;

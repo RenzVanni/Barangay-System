@@ -28,8 +28,7 @@ function calculateAge($dob) {
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js "></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.2.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    
 
 </head>
 
@@ -135,6 +134,10 @@ function calculateAge($dob) {
             </div>
         </div>
 
+        <script src="./js//jQuery-3.7.0.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+        <script src="./js/app.js"></script>
+
         <script>
            $(document).ready(function() {
                 var dataTable = $('#table').DataTable({
@@ -164,8 +167,7 @@ function calculateAge($dob) {
         </script>
     </div>
 
-    <script src="./js//jQuery-3.7.0.js"></script>
-    <script src="./js/app.js"></script>
+  
 </body>
 
 </html>

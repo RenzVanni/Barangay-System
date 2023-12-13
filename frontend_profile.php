@@ -13,7 +13,7 @@
             <div class="close-profile">
                 <img src="./assets/close-login.svg" alt="close-icon">
             </div>
-            <form action="">
+            <form action="./frontendModel/profile/update_profile.php" method="post" enctype="multipart/form-data">
                 <div class="form1">
                     <label for="">Username:</label>
                     <input type="text" readonly name="" id="" value="<?= $_SESSION['username'] ?>">
@@ -32,13 +32,15 @@
                 </div>
                 <div class="form2">
 
-                <div class="profile-img">
-                    <img src="./assets/default-profile.svg" alt="default-profile-icon">
+                <div class="profile-img" id="profile-preview">
+                    <!-- <img src="./assets/default-profile.svg" alt="default-profile-icon"> -->
                 </div>
                     <label for="yourImage">
                         <img src="./assets/camera-icon.svg" alt="camera-icon">
                     </label>
-                    <input type="file" name="" id="yourImage">
+                    <input type="file" name="" id="yourImage" onchange="updateProfileImg()" required>
+                    <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
+                    <button type="submit" name="submit">Save</button>
                 </div>
             </form>
         </div>

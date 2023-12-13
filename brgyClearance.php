@@ -71,15 +71,11 @@ $stmt->close();
                 <input type="text" class="searchBar" placeholder=" Enter text here">
             </div>
             <div class="add-cont">
-                <a href="?filter=status&value=Pending">Pending</a>
-                <a href="?filter=status&value=for pick-up">For Pick-up</a>
-                <a href="?filter=status&value=completed">Completed</a>
-                <!-- <select name="status_change" id="status_change">
-                    <option value="Pending">Pending</option>
-                    <option value="ForPickUp">For Pick-up</option>
-                    <option value="Completed">Completed</option>
-                </select> -->
+               
                 <a href="#" class="add" id="addbrgyClearance">+ Clearance</a>
+                <a class="add1" href="?filter=status&value=Pending">Pending</a>
+                <a class="add1" href="?filter=status&value=for pick-up">For Pick-up</a>
+                <a class="add1" href="?filter=status&value=completed">Completed</a>
                 <a href="archives/ArchivebrgyClearance.php" class="archiveResidents">Archive</a>
             </div>
         </div>

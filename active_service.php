@@ -1,5 +1,5 @@
 <div class="active-service" id="active-service">
-    <form class="active-form" action="./frontendModel/request_brgyId.php" method="post">
+    <form class="active-form" action="./frontendModel/request_brgyId.php" method="post" enctype="multipart/form-data">
         <div class="main-form">
             <div class="active-service-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Barangay ID</h2>
@@ -15,6 +15,11 @@
             <div class="container">
                 <label for="contact-number">Contact Number</label>
                 <input required type="text" name="contactNo" id="contact-number" placeholder="Enter Contact Number" />
+
+                <div class="idImage-container">
+                    <input type="file" name="image" id="idImage" onchange="displayImage()">
+                    <div id="previewImage" class="previewImage"></div>
+                </div>
             </div>
             <div class="container">
                 <label for="for">For</label>

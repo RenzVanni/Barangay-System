@@ -21,7 +21,7 @@ header {
     background-size: cover;
     height: 40vh;
     padding: 5rem;
-    min-width: 780px;
+    min-width: 1100px;
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -66,19 +66,19 @@ header {
     z-index: 3;
 
     img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      width: inherit;
+      height: inherit;
       border-radius: 100%;
       object-fit: cover;
     }
 
     @media (min-width: 375px) {
-      width: 181px;
-      height: 181px;
+      width: 150px;
+      height: 150px;
       margin: 0;
     }
   }
@@ -119,8 +119,8 @@ header {
       .profile-img {
         border: none;
         border-radius: 100%;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         object-fit: cover;
         padding: 0.2rem;
         overflow: hidden;
@@ -129,6 +129,10 @@ header {
           width: 100%;
           height: 100%;
         }
+      }
+
+      p {
+        color: #f8f9fa;
       }
 
       .profile-down {

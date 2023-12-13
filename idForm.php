@@ -70,16 +70,12 @@ $stmt->close();
             </div>
            
             <div class="add-cont">
-                <a href="?filter=status&value=Pending">Pending</a>
-                <a href="?filter=status&value=for pick-up">For Pick-up</a>
-                <a href="?filter=status&value=completed">Completed</a>
-                <!-- <select name="status_change" id="status_change">
-                    <option value="Pending"><a href="?filter=status&value=pending">Pending</a></option>
-                    <option value="ForPickUp"><a href="?filter=status&value=for pick-up">For Pick-up</a></option>
-                    <option value="Completed"><a href="?filter=status&value=completed">Completed</a></option>
-                </select> -->
-              
                 <a href="#" class="add" id="addIdForm">+ ID Form</a>
+                <a class="add1" href="?filter=status&value=Pending">Pending</a>
+                <a class="add1" href="?filter=status&value=for pick-up">For Pick-up</a>
+                <a class="add1" href="?filter=status&value=completed">Completed</a>
+               
+                g
                 <a href="archives/ArchiveIdForm.php" class="archiveResidents">Archive</a>
             </div>
         </div>
