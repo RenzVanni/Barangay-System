@@ -25,7 +25,7 @@
           <a class="db" href="../dashboard.php">Dashboard</a>
           <a class="bo" href="../barangayOfficials.php">Barangay Officials</a>
           <a class="ri" href="#">Residents Information</a>
-          <a href="../residentInfo.php" class="residentInfo">Residents Records</a>
+          <a href="../residentInfo.php" class="residentInfo">Individual Records</a>
           <a href="../household.php" class="household">Household Records</a>
           <a href="../business.php" class="businessInfo">Business Records</a>
           <a class="cc" href="#">Certificate/Clearance</a>

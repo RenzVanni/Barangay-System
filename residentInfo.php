@@ -185,42 +185,9 @@ function calculateAge($dob) {
                         <td><?= $row['house_no']. " " .$row['street']. " " .$row['subdivision'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td class="actions">
-                            <a href="#" class="edit" id="editResidents" onclick="editResident(this)"
-                                data-id="<?= $row['id'] ?>" data-fname="<?= $row['firstname'] ?>"
-                                data-mname="<?= $row['middlename'] ?>" data-lname="<?= $row['lastname'] ?>"
-                                data-sex="<?= $row['sex'] ?>" data-houseNo="<?= $row['house_no'] ?>"
-                                data-street="<?= $row['street'] ?>" data-subdivision="<?= $row['subdivision'] ?>"
-                                data-dbirth="<?= $row['date_of_birth'] ?>" data-pbirth="<?= $row['place_of_birth'] ?>"
-                                data-cstatus="<?= $row['civil_status'] ?>" data-occupation="<?= $row['occupation'] ?>"
-                                data-email="<?= $row['email'] ?>" data-contactNo="<?= $row['contact_no'] ?>"
-                                data-vstatus="<?= $row['voter_status'] ?>" data-citizenship="<?= $row['citizenship'] ?>"
-                                data-householdNo="<?= $row['household_no'] ?>" data-osy="<?= $row['osy'] ?>"
-                                data-pwd="<?= $row['pwd'] ?>">Edit</a>
-                            <?php 
-                                $userExists = false;
-                                foreach($users as $user) {
-                                    if ($user['firstname'] === $row['firstname'] && $user['lastname'] === $row['lastname']) {
-                                        $userExists = true;
-                                        break;
-                                    }
-                                }
-                            ?>
-                            <?php if(!$userExists) { ?>
-                            <a href="#" class="accountBtn" onclick="createAccount(this)"
-                                data-id="<?= $row['id'] ?>" 
-                                data-fname="<?= $row['firstname'] ?>" 
-                                data-mname="<?= $row['middlename'] ?>"
-                                data-lname="<?= $row['lastname'] ?>"
-                                data-age="<?= calculateAge($row['date_of_birth']) ?>" 
-                                data-sex="<?= $row['sex'] ?>"
-                                data-houseNo="<?= $row['house_no'] ?>" 
-                                data-street="<?= $row['street'] ?>"
-                                data-subdivision="<?= $row['subdivision'] ?>" 
-                                data-cstatus="<?= $row['civil_status'] ?>"
-                                data-dbirth="<?= $row['date_of_birth'] ?>" 
-                                data-pbirth="<?= $row['place_of_birth'] ?>" 
-                                data-email="<?= $row['email'] ?>">Account</a>
-                            <?php } ?>
+                            <a href="addHousehold.php" class="edit" id="editResidents">Edit</a>
+                           
+                            
                             <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
 
                             <div class="modal-delete">
@@ -428,22 +395,7 @@ function calculateAge($dob) {
 <script src=" ./js/jQuery-3.7.0.js"></script>
 <script src="./js//app.js"></script>
 <script>
-const editResidentsLink = document.querySelectorAll('.edit');
-const modalEdit = document.querySelector('.modal-editResidents');
-const closeButtonEdit = document.querySelector('.closeBtnEdit');
 
-// EDIT RESIDENTS
-editResidentsLink.forEach(edit => {
-    edit.addEventListener('click', function(event) {
-        event.preventDefault();
-        modalEdit.style.display = 'block';
-        console.log("log")
-    });
-})
-
-closeButtonEdit.addEventListener('click', function() {
-    modalEdit.style.display = 'none';
-});
 
 
 
