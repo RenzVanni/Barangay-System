@@ -8,6 +8,14 @@ include '../../server/server.php';
 	}
 	
 	$id 	= $conn->real_escape_string($_GET['id']);
+	$head 	= $conn->real_escape_string($_GET['head']);
+
+	if($head == 'yes') {
+		$_SESSION['message'] = 'You cannot delete the household head!';
+		$_SESSION['success'] = 'danger';
+		header("Location: ../../household.php");
+		exit();
+	}
 
 	if($id != ''){
 

@@ -83,6 +83,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
+        // If there's only one entry, set $householdHeadId directly
+        if ($totalEntries === 1) {
+            $householdHeadId = $_POST['id'][0];
+        }
+
                // If the record does not exist, perform an INSERT
         if ($stmtCheck->num_rows === 0) {
 

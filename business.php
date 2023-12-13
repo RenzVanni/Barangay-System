@@ -114,16 +114,19 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['business_status']?></td>
                         <td>
                             <a href="addBusiness.php" class="edit"
+                            onclick="editBusiness(this)"
+                            data-id="<?= $row['id'] ?>"
                             data-fname="<?= $row['taxpayer_fname'] ?>"
                             data-mname="<?= $row['taxpayer_mname'] ?>"
                             data-lname="<?= $row['taxpayer_lname'] ?>"
                             data-suffix="<?= $row['taxpayer_suffix'] ?>"
-                            data-business_name="<?= $row['taxpayer_business_name'] ?>"
-                            data-house_no="<?= $row['taxpayer_house_no'] ?>"
-                            data-street="<?= $row['taxpayer_street'] ?>"
-                            data-subdivision="<?= $row['taxpayer_subdivision'] ?>"
-                            data-business_type="<?= $row['taxpayer_business_type'] ?>"
-                            data-business_started="<?= $row['taxpayer_business_started'] ?>"
+                            data-business_name="<?= $row['business_name'] ?>"
+                            data-house_no="<?= $row['house_no'] ?>"
+                            data-street="<?= $row['street'] ?>"
+                            data-subdivision="<?= $row['subdivision'] ?>"
+                            data-business_type="<?= $row['business_type'] ?>"
+                            data-business_status="<?= $row['business_status'] ?>"
+                            data-business_started="<?= $row['business_started'] ?>"
                             >Edit</a>
 
                             <a href="#" class="delete">Delete</a>
@@ -152,6 +155,8 @@ while($row = $result->fetch_assoc()) {
     </div>
 
 
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script src="./js//app.js"></script>
 
 </body>
 

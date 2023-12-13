@@ -208,7 +208,7 @@ if ($result2->num_rows > 0) {
                         <?php }?>
                         <td>
                             <button class="delete" style="border:none; background: none; color: #ff0000;
-                              font-size: 10px; font-family: Poppins; font-style: normal; font-weight: 700; line-height: normal;">Delete</button>
+                              font-size: 10px; font-family: Poppins; font-style: normal; font-weight: 700; line-height: normal;"><a href="./model/remove/remove_resident.php?id=<?= $row['id'] ?>&head=<?= $row['household_head'] ?>" style="color: #ff0000; text-decoration:none;">Delete</a></button>
                         </td>
                         <td style="display: none;"><input type="text" value="<?= $row['place_of_birth'] ?>" name="placeBirth[]" id=""></td>
                         <td style="display: none;"><input type="text" value="<?= $row['citizenship'] ?>" name="citizenship[]" id=""></td>
