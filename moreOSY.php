@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 </head>
 <body>
     
@@ -45,10 +45,44 @@
             <p>Total OSY</p>
             <a href="#">Logout</a>
         </div>
-        <div class="second_layer">
+
+        <a href="dashboard.php" class="backContainer">
+            <img src="iconsBackend/back.png" alt="">
+            <p>Go Back</p>
+        </a>
+        
+        <div class="second_layer1">
             <div class="search-cont">
                 <p>Search:</p>
-                <input type="text" class="searchBar" placeholder=" Enter text here">
+                <input type="text" class="searchBar" placeholder="Enter text here" id="searchInput">
+            </div>
+
+            <div class="sorting-cont">
+                
+                <div class="label-cont">
+                <p>Sort and Filter By:</p>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="0"> Full Name</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="1"> Age</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="2"> Sex</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="3"> Civil Status</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="4"> Street</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="5"> Email</label>
+                    
+                    <!-- Add more checkboxes for other columns -->
+                </div>
+              
+
+               <div class="order-cont">
+                <p>Order:</p>
+                    <select id="orderSelect">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+
+                <button id="sortButton">Sort</button>   
+               </div>
+
+               
             </div>
         </div>
 
@@ -62,22 +96,7 @@
                     <img src="icons/ResidentsSeeMore.png" alt="">
                 </div>
             </div>
-            <div class="Second-Cont">
-                <div class="smallBoxOsy">
-                    <div class="text-cont">
-                        <p class="text">Male</p>
-                        <p class="number">600</p>
-                    </div>
-                    <img src="icons/people.png" alt="">
-                </div>
-                <div class="smallBoxOsy">
-                    <div class="text-cont">
-                        <p class="text">Female</p>
-                        <p class="number">600</p>
-                    </div>
-                    <img src="icons/people.png" alt="">
-                </div>
-            </div>
+           
         </div>
 
         <div class="fourth_layer">
@@ -86,10 +105,10 @@
                     <tr>
                         <th>Full Name</th>
                         <th>Age</th>
-                        <th>Date of Birth</th>
-                        <th>Gender</th>
+                        <th>Sex</th>
                         <th>Civil Status</th>
                         <th>Street</th>
+                        <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -108,9 +127,46 @@
                 </tbody>
                 <!-- Add more rows here -->
             </table>
+
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
 
-     
+      <!-- <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.2.js"></script> -->
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script src="./js/app.js"></script>
+
+        <script>
+           $(document).ready(function() {
+                var dataTable = $('#table').DataTable({
+                    "paging": false, // Disable pagination for simplicity
+                    "searching": true // Enable searching
+                });
+
+                // Enable search functionality for the DataTable
+                $('#searchInput').on('keyup', function() {
+                    dataTable.search($(this).val()).draw();
+                });
+
+                // Custom sorting and filtering
+                $('#sortButton').on('click', function() {
+                    var order = $('#orderSelect').val(); // Get the selected order
+                    var columnsToSort = [];
+
+                    // Collect columns to sort based on checked checkboxes
+                    $('.sort-checkbox:checked').each(function() {
+                        columnsToSort.push(parseInt($(this).data('column')));
+                    });
+
+                    // Perform custom sorting
+                    dataTable.order(columnsToSort.map(column => [column, order])).draw();
+                });
+            });
+        </script>
     </div>
 </body>
 </html>
