@@ -58,7 +58,7 @@
 			include './sendAccount.php';
 		}
 
-		insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $pbirth, $email, $houseNo, $subdivision, $contact);
+		// insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $pbirth, $email, $houseNo, $subdivision, $contact);
 	} else {
 		$_SESSION['message'] = 'Resident Information already exists';
 		$_SESSION['success'] = 'danger';

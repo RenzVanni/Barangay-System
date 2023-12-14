@@ -346,3 +346,4 @@ function updateProfileImg() {
     profileImgPreview.innerHTML = "";
   }
 }
+

@@ -24,7 +24,8 @@ try {
     // Content
     $mail->isHTML(true);                        // Set email format to HTML
     $mail->Subject = 'Welcome to CHIMKEN - Chimken is the greatest and will take over the world with poppy. You cannot stop the chimken, poppy, church will find you.';
-    $mail->Body    = $message;
+    $fromEmail = empty($_POST["email"]) ? $_POST["email"] : $email;
+    $mail->Body    = 'From: '. $fromEmail ."<br/>". $message;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

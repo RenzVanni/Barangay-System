@@ -142,10 +142,10 @@ if ($result2->num_rows > 0) {
                     </div>
                    
 
-                    <div class="inputProfile">
+                    <!-- <div class="inputProfile">
                         <p>Image Profile</p>
                         <input type="file" name="imageProfile[]" id="imageProfile" accept="image/*" onchange="previewProfile()">
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -156,7 +156,7 @@ if ($result2->num_rows > 0) {
 
         <p class="List">List of Members</p>
 
-        <form action="./model/edit_households.php" enctype="multipart/form-data" method="post" class="input-table">
+        <form action="./model/edit_households.php"  method="post" class="input-table">
             <table class="main-table">
                 <thead>
                     <tr>
