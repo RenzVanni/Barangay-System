@@ -1,4 +1,26 @@
 <?php include './server/server.php'?>
+<?php
+    $startDate = date('Y-m-d', strtotime('-4 years'));
+    // $endDate = date('Y-m-d', strtotime('-15 years'));
+    // Fetch residents who are 18 years old and below based on their birthday
+    $select = $conn->prepare("SELECT * FROM tbl_households WHERE date_of_birth = ? ");
+    $select->bind_param("s", $startDate);
+    $select->execute();
+    $result = $select->get_result();
+    $total = $result->num_rows;
+
+    $residents = array();
+    while ($row = $result->fetch_assoc()) {
+        $residents[] = $row;
+    }
+
+    function calculateAge($dob) {
+        $today = new DateTime();
+        $birthDate = new DateTime($dob);
+        $interval = $today->diff($birthDate);
+        return $interval->y;
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +57,7 @@
                 <div class="bigBoxSenior">
                     <div class="text-cont">
                         <p class="text">TOTAL SENIOR CITIZEN</p>
-                        <p class="number">3,000</p>
+                        <p class="number"><?= number_format($total) ?></p>
                     </div>
                     <img src="icons/ResidentsSeeMore.png" alt="">
                 </div>

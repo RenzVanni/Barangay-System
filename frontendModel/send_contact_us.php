@@ -11,8 +11,8 @@
     $email 	  = $conn->real_escape_string($_POST['email']);
     $message 	  = $conn->real_escape_string($_POST['message']);
 
-    $insert  = "INSERT INTO chat_messages (`messages`, `sender`, `email`, `seen`) 
-    VALUES ('$message', '$name', '$email', 'unread')";
+    $insert  = "INSERT INTO contact_us (`name`, `message`, `email`, `seen`) 
+    VALUES ('$name', '$message', '$email', 'unread')";
 
     include "./contact_us/email_contact_us.php";
     $result  = $conn->query($insert);

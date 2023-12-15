@@ -20,6 +20,8 @@ if($sortOption == "age") {
     $query .= " ORDER BY $sortOption DESC";
 }
 
+$query .= " ORDER BY id DESC";
+
 $stmt = $conn->prepare($query);
 
 if (!empty($types) && !empty($params)) {

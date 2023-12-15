@@ -1549,6 +1549,7 @@ footer .com ul li {
 .login_page .section-3 form .register-fname,
 .login_page .section-3 form .register-mname,
 .login_page .section-3 form .register-lname,
+.login_page .section-3 form .register-suffix,
 .login_page .section-3 form .register-bod {
   display: flex;
   border: 1px solid #212529;
@@ -1562,6 +1563,7 @@ footer .com ul li {
 .login_page .section-3 form .register-fname .icon-container,
 .login_page .section-3 form .register-mname .icon-container,
 .login_page .section-3 form .register-lname .icon-container,
+.login_page .section-3 form .register-suffix .icon-container,
 .login_page .section-3 form .register-bod .icon-container {
   width: 25px;
   display: flex;
@@ -1574,6 +1576,7 @@ footer .com ul li {
 .login_page .section-3 form .register-fname input,
 .login_page .section-3 form .register-mname input,
 .login_page .section-3 form .register-lname input,
+.login_page .section-3 form .register-suffix input,
 .login_page .section-3 form .register-bod input {
   padding: 0.5rem;
   outline: none;

@@ -40,7 +40,16 @@ function calculateAge($dob) {
     $result = $select->get_result();
     $osy = $result->num_rows;
 
-  $query7 = "SELECT * FROM tbl_households WHERE pwd='PWD'";
+    $startDateSnr = date('Y-m-d', strtotime('-24 years'));
+    // $endDateSnr = date('Y-m-d', strtotime('-15 years'));
+    // Fetch residents who are 18 years old and below based on their birthday
+    $selectSnr = $conn->prepare("SELECT * FROM tbl_households WHERE date_of_birth = ? ");
+    $selectSnr->bind_param("s", $startDateSnr);
+    $selectSnr->execute();
+    $resultSnr = $selectSnr->get_result();
+    $snr = $resultSnr->num_rows;
+
+    $query7 = "SELECT * FROM tbl_households WHERE pwd='PWD'";
 	$pwd = $conn->query($query7)->num_rows;
 
     $query8 =  "SELECT * FROM tbl_awareness WHERE status='active' ORDER BY timestamp DESC";
@@ -335,21 +344,21 @@ function calculateAge($dob) {
                         </div>
                     </div>
 
-                    <div class="osy">
+                    <div class="senior">
                         <div class="a1">
                             <div class="b1">
-                                <div class="c1">OSY (15-24)</div>
-                                <div class="c2-o"><?= number_format($osy) ?></div>
-                                <div class="c3">Total Out of School Youth</div>
+                                <div class="c1">Senior Citizen</div>
+                                <div class="c2-senior"><?= number_format($snr) ?></div>
+                                <div class="c3">Total Senior Citizens</div>
                             </div>
                             <div class="b2">
-                                <div class="c4-o">
+                                <div class="c4-senior">
                                     <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="a2-o" id="more-osy">
-                            <a href="moreOSY.php" class="b3">More info</a>
+                        <div class="a2-senior" id="more-senior">
+                            <a href="moreSNR.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="iconsBackend/down-arrow.png" alt="">
                             </div>

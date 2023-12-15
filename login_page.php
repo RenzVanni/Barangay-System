@@ -83,6 +83,12 @@
                     </div>
                         <input type="text" name="lastname" id="" placeholder="Lastname" required>
                 </div>
+                <div class="register-suffix">
+                    <div class="icon-container">
+                        <img src="./assets/register-userId-icon.svg" alt="">
+                    </div>
+                        <input type="text" name="suffix" id="" placeholder="suffix" >
+                </div>
                 <div class="register-bod">
                     <div class="icon-container">
                         <img src="./assets/register-userId-icon.svg" alt="">
