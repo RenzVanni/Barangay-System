@@ -15,7 +15,7 @@ while($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blotter Reports</title>
-    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?> ">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="./style/generateCert.css">
@@ -61,8 +61,8 @@ while($row = $result->fetch_assoc()) {
                         <th>Complainant</th>
                         <th>Respondent</th>
                         <th>Victim(s)</th>
-                        <th>Blotter/Incident</th>
-                        <th>Status</th>
+                    
+                      
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -76,8 +76,7 @@ while($row = $result->fetch_assoc()) {
                         </td>
                         <td><?= $row['victim_fname']." ".$row['victim_mname']." ".$row['victim_lname']." ".$row['victim_suffix'] ?>
                         </td>
-                        <td><?= $row['type'] ?></td>
-                        <td><?= $row['status'] ?></td>
+                       
                         <td class="actions">
                             <a href="#" class="edit" id="editBlotter" onclick="editBlotter(this)"
                                 data-id="<?= $row['id'] ?>" data-complainant-fname="<?= $row['complainant_fname'] ?>"
@@ -91,10 +90,9 @@ while($row = $result->fetch_assoc()) {
                                 data-victim-fname="<?= $row['victim_fname'] ?>"
                                 data-victim-mname="<?= $row['victim_mname'] ?>"
                                 data-victim-lname="<?= $row['victim_lname'] ?>"
-                                data-victim-suffix="<?= $row['victim_suffix'] ?>" data-type="<?= $row['type'] ?>"
+                                data-victim-suffix="<?= $row['victim_suffix'] ?>" 
                                 data-location="<?= $row['location'] ?>" data-date="<?= $row['date'] ?>"
-                                data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>"
-                                data-status="<?= $row['status'] ?>">Edit</a>
+                                data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>">Edit</a>
                             <!-- <a href="./model/print_blotter.php?id=<?= $row['id']?>" class="print">Print</a> -->
                             <a href="#" class="delete">Delete</a>
 
@@ -148,7 +146,7 @@ while($row = $result->fetch_assoc()) {
                         <input type="text" name="complainant_suffix" id="complainant_suffix" placeholder="Suffix">
                     </div>
 
-                    <label for="respondent">Repondent</label>
+                    <label for="respondent">Respondent</label>
                     <div class="input-cont-blotter">
                         <input type="text" name="respondent_fname" id="respondent_fname" placeholder="First Name"
                             required>
@@ -173,12 +171,6 @@ while($row = $result->fetch_assoc()) {
                     <label for="time">Time</label>
                     <input id="timeBlotter" type="time" name="time" required>
 
-                    <label for="type">Type</label>
-                    <select id="typeBlotter" name="type" required>
-                        <option value="">Select Type</option>
-                        <option value="amicable">Amicable</option>
-                        <option value="incident">Incident</option>
-                    </select>
 
                     <label for="location">Location</label>
                     <input id="locationBlotter" type="text" name="location" placeholder="Street Name" required>
@@ -188,12 +180,7 @@ while($row = $result->fetch_assoc()) {
                     <label for="date">Date</label>
                     <input id="dateBlotter" type="date" name="date" required>
 
-                    <label for="status">Status</label>
-                    <select id="statusBlotter" name="status" required>
-                        <option value="">Select Status</option>
-                        <option value="active">Active</option>
-                        <option value="scheduled">Scheduled</option>
-                    </select>
+                    
                 </div>
             </div>
 
@@ -202,7 +189,7 @@ while($row = $result->fetch_assoc()) {
                 <textarea id="detailsBlotter" name="details" cols="4" rows="50" required></textarea>
             </div>
 
-            <input class="submitBlotter" type="submit" value="Create">
+            <input class="submitBlotter" type="submit" value="Submit">
         </form>
     </div>
     <!-- END ADD Blotter -->
@@ -256,12 +243,7 @@ while($row = $result->fetch_assoc()) {
                     <label for="time">Time</label>
                     <input id="timeBlotter1" step="any" type="time" name="time" required>
 
-                    <label for="type">Type</label>
-                    <select id="typeBlotter1" name="type" required>
-                        <option value="">Select Type</option>
-                        <option value="amicable">Amicable</option>
-                        <option value="incident">Incident</option>
-                    </select>
+                   
 
                     <label for="location">Location</label>
                     <input id="locationBlotter1" type="text" name="location" placeholder="Street Name" required>
@@ -271,13 +253,7 @@ while($row = $result->fetch_assoc()) {
                     <label for="date">Date</label>
                     <input id="dateBlotter1" type="date" name="date" required>
 
-                    <label for="status">Status</label>
-                    <select id="statusBlotter1" name="status" required>
-                        <option value="">Select Status</option>
-                        <option value="active">Active</option>
-                        <option value="scheduled">Scheduled</option>
-                        <option value="settled">Settled</option>
-                    </select>
+                    
                 </div>
             </div>
 
