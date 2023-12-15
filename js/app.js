@@ -771,3 +771,51 @@ function scrollChatToBottom() {
   var messagesContainer = document.getElementById("chat-container");
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
+
+// ! INQUIRY
+// Function to update chat messages
+function updateInquiry() {
+  var inquiryContainer = document.getElementById("inquiry-container");
+  if (inquiryContainer) {
+    var isScrolledToBottom =
+      inquiryContainer.scrollHeight - inquiryContainer.clientHeight <=
+      inquiryContainer.scrollTop + 1;
+  }
+
+  var urlParamsInquiry = new URLSearchParams(window.location.search);
+  var name = urlParamsInquiry.get("name");
+
+  $.get(
+    "./model/get_inquiry.php?name=" + encodeURIComponent(name),
+    function (messages) {
+      $("#inquiry-container").html(messages);
+
+      if (isScrolledToBottom) {
+        scrollChatToBottom();
+      }
+    }
+  );
+}
+
+// Periodically update chat messages every 3 seconds
+setInterval(updateInquiry, 3000);
+
+// Submit new message
+$("#inquiryForm").submit(function (e) {
+  e.preventDefault();
+  console.log("chat");
+
+  $.post(
+    "./model/reply_contact.php",
+    $("#inquiryForm").serialize(),
+    function () {
+      $("#inquiry-user-message").val("");
+      updateChat();
+    }
+  );
+});
+
+function scrollChatToBottom() {
+  var messagesContainer = document.getElementById("inquiry-container");
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}

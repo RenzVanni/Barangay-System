@@ -107,6 +107,14 @@ function calculateAge($dob) {
 	}
 }
 
+    $queryInquiry = "SELECT name, email, message, MAX(timestamp) AS latest_timestamp FROM contact_us GROUP BY name";
+    $resultInquiry = $conn->query($queryInquiry);
+
+    $inquiryData = array();
+    while($row = $resultInquiry->fetch_assoc()) {
+    $inquiryData[] = $row;
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -606,7 +614,18 @@ function calculateAge($dob) {
                     <p class="title">Inquiries</p>
 
                     <div class="all-quiry-cont">
-                        <div class="one-inquiry">
+                        <?php if(!empty($inquiryData)) { ?>
+                            <?php $no=1; foreach($inquiryData as $row): ?>
+                                <a href="inquiry.php?name=<?= $row['name'] ?>&email=<?= $row['email'] ?>">
+                                    <div class="one-inquiry">
+                                        <p class="email"><?= $row['email'] ?></p>
+                                        <p class="name"><?= $row['name'] ?></p>
+                                        <p class="message"><?= $row['message'] ?></p>
+                                    </div>
+                                </a>
+                            <?php $no++; endforeach ?>
+                        <?php } ?>
+                        <!-- <div class="one-inquiry">
                             <p class="email">rohomeres026@gmal.com</p>
                             <p class="name">Rodwin</p>
                             <p class="message">how to create an account?</p>
@@ -620,12 +639,7 @@ function calculateAge($dob) {
                             <p class="email">rohomeres026@gmal.com</p>
                             <p class="name">Rodwin</p>
                             <p class="message">how to create an account?</p>
-                        </div>
-                        <div class="one-inquiry">
-                            <p class="email">rohomeres026@gmal.com</p>
-                            <p class="name">Rodwin</p>
-                            <p class="message">how to create an account?</p>
-                        </div>
+                        </div> -->
                     </div>
                     <a href="inquiry.php">View more</a>
                 </div>

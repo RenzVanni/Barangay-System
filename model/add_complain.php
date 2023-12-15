@@ -18,7 +18,7 @@
     $details 	  = $conn->real_escape_string($_POST['details_complain']);
     $status 	    = $conn->real_escape_string($_POST['statusComplain']);
 
-    if(!empty($date) && !empty($location) && !empty($time) && !empty($details) && !empty($status)){
+    if(!empty($date) && !empty($location) && !empty($time) && !empty($details)){
 
         $insert  = "INSERT INTO tbl_complain (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `date`, `location`, `time`, `details`, `status`) 
         VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$date','$location', '$time','$details','$status')";

@@ -1,7 +1,7 @@
 <?php include './server/server.php'?>
 
 <?php 
-$query =  "SELECT * FROM tbl_users WHERE `email`!=''";
+$query = "SELECT name, email, message, MAX(timestamp) AS latest_timestamp FROM contact_us GROUP BY name";
 $result = $conn->query($query);
 
 $residents = array();
@@ -9,12 +9,10 @@ while($row = $result->fetch_assoc()) {
   $residents[] = $row;
 }
 
-if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
-    $name = $_GET['fname']." ".$_GET['mname']." ".$_GET['lname'];
-    $firstname = $_GET['fname'];
-    $middlename = $_GET['mname'];
-    $lastname = $_GET['lname'];
-    $query2 =  "SELECT * FROM chat_messages WHERE `sender`='$name' OR `receiver`='$name'";
+if(!empty($_GET['name'])) {
+    $name = $_GET['name'];
+    $SenderEmail = $_GET['email'];
+    $query2 =  "SELECT * FROM contact_us WHERE `name`='$name'";
     $result2 = $conn->query($query2);
 
     $messages = array();
@@ -23,13 +21,13 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
     }
 
         // Select the latest chat messages for the given sender or receiver
-    $queryv2 = "SELECT * FROM chat_messages WHERE `sender`='$name' OR `receiver`='$name' ORDER BY timestamp DESC LIMIT 1";
+    $queryv2 = "SELECT * FROM contact_us WHERE `name`='$name' ORDER BY timestamp DESC LIMIT 1";
     $resultv2 = $conn->query($queryv2);
     $messagesv2 = $resultv2->fetch_assoc();
 
-    $query3 =  "SELECT * FROM tbl_users WHERE `firstname`='$firstname' AND `middlename`='$middlename' AND `lastname`='$lastname'";
-    $result3 = $conn->query($query3);
-    $user = $result3->fetch_assoc(); 
+    // $query3 =  "SELECT * FROM tbl_users WHERE `firstname`='$firstname' AND `middlename`='$middlename' AND `lastname`='$lastname'";
+    // $result3 = $conn->query($query3);
+    // $user = $result3->fetch_assoc(); 
 }
 ?>
 
@@ -67,22 +65,18 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
                 <?php if(!empty($residents)) { ?>
                     <?php $no=1; foreach($residents as $row): ?>
 
-                        <a href="?fname=<?= $row['firstname'] ?>&mname=<?= $row['middlename'] ?>&lname=<?= $row['lastname'] ?>" style="text-decoration:none;">
+                        <a href="?name=<?= $row['name'] ?>&email=<?= $row['email'] ?>" style="text-decoration:none;">
                           
                         <div class="one-inbox">
                             <div class="user-cont" style="padding: 5px 5px;">
-                                <p class="name" style="text-align: left;"><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']?></p>
-                                <?php   $yourName = $row['firstname']." ".$row['middlename']." ".$row['lastname'];
-                                        $queryM = "SELECT * FROM chat_messages WHERE `sender`='$yourName' OR `receiver`='$yourName' ORDER BY timestamp DESC LIMIT 1";
-                                        $resultM = $conn->query($queryM);
-                                        $messageM = $resultM->fetch_assoc();
-                                        $timestamp = isset($messageM['timestamp']) ? $messageM['timestamp'] : "";
+                                <p class="name" style="text-align: left;"><?= $row['name']?></p>
+                                <?php   $timestamp = isset($row['timestamp']) ? $row['timestamp'] : "";
                                         if ($timestamp) {
                                             $dateTime = new DateTime($timestamp);
                                             $formattedTime = $dateTime->format('H:i'); // Format as time (hours:minutes)
                                             $formattedDate = $dateTime->format('Y-m-d'); // Format as date (year-month-day)
                                         } ?>
-                                <p class="question"><?= (isset($messageM['messages'])) ? $messageM['messages'] : "" ?></p>
+                                <p class="question"><?= (isset($messageM['message'])) ? $messageM['message'] : "" ?></p>
                             </div>
                             <div class="time-cont">
                                 <p class="time"><?= isset($formattedDate) ? $formattedDate : "" ?></p>
@@ -102,23 +96,23 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
 
                 <div class="body-message">
 
-                    <div id="chat-container" >
+                    <div id="inquiry-container" >
                         <?php if(!empty($messages)) { ?>
                             <?php $no=1; foreach($messages as $row) :?>
-                                <?php  $messageClass = ($row['sender'] === 'admin') ? 'admin-sender' : 'sender'; ?>
+                                <?php  $messageClass = ($row['sender'] == 'admin') ? 'admin-sender' : 'sender'; ?>
                                 <div id="chat-messages" class="chat-messages">
                                     <div class="message-<?= $messageClass ?>">
-                                    <p class="<?= $messageClass ?>"><?= $row['messages'] ?></p>
+                                    <p class="<?= $messageClass ?>"><?= $row['message'] ?></p>
                                     </div>
                                 </div>
                             <?php $no++; endforeach ?>
                         <?php } ?>
                     </div>
 
-                    <form action="./model/reply_message.php" method="post" id="chatForm">
+                    <form action="./model/reply_contact.php" method="post" id="inquiryForm">
                         <input type="hidden" name="name" value="<?= $name ?>">
                         <div id="user-input" style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;">
-                            <textarea type="text" name="reply" id="user-message" placeholder="Type your message..."
+                            <textarea type="text" name="reply" id="inquiry-user-message" placeholder="Type your message..."
                                 style="width: 1090px; height: 42px; border-radius: 10px; margin-top: 10px; padding: 9px 5px;  text-align: start;
                                 font-family: Poppins;
                                 font-size: 15px;
@@ -127,10 +121,8 @@ if(!empty($_GET['fname']) && !empty($_GET['lname'])) {
                                 line-height: normal;
                                 border: 1px solid #ccc;" maxlength="70" > </textarea>
                             
-
-                            <button type="submit" style="margin-top: 9px;margin-left: 10px; border: none; cursor: pointer;"> 
-
-                            <input type="hidden" name="contactNo" value="<?= $user['contact_no'] ?>">
+                                <input type="hidden" name="email" value="<?= $SenderEmail ?>" id="">
+                                <button type="submit" style="margin-top: 9px;margin-left: 10px; border: none; cursor: pointer;"> 
                                <img id="send-button" src="iconsBackend/send.png" alt="" onclick="sendMessage()" style="display: flex;">
                             </button>
                            

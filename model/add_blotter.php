@@ -28,7 +28,7 @@
     $status 	    = $conn->real_escape_string($_POST['status']);
     $details 	    = $conn->real_escape_string($_POST['details']);
 
-    if(!empty($type) && !empty($location) && !empty($date) && !empty($time) && !empty($status) && !empty($details)){
+    if(!empty($location) && !empty($date) && !empty($time) && !empty($details)){
 
         $insert  = "INSERT INTO tbl_blotter (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `respondent_fname`, `respondent_mname`, `respondent_lname`, `respondent_suffix`, `victim_fname`, `victim_mname`, `victim_lname`, `victim_suffix`, `type`, `location`, `date`, `time`, `details`, `status`) 
                     VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$respondent_fname', '$respondent_mname', '$respondent_lname', '$respondent_suffix', '$victim_fname', '$victim_mname', '$victim_lname', '$victim_suffix', '$type','$location','$date', '$time','$details', '$status')";
