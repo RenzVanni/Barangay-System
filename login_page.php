@@ -118,6 +118,29 @@
             </form>
             <p>Already an account? <span class="register_login">Log In.</span></p>
         </section>
+
+        <section class="section-4 frontendForgotPassword">
+            <div class="close">
+                <a href="./index.php">
+                    <img src="./assets/close-login.svg" alt="close">
+                </a>
+            </div>
+            <form action="./frontendModel/forgot_password.php" method="post">
+                <h1>Forgot Password</h1>
+                <span><?= (isset($_SESSION['message'])) ? $_SESSION['message'] : "" ?></span>
+
+                <div class="email">
+                    <div class="icon-container">
+                        <img src="./assets/register-email-icon.svg" alt="">
+                    </div>
+                        <input type="email" name="email" id="" placeholder="Email" required>
+                </div>
+
+                <button type="submit">Reset Password</button>
+            </form>
+            <p>Already an account? <span class="register_login">Log In.</span></p>
+        </section>
+
     </div>
 
     <script src="./forntendJs//jQuery-3-7-0.js"></script>
@@ -127,18 +150,28 @@
     const signUpBtn = document.querySelector(".signUp");
     const registerContainer = document.querySelector(".frontendRegister");
     const frontendLoginContainer = document.querySelector(".frontendLogin");
+    const frontendForgotContainer = document.querySelector(".frontendForgotPassword");
 
-    const registerLogin = document.querySelector(".register_login");
+    const registerLogin = document.querySelectorAll(".register_login");
+    const forgotPasswordBtn = document.querySelector(".forgotPassword");
 
     signUpBtn.addEventListener("click", () => {
         registerContainer.style.display = "flex";
         frontendLoginContainer.style.display = "none";
     });
 
-    registerLogin.addEventListener("click", () => {
-        registerContainer.style.display = "none";
-        frontendLoginContainer.style.display = "flex";
-    });
+    registerLogin.forEach(registerLogin => {
+        registerLogin.addEventListener("click", () => {
+            registerContainer.style.display = "none";
+            frontendForgotContainer.style.display = "none";
+            frontendLoginContainer.style.display = "flex";
+        });
+    })
+
+    forgotPasswordBtn.addEventListener("click", () => {
+        frontendForgotContainer.style.display = "flex";
+        frontendLoginContainer.style.display = "none";
+    })
     </script>
 </body>
 
