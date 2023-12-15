@@ -10,12 +10,14 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $requestor_fname    = $conn->real_escape_string($_POST['requestor_fname']);
-    $requestor_mname    = $conn->real_escape_string($_POST['requestor_mname']);
+    $requestor_mname    = $conn->real_escape_string(isset($_POST['requestor_mname']) ? $_POST['requestor_mname'] : "");
     $requestor_lname    = $conn->real_escape_string($_POST['requestor_lname']);
+    $requestor_suffix    = $conn->real_escape_string(isset($_POST['requestor_suffix']) ? $_POST['requestor_suffix'] : "");
 
     $applicant_fname    = $conn->real_escape_string($_POST['applicant_fname']);
-    $applicant_mname    = $conn->real_escape_string($_POST['applicant_mname']);
+    $applicant_mname    = $conn->real_escape_string(isset($_POST['applicant_mname']) ? $_POST['applicant_mname'] : "");
     $applicant_lname    = $conn->real_escape_string($_POST['applicant_lname']);
+    $applicant_suffix    = $conn->real_escape_string(isset($_POST['applicant_suffix']) ? $_POST['applicant_suffix'] : "");
 
     $requestor_houseNo      = $conn->real_escape_string($_POST['requestor_houseNo']);
     $requestor_street      = $conn->real_escape_string($_POST['requestor_street']);
@@ -35,8 +37,8 @@
     
     if(!empty($applicant_fname) && !empty($applicant_lname)){
 
-        $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `status`, `seen`, `image`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_houseNo', '$requestor_street', '$requestor_subdivision', '$requestor_pob', '$requestor_dob', '$requestor_civilStatus','$contactNo', '$documentFor', 'Pending', 'unread', '$image')";
+        $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `applicant_suffix`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `requestor_suffix`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `status`, `seen`, `image`) 
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$applicant_suffix', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_suffix', '$requestor_houseNo', '$requestor_street', '$requestor_subdivision', '$requestor_pob', '$requestor_dob', '$requestor_civilStatus','$contactNo', '$documentFor', 'Pending', 'unread', '$image')";
         $result  = $conn->query($insert);
 
         if($result === true){

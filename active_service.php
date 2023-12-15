@@ -5,12 +5,14 @@
             <h2>Barangay ID</h2>
             <div class="container requestor">
                 <label for="requestor">Applicant</label>
-                <input class="requestorName" type="text" name="applicant_fname" id="applicant"
+                <input class="requestorName" type="text" name="applicant_fname" id=""
                     placeholder="Enter applicant firstname">
-                <input class="applicantName" type="text" name="applicant_mname" id="applicant"
+                <input class="applicantName" type="text" name="applicant_mname" id=""
                     placeholder="Enter applicant middlename">
-                <input class="applicantName" type="text" name="applicant_lname" id="applicant"
+                <input class="applicantName" type="text" name="applicant_lname" id=""
                     placeholder="Enter applicant lastname">
+                <input class="applicantName" type="text" name="applicant_suffix" id=""
+                    placeholder="Enter applicant suffix">
             </div>
             <div class="container">
                 <label for="contact-number">Contact Number</label>
@@ -31,6 +33,7 @@
             <input type="hidden" name="requestor_fname" value="<?php echo $_SESSION['firstname']?>">
             <input type="hidden" name="requestor_mname" value="<?php echo $_SESSION['middlename']?>">
             <input type="hidden" name="requestor_lname" value="<?php echo $_SESSION['lastname']?>">
+            <input type="hidden" name="requestor_suffix" value="<?php echo $_SESSION['suffix']?>">
             <input type="hidden" name="requestor_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
             <input type="hidden" name="requestor_street" value="<?php echo $_SESSION['street'] ?>" id="">
             <input type="hidden" name="requestor_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
@@ -66,6 +69,7 @@
             <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
             <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
             <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+            <input type="hidden" name="requestor_suffix" value="<?php echo $_SESSION['suffix']?>">
             <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
             <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
             <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
@@ -98,12 +102,14 @@
             <h2>Endorsement</h2>
             <div class="container requestor">
                 <label for="requestor">Requestor</label>
-                <input class="requestorName" type="text" name="requestor_fname" id="requestor"
+                <input class="requestorName" type="text" name="requestor_fname" id=""
                     placeholder="Enter requestor firstname">
-                <input class="requestorName" type="text" name="requestor_mname" id="requestor"
+                <input class="requestorName" type="text" name="requestor_mname" id=""
                     placeholder="Enter requestor middlename">
-                <input class="requestorName" type="text" name="requestor_lname" id="requestor"
+                <input class="requestorName" type="text" name="requestor_lname" id=""
                     placeholder="Enter requestor lastname">
+                <input class="requestorName" type="text" name="requestor_suffix" id=""
+                    placeholder="Enter requestor suffix">
             </div>
             <div class="container">
                 <label for="for">For</label>
@@ -116,6 +122,7 @@
             <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
             <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
             <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+            <input type="hidden" name="requestor_suffix" value="<?php echo $_SESSION['suffix']?>">
             <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
             <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
             <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
@@ -153,6 +160,8 @@
                     placeholder="Enter requestor middlename">
                 <input class="requestorName" type="text" name="requestor_lname" id="requestor"
                     placeholder="Enter requestor lastname">
+                <input class="requestorName" type="text" name="requestor_suffix" id=""
+                    placeholder="Enter requestor suffix">
             </div>
             <div class="container">
                 <label for="for">For</label>
@@ -165,6 +174,7 @@
             <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
             <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
             <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+            <input type="hidden" name="requestor_suffix" value="<?php echo $_SESSION['suffix']?>">
             <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
             <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
             <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
@@ -208,6 +218,10 @@
                 <label for="flname">Father's Lastname</label>
                 <input required type="text" name="flname" id="flname" placeholder="Enter Father's Lastname" />
             </div>
+             <div class="container">
+                <label for="fsuffix">Father's Suffix</label>
+                <input required type="text" name="fsuffix" id="fsuffix" placeholder="Enter Father's Suffix" />
+            </div>
             <div class="container">
                 <label for="mfname">Mother's Firstname</label>
                 <input required type="text" name="mfname" id="mfname" placeholder="Enter Mother's Firstname" />
@@ -221,6 +235,10 @@
                 <input required type="text" name="mlname" id="mlname" placeholder="Enter Mother's Lastname" />
             </div>
             <div class="container">
+                <label for="msuffix">Mother's Suffix</label>
+                <input required type="text" name="msuffix" id="msuffix" placeholder="Enter Mother's Suffix" />
+            </div>
+            <div class="container">
                 <label for="for">For</label>
                 <select name="documentFor" id="For" class="for">
                     <option value="Self">For self</option>
@@ -230,6 +248,7 @@
             <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
             <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
             <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+            <input type="hidden" name="applicant_suffix" value="<?php echo $_SESSION['suffix']?>">
             <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
             <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
             <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">

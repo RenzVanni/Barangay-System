@@ -110,7 +110,7 @@ function editBusiness(that) {
   business_started = $(that).attr("data-business_started");
 
   $("#business_id").val(id);
-  $("#taxPayer_lname").val(taxpayer_fname);
+  $("#taxPayer_fname").val(taxpayer_fname);
   $("#taxPayer_mname").val(taxpayer_mname);
   $("#taxPayer_lname").val(taxpayer_lname);
   $("#taxPayer_suffix").val(taxpayer_suffix);

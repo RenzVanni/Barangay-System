@@ -1,7 +1,7 @@
 <?php
 function getNewMessages($conn) {
     // Fetch new certificates from tables like idfom, brgyclearance, certoflbr, etc.
-    $sql = "SELECT * FROM chat_messages WHERE seen = 'unread' ORDER BY timestamp DESC"; // Adjust the query based on your tables and criteria
+    $sql = "SELECT * FROM chat_messages WHERE seen = 'unread' AND email = '' ORDER BY timestamp DESC"; // Adjust the query based on your tables and criteria
 
     $result = $conn->query($sql);
 

@@ -38,7 +38,7 @@ if ($result->num_rows) {
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../dashboard.php');
-        } else if ($user['role'] === 'user') {
+        } else if ($user['role'] === 'user' && $user['is_verified'] === 1) {
             $_SESSION['role'] = $user['role'];
             $_SESSION['id'] = $user['id'];
             $_SESSION['username'] = $user['username'];

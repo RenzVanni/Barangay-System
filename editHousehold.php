@@ -1,4 +1,42 @@
 <?php include './server/server.php'?>
+<?php 
+$id = $_GET['id'];
+$query = "SELECT * FROM tbl_households WHERE `id`='$id'";
+$result = $conn->query($query);
+$resident = $result->fetch_assoc();
+
+if($resident['household_head'] == 'yes') {
+    $headName = $resident['firstname'] . " " . $resident['middlename'] . " " . $resident['lastname'];
+
+    $query2 = "SELECT * FROM tbl_households WHERE `household_head`='$headName' OR `id`='$id'"; 
+    $result2 = $conn->query($query2);
+} else if(empty(trim($resident['household_head'])) || $resident['household_head'] == "no") {
+    header("Location: ./residentInfo.php");
+    exit();
+}
+else {
+    $nameParts = explode(' ', $resident['household_head']);
+
+    // Separate the name parts
+    $firstname = isset($nameParts[0]) ? $nameParts[0] : ''; // Renz
+    $middlename = isset($nameParts[1]) ? $nameParts[1] : ''; // Check if middle name exists
+    $lastname = isset($nameParts[2]) ? $nameParts[2] : ''; // Bato
+
+    $headName = $firstname . " " . $middlename . " " . $lastname;
+
+    $query2 = "SELECT * FROM tbl_households WHERE `household_head`='$headName' OR `id`='$id'"; 
+}
+$result2 = $conn->query($query2);
+
+if ($result2->num_rows > 0) {
+    $members = array();
+    while ($row = $result2->fetch_assoc()) {
+        $members[] = $row;
+    }
+} else {
+    echo "No results found.". $headName;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +71,7 @@
         <div class="input-form">
             <div class="headerInfo">
                 <p>Household Information</p>
+                <p><?= $headName ?></p>
             </div>
             <div class="bodyInfo">
                 <div class="leftInfo">
@@ -131,7 +170,7 @@
 
         <p class="List">List of Members</p>
 
-        <form action="./model/add_households.php" enctype="multipart/form-data" method="post" class="input-table">
+        <form action="./model/edit_households.php   " enctype="multipart/form-data" method="post" class="input-table">
             <table class="main-table">
                 <thead>
                     <tr>
@@ -153,6 +192,48 @@
                 </thead>
                 <tbody>
                     <!-- Data will be dynamically added here using JavaScript -->
+                            <?php if(!empty($members)) { ?>
+                        <?php $no=1; foreach($members as $row) : ?>
+                    <tr>
+                        <td style="width: 100%; display:flex; padding-top: 8px;">
+                            <input style="width: 30%; margin-right: 5px;" type="text" value="<?= $row['lastname'] ?>" name="lastName[]" id="">
+                            <input style="width: 30%; margin-right: 5px;" type="text" value="<?= $row['firstname'] ?>" name="firstName[]" id="">
+                            <input style="width: 30%; margin-right: 5px;" type="text" value="<?= $row['middlename'] ?>" name="middleName[]" id="">
+                            <input style="width: 20%;" type="text" value="<?= $row['suffix'] ?>" name="ext[]" id="">
+                        </td>
+                        <td>
+                            <input type="text" value="<?= $row['date_of_birth'] ?>" name="dateBirth[]" id="">
+                        </td>
+                        <td>
+                            <input type="text" value="<?= $row['contact_no'] ?>" name="contact_no[]" id="">
+                        </td>
+                        <td>
+                            <input type="text" value="<?= $row['email'] ?>" name="email[]" id="">
+                        </td>
+                        <td style="width: 100%; display:flex; padding-top: 8px;">
+                            <input style="width: 50px; margin-right: 5px;" type="text" value="<?= $row['house_no'] ?>" name="no[]" id="">
+                            <input style="margin-right: 5px;" type="text" value="<?= $row['street'] ?>" name="streetName[]" id="">
+                            <input style="margin-right: 5px;" type="text" value="<?= $row['subdivision'] ?>" name="subdiName[]" id="">
+                        </td>
+                        <td><input type="text" value="<?= $row['sex'] ?>" name="sex[]" id=""></td>
+                        <?php if($row['household_head'] == $headName) { ?>
+                            <td><input type="radio" value="yes" name="householdHead[<?= $no ?>]"></td>
+                        <?php } else { ?>
+                            <td><input type="radio" value="yes" checked name="householdHead[<?= $no ?>]"></td>
+                        <?php }?>
+                        <td>
+                            <button class="delete" style="border:none; background: none; color: #ff0000;
+                              font-size: 10px; font-family: Poppins; font-style: normal; font-weight: 700; line-height: normal;"><a href="./model/remove/remove_resident.php?id=<?= $row['id'] ?>&head=<?= $row['household_head'] ?>" style="color: #ff0000; text-decoration:none;">Delete</a></button>
+                        </td>
+                        <td style="display: none;"><input type="text" value="<?= $row['place_of_birth'] ?>" name="placeBirth[]" id=""></td>
+                        <td style="display: none;"><input type="text" value="<?= $row['citizenship'] ?>" name="citizenship[]" id=""></td>
+                        <td style="display: none;"><input type="text" value="<?= $row['occupation'] ?>" name="occupational[]" id=""></td>
+                        <td style="display: none;"><input type="text" value="<?= $row['civil_status'] ?>" name="civilStatus[]" id=""></td>
+                        <td style="display: none;"><input type="text" value="<?= $row['voter_status'] ?>" name="voter_status[]" id=""></td>
+                        <td style="display: none;"><input type="text" value="<?= $row['id'] ?>" name="id[]" id=""></td>
+                    </tr>
+                    <?php $no++; endforeach ?>
+                    <?php } ?>
                 </tbody>
             </table>
             <div class="submitContainerDaw">

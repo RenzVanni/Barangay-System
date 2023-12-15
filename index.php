@@ -154,8 +154,8 @@
     <?php include './contact_us.php' ?>
 
    
-
-    <?php include './hotlines.php' ?>
+    <?php include './emergency_numbers.php' ?>
+    
 
     <footer>
         <div class="logo">
@@ -298,12 +298,15 @@
     });
 
     var swiper = new Swiper(".emNumberSwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
+        spaceBetween: 30,
+        loop: true,
+        centerSlide: 'true',
+        grabCursor: 'true',
+        fade: 'true',
+    //   autoplay: {
+    //     delay: 2500,
+    //     disableOnInteraction: false,
+    //   },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -312,6 +315,17 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            600: {
+                slidesPerView: 2,
+            },
+            900: {
+                slidesPerView: 3,
+            },
+        },
     });
     </script>
 </body>

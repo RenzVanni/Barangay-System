@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, 
                                     `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, 
                                     `occupation`, `citizenship`, `household_head`, `suffix`, `email`, 
-                                    `contact_no`, `voter_status`, `profile_img`)
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                                    `contact_no`, `voter_status`)
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     $totalEntries = count($_POST['lastName']); // Assumes every other array has the same count
 
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                // If the record does not exist, perform an INSERT
         if ($stmtCheck->num_rows === 0) {
 
-            if(!$stmtInsert->bind_param("ssssssssssssssssss", 
+            if(!$stmtInsert->bind_param("sssssssssssssssss", 
                 $_POST['firstName'][$i],
                 $_POST['middleName'][$i], 
                 $_POST['lastName'][$i],
@@ -108,8 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_POST['ext'][$i],
                 $_POST['email'][$i],
                 $_POST['contact_no'][$i],
-                $_POST['voter_status'][$i],
-                $imagePath
+                $_POST['voter_status'][$i]
             )) {
                 echo "Binding parameters failed: (" . $stmtInsert->errno . ") " . $stmtInsert->error;
             }

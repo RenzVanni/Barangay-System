@@ -3,7 +3,7 @@
 require("../server/server.php");
 
 // get Users
-$query = "SELECT `firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`, `household_head`, `ext` FROM tbl_households";
+$query = "SELECT `firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `household_head`, `ext` FROM tbl_households";
 if (!$result = $conn->query($query)) {
     exit($conn->error);
 }
@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=Residents.csv');
 $output = fopen('php://output', 'w');
-fputcsv($output, array('Firstname', 'Middlename', 'Lastname', 'Sex', 'House_No', 'Street', 'Subdivision', 'Date_of_Birth', 'Place_of_Birth', 'Civil_Status', 'Occupation', 'Email', 'Contact_No', 'Voter_Status', 'Citizenship', 'Household_No', 'OSY', 'PWD', 'Household_Head', 'Ext'));
+fputcsv($output, array('Firstname', 'Middlename', 'Lastname', 'Sex', 'House_No', 'Street', 'Subdivision', 'Date_of_Birth', 'Place_of_Birth', 'Civil_Status', 'Occupation', 'Email', 'Contact_No', 'Voter_Status', 'Citizenship', 'Household_No', 'Household_Head', 'Ext'));
 
 if (count($users) > 0) {
     foreach ($users as $row) {

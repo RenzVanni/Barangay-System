@@ -20,6 +20,8 @@ if($sortOption == "age") {
     $query .= " ORDER BY $sortOption DESC";
 }
 
+$query .= " ORDER BY id DESC";
+
 $stmt = $conn->prepare($query);
 
 if (!empty($types) && !empty($params)) {
@@ -185,7 +187,7 @@ function calculateAge($dob) {
                         <td><?= $row['house_no']. " " .$row['street']. " " .$row['subdivision'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td class="actions">
-                            <a href="editHousehold.php" class="edit" id="editResidents">Edit</a>
+                            <a href="./editHousehold.php?id=<?= $row['id'] ?>" class="edit" id="editResidents">Edit</a>
                            
                             
                             <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
