@@ -2322,3 +2322,81 @@ tr:nth-child(even) {
   background-color: #D3D3D3;
   height: 1px;
 }
+.inquiries-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+ 
+  width: 100%;
+  margin-bottom: 80px;
+}
+.inquiries-cont .title {
+  color: #007236;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.inquiries-cont .all-quiry-cont {
+  width: 55%;
+  height: 300px;
+  padding: 10px 5px;
+  overflow-x: auto;
+  
+}
+.inquiries-cont .all-quiry-cont .one-inquiry {
+  width: 100%;
+  height: 100px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.inquiries-cont .all-quiry-cont .one-inquiry .email {
+  color: rgba(0, 0, 0, 0.40);
+
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.inquiries-cont .all-quiry-cont .one-inquiry .name {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.inquiries-cont .all-quiry-cont .one-inquiry .message {
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.inquiries-cont .all-quiry-cont .one-inquiry:hover {
+  background-color: #1a1a1a27;
+}
+.inquiries-cont a {
+  color: #007236;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 10px;
+  cursor: pointer;
+}

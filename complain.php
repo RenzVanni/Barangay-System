@@ -15,7 +15,7 @@ while($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complain Report</title>
-    <link rel="stylesheet" href="style3.css ">
+    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?> ">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?> ">
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="./style/generateCert.css">
@@ -63,7 +63,7 @@ while($row = $result->fetch_assoc()) {
                         <th>Date</th>
                         <th>Time</th>
                         <th>Location</th>
-                        <th>Status</th>
+                       
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -77,7 +77,7 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['date'] ?></td>
                         <td><?= $row['time'] ?></td>
                         <td><?= $row['location'] ?></td>
-                        <td><?= $row['status'] ?></td>
+                       
                         <td class="actions">
                             <a href="#" class="edit" id="editComplain" onclick="complainEdit(this)"
                                 data-id="<?= $row['id'] ?>" data-complainant-fname="<?= $row['complainant_fname'] ?>"
@@ -86,7 +86,7 @@ while($row = $result->fetch_assoc()) {
                                 data-complainant-suffix="<?= $row['complainant_suffix'] ?>"
                                 data-date="<?= $row['date'] ?>" data-location="<?= $row['location'] ?>"
                                 data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>"
-                                data-status="<?= $row['status'] ?>">Edit</a>
+                               >Edit</a>
                             <!-- <a href="./model/print_complain.php" class="print">Print</a> -->
                             <a href="#" class="delete">Delete</a>
 
@@ -167,14 +167,7 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="pangatlong-layer-to">
-                <div class="statusComplain_cont">
-                    <label for="statusComplain">Status</label>
-                    <select id="statusComplain" name="statusComplain" required>
-                        <option value="">Select Status</option>
-                        <option value="active">Active</option>
-                        <option value="schedule">Schedule</option>
-                    </select>
-                </div>
+               
 
                 <div class="submit_cont">
                     <button type="submit">Submit</button>
@@ -231,15 +224,7 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="pangatlong-layer-to">
-                <div class="statusComplain_cont">
-                    <label for="statusComplain">Status</label>
-                    <select id="statusComplain1" name="statusComplain" required>
-                        <option value="">Select Status</option>
-                        <option value="active">Active</option>
-                        <option value="schedule">Schedule</option>
-                        <option value="settled">Settled</option>
-                    </select>
-                </div>
+               
 
                 <div class="submit_cont">
                     <button type="submit">Submit</button>

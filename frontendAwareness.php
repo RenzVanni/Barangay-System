@@ -1,11 +1,10 @@
 <div class="awareness-page" id="frontendAwareness">
     <div class="section-1">
         <h1>Awareness</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ex molestiae quos! Porro in et dolores eum pariatur molestias error natus harum dicta consequuntur, facere libero voluptate obcaecati eaque minus.
-        Magnam modi tempora quos ullam laudantium doloremque eveniet neque repudiandae amet quisquam laborum eum quae ex aliquid veniam eligendi placeat, debitis omnis? Consequuntur libero similique ea quidem in alias quaerat.
-        Consequatur maxime voluptas recusandae id quia blanditiis eos itaque numquam eveniet in quidem provident quod fugit quaerat, dolor sed magni dolores repellat voluptatibus architecto vitae voluptatum quis suscipit. Maiores, nemo?
-        Quis sequi, magni facilis similique earum quo vitae, quam, dolor a repellat aliquam ducimus eum ut. Nihil molestias fugiat adipisci voluptate, recusandae sit qui illum provident numquam laudantium similique saepe!
-        Maxime ex error est hic, quod fugiat ad delectus quo esse aut aperiam tempora animi necessitatibus nihil. Blanditiis, corrupti molestias eligendi expedita perspiciatis accusantium dolore aliquam eveniet consectetur fugit dolorum!</p>
+        <p>Maligayang pagdating sa aming Resident Awareness Module! Ito ay isang mahusay at bago tool na makakatulong sa pagpabuti ng ating Barangay. Dito, madali mong maireport ang anumang problema o alalahanin mo, at siguradong maririnig ang iyong boses. <br><br>
+           Hindi lang ito simpleng tool, kundi isang paraan din para tayo ay magtulungan at magkaruon ng positibong pagbabago sa ating komunidad. Sa tulong mo, mas magiging matibay at magkakaisa ang ating Barangay, kung saan lahat ay ligtas at mahalaga. Bawat ulat mo ay mahalaga at makakatulong sa atin na malaman ang mga lugar na kailangan ng atensyon at pagpapabuti.
+           <br><br>Kung may makikita kang butas sa kalsada, sirang ilaw, o anuman, gamitin mo ang Resident Awareness Module para makatulong sa pagpabuti ng ating komunidad. Wag mag-atubiling mag-contribute para gawing mas maganda ang Barangay para sa lahat!
+           
     </div>
 
     <div class="section-2">

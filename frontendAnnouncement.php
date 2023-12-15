@@ -36,8 +36,7 @@ while($row = $result->fetch_assoc()) {
 
                     <div class="context">
                         <h3><?= $row['title'] ?></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit aliquam iste voluptatibus harum illo, atque voluptatum esse exercitationem ab aliquid corrupti maiores accusantium laborum numquam ex quia dolores excepturi nemo.
-                        Optio delectus beatae nemo neque quis, corrupti impedit dolor repellat eos alias voluptatem quod nesciunt aliquam aspernatur? Velit ex alias et eum sunt quis provident, quo ducimus accusantium veritatis autem.</p>
+                        <p><?= $row['details'] ?></p>
 
                         <div class="more">
                             <span><?= $formattedDate ?></span>

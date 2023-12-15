@@ -1101,7 +1101,7 @@ select {
 }
 .pangatlong-layer-to {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 20px;
   width: 100%;
 }
@@ -1118,8 +1118,8 @@ select {
 }
 .pangatlong-layer-to .submit_cont {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   margin-top: 10px;
 }
 .pangatlong-layer-to .submit_cont button {

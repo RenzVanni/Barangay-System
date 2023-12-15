@@ -597,6 +597,38 @@ function calculateAge($dob) {
                         <button id="nextBtn">Next</button>
                     </div>
                 </div>
+
+                <div class="line-container">
+                    <img src="vector/Line 6.png" alt="">
+                </div>
+
+                <div class="inquiries-cont">
+                    <p class="title">Inquiries</p>
+
+                    <div class="all-quiry-cont">
+                        <div class="one-inquiry">
+                            <p class="email">rohomeres026@gmal.com</p>
+                            <p class="name">Rodwin</p>
+                            <p class="message">how to create an account?</p>
+                        </div>
+                        <div class="one-inquiry">
+                            <p class="email">rohomeres026@gmal.com</p>
+                            <p class="name">Rodwin</p>
+                            <p class="message">how to create an account?</p>
+                        </div>
+                        <div class="one-inquiry">
+                            <p class="email">rohomeres026@gmal.com</p>
+                            <p class="name">Rodwin</p>
+                            <p class="message">how to create an account?</p>
+                        </div>
+                        <div class="one-inquiry">
+                            <p class="email">rohomeres026@gmal.com</p>
+                            <p class="name">Rodwin</p>
+                            <p class="message">how to create an account?</p>
+                        </div>
+                    </div>
+                    <a href="inquiry.php">View more</a>
+                </div>
             </div>
         </div>
     </div>
