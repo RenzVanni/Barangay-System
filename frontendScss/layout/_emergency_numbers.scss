@@ -8,12 +8,13 @@
   .emNumberSwiper {
     width: 90%;
     height: 500px;
+    overflow: hidden;
     background-color: red;
     .cards-container {
       //   display: flex;
       //   align-items: center;
       //   justify-content: center;
-      width: 100%;
+      width: auto;
       height: 500px;
       background-color: black;
       .card {
