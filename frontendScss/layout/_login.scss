@@ -118,9 +118,12 @@
     flex-grow: 1;
     display: none;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 1rem;
     .close {
       padding: 1rem;
       text-align: end;
@@ -136,12 +139,18 @@
 
     p {
       font-size: 0.8rem;
-      // margin: 0 0 0.5rem 0;
+      margin: 0.5rem 0;
     }
 
     span {
       color: #e01e37;
       font-size: 0.6rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin: 0.8rem 0;
     }
 
     form {
@@ -152,7 +161,10 @@
       .register-mname,
       .register-lname,
       .register-suffix,
-      .register-bod {
+      .register-bod,
+      .register-house_no,
+      .register-street,
+      .register-subdivision {
         display: flex;
         border: 1px solid #212529;
         padding: 0.5rem;
@@ -185,12 +197,13 @@
         color: #f5f5f7;
         font-weight: bold;
         width: 100%;
+        margin-bottom: 1rem;
       }
     }
-    p {
-      text-align: center;
+    p:last-of-type {
+      text-align: start;
       font-size: 0.8rem;
-      margin: 1rem 0;
+      margin: 0 0 0.5rem 0;
 
       span {
         cursor: pointer;
@@ -198,5 +211,9 @@
         color: #006630;
       }
     }
+  }
+
+  .section-4 {
+    justify-content: center;
   }
 }

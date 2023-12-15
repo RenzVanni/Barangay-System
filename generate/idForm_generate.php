@@ -115,7 +115,7 @@
                                         <h4>FULLNAME: (FIRST, MIDDLE, & LAST NAME)</h4>
                                         <h2>
                                             <div class="label111" style="display: flex;
-                                                       flex-directiont: row;">
+                                                       flex-direction: row;">
                                                 <input type="text" value="<?= $idForm['applicant_fname']?>"
                                                     name="applicant_fname" id="applicant_fname" style="margin-right: 5px;
                                                        width: 100px;
@@ -142,7 +142,7 @@
                                         <h5>ADDRESS: (HOUSE NO., STREET, & SUBDIVISION)</h5>
                                         <h2>
                                             <div class="label111" style="display: flex;
-                                                   flex-directiont: row;">
+                                                   flex-direction: row;">
                                                 <input type="text" value="<?= $idForm['house_no']?>" name="house_no"
                                                     id="house_no" style="margin-right: 5px;
                                                        width: 70px;
@@ -340,7 +340,7 @@
                                         <h4>FULLNAME: (FIRST, MIDDLE, & LAST NAME)</h4>
                                         <h2>
                                             <div class="label111" style="display: flex;
-                                                       flex-directiont: row;">
+                                                       flex-direction: row;">
                                                 <input type="text" value="<?= $idForm['applicant_fname']?>"
                                                     name="applicant_fname" id="applicant_fname" style="margin-right: 5px;
                                                        width: 100px;
@@ -367,7 +367,7 @@
                                         <h5>ADDRESS: (HOUSE NO., STREET, & SUBDIVISION)</h5>
                                         <h2>
                                             <div class="label111" style="display: flex;
-                                                   flex-directiont: row;">
+                                                   flex-direction: row;">
                                                 <input type="text" value="<?= $idForm['house_no']?>" name="house_no"
                                                     id="house_no" style="margin-right: 5px;
                                                        width: 70px;

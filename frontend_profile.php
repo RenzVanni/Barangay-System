@@ -25,7 +25,7 @@
                     <input type="text" readonly name="" id="" value="<?= $_SESSION['house_no']." ".$_SESSION['street']." ".$_SESSION['subdivision'] ?>">
 
                     <label for="">Email:</label>
-                    <input type="text" readonly name="" id="" value="<?= $_SESSION['email'] ?>">
+                    <input type="text" readonly name="" id="" value="<?= $_SESSION['profile_img'] ?>">
 
                     <label for="">Contact:</label>
                     <input type="text" readonly name="" id="" value="<?= $_SESSION['contact_no'] ?>">
@@ -34,11 +34,16 @@
 
                 <div class="profile-img" id="profile-preview">
                     <!-- <img src="./assets/default-profile.svg" alt="default-profile-icon"> -->
+                        <?php if(isset($_SESSION['profile_img'])) { ?>
+                            <img src="./uploads/profile/<?= $_SESSION['profile_img'] ?>" alt="Profile-img">
+                        <?php } else { ?> 
+                            <img src="./assets/default-profile.svg" alt="default-profile">
+                        <?php } ?>
                 </div>
                     <label for="yourImage">
-                        <img src="./assets/camera-icon.svg" alt="camera-icon">
+                            <img src="./assets/camera-icon.svg" alt="camera-icon">
                     </label>
-                    <input type="file" name="" id="yourImage" onchange="updateProfileImg()" required>
+                    <input type="file" name="profile_img" id="yourImage" onchange="updateProfileImg()" required>
                     <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
                     <button type="submit" name="submit">Save</button>
                 </div>
@@ -53,10 +58,10 @@
             </div>
             <h1>Change Password</h1>
             <p>Must be at least 8 characters.</p>
-            <form action="">
+            <form action="./frontendModel/user_change_password.php" method="post">
                 <input type="password" name="old_password" id="" placeholder="Old Password...">
-                <input type="password" name="new_password" id="" placeholder="New Password...">
-                <input type="password" name="confirm_password" id="" placeholder="Confirm Password...">
+                <input type="password" minlength="8" name="new_password" id="" placeholder="New Password...">
+                <input type="password" minlength="8" name="confirm_password" id="" placeholder="Confirm Password...">
                 <button type="submit">Continue</button>
             </form>
         </div>

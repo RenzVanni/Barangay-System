@@ -131,7 +131,7 @@
 
         <p class="List">List of Members</p>
 
-        <form action="./model/add_households.php" enctype="multipart/form-data" method="post" class="input-table">
+        <form action="./model/add_households.php" method="post" class="input-table">
             <table class="main-table">
                 <thead>
                     <tr>

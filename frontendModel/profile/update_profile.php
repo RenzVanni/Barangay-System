@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     // Check if the file was successfully uploaded
     if (move_uploaded_file($_FILES['profile_img']['tmp_name'], $targetProfile)) {
 
-        $query = "UPDATE tbl_households SET profile_img='$profile_img' WHERE id='$id';";
+        $query = "UPDATE tbl_users SET profile_img='$profile_img' WHERE id='$id';";
 
         if ($conn->query($query) === true) {
             $_SESSION['message'] = 'Profile image has been updated!';

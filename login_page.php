@@ -65,6 +65,8 @@
                 <h1>Create account</h1>
                 <p>Give Us of some your information to get free access</p>
                 <span><?= (isset($_SESSION['message'])) ? $_SESSION['message'] : "" ?></span>
+
+                <label for="">Name:</label>
                 <div class="register-fname">
                     <div class="icon-container">
                         <img src="./assets/register-userId-icon.svg" alt="">
@@ -89,24 +91,52 @@
                     </div>
                         <input type="text" name="suffix" id="" placeholder="suffix" >
                 </div>
+
+                <label for="">Birthdate:</label>
                 <div class="register-bod">
                     <div class="icon-container">
                         <img src="./assets/register-userId-icon.svg" alt="">
                     </div>
-                        <input type="date" name="birthdate" id="" required>
+                        <input type="date" name="birthdate"s id="" required>
                 </div>
+
+                <label for="">Address:</label>
+                <div class="register-house_no">
+                    <div class="icon-container">
+                        <img src="./assets/register-userId-icon.svg" alt="">
+                    </div>
+                        <input type="text" name="house_no" id="" placeholder="House no">
+                </div>
+                <div class="register-street">
+                    <div class="icon-container">
+                        <img src="./assets/register-userId-icon.svg" alt="">
+                    </div>
+                        <input type="text" name="street" id="" placeholder="Street" required>
+                </div>
+                <div class="register-subdivision">
+                    <div class="icon-container">
+                        <img src="./assets/register-userId-icon.svg" alt="">
+                    </div>
+                        <input type="text" name="subdivision" id="" placeholder="Subdivision">
+                </div>
+                
+                <label for="">Username:</label>
                 <div class="username">
                     <div class="icon-container">
                         <img src="./assets/register-profile-icon.svg" alt="">
                     </div>
                         <input type="text" name="username" id="" placeholder="Username" required>
                 </div>
+
+                <label for="">Email:</label>
                 <div class="email">
                     <div class="icon-container">
                         <img src="./assets/register-email-icon.svg" alt="">
                     </div>
                         <input type="email" name="email" id="" placeholder="Email" required>
                 </div>
+
+                <label for="">Password:</label>
                 <div class="password">
                     <div class="icon-container">
                         <img src="./assets/register-lock-icon.svg" alt="">

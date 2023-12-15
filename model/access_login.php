@@ -54,6 +54,7 @@ if ($result->num_rows) {
             $_SESSION['civil'] = $user['civil_status'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['contact_no'] = $user['contact_no'];
+            $_SESSION['profile_img'] = $user['profile_img'];
 
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../index.php');
         } else {

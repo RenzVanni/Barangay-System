@@ -1522,9 +1522,12 @@ footer .com ul li {
   flex-grow: 1;
   display: none;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 1rem;
 }
 .login_page .section-3 .close,
 .login_page .section-4 .close {
@@ -1542,11 +1545,18 @@ footer .com ul li {
 .login_page .section-3 p,
 .login_page .section-4 p {
   font-size: 0.8rem;
+  margin: 0.5rem 0;
 }
 .login_page .section-3 span,
 .login_page .section-4 span {
   color: #e01e37;
   font-size: 0.6rem;
+}
+.login_page .section-3 label,
+.login_page .section-4 label {
+  display: block;
+  font-size: 0.9rem;
+  margin: 0.8rem 0;
 }
 .login_page .section-3 form .username,
 .login_page .section-3 form .email,
@@ -1556,6 +1566,9 @@ footer .com ul li {
 .login_page .section-3 form .register-lname,
 .login_page .section-3 form .register-suffix,
 .login_page .section-3 form .register-bod,
+.login_page .section-3 form .register-house_no,
+.login_page .section-3 form .register-street,
+.login_page .section-3 form .register-subdivision,
 .login_page .section-4 form .username,
 .login_page .section-4 form .email,
 .login_page .section-4 form .password,
@@ -1563,7 +1576,10 @@ footer .com ul li {
 .login_page .section-4 form .register-mname,
 .login_page .section-4 form .register-lname,
 .login_page .section-4 form .register-suffix,
-.login_page .section-4 form .register-bod {
+.login_page .section-4 form .register-bod,
+.login_page .section-4 form .register-house_no,
+.login_page .section-4 form .register-street,
+.login_page .section-4 form .register-subdivision {
   display: flex;
   border: 1px solid #212529;
   padding: 0.5rem;
@@ -1578,6 +1594,9 @@ footer .com ul li {
 .login_page .section-3 form .register-lname .icon-container,
 .login_page .section-3 form .register-suffix .icon-container,
 .login_page .section-3 form .register-bod .icon-container,
+.login_page .section-3 form .register-house_no .icon-container,
+.login_page .section-3 form .register-street .icon-container,
+.login_page .section-3 form .register-subdivision .icon-container,
 .login_page .section-4 form .username .icon-container,
 .login_page .section-4 form .email .icon-container,
 .login_page .section-4 form .password .icon-container,
@@ -1585,7 +1604,10 @@ footer .com ul li {
 .login_page .section-4 form .register-mname .icon-container,
 .login_page .section-4 form .register-lname .icon-container,
 .login_page .section-4 form .register-suffix .icon-container,
-.login_page .section-4 form .register-bod .icon-container {
+.login_page .section-4 form .register-bod .icon-container,
+.login_page .section-4 form .register-house_no .icon-container,
+.login_page .section-4 form .register-street .icon-container,
+.login_page .section-4 form .register-subdivision .icon-container {
   width: 25px;
   display: flex;
   align-items: center;
@@ -1599,6 +1621,9 @@ footer .com ul li {
 .login_page .section-3 form .register-lname input,
 .login_page .section-3 form .register-suffix input,
 .login_page .section-3 form .register-bod input,
+.login_page .section-3 form .register-house_no input,
+.login_page .section-3 form .register-street input,
+.login_page .section-3 form .register-subdivision input,
 .login_page .section-4 form .username input,
 .login_page .section-4 form .email input,
 .login_page .section-4 form .password input,
@@ -1606,7 +1631,10 @@ footer .com ul li {
 .login_page .section-4 form .register-mname input,
 .login_page .section-4 form .register-lname input,
 .login_page .section-4 form .register-suffix input,
-.login_page .section-4 form .register-bod input {
+.login_page .section-4 form .register-bod input,
+.login_page .section-4 form .register-house_no input,
+.login_page .section-4 form .register-street input,
+.login_page .section-4 form .register-subdivision input {
   padding: 0.5rem;
   outline: none;
   border: none;
@@ -1624,18 +1652,22 @@ footer .com ul li {
   color: #f5f5f7;
   font-weight: bold;
   width: 100%;
+  margin-bottom: 1rem;
 }
-.login_page .section-3 p,
-.login_page .section-4 p {
-  text-align: center;
+.login_page .section-3 p:last-of-type,
+.login_page .section-4 p:last-of-type {
+  text-align: start;
   font-size: 0.8rem;
-  margin: 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
-.login_page .section-3 p span,
-.login_page .section-4 p span {
+.login_page .section-3 p:last-of-type span,
+.login_page .section-4 p:last-of-type span {
   cursor: pointer;
   font-size: 0.8rem;
   color: #006630;
+}
+.login_page .section-4 {
+  justify-content: center;
 }
 
 .announcement_title {
