@@ -205,6 +205,7 @@ while($row = $result->fetch_assoc()) {
         <form class="form2Blotter" action="./model/edit_blotter.php" method="POST">
             <div class="title-cont">
                 <p>Blotter Form</p>
+                
                 <img src="iconsBackend/close 1.png" class="closeBtnEdit" alt="">
             </div>
 
@@ -220,7 +221,7 @@ while($row = $result->fetch_assoc()) {
                         <input type="text" name="complainant_suffix" id="complainant_suffix1" placeholder="Suffix">
                     </div>
 
-                    <label for="respondent">Repondent</label>
+                    <label for="respondent">Respondent</label>
                     <div class="input-cont-blotter">
                         <input type="text" name="respondent_fname" id="respondent_fname1" placeholder="First Name"
                             required>
