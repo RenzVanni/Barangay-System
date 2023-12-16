@@ -70,9 +70,11 @@ if (!empty($username)) {
     $_SESSION['success'] = 'danger';
 }
 
-if (isset($_SERVER["HTTP_REFERER"])) {
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+    echo "<script>window.location.href='../users.php'</script>";
+
+// if (isset($_SERVER["HTTP_REFERER"])) {
+//     header("Location: " . $_SERVER["HTTP_REFERER"]);
+// }
 
 $conn->close();
 ?>
