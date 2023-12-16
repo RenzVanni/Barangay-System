@@ -88,7 +88,9 @@ while($row = $result->fetch_assoc()) {
                                 data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>"
                                >Edit</a>
                             <!-- <a href="./model/print_complain.php" class="print">Print</a> -->
-                            <a href="#" class="delete">Delete</a>
+                            <?php if($_SESSION['role'] === 'admin') { ?>
+                                <a href="#" class="delete">Delete</a>
+                            <?php } ?>
 
                             <div class="modal-delete">
                                 <div class="form-delete">

@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['message'] = 'Error: User already exists.';
         $_SESSION['success'] = 'danger';
         header("Location: ../login_page.php");
+        exit;
         // Redirect or handle the error as needed
     } else {
         // The household already exists, proceed with user registration
@@ -61,21 +62,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Subject = 'Email Verification';
             $mail->Body = "Click the following link to verify your email: http://localhost/BarangaySystem/frontendModel/verify_registration.php?code=$verificationCode";
 
+ try {
             if ($mail->send()) {
                 $_SESSION['message'] = 'Registration successful. Please check your email to verify your account.';
                 $_SESSION['success'] = 'success';
                 header("Location: ../login_page.php");
+                exit;
             } else {
-                $_SESSION['message'] = 'Error sending verification email: ' . $mail->ErrorInfo;
-                $_SESSION['success'] = 'danger';
-                echo 'Error sending verification email: ' . $mail->ErrorInfo;
-                header("Location: ../login_page.php");
+                throw new Exception('Error sending verification email: ' . $mail->ErrorInfo);
             }
-        } else {
-            $_SESSION['message'] = 'Error registering user: ' . mysqli_error($conn);
+        } catch (Exception $e) {
+            $_SESSION['message'] = $e->getMessage();
             $_SESSION['success'] = 'danger';
             header("Location: ../login_page.php");
-        }     
+            exit;
+        }
+    } else {
+        $_SESSION['message'] = 'Error registering user: ' . mysqli_error($conn);
+        $_SESSION['success'] = 'danger';
+        header("Location: ../login_page.php");
+        exit;
+    }
     }
 }
 ?>

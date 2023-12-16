@@ -420,6 +420,39 @@ function editBusinessClearance(that) {
   $("#status").val(status);
 }
 
+// ! EDIT BUSINESS CLEARANCE
+function editBusinessClosure(that) {
+  id = $(that).attr("data-id");
+  business_name = $(that).attr("data-business_name");
+  owner_fname = $(that).attr("data-business_owner_fname");
+  owner_mname = $(that).attr("data-business_owner_mname");
+  owner_lname = $(that).attr("data-business_owner_lname");
+  owner_suffix = $(that).attr("data-business_owner_suffix");
+
+  house_no = $(that).attr("data-house_no");
+  street = $(that).attr("data-street");
+  subdivision = $(that).attr("data-subdivision");
+
+  documentFor = $(that).attr("data-documentFor");
+  dateApplied = $(that).attr("data-date_applied");
+  status = $(that).attr("data-status");
+
+  $("#business_id").val(id);
+  $("#businessName").val(business_name);
+  $("#business_owner_fname").val(owner_fname);
+  $("#business_owner_mname").val(owner_mname);
+  $("#business_owner_lname").val(owner_lname);
+  $("#business_owner_suffix").val(owner_suffix);
+
+  $("#house_no").val(house_no);
+  $("#street").val(street);
+  $("#subdivision").val(subdivision);
+
+  $("#documentFor").val(documentFor);
+  $("#date_applied").val(dateApplied);
+  $("#status").val(status);
+}
+
 // ! EDIT BLOTTER
 function editBlotter(that) {
   id = $(that).attr("data-id");
