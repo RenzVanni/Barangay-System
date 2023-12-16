@@ -154,7 +154,7 @@
     <?php include './contact_us.php' ?>
 
    
-    <?php include './emergency_numbers.php' ?>
+    <?php include './hotlines.php' ?>
     
 
     <footer>
@@ -310,6 +310,7 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        dynamicBullets: true,
       },
       navigation: {
         nextEl: ".swiper-button-next",

@@ -55,6 +55,7 @@
         $_SESSION['message'] = 'Something went wrong!';
         $_SESSION['success'] = 'danger';
     }
-    header("Location: ../index.php#services");
+    echo "<script>window.location.href='../index.php#services'</script>";
+
 
 	$conn->close();

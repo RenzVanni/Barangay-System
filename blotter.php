@@ -94,7 +94,9 @@ while($row = $result->fetch_assoc()) {
                                 data-location="<?= $row['location'] ?>" data-date="<?= $row['date'] ?>"
                                 data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>">Edit</a>
                             <!-- <a href="./model/print_blotter.php?id=<?= $row['id']?>" class="print">Print</a> -->
+                            <?php if($_SESSION['role'] === 'admin') { ?>
                             <a href="#" class="delete">Delete</a>
+                            <?php } ?>
 
                             <div class="modal-delete">
                                 <div class="form-delete">

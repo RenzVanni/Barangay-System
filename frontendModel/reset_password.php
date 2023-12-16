@@ -64,14 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['token'])) {
     if (empty($newPassword) || empty($confirmPassword)) {
         $_SESSION['message'] = 'Please enter both the new password and confirm password.';
         $_SESSION['success'] = 'danger';
-        header("Location: reset_password.php?token=$token");
+        echo "<script>window.location.href='reset_password.php?token=$token'</script>";
+        // header("Location: reset_password.php?token=$token");
         exit;
     }
 
     if ($newPassword !== $confirmPassword) {
         $_SESSION['message'] = 'The new password and confirm password do not match.';
         $_SESSION['success'] = 'danger';
-        header("Location: reset_password.php?token=$token");
+        echo "<script>window.location.href='reset_password.php?token=$token'</script>";
+        // header("Location: reset_password.php?token=$token");
         exit;
     }
 
@@ -101,7 +103,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['token'])) {
         $_SESSION['success'] = 'danger';
     }
 
-    header("Location: ../login_page.php");
+    echo "<script>window.location.href='../login_page.php'</script>";
+    // header("Location: ../login_page.php");
     exit;
 }
 ?>

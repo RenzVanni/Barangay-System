@@ -1,3 +1,11 @@
+<?php include '../server/server.php' ?>
+<?php
+    $id = $_GET['id'];
+    $query = "SELECT * FROM tbl_businessclearance WHERE `id`='$id'";
+    $result = $conn->query($query);
+    $businessClearance = $result->fetch_assoc();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,7 +131,7 @@
           
           margin-top: 30px;
           margin-left: 85px;">
-                        This is to certify that the business <input type="text" id="bname"
+                        This is to certify that the business <input type="text"  value="<?php echo $businessClearance['business_name']?>" id="bname"
                             placeholder="NAME OF BUSINESS" style="color: #000;
             font-family: Caladea;
             font-size: 19px;
@@ -133,7 +141,7 @@
             border: none;
             border-bottom: 1px solid black;
             width: 200px;">owned and
-                        operated by <input type="text" id="ownersName" placeholder="BUSINESS OWNER’S NAME" style="color: #000;
+                        operated by <input type="text"  value="<?php echo $businessClearance['business_owner_fname']." ".$businessClearance['business_owner_mname']." ".$businessClearance['business_owner_lname']." ".$businessClearance['business_owner_suffix']?>" id="ownersName" placeholder="BUSINESS OWNER’S NAME" style="color: #000;
             font-family: Caladea;
             font-size: 19px;
             font-style: normal;
@@ -142,7 +150,7 @@
             border: none;
             border-bottom: 1px solid black;
             width: 200px;">whose business address is located at
-                        <input type="text" id="address" placeholder="ADDRESS OF BUSINESS" style="color: #000;
+                        <input type="text" id="address" value="<?= $businessClearance['house_no']." ".$businessClearance['street']." ".$businessClearance['subdivision'] ?>" placeholder="ADDRESS OF BUSINESS" style="color: #000;
             font-family: Caladea;
             font-size: 19px;
             font-style: normal;
@@ -152,7 +160,7 @@
             border-bottom: 1px solid black;
             width: 200px;"> <span>Barangay Zone IV, City of Dasmariñas, Cavite</span>has
                         ceased / stopped its business operation effective <input type="text" id="dateClosure"
-                            placeholder="DATE OF CLOSURE" style="color: #000;
+                            placeholder="DATE OF CLOSURE" value="<?= $businessClearance['date_applied'] ?>" style="color: #000;
             font-family: Caladea;
             font-size: 19px;
             font-style: normal;
@@ -161,7 +169,7 @@
             border: none;
             border-bottom: 1px solid black;
             width: 200px;"> due to
-                        <input type="text" id="reason" placeholder="REASON" style="color: #000;
+                        <input type="text" value="<?= $businessClearance['purpose'] ?>" id="reason" placeholder="REASON" style="color: #000;
             font-family: Caladea;
             font-size: 19px;
             font-style: normal;
@@ -235,7 +243,7 @@
     </div>
 
     <div class="modal-editClosure">
-        <form class="formeditClosure" action="">
+        <form class="formeditClosure" action="../model/edit_certificates/edit_businessClosure.php" method="post">
             <div class="title-cont-modal">
                 <p>Resident Informatoin</p>
                 <img src="../iconsBackend/close 1.png" class="closeClosure" alt="">
@@ -244,30 +252,39 @@
             <div class="modal-layer-b-closure">
                 <div class="input-b-closure">
                     <label for="businessName">Business Name:</label>
-                    <input type="text" id="businessName" placeholder="Business name">
+                    <input type="text" name="business_name" value="<?= $businessClearance['business_name'] ?>" id="businessName" placeholder="Business name">
                 </div>
                 <div class="input-b-closure">
                     <label for="ownerName">Business Owner's Name:</label>
                     <div class="label111">
-                        <input type="text" id="business_owner_fname" placeholder="First Name">
-                        <input type="text" id="business_owner_mname" placeholder="Middle Name">
-                        <input type="text" id="business_owner_lname" placeholder="Last Name">
-                        <input type="text" id="business_owner_suffix" placeholder="Suffix">
+                        <input type="text" name="owner_fname" value="<?= $businessClearance['business_owner_fname'] ?>" id="business_owner_fname" placeholder="First Name">
+                        <input type="text" name="owner_mname" value="<?= $businessClearance['business_owner_mname'] ?>" id="business_owner_mname" placeholder="Middle Name">
+                        <input type="text" name="owner_lname" value="<?= $businessClearance['business_owner_lname'] ?>" id="business_owner_lname" placeholder="Last Name">
+                        <input type="text" name="owner_suffix" value="<?= $businessClearance['business_owner_suffix'] ?>" id="business_owner_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-b-closure">
                     <label for="address">Business Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" value="<?= $businessClearance['house_no'] ?>" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" value="<?= $businessClearance['street'] ?>" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" value="<?= $businessClearance['subdivision'] ?>" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
 
+                <textarea name="purpose" id="" cols="30" rows="10"></textarea>
+
+            <input type="hidden" value="<?= $businessClearance['id'] ?>" name="id" id="business_id">
+            <input type="hidden" value="<?= $businessClearance['date_applied'] ?>" name="date_applied" id="date_applied">
+            <input type="hidden" value="<?= $businessClearance['status'] ?>" name="status" id="status">
             </div>
             <input type="submit" id="submit" value="Save">
         </form>
     </div>
+
+    <script src="../js//jQuery-3.7.0.js"></script>
+    <script src="../js//app.js"></script>
+
     <script>
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;

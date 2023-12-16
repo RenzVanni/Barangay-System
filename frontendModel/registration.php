@@ -59,23 +59,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->setFrom('renzvanni626@gmail.com');
             $mail->addAddress($email);
             $mail->Subject = 'Email Verification';
-            $mail->Body = "Click the following link to verify your email: http://localhost/BarangaySystem/frontendModel/verify_registration.php?code=$verificationCode";
+            $mail->Body = "Click the following link to verify your email: http://barangayzone4dasmarinas.000webhostapp.com/frontendModel/verify_registration.php?code=$verificationCode";
 
             if ($mail->send()) {
                 $_SESSION['message'] = 'Registration successful. Please check your email to verify your account.';
                 $_SESSION['success'] = 'success';
-                header("Location: ../login_page.php");
+               
             } else {
                 $_SESSION['message'] = 'Error sending verification email: ' . $mail->ErrorInfo;
                 $_SESSION['success'] = 'danger';
                 echo 'Error sending verification email: ' . $mail->ErrorInfo;
-                header("Location: ../login_page.php");
+                
             }
         } else {
             $_SESSION['message'] = 'Error registering user: ' . mysqli_error($conn);
             $_SESSION['success'] = 'danger';
-            header("Location: ../login_page.php");
+           
         }     
+         echo "<script>window.location.href='../login_page.php'</script>";
     }
 }
 ?>

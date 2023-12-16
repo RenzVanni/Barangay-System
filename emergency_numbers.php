@@ -59,6 +59,10 @@
             </div>
         </div>
 
+        <img class="swiper-button-prev" src="./assets/arrow-preview.png" alt="arrow-preview" />
+        <img class="swiper-button-next" src="./assets/arrow-next.png" alt="arrow-next" />
+        <div class="swiper-pagination"></div>
+
     </div>
 </div>
 </div>

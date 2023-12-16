@@ -41,6 +41,7 @@
         $_SESSION['success'] = 'danger';
     }
 
+    // echo "<script>window.location.href='../login_page.php'</script>";
     header("Location: ../index.php#frontendAwareness");
 
 	$conn->close();

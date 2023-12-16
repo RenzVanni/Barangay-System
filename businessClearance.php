@@ -185,7 +185,7 @@ $stmt->close();
 
 
     <div class="modal-addClosure">
-        <form class="formaddClosure" action="">
+        <form class="formaddClosure" action="./model/add_businessClosure.php" method="post">
             <div class="title-cont-modal">
                 <p>Closure</p>
                 <img src="iconsBackend/close 1.png" class="closeClosure" alt="">
@@ -194,28 +194,30 @@ $stmt->close();
             <div class="modal-layer-b-closure">
                 <div class="input-b-closure">
                     <label for="businessName">Business Name:</label>
-                    <input type="text" id="businessName" placeholder="Business name">
+                    <input type="text" name="business_name" id="businessName" placeholder="Business name">
                 </div>
                 <div class="input-b-closure">
                     <label for="ownerName">Business Owner's Name:</label>
                     <div class="label111">
-                        <input type="text" id="business_owner_fname" placeholder="First Name">
-                        <input type="text" id="business_owner_mname" placeholder="Middle Name">
-                        <input type="text" id="business_owner_lname" placeholder="Last Name">
-                        <input type="text" id="business_owner_suffix" placeholder="Suffix">
+                        <input type="text" name="owner_fname" id="business_owner_fname" placeholder="First Name">
+                        <input type="text" name="owner_mname" id="business_owner_mname" placeholder="Middle Name">
+                        <input type="text" name="owner_lname" id="business_owner_lname" placeholder="Last Name">
+                        <input type="text" name="owner_suffix" id="business_owner_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-b-closure">
                     <label for="address">Business Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
 
+                <textarea name="purpose" id="" cols="30" rows="10" required></textarea>
+
             </div>
-            <input type="hidden" name="documentFor" value="closure">
+            <input type="hidden" name="documentFor" value="Closure">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
