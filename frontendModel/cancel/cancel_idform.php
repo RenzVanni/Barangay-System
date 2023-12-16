@@ -61,6 +61,6 @@
 		$_SESSION['message'] = 'Missing idForm ID!';
 		$_SESSION['success'] = 'danger';
 	}
-
-    header("Location: ../../Cart.php");
+    echo "<script>window.location.href='../../Cart.php'</script>";
+    // header("Location: ../../Cart.php");
 	$conn->close();

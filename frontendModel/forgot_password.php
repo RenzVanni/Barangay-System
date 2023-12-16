@@ -45,7 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['message'] = 'Error updating reset token: ' . mysqli_error($conn);
         $_SESSION['success'] = 'danger';
     }
-    header("Location: ../login_page.php");
+    echo "<script>window.location.href='../login_page.php'</script>";
+    // header("Location: ../login_page.php");
 
 }
 ?>

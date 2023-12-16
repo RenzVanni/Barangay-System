@@ -26,6 +26,7 @@
         $_SESSION['success'] = 'danger';
     }
 
-    header("Location: ../index.php#contact-us");
+    echo "<script>window.location.href='../index.php#contact-us'</script>";
+    // header("Location: ../index.php#contact-us");
 
 	$conn->close();

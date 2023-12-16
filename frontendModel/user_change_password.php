@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($newPassword !== $confirmPassword) {
         $_SESSION['message'] = 'New password and confirm password do not match.';
         $_SESSION['success'] = 'danger';
-        header("Location: ../index.php");
+        echo "<script>window.location.href='../index.php'</script>";
+        // header("Location: ../index.php");
         exit;
     }
 
@@ -35,24 +36,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($updatePasswordResult) {
                 $_SESSION['message'] = 'Password changed successfully.';
                 $_SESSION['success'] = 'success';
-                header("Location: ../index.php");
+                echo "<script>window.location.href='../index.php'</script>";
+                // header("Location: ../index.php");
                 exit;
             } else {
                 $_SESSION['message'] = 'Error updating password: ' . mysqli_error($conn);
                 $_SESSION['success'] = 'danger';
-                header("Location: ../index.php");
+                echo "<script>window.location.href='../index.php'</script>";
+                // header("Location: ../index.php");
                 exit;
             }
         } else {
             $_SESSION['message'] = 'Old password is incorrect.';
             $_SESSION['success'] = 'danger';
-            header("Location: ../index.php");
+            echo "<script>window.location.href='../index.php'</script>";
+            // header("Location: ../index.php");
             exit;
         }
     } else {
         $_SESSION['message'] = 'Error fetching user password: ' . mysqli_error($conn);
         $_SESSION['success'] = 'danger';
-        header("Location: ../index.php");
+        echo "<script>window.location.href='../index.php'</script>";
+        // header("Location: ../index.php");
         exit;
     }
 }

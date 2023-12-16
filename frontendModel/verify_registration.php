@@ -9,7 +9,8 @@ if (isset($_GET['code'])) {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        header("Location: ../login_page.php");
+        echo "<script>window.location.href='../login_page.php'</script>";
+        // header("Location: ../login_page.php");
         $_SESSION['message'] = 'Email verification successful. Your account is now active.';
         $_SESSION['success'] = 'success';
     } else {

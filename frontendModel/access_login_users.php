@@ -55,6 +55,7 @@ $conn->close();
 function setMessageAndRedirect($message, $status, $location) {
     $_SESSION['message'] = $message;
     $_SESSION['success'] = $status;
-    header("Location: ../main.php");
+    echo "<script>window.location.href='../main.php'</script>";
+    // header("Location: ../main.php");
     exit();
 }
