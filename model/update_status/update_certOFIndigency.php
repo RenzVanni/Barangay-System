@@ -45,6 +45,9 @@ if (!empty($status)) {
     if ($conn->query($query) === true) {
         $_SESSION['message'] = 'Certificate of Indigency status has been updated!';
         $_SESSION['success'] = 'success';
+        echo "<script>window.location.href='../certOfIndigency.php'</script>";
+        exit;
+
     } else {
         $_SESSION['message'] = 'Error updating Endorsement Certificate of Indigency status: ' . $conn->error;
         $_SESSION['success'] = 'danger';
@@ -54,9 +57,12 @@ if (!empty($status)) {
     $_SESSION['success'] = 'danger';
 }
 
-if (isset($_SERVER["HTTP_REFERER"])) {
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+echo "<script>window.location.href='../certOfIndigency.php'</script>";
+
+// if (isset($_SERVER["HTTP_REFERER"])) {
+//     echo "<script>window.location.href='" . $_SERVER["HTTP_REFERER"] . "'</script>";
+//     // header("Location: " . $_SERVER["HTTP_REFERER"]);
+// }
 
 $conn->close();
 ?>

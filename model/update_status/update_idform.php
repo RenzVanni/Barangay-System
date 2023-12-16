@@ -45,6 +45,9 @@ if (!empty($status)) {
     if ($conn->query($query) === true) {
         $_SESSION['message'] = 'idForm status has been updated!';
         $_SESSION['success'] = 'success';
+        echo "<script>window.location.href='../../idForm.php'</script>";
+        exit;
+
     } else {
         $_SESSION['message'] = 'Error updating idForm status: ' . $conn->error;
         $_SESSION['success'] = 'danger';
@@ -53,10 +56,14 @@ if (!empty($status)) {
     $_SESSION['message'] = 'Please complete the form!';
     $_SESSION['success'] = 'danger';
 }
+echo "<script>window.location.href='../../idForm.php'</script>";
 
-if (isset($_SERVER["HTTP_REFERER"])) {
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+
+
+// if (isset($_SERVER["HTTP_REFERER"])) {
+//     echo "<script>window.location.href='" . $_SERVER["HTTP_REFERER"] . "'</script>";
+//     // header("Location: " . $_SERVER["HTTP_REFERER"]);
+// }
 
 $conn->close();
 ?>

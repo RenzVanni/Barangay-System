@@ -45,6 +45,8 @@ if (!empty($status)) {
     if ($conn->query($query) === true) {
         $_SESSION['message'] = 'Endorsement Certificate status has been updated!';
         $_SESSION['success'] = 'success';
+        echo "<script>window.location.href='../../endorsmentCert.php'</script>";
+        exit;
     } else {
         $_SESSION['message'] = 'Error updating Endorsement Certificate status: ' . $conn->error;
         $_SESSION['success'] = 'danger';
@@ -53,10 +55,14 @@ if (!empty($status)) {
     $_SESSION['message'] = 'Please complete the form!';
     $_SESSION['success'] = 'danger';
 }
+echo "<script>window.location.href='../../endorsmentCert.php'</script>";
+exit;
 
-if (isset($_SERVER["HTTP_REFERER"])) {
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+
+// if (isset($_SERVER["HTTP_REFERER"])) {
+//     echo "<script>window.location.href='" . $_SERVER["HTTP_REFERER"] . "'</script>";
+//     // header("Location: " . $_SERVER["HTTP_REFERER"]);
+// }
 
 $conn->close();
 ?>

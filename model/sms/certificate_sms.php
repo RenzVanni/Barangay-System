@@ -76,6 +76,8 @@ if($contactNo) {
 if (substr($RECIPIENT, 0, 2) !== "63") {
     // If not, replace the leading zero with "63"
     $RECIPIENT = "63" . substr($RECIPIENT, 1);
+} else if(!empty($RECIPIENT)) {
+    exit;
 }
 
 $configuration = new Configuration(host: $BASE_URL, apiKey: $API_KEY);

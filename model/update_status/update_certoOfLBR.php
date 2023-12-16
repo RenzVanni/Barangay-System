@@ -45,6 +45,8 @@ if (!empty($status)) {
     if ($conn->query($query) === true) {
         $_SESSION['message'] = 'Certificate of Late Birth Registration status has been updated!';
         $_SESSION['success'] = 'success';
+        echo "<script>window.location.href='.././certOfLBR.php'</script>";
+        exit;
     } else {
         $_SESSION['message'] = 'Error updating Certificate Late Birth Registration status: ' . $conn->error;
         $_SESSION['success'] = 'danger';
@@ -54,9 +56,12 @@ if (!empty($status)) {
     $_SESSION['success'] = 'danger';
 }
 
-if (isset($_SERVER["HTTP_REFERER"])) {
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
+    echo "<script>window.location.href='.././certOfLBR.php'</script>";
+
+// if (isset($_SERVER["HTTP_REFERER"])) {
+//     echo "<script>window.location.href='" . $_SERVER["HTTP_REFERER"] . "'</script>";
+//     // header("Location: " . $_SERVER["HTTP_REFERER"]);
+// }
 
 $conn->close();
 ?>
