@@ -49,7 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirect to the appropriate page (adjust the path accordingly)
-    header("Location: ../../generate/idForm_generate.php?id=". $id);
+    echo "<script>window.location.href='../../generate/idForm_generate.php?id=$id'</script>";
+    // header("Location: ../../generate/idForm_generate.php?id=". $id);
     exit();
 }
 

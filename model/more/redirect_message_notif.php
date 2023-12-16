@@ -8,7 +8,8 @@ $notificationId = $_GET['id'];
 // Mark the specific certificate as read
 if (markCertificateAsReadMessage($conn, $notificationId)) {
     // Redirect to the corresponding page
-        header('Location: ../../message.php?id='. $notificationId);
+        echo "<script>window.location.href='../../message.php?id=$notificationId'</script>";
+        // header('Location: ../../message.php?id='. $notificationId);
 } else {
     // Handle the case where marking as read fails
     echo 'Error marking notification as read.';
@@ -16,7 +17,8 @@ if (markCertificateAsReadMessage($conn, $notificationId)) {
 
 if (getUser($conn, $notificationId)) {
     // Redirect to the corresponding page
-        header('Location: ../../message.php?id='. $notificationId);
+        echo "<script>window.location.href='../../message.php?id=$notificationId'</script>";
+        // header('Location: ../../message.php?id='. $notificationId);
 } else {
     // Handle the case where marking as read fails
     echo 'Error marking notification as read.';

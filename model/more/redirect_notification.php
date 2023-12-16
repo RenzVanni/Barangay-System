@@ -10,15 +10,20 @@ $notificationSource = $_GET['source'];
 if (markCertificateAsRead($conn, $notificationSource, $notificationId)) {
     // Redirect to the corresponding page
     if ($notificationSource === 'tbl_idform') {
-        header('Location: ../../idForm.php');
+        echo "<script>window.location.href='../../idForm.php'</script>";
+        // header('Location: ../../idForm.php');
     } else if ($notificationSource === 'tbl_brgyclearance') {
-        header('Location: ../../brgyClearance.php');
+        echo "<script>window.location.href='../../brgyClearance.php'</script>";
+        // header('Location: ../../brgyClearance.php');
     } else if ($notificationSource === 'tbl_ecertificate') {
-        header('Location: ../../endorsmentCert.php');
+        echo "<script>window.location.href='../../endorsmentCert.php'</script>";
+        // header('Location: ../../endorsmentCert.php');
     } else if ($notificationSource === 'tbl_certofindigency') {
-        header('Location: ../../certOfIndigency.php');
+        echo "<script>window.location.href='../../certOfIndigency.php'</script>";
+        // header('Location: ../../certOfIndigency.php');
     } else if ($notificationSource === 'tbl_certoflbr') {
-        header('Location: ../../certOfLBR.php');
+        echo "<script>window.location.href='../../certOfLBR.php'</script>";
+        // header('Location: ../../certOfLBR.php');
     } else {
         echo 'Unknown notification source.';
     }

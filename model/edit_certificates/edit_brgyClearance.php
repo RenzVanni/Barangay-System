@@ -46,7 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirect to the appropriate page (adjust the path accordingly)
-    header("Location: ../../generate/brgyClearance_generate.php?id=". $id);
+    echo "<script>window.location.href='../../generate/brgyClearance_generate.php?id=$id'</script>";
+    // header("Location: ../../generate/brgyClearance_generate.php?id=". $id);
     exit();
 }
 

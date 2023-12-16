@@ -56,9 +56,11 @@ if ($result) {
 
         // Redirect to the appropriate page based on the 'documentFor' value
         if ($documentFor == "Self") {
-            header("Location: ../../generate/endorsementCert_generate_forselft.php?id=". $id);
+            echo "<script>window.location.href='../../generate/endorsementCert_generate_forselft.php?id=$id'</script>";
+            // header("Location: ../../generate/endorsementCert_generate_forselft.php?id=". $id);
         } else {
-            header("Location: ../../generate/endorsementCert_generate_forsomeone.php?id=". $id);
+            echo "<script>window.location.href='../../generate/endorsementCert_generate_forsomeone.php?id=$id'</script>";
+            // header("Location: ../../generate/endorsementCert_generate_forsomeone.php?id=". $id);
         }
     } else {
         echo "Error: 'documentFor' column not found in the result.";

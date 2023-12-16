@@ -67,6 +67,7 @@ include '../../server/server.php';
 		$_SESSION['success'] = 'danger';
 	}	
 
-	header("Location: ../../residentInfo.php");
+    echo "<script>window.location.href='../../residentInfo.php'</script>";
+	// header("Location: ../../residentInfo.php");
 	$conn->close();
  ?>

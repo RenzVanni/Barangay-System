@@ -77,11 +77,14 @@ if ($result) {
 
         // Redirect to the appropriate page based on the 'documentFor' value
         if ($documentFor == "Self") {
-            header("Location: ../../generate/certOfLBR_generate_forself.php?id=". $id);
+            echo "<script>window.location.href='../../generate/certOfLBR_generate_forself.php?id=$id'</script>";
+            // header("Location: ../../generate/certOfLBR_generate_forself.php?id=". $id);
         } else if($documentFor == "Single Parent") {
-            header("Location: ../../generate/certOfLBR_generate_forsingleparent.php?id=". $id);
+            echo "<script>window.location.href='../../generate/certOfLBR_generate_forsingleparent.php?id=$id'</script>";
+            // header("Location: ../../generate/certOfLBR_generate_forsingleparent.php?id=". $id);
         } else {
-            header("Location: ../../generate/certOfLBR_generate_fortheirchild.php?id=". $id);
+            echo "<script>window.location.href='../../generate/certOfLBR_generate_fortheirchild.php?id=$id'</script>";
+            // header("Location: ../../generate/certOfLBR_generate_fortheirchild.php?id=". $id);
         }
     } else {
         echo "Error: 'documentFor' column not found in the result.";

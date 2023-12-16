@@ -39,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirect to the appropriate page (adjust the path accordingly)
-    header("Location: ../../generate/businessClosure.php?id=". $id);
+    echo "<script>window.location.href='../../generate/businessClosure.php?id=$id'</script>";
+    // header("Location: ../../generate/businessClosure.php?id=". $id);
     exit();
 }
 
