@@ -169,7 +169,6 @@ function calculateAge($dob) {
                         <th>Place of Birth</th>
                         <th>Civil Status</th>
                         <th>Address</th>
-                        <th>Email</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -185,12 +184,12 @@ function calculateAge($dob) {
                         <td><?= $row['place_of_birth'] ?></td>
                         <td><?= $row['civil_status'] ?></td>
                         <td><?= $row['house_no']. " " .$row['street']. " " .$row['subdivision'] ?></td>
-                        <td><?= $row['email'] ?></td>
                         <td class="actions">
                             <a href="./editHousehold.php?id=<?= $row['id'] ?>" class="edit" id="editResidents">Edit</a>
                            
-                            
-                            <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
+                            <?php if($_SESSION['role'] === 'admin') { ?>
+                                <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
+                            <?php } ?>
 
                             <div class="modal-delete">
                                 <div class="form-delete">

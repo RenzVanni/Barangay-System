@@ -40,10 +40,10 @@ function calculateAge($dob) {
     $result = $select->get_result();
     $osy = $result->num_rows;
 
-    $startDateSnr = date('Y-m-d', strtotime('-24 years'));
+    $startDateSnr = date('Y-m-d', strtotime('-60 years'));
     // $endDateSnr = date('Y-m-d', strtotime('-15 years'));
     // Fetch residents who are 18 years old and below based on their birthday
-    $selectSnr = $conn->prepare("SELECT * FROM tbl_households WHERE date_of_birth = ? ");
+    $selectSnr = $conn->prepare("SELECT * FROM tbl_households WHERE date_of_birth <= ? ");
     $selectSnr->bind_param("s", $startDateSnr);
     $selectSnr->execute();
     $resultSnr = $selectSnr->get_result();

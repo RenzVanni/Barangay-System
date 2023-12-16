@@ -156,6 +156,9 @@ function calculateAge($dob) {
 
 </html>
 
+<script src="../js//jQuery-3.7.0.js"></script>
+<script src="../js//app.js"></script>
+
 <script>
 // JavaScript code to handle pagination
 const table = document.getElementById('table');

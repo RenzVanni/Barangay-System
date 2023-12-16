@@ -77,8 +77,9 @@ while($row = $result->fetch_assoc()) {
                             <a href="" class="edit" id="editUser" onclick="editPassword(this)"
                                 data-id="<?= $row['id']?>" data-email="<?= $row["email"] ?>"
                                 data-username="<?= $row['username'] ?>">Edit</a>
-                                <a href="#"
-                                    class="delete">Delete</a>
+                                <?php if($_SESSION['role'] === 'admin') { ?>
+                                <a href="#"class="delete">Delete</a>
+                                <?php } ?>
 
                                 <div class="modal-delete">
                                     <div class="form-delete">
@@ -115,12 +116,12 @@ while($row = $result->fetch_assoc()) {
                 <p class="title-name">Create New User</p>
                 <img src="iconsBackend/close 1.png" class="closeBtn" alt="">
             </div>
-
+<!-- 
             <div class="unang-layer-user">
                 <img id="preview" alt="Preview">
                 <label for="file-upload" class="custom-file-upload">
                     <input type="file" accept="image/*" onchange="previewImage(event)">
-            </div>
+            </div> -->
 
             <div class="pangalawang-layer-user">
                 <label for="username-user"></label>Username

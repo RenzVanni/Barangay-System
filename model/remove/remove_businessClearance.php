@@ -16,12 +16,15 @@
 			$select->execute();
 			$businessClearance = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_businessclearance_archive(`business-name`, `business-owner-fname`, `business-owner-mname`, `business-owner-lname`, `business-address`, `date-applied`, `documentFor`) VALUES (
+			$insert = "INSERT INTO del_businessclearance_archive(`business-name`, `business-owner-fname`, `business-owner-mname`, `business-owner-lname`, `house_no`, `street`, `subdivision`, `purpose`, `date-applied`, `documentFor`) VALUES (
 				'{$businessClearance['business-name']}',
 				'{$businessClearance['business-owner-fname']}',
 				'{$businessClearance['business-owner-mname']}',
 				'{$businessClearance['business-owner-lname']}',
-				'{$businessClearance['business-address']}',
+				'{$businessClearance['house_no']}',
+				'{$businessClearance['street']}',
+				'{$businessClearance['subdivision']}',
+				'{$businessClearance['purpose']}',
 				'{$businessClearance['date-applied']}',
 				'{$businessClearance['documentFor']}'
 			)";

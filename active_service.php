@@ -16,7 +16,7 @@
             </div>
             <div class="container">
                 <label for="contact-number">Contact Number</label>
-                <input required type="text" name="contactNo" id="contact-number" placeholder="Enter Contact Number" />
+                <input required type="number" minlength="11" name="contactNo" id="contact-number" placeholder="Enter Contact Number" />
 
                 <div class="idImage-container">
                     <input type="file" name="image" id="idImage" onchange="displayImage()">
