@@ -15,10 +15,10 @@ while($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archives Barangay Clearance</title>
-    <link rel="stylesheet" href="../style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="../style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="../style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar2.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="../style3.css ">
+    <link rel="stylesheet" href="../style4.css ">
+    <link rel="stylesheet" href="../style/generateCert.css">
+    <script src="sidebar2.js "></script>
     <link rel="stylesheet" href="../sidenav.css">
 </head>
 

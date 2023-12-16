@@ -133,7 +133,7 @@
                     <div class="icon-container">
                         <img src="./assets/register-email-icon.svg" alt="">
                     </div>
-                        <input type="email" name="email" id="" placeholder="Email" required>
+                        <input type="email" name="email" id="" placeholder="Email" required>  
                 </div>
 
                 <label for="">Password:</label>
