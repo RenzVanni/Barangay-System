@@ -1194,12 +1194,14 @@ header .user {
   width: 90%;
   height: 500px;
   overflow: hidden;
-  background-color: red;
 }
 .emergency_numbers .emNumberSwiper .cards-container {
-  width: auto;
-  height: 500px;
-  background-color: black;
+  width: 90%;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 80%;
+  border-radius: 1rem;
+  padding-bottom: 2rem;
 }
 .emergency_numbers .emNumberSwiper .cards-container .card {
   display: flex;
@@ -1207,8 +1209,9 @@ header .user {
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
-  background-color: #e5b3fe;
   border-radius: 1rem;
+  border: none;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 .emergency_numbers .emNumberSwiper .cards-container .card .pic {
   background-color: black;
@@ -1263,6 +1266,7 @@ header .user {
 @media (min-width: 375px) {
   .hotlines .container {
     margin-bottom: 0;
+    max-width: 800px;
   }
 }
 .hotlines .container .numbers {

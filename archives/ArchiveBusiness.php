@@ -1,4 +1,13 @@
 <?php include '../server/server.php'?>
+<?php
+$query =  "SELECT * FROM del_business_archive";
+$result = $conn->query($query);
+
+$business = array();
+while($row = $result->fetch_assoc()) {
+  $business[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,9 +58,20 @@
                     </tr>
                 </thead>
                 <tbody>
+                        <?php if(!empty($business)) {?>
+                    <?php $no=1; foreach($business as $row): ?>
                     <tr>
-                        <td></td>
+                        <td>
+                            <?= $no ?></td>
+                        <td><?= $row['taxpayer_fname']." ".$row['taxpayer_mname']." ".$row['taxpayer_lname']." ".$row['taxpayer_suffix']?>
+                        </td>
+                        <td>
+                            <?= $row['business_name']?></td>
+                        <td><?= $row['house_no']." ".$row['street']." ".$row['subdivision']?></td>
+                        <td><?= $row['business_type']?></td>
                     </tr>
+                    <?php $no++; endforeach  ?>
+                    <?php } ?>
                 </tbody>
                 <!-- Add more rows here -->
             </table>
@@ -66,6 +86,9 @@
 </body>
 
 </html>
+
+<script src="../js//jQuery-3.7.0.js"></script>
+<script src="../js//app.js"></script>
 
 <script>
 // JavaScript code to handle pagination

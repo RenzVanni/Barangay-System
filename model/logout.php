@@ -31,4 +31,3 @@ if (isset($_SESSION['role'])) {
 // } else {
 //     header('location: ../login_page.php');
 // }
-?>

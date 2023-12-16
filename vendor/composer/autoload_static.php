@@ -164,8 +164,8 @@ class ComposerStaticInit49310a8468448811f88e989dbc597500
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -217,6 +217,16 @@ class ComposerStaticInit49310a8468448811f88e989dbc597500
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PhpImap' => 
+            array (
+                0 => __DIR__ . '/..' . '/php-imap/php-imap/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -243,6 +253,7 @@ class ComposerStaticInit49310a8468448811f88e989dbc597500
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit49310a8468448811f88e989dbc597500::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit49310a8468448811f88e989dbc597500::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit49310a8468448811f88e989dbc597500::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit49310a8468448811f88e989dbc597500::$classMap;
 
         }, null, ClassLoader::class);

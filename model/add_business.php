@@ -9,7 +9,7 @@
     
     $taxpayer_fname  = $conn->real_escape_string($_POST['taxPayer_fname']);
     $taxpayer_mname  = $conn->real_escape_string($_POST['taxPayer_mname']);
-    $taxpayer_lname  = $conn->real_escape_string($_POST['taxaPyer_lname']);
+    $taxpayer_lname  = $conn->real_escape_string($_POST['taxaPayer_lname']);
     $taxpayer_suffix  = $conn->real_escape_string($_POST['taxPayer_suffix']);
 
     $businessName 	= $conn->real_escape_string($_POST['business_name']);

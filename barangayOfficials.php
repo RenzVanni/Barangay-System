@@ -64,7 +64,9 @@
                             <th>Term Start</th>
                             <th>Term End</th>
                             <th>Status</th>
+                            <?php if($_SESSION['role'] === 'admin') {?>
                             <th>Action</th>
+                            <?php } ?>
                         </tr>
                     </thead>
                     <?php if(!empty($official)) { ?>
@@ -75,6 +77,7 @@
                         <td><?= $row['termstart'] ?></td>
                         <td><?= $row['termend'] ?></td>
                         <td class="status"><?= $row['status'] ?></td>
+                        <?php if($_SESSION['role'] == 'admin') {?>
                         <td class="actions">
                             <span class="edit" id="editOfficials" onclick="editOfficial(this)"
                                 data-id="<?= $row['id'] ?>" data-fname="<?= $row['firstname'] ?>"
@@ -84,6 +87,7 @@
                                 data-status="<?= $row['status'] ?>">Edit</span>
                             <!-- <a href="./model/remove/remove_official.php?id=<?= $row['id'] ?>" class="delete">Delete</a> -->
                         </td>
+                        <?php } ?>
                     </tr>
                     <?php endforeach ?>
                     <?php }?>

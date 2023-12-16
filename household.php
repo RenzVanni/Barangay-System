@@ -64,7 +64,6 @@ function calculateAge($dob) {
                         <th>Gender</th>
                         <th>Civil Status</th>
                         <th>Street</th>
-                        <th>Email</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -79,7 +78,6 @@ function calculateAge($dob) {
                         <td><?= $row['sex'] ?></td>
                         <td><?= $row['civil_status'] ?></td>
                         <td><?= $row['street'] ?></td>
-                        <td><?= $row['email'] ?></td>
                         <td class="actions">
                             <a href="editHouseholds.php?id=<?= $row['id']?>" class="edit" id="viewHousehold">View</a>
 
