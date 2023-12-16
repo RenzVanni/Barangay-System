@@ -42,8 +42,8 @@
             $passwordHashed = password_hash("admin", PASSWORD_DEFAULT);
             $role = "admin";
 
-            $insertAdmin = $conn->prepare("INSERT INTO tbl_users (username, password, role) VALUES (?, ?, ?)");
-            $insertAdmin->bind_param("sss", $adminName, $passwordHashed, $role);
+            $insertAdmin = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname) VALUES (?, ?, ?, ?, ?, ?)");
+            $insertAdmin->bind_param("ssssss", $adminName, $passwordHashed, $role, $fname, $fname, $lname);
             $insertAdmin->execute();
 
         }
