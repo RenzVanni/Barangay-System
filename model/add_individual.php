@@ -55,7 +55,7 @@
 		if ($stmt->execute()) {
 			$_SESSION['message'] = 'Resident Information has been saved!';
 			$_SESSION['success'] = 'success';
-			include './sendAccount.php';
+			// include './sendAccount.php';
 		}
 
 		// insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $pbirth, $email, $houseNo, $subdivision, $contact);
