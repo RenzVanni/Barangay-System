@@ -24,7 +24,8 @@
         $conn->close();
 
         // Redirect back to the main chat page
-        header('Location: ../message.php');
+        echo "<script>window.location.href='../message.php'</script>";
+        // header('Location: ../message.php');
         exit();
     }
 ?>

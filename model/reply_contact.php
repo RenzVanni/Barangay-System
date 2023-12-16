@@ -26,7 +26,8 @@
         $conn->close();
 
         // Redirect back to the main chat page
-        header('Location: ../inquiry.php');
+        echo "<script>window.location.href='../inquiry.php'</script>";
+        // header('Location: ../inquiry.php');
         exit();
     }
 ?>

@@ -54,5 +54,6 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../../certOfIndigency.php");
+    echo "<script>window.location.href='../../certOfIndigency.php'</script>";
+    // header("Location: ../../certOfIndigency.php");
 	$conn->close();

@@ -60,8 +60,8 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-
-    header("Location: ../../blotter.php");
+    echo "<script>window.location.href='../../blotter.php'</script>";
+    // header("Location: ../../blotter.php");
 	$conn->close();
 
 	?>

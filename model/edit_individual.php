@@ -67,7 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $updateAllStmt->execute();
             $updateAllStmt->close();
             
-        header("Location: ../householdDisplay.php?id=" . $headId);
+        echo "<script>window.location.href='../householdDisplay.php?id=$headId'</script>";
+        // header("Location: ../householdDisplay.php?id=" . $headId);
         exit;
     } else {
         echo "Error updating record: " . $stmt->error;

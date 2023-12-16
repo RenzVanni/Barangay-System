@@ -97,24 +97,31 @@
 	}
 
 	if(isset($_POST['idForm'])) {
-    header("Location: ../idForm.php");
+    echo "<script>window.location.href='../idForm.php'</script>";
+    // header("Location: ../idForm.php");
 	}
 	else if($_POST['brgyClearance']) {
-    header("Location: ../brgyClearance.php");
+    echo "<script>window.location.href='../brgyClearance.php'</script>";
+    // header("Location: ../brgyClearance.php");
 	} 
 	else if($_POST['endorsementCert']) {
-    header("Location: ../endorsmentCert.php");
+    echo "<script>window.location.href='../endorsmentCert.php'</script>";
+    // header("Location: ../endorsmentCert.php");
 	}
 	else if($_POST['certOfIndigency']) {
-    header("Location: ../certOfIndigency.php");
+    echo "<script>window.location.href='../certOfIndigency.php'</script>";
+    // header("Location: ../certOfIndigency.php");
 	}
 	else if($_POST['certOfLBR']) {
-    header("Location: ../certOfLBR.php");
+    echo "<script>window.location.href='../certOfLBR.php'</script>";
+    // header("Location: ../certOfLBR.php");
 	}
 	else if($_POST['awareness']) {
-    header("Location: ../awareness.php");
+    echo "<script>window.location.href='../awareness.php'</script>";
+    // header("Location: ../awareness.php");
 	}else {
-    header("Location: ../residentInfo.php");
+    echo "<script>window.location.href='../residentInfo.php'</script>";
+    // header("Location: ../residentInfo.php");
 	}
 
 	$conn->close();

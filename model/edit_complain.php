@@ -59,6 +59,7 @@
 		$_SESSION['success'] = 'danger';
 	}
 
+	
     header("Location: ../complain.php");
 
 	$conn->close();

@@ -63,5 +63,6 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../../certOfLBR.php");
+    echo "<script>window.location.href='../../certOfLBR.php'</script>";
+    // header("Location: ../../certOfLBR.php");
 	$conn->close();

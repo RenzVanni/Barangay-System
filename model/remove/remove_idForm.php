@@ -59,5 +59,6 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../../idForm.php");
+    echo "<script>window.location.href='../../idForm.php'</script>";
+    // header("Location: ../../idForm.php");
 	$conn->close();

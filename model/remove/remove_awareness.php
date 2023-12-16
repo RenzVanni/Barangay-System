@@ -50,5 +50,6 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../../awareness.php");
+    echo "<script>window.location.href='../../awareness.php'</script>";
+    // header("Location: ../../awareness.php");
 	$conn->close();

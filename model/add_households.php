@@ -80,7 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     $stmt->close();
-    header("Location: ../residentInfo.php");
+    echo "<script>window.location.href='../residentInfo.php'</script>";
+    // header("Location: ../residentInfo.php");
     exit;
 }
 ?>

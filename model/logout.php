@@ -9,7 +9,8 @@ if (isset($_SESSION['role'])) {
         session_start();
         $_SESSION['message'] = "You have been logged out!";
         $_SESSION['success'] = 'danger';
-        header('location: ../index.php');
+        echo "<script>window.location.href='../index.php'</script>";
+        // header('location: ../index.php');
 
         
     } else {
@@ -19,7 +20,8 @@ if (isset($_SESSION['role'])) {
         session_start();
         $_SESSION['message'] = "You have been logged out!";
         $_SESSION['success'] = 'danger';
-        header('location: ../index.php');
+        echo "<script>window.location.href='../index.php'</script>";
+        // header('location: ../index.php');
 
     }
 }

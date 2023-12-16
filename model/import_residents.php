@@ -68,7 +68,8 @@ foreach ($data as $key => $row) {
         }
     }
 }
-    header("Location: ../residentInfo.php");
+    echo "<script>window.location.href='../residentInfo.php'</script>";
+    // header("Location: ../residentInfo.php");
 
 $conn->close();
 ?>

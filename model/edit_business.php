@@ -41,6 +41,7 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../editBusiness.php?id=". $id);
+    echo "<script>window.location.href='../editBusiness.php?id=$id'</script>";
+    // header("Location: ../editBusiness.php?id=". $id);
 
 	$conn->close();

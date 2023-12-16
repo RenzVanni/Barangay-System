@@ -56,5 +56,6 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../../brgyClearance.php");
+    echo "<script>window.location.href='../../brgyClearance.php'</script>";
+    // header("Location: ../../brgyClearance.php");
 	$conn->close();

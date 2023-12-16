@@ -45,6 +45,7 @@
         $_SESSION['success'] = 'danger';
     }
 
-    header("Location: ../endorsmentCert.php");
+    echo "<script>window.location.href='../endorsmentCert.php'</script>";
+    // header("Location: ../endorsmentCert.php");
 
 	$conn->close();

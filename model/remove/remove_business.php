@@ -52,5 +52,6 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../../business.php");
+    echo "<script>window.location.href='../../business.php'</script>";
+    // header("Location: ../../business.php");
 	$conn->close();

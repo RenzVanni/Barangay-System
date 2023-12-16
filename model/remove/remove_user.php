@@ -28,5 +28,6 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-	header("Location: ../../users.php");
+    echo "<script>window.location.href='../../users.php'</script>";
+	// header("Location: ../../users.php");
 	$conn->close();

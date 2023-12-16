@@ -152,7 +152,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmtCheck->close();
     $stmtInsert->close();
     $stmt->close();
-    header("Location: ../editHouseholds.php?id=". $householdHeadId);
+    echo "<script>window.location.href='../editHouseholds.php?id= $householdHeadId'</script>";
+    // header("Location: ../editHouseholds.php?id=". $householdHeadId);
     exit;
 }
 ?>

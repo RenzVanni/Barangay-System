@@ -50,5 +50,6 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../../complain.php");
+    echo "<script>window.location.href='../../complain.php'</script>";
+    // header("Location: ../../complain.php");
 	$conn->close();

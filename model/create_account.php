@@ -28,7 +28,8 @@ $insert->bind_param("ssssss", $resUsername, $passwordHashed, $userType, $firstna
 
 // Execute the statement
 if ($insert->execute()) {
-     header('Location: ../users.php');
+    echo "<script>window.location.href='../users.php'</script>";
+    // header('Location: ../users.php');
 } else {
     echo "Error creating user account: " . $insert->error;
 }
