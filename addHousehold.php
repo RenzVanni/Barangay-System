@@ -131,7 +131,7 @@
 
         <p class="List">List of Members</p>
 
-        <form action="./model/add_households.php" method="post" class="input-table">
+        <form action="./model/add_households.php" method="POST" class="input-table">
             <table class="main-table">
                 <thead>
                     <tr>
@@ -146,7 +146,6 @@
                         <th>Sex</th>
                         <th style="display: none">Civil Status</th>
                         <th style="display: none">Voters Status</th>
-                        <th style="display: none">Image Profile</th>
                         <th class="houseTitle">Household Head</th>
                         <th>Action</th>
                     </tr>
