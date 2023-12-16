@@ -45,8 +45,8 @@ foreach ($data as $key => $row) {
     $voter_status     = $row[13];
     $citizenship      = $row[14];
     $householdNo      = $row[15];
-    $osy              = $row[16];
-    $pwd              = $row[17];
+    $householdHead    = $row[16];
+    $suffix              = $row[17];
 
     $query_check = "SELECT * FROM tblresidents WHERE firstname='$firstname' AND middlename='$middlename' AND lastname='$lastname'";
 
@@ -54,17 +54,17 @@ foreach ($data as $key => $row) {
 
 
     if($result->num_rows == 0) {
-        $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`) 
-             VALUES ('$firstname', '$middlename', '$lastname', '$sex', '$houseNo', '$street', '$subdivision', '$dob', '$pob', '$civil_status', '$occupation', '$email', '$contactNo', '$voter_status', '$citizenship', '$householdNo', '$osy', '$pwd')";
+        $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `household_head`, `suffix`) 
+             VALUES ('$firstname', '$middlename', '$lastname', '$sex', '$houseNo', '$street', '$subdivision', '$dob', '$pob', '$civil_status', '$occupation', '$email', '$contactNo', '$voter_status', '$citizenship', '$householdNo', '$householdHead', '$suffix')";
 
-        insertUser($conn, $username, $hashedPassword, $firstname, $middlename, $lastname, $sex, $civil_status, $street, $dob, $email);
+        // insertUser($conn, $username, $hashedPassword, $firstname, $middlename, $lastname, $sex, $civil_status, $street, $dob, $email);
 
 
         if($conn->query($query) === true){
             $_SESSION['message'] = 'Resident Information has been saved!';
             $_SESSION['success'] = 'success';
 
-            include './sendAccount.php';
+            // include './sendAccount.php';
         }
     }
 }
