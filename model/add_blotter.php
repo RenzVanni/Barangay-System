@@ -21,7 +21,6 @@
     $victim_mname 	    = $conn->real_escape_string($_POST['victim_mname']);
     $victim_lname 	    = $conn->real_escape_string($_POST['victim_lname']);
     $victim_suffix	    = $conn->real_escape_string($_POST['victim_suffix']);
-
   
     $location 	  = $conn->real_escape_string($_POST['location']);
     $date         = $conn->real_escape_string($_POST['date']);
