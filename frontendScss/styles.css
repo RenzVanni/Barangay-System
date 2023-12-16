@@ -1004,6 +1004,27 @@ header .user {
   width: 100%;
   height: 200px;
 }
+.awareness-page .section-2 form .awareness-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 1rem;
+}
+.awareness-page .section-2 form .awareness-input-container .img-input label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.awareness-page .section-2 form .awareness-input-container .preview-awareness {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #212529;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.awareness-page .section-2 form .awareness-input-container .preview-awareness img {
+  width: inherit;
+  height: inherit;
+}
 .awareness-page .section-2 form button {
   background-color: #097338;
   border-radius: 0.5rem;

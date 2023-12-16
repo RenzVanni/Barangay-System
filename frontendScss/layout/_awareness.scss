@@ -80,6 +80,32 @@
         height: 200px;
       }
 
+      .awareness-input-container {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-bottom: 1rem;
+
+        .img-input {
+          label {
+            display: block;
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        .preview-awareness {
+          width: 250px;
+          height: 250px;
+          border: 1px solid #212529;
+          object-fit: cover;
+
+          img {
+            width: inherit;
+            height: inherit;
+          }
+        }
+      }
+
       button {
         background-color: #097338;
         border-radius: 0.5rem;

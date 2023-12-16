@@ -347,3 +347,30 @@ function updateProfileImg() {
   }
 }
 
+// ! AWARENESS
+function displayAwarenessImage() {
+  const awarenessImageInput = document.getElementById("awarenessImage");
+  const label = document.querySelector(".idLabel");
+  const previewAwarenssImg = document.getElementById("preview-awareness");
+
+  // Check if a file is selected
+  if (awarenessImageInput.files && awarenessImageInput.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      // Display the image preview
+      previewAwarenssImg.innerHTML =
+        '<img src="' + e.target.result + '" alt="Image Preview">';
+    };
+
+    // Read the selected file as a data URL
+    reader.readAsDataURL(awarenessImageInput.files[0]);
+
+    // Update the label text to indicate the file name
+    label.textContent = awarenessImageInput.files[0].name;
+  } else {
+    // No file selected, reset label and preview
+    label.textContent = "Image";
+    previewAwarenssImg.innerHTML = "";
+  }
+}

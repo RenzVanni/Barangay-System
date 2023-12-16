@@ -19,10 +19,18 @@
 
     $location = $house_no." ".$street." ".$subdivision;
 
+    $image = $_FILES['image']['name'];
+
+
+// File upload handling
+    $targetDirectory = "../uploads/awareness/";
+    $targetAnnouncement = $targetDirectory . basename($_FILES['image']['name']);
+    $validAnnouncementImage = move_uploaded_file($_FILES['image']['tmp_name'], $targetAnnouncement);
+
     if(!empty($location) && !empty($details)){
 
-        $insert  = "INSERT INTO tbl_awareness (`firstname`, `middlename`, `lastname`, `suffix`, `location`, `details`,`status`, `seen`) 
-        VALUES ('$firstname', '$middlename', '$lastname', '$suffix','$location','$details','active', 'unread')";
+        $insert  = "INSERT INTO tbl_awareness (`firstname`, `middlename`, `lastname`, `suffix`, `location`, `details`,`status`, `seen`, `image`) 
+        VALUES ('$firstname', '$middlename', '$lastname', '$suffix','$location','$details','active', 'unread', '$image')";
 
         $result  = $conn->query($insert);
 

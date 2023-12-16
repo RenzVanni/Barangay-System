@@ -29,6 +29,16 @@
 
             <label for="">Details:</label>
             <textarea name="details" id="" placeholder="Details..." required></textarea>
+
+            <div class="awareness-input-container">
+                <div class="img-input">
+                    <label for="">Image:</label>
+                    <input type="file" name="image" id="awarenessImage" onchange="displayAwarenessImage()">
+                </div>
+                <div class="preview-awareness" id="preview-awareness">
+            </div>
+                
+            </div>
             <?php if(isset($_SESSION['username'])) {?>
                 <button type="button" class="awarenessBtn">Submit</button>
             <?php } else { ?>

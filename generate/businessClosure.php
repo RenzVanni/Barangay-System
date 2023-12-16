@@ -176,7 +176,7 @@
             font-weight: 700;
             line-height: normal;
             border: none;
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid black; 
             width: 200px;">.
                     </div>
 
