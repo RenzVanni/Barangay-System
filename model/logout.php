@@ -9,6 +9,9 @@ if (isset($_SESSION['role'])) {
         session_start();
         $_SESSION['message'] = "You have been logged out!";
         $_SESSION['success'] = 'danger';
+        header('location: ../index.php');
+
+        
     } else {
         session_destroy();
         unset($_SESSION['username']);
@@ -16,14 +19,16 @@ if (isset($_SESSION['role'])) {
         session_start();
         $_SESSION['message'] = "You have been logged out!";
         $_SESSION['success'] = 'danger';
+        header('location: ../index.php');
+
     }
 }
 
-$username = $conn->real_escape_string($_GET['username']);
+// $username = $conn->real_escape_string($_GET['username']);
 
-if (!empty($username)) {
-    header('location: ../index.php');
-} else {
-    header('location: ../login_page.php');
-}
+// if (!empty($username)) {
+//     header('location: ../index.php');
+// } else {
+//     header('location: ../login_page.php');
+// }
 ?>

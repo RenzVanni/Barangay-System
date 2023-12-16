@@ -15,12 +15,12 @@
     $time 	      = $conn->real_escape_string($_POST['time']);
     $location 	    = $conn->real_escape_string($_POST['location']);
     $details 	  = $conn->real_escape_string($_POST['details_awareness']);
-    $status 	    = $conn->real_escape_string($_POST['status_awareness']);
+    
 
     if( !empty($date) && !empty($location) && !empty($time) && !empty($details)){
 
-        $insert  = "INSERT INTO tbl_awareness (`firstname`, `middlename`, `lastname`, `suffix`, `date`, `time`, `location`, `details`,`status`) 
-        VALUES ('$firstname', '$middlename', '$lastname', '$suffix', '$date','$time', '$location','$details','$status')";
+        $insert  = "INSERT INTO tbl_awareness (`firstname`, `middlename`, `lastname`, `suffix`, `date`, `time`, `location`, `details`, `seen`) 
+        VALUES ('$firstname', '$middlename', '$lastname', '$suffix', '$date','$time', '$location','$details','read')";
 
         $result  = $conn->query($insert);
 

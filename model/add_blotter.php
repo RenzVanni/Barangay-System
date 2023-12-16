@@ -21,17 +21,17 @@
     $victim_mname 	    = $conn->real_escape_string($_POST['victim_mname']);
     $victim_lname 	    = $conn->real_escape_string($_POST['victim_lname']);
     $victim_suffix	    = $conn->real_escape_string($_POST['victim_suffix']);
-    $type 	      = $conn->real_escape_string($_POST['type']);
+  
     $location 	  = $conn->real_escape_string($_POST['location']);
     $date         = $conn->real_escape_string($_POST['date']);
     $time 	      = $conn->real_escape_string($_POST['time']);
-    $status 	    = $conn->real_escape_string($_POST['status']);
+    
     $details 	    = $conn->real_escape_string($_POST['details']);
 
     if(!empty($location) && !empty($date) && !empty($time) && !empty($details)){
 
-        $insert  = "INSERT INTO tbl_blotter (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `respondent_fname`, `respondent_mname`, `respondent_lname`, `respondent_suffix`, `victim_fname`, `victim_mname`, `victim_lname`, `victim_suffix`, `type`, `location`, `date`, `time`, `details`, `status`) 
-                    VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$respondent_fname', '$respondent_mname', '$respondent_lname', '$respondent_suffix', '$victim_fname', '$victim_mname', '$victim_lname', '$victim_suffix', '$type','$location','$date', '$time','$details', '$status')";
+        $insert  = "INSERT INTO tbl_blotter (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `respondent_fname`, `respondent_mname`, `respondent_lname`, `respondent_suffix`, `victim_fname`, `victim_mname`, `victim_lname`, `victim_suffix`, `location`, `date`, `time`, `details`, `seen`) 
+                    VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$respondent_fname', '$respondent_mname', '$respondent_lname', '$respondent_suffix', '$victim_fname', '$victim_mname', '$victim_lname', '$victim_suffix','$location','$date', '$time','$details','read')";
         $result  = $conn->query($insert);
 
         if($result === true){
