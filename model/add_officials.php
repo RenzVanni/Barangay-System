@@ -40,7 +40,7 @@
 
             $adminName = $fname." ".$mname." ".$lname;
             $passwordHashed = password_hash("admin", PASSWORD_DEFAULT);
-            $role = "admin";
+            $role = $chair;
 
             $insertAdmin = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname) VALUES (?, ?, ?, ?, ?, ?)");
             $insertAdmin->bind_param("ssssss", $adminName, $passwordHashed, $role, $fname, $fname, $lname);

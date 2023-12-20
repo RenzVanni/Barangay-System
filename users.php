@@ -71,7 +71,22 @@ while($row = $result->fetch_assoc()) {
                     <tr>
                         <td><?= $row['firstname']. " " .$row['middlename']. " " .$row['lastname'] ?></td>
                         <td><?= $row['username']?></td>
-                        <td><?= $row['role']?></td>
+                        
+                    <?php
+                    $user_id = $row['role'];
+                    $chairQuery = "SELECT title FROM tblchairmanship WHERE id = $user_id";
+                    $chairmanshipResult = $conn->query($chairQuery);
+
+                    if ($chairmanshipResult) {
+                        $chairmanship = $chairmanshipResult->fetch_assoc();
+                        $title = isset($chairmanship['title']) ? $chairmanship['title'] : 'No Chairmanship';
+                    ?>
+                        <td><?= $title ?></td>
+                    <?php } else { ?>
+                        <td><?= $row['role'] ?></td>
+                    <?php } ?>
+
+
                         <td><?= $row['time'] ?></td>
                         <td class="actions">
                             <a href="" class="edit" id="editUser" onclick="editPassword(this)"

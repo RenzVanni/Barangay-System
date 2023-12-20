@@ -32,8 +32,12 @@ if ($result->num_rows) {
         $insertLogQuery->execute();
         $insertLogQuery->close();
 
+        $user_id = $user['role'];
+        $official = "SELECT id FROM tblchairmanship WHERE id = $user_id";
+        $officialResult = $conn->query($official);
+
         // Set session variables based on user role
-        if ($user['role'] === 'admin' || $user['role'] === 'staff') {
+        if ($user['role'] === 'admin' || $user['role'] === 'staff' || $officialResult) {
             $_SESSION['id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];

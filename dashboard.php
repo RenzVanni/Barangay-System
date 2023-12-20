@@ -115,6 +115,9 @@ function calculateAge($dob) {
     $inquiryData[] = $row;
 }
 
+$audit = "SELECT * FROM audit_log ORDER BY created_at DESC";
+$auditResult = $conn->query($audit);
+
 
 ?>
 <!DOCTYPE html>
@@ -605,6 +608,41 @@ function calculateAge($dob) {
                         <button id="nextBtn">Next</button>
                     </div>
                 </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Action</th>
+                            <th>Table Name</th>
+                            <th>Record ID</th>
+                            <th>Field Name</th>
+                            <th>Old Value</th>
+                            <th>New Value</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if ($auditResult->num_rows > 0) {
+                            while ($row = $auditResult->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>{$row['user_id']}</td>";
+                                echo "<td>{$row['action']}</td>";
+                                echo "<td>{$row['table_name']}</td>";
+                                echo "<td>{$row['record_id']}</td>";
+                                echo "<td>{$row['field_name']}</td>";
+                                echo "<td>{$row['old_value']}</td>";
+                                echo "<td>{$row['new_value']}</td>";
+                                echo "<td>{$row['created_at']}</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='8'>No audit trail records found.</td></tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
 
                 <div class="line-container">
                     <img src="vector/Line 6.png" alt="">
