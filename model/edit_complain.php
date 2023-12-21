@@ -1,5 +1,6 @@
 <?php 
 	include '../server/server.php';
+    include "./functions/audit.php";
 
 	if(!isset($_SESSION['username'])){
 		if (isset($_SERVER["HTTP_REFERER"])) {
@@ -28,6 +29,11 @@
 			$_SESSION['message'] = 'Complain details has been updated!';
 			$_SESSION['success'] = 'success';
 
+			$user_id = $_SESSION['id'];
+            $action = "UPDATE";
+            $table_name = "Complain";
+            logAuditTrail($user_id, $action, $table_name);
+
 		}else{
 
 			$_SESSION['message'] = 'Somethin went wrong!';
@@ -42,6 +48,11 @@
             
 			$_SESSION['message'] = 'Complain has been saved to archived!';
 			$_SESSION['success'] = 'success';
+
+			$user_id = $_SESSION['id'];
+            $action = "DELETE";
+            $table_name = "Complain";
+            logAuditTrail($user_id, $action, $table_name);
 
 			$delete = $conn->prepare("DELETE FROM tbl_complain WHERE id = ?");
 			$delete->bind_param("i", $id);

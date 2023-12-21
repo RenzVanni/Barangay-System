@@ -1,5 +1,6 @@
 <?php 
 	include '../server/server.php';
+    include "./functions/audit.php";
 
 	if(!isset($_SESSION['username'])){
 		if (isset($_SERVER["HTTP_REFERER"])) {
@@ -30,6 +31,11 @@
             
 			$_SESSION['message'] = 'Business details has been updated!';
 			$_SESSION['success'] = 'success';
+
+			$user_id = $_SESSION['id'];
+            $action = "UPDATE";
+            $table_name = "Business";
+            logAuditTrail($user_id, $action, $table_name);
 
 		}else{
 

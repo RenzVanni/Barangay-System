@@ -1,5 +1,6 @@
 <?php
 include '../server/server.php';
+include "./functions/audit.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -66,6 +67,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $updateAllStmt->bind_param("ss", $newHouseholdHead, $oldHeadData['household_head']);
             $updateAllStmt->execute();
             $updateAllStmt->close();
+
+            $user_id = $_SESSION['id'];
+            $action = "UPDATE";
+            $table_name = "Individual";
+            logAuditTrail($user_id, $action, $table_name);
             
         echo "<script>window.location.href='../householdDisplay.php?id=$headId'</script>";
         // header("Location: ../householdDisplay.php?id=" . $headId);

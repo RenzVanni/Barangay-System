@@ -28,9 +28,10 @@
         if($result === true){
             $_SESSION['message'] = 'Awareness added!';
             $_SESSION['success'] = 'success';
+
             $user_id = $_SESSION['id'];
             $action = "INSERT";
-            $table_name = "tbl_awareness";
+            $table_name = "Awareness";
             logAuditTrail($user_id, $action, $table_name);
 
         }else{

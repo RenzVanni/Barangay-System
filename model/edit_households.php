@@ -1,5 +1,6 @@
 <?php
 include '../server/server.php';
+include "./functions/audit.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
@@ -152,6 +153,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmtCheck->close();
     $stmtInsert->close();
     $stmt->close();
+
+    $user_id = $_SESSION['id'];
+    $action = "UPDATE";
+    $table_name = "Households";
+    logAuditTrail($user_id, $action, $table_name);
+    
     echo "<script>window.location.href='../editHouseholds.php?id= $householdHeadId'</script>";
     // header("Location: ../editHouseholds.php?id=". $householdHeadId);
     exit;

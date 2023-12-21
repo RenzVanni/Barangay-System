@@ -1,6 +1,6 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tbl_users";
+$query =  "SELECT * FROM tbl_users ORDER BY id DESC";
 $result = $conn->query($query);
 
 $users = array();
@@ -73,8 +73,8 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['username']?></td>
                         
                     <?php
-                    $user_id = $row['role'];
-                    $chairQuery = "SELECT title FROM tblchairmanship WHERE id = $user_id";
+                    $admin_id = $row['role'];
+                    $chairQuery = "SELECT title FROM tblchairmanship WHERE id = '$admin_id'";
                     $chairmanshipResult = $conn->query($chairQuery);
 
                     if ($chairmanshipResult) {

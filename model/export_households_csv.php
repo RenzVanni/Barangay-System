@@ -1,6 +1,8 @@
 <?php
 
 require("../server/server.php");
+include "./functions/audit.php";
+
 
 // get Users
 $query = "SELECT `firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `household_head`, `ext` FROM tbl_households";
@@ -26,5 +28,9 @@ if (count($users) > 0) {
     }
 }
 
+$user_id = $_SESSION['id'];
+$action = "EXPORT";
+$table_name = "Households";
+logAuditTrail($user_id, $action, $table_name);
 
 ?>

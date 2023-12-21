@@ -1,4 +1,6 @@
 <?php
+include "./functions/audit.php";
+
 include '../server/server.php';
 include './functions/autoGenerateUser.php';
 
@@ -63,6 +65,11 @@ foreach ($data as $key => $row) {
         if($conn->query($query) === true){
             $_SESSION['message'] = 'Resident Information has been saved!';
             $_SESSION['success'] = 'success';
+
+            $user_id = $_SESSION['id'];
+            $action = "IMPORT";
+            $table_name = "Households";
+            logAuditTrail($user_id, $action, $table_name);
 
             // include './sendAccount.php';
         }

@@ -1,5 +1,6 @@
 <?php 
 	include('../server/server.php');
+    include "./functions/audit.php";
 
     if(!isset($_SESSION['username'])){
         if (isset($_SERVER["HTTP_REFERER"])) {
@@ -48,6 +49,11 @@
         if($result === true){
             $_SESSION['message'] = 'Late birth registration added!';
             $_SESSION['success'] = 'success';
+
+            $user_id = $_SESSION['id'];
+            $action = "INSERT";
+            $table_name = "Certificate of Late Birth";
+            logAuditTrail($user_id, $action, $table_name);
 
         }else{
             $_SESSION['message'] = 'Something went wrong!';

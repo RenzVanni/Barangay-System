@@ -2,6 +2,8 @@
 // Backend PHP code for updating the user's password
 
 include '../server/server.php';
+include "./functions/audit.php";
+
 
 
 $username = $_POST['username'];
@@ -19,6 +21,11 @@ if(isset($_POST["submit_admin"])) {
     if ($update_stmt->execute()) {
         $_SESSION['message'] = 'Password has been updated!';
         $_SESSION['success'] = 'success';
+
+        $user_id = $_SESSION['id'];
+        $action = "UPDATE";
+        $table_name = "Change Password";
+        logAuditTrail($user_id, $action, $table_name);
 
     } else {
         $_SESSION['message'] = 'Something went wrong!';

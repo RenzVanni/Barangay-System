@@ -1,5 +1,6 @@
 <?php
-include '../server/server.php';
+    include '../server/server.php';
+    include "./functions/audit.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
@@ -76,6 +77,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Insert successful, set success message
             $_SESSION['message'] = 'Household information added successfully.';
 			$_SESSION['success'] = 'success';
+
+            $user_id = $_SESSION['id'];
+            $action = "INSERT";
+            $table_name = "Households";
+            logAuditTrail($user_id, $action, $table_name);
         }
     }
 

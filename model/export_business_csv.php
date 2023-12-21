@@ -1,4 +1,5 @@
 <?php
+include "./functions/audit.php";
 require("../server/server.php");
 require "./vendor/autoload.php";
 
@@ -63,4 +64,9 @@ header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetm
 header('Content-Disposition: attachment; filename="Residents.xlsx"');
 $writer = new Xlsx($spreadsheet);
 $writer->save('php://output');
+
+$user_id = $_SESSION['id'];
+$action = "EXPORT";
+$table_name = "Business";
+logAuditTrail($user_id, $action, $table_name);
  ?>

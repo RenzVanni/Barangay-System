@@ -1,5 +1,6 @@
 <?php 
 	include('../server/server.php');
+    include "./functions/audit.php";
 
     if(!isset($_SESSION['username'])){
         if (isset($_SERVER["HTTP_REFERER"])) {
@@ -33,6 +34,11 @@
             if ($result === true) {
                 $_SESSION['message'] = 'Official added!';
                 $_SESSION['success'] = 'success';
+                            
+                $user_id = $_SESSION['id'];
+                $action = "INSERT";
+                $table_name = "Official";
+                logAuditTrail($user_id, $action, $table_name);
             } else {
                 $_SESSION['message'] = 'Something went wrong!';
                 $_SESSION['success'] = 'danger';
@@ -43,7 +49,7 @@
             $role = $chair;
 
             $insertAdmin = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname) VALUES (?, ?, ?, ?, ?, ?)");
-            $insertAdmin->bind_param("ssssss", $adminName, $passwordHashed, $role, $fname, $fname, $lname);
+            $insertAdmin->bind_param("ssssss", $adminName, $passwordHashed, $role, $fname, $mname, $lname);
             $insertAdmin->execute();
 
         }

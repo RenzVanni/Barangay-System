@@ -1,5 +1,7 @@
 <?php 
 	include '../server/server.php';
+    include "./functions/audit.php";
+
 
 	if(!isset($_SESSION['username'])){
 		if (isset($_SERVER["HTTP_REFERER"])) {
@@ -28,6 +30,11 @@
 			$_SESSION['message'] = 'Brgy official has been updated!';
 			$_SESSION['success'] = 'success';
 
+			$user_id = $_SESSION['id'];
+            $action = "UPDATE";
+            $table_name = "Official";
+            logAuditTrail($user_id, $action, $table_name);
+
 		}else{
 
 			$_SESSION['message'] = 'Something went wrong!';
@@ -37,14 +44,27 @@
 		$query  = "INSERT INTO officials_archive (`firstname`, `middlename`, `lastname`, `suffix`, `chairmanship`,  termstart, termend, `status`) VALUES ('$fname', '$mname', '$lname', '$suffix', '$chair', '$start','$end', '$status')";
 		$result 	= $conn->query($query);
 
+		
+		$adminAccount = $conn->prepare("DELETE FROM tbl_users WHERE `firstname`=? AND `middlename`=? AND `lastname`=? ");
+		$adminAccount->bind_param("sss", $fname, $mname, $lname);
+		$deleteAccount = $adminAccount->execute();
+
 		if($result === true){
             
 			$_SESSION['message'] = 'Brgy official has been saved to archive!';
 			$_SESSION['success'] = 'success';
 
+			$user_id = $_SESSION['id'];
+            $action = "DELETE";
+            $table_name = "Official";
+            logAuditTrail($user_id, $action, $table_name);
+
 			$delete = $conn->prepare("DELETE FROM tblofficials WHERE id = ?");
 			$delete->bind_param("i", $id);
 			$delete->execute();
+
+
+
 
 		}else{
 

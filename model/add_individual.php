@@ -1,6 +1,7 @@
 <?php 
 	include '../server/server.php';
 	include './functions/autoGenerateUser.php';
+    include "./functions/audit.php";
 
 	if(!isset($_SESSION['username'])){
 		if (isset($_SERVER["HTTP_REFERER"])) {
@@ -55,6 +56,12 @@
 		if ($stmt->execute()) {
 			$_SESSION['message'] = 'Resident Information has been saved!';
 			$_SESSION['success'] = 'success';
+
+			$user_id = $_SESSION['id'];
+            $action = "INSERT";
+            $table_name = "Individual";
+            logAuditTrail($user_id, $action, $table_name);
+
 			// include './sendAccount.php';
 		}
 

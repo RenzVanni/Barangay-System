@@ -1,5 +1,6 @@
 <?php
 include "../server/server.php";
+include "./functions/audit.php";
 
 // Get user input
 $resUsername = $_POST['username'];
@@ -28,6 +29,10 @@ $insert->bind_param("ssssss", $resUsername, $passwordHashed, $userType, $firstna
 
 // Execute the statement
 if ($insert->execute()) {
+    $user_id = $_SESSION['id'];
+    $action = "INSERT";
+    $table_name = "Create Account";
+    logAuditTrail($user_id, $action, $table_name);
     echo "<script>window.location.href='../users.php'</script>";
     // header('Location: ../users.php');
 } else {

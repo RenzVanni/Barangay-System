@@ -1,6 +1,7 @@
 <?php
 require_once '../server/server.php';
 include './functions/sendUserAccount.php';
+include "./functions/audit.php";
 
 if (!isset($_SESSION['username'])) {
     if (isset($_SERVER["HTTP_REFERER"])) {
@@ -54,6 +55,11 @@ if ($insert->execute()) {
     $updateEmail->bind_param("si", $email, $id);
     $updateResult = $updateEmail->execute();
     $updateEmail->close();
+
+    $user_id = $_SESSION['id'];
+    $action = "INSERT";
+    $table_name = "User";
+    logAuditTrail($user_id, $action, $table_name);
 
     setMessageAndRedirect('User added!'. $id, 'success', '../residentInfo.php');
 

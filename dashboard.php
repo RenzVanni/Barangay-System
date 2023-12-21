@@ -615,10 +615,6 @@ $auditResult = $conn->query($audit);
                             <th>User ID</th>
                             <th>Action</th>
                             <th>Table Name</th>
-                            <th>Record ID</th>
-                            <th>Field Name</th>
-                            <th>Old Value</th>
-                            <th>New Value</th>
                             <th>Timestamp</th>
                         </tr>
                     </thead>
@@ -626,16 +622,28 @@ $auditResult = $conn->query($audit);
                         <?php
                         if ($auditResult->num_rows > 0) {
                             while ($row = $auditResult->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>{$row['user_id']}</td>";
-                                echo "<td>{$row['action']}</td>";
-                                echo "<td>{$row['table_name']}</td>";
-                                echo "<td>{$row['record_id']}</td>";
-                                echo "<td>{$row['field_name']}</td>";
-                                echo "<td>{$row['old_value']}</td>";
-                                echo "<td>{$row['new_value']}</td>";
-                                echo "<td>{$row['created_at']}</td>";
-                                echo "</tr>";
+                                $admin_id = $row['user_id'];
+                                $query = "SELECT * FROM tbl_users WHERE id='$admin_id'";
+                                $result = $conn->query($query);
+                             // Check if the query was successful and if there are results
+                                if ($result && $result->num_rows > 0) {
+                                    $name = $result->fetch_assoc();
+
+                                    echo "<tr>";
+                                    echo "<td>{$name['firstname']} {$name['middlename']} {$name['lastname']}</td>";
+                                    echo "<td>{$row['action']}</td>";
+                                    echo "<td>{$row['table_name']}</td>";
+                                    echo "<td>{$row['created_at']}</td>";
+                                    echo "</tr>";
+                                } else {
+                                    // Handle the case when no user data is found
+                                    echo "<tr>";
+                                    echo "<td>User Not Found</td>";
+                                    echo "<td>{$row['action']}</td>";
+                                    echo "<td>{$row['table_name']}</td>";
+                                    echo "<td>{$row['created_at']}</td>";
+                                    echo "</tr>";
+                                }
                             }
                         } else {
                             echo "<tr><td colspan='8'>No audit trail records found.</td></tr>";
