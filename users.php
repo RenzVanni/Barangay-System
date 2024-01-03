@@ -79,11 +79,12 @@ while($row = $result->fetch_assoc()) {
 
                     if ($chairmanshipResult) {
                         $chairmanship = $chairmanshipResult->fetch_assoc();
-                        $title = isset($chairmanship['title']) ? $chairmanship['title'] : 'No Chairmanship';
-                    ?>
-                        <td><?= $title ?></td>
-                    <?php } else { ?>
-                        <td><?= $row['role'] ?></td>
+                        // $title = isset($chairmanship['title']) ? $chairmanship['title'] : 'No Chairmanship';
+                        if(isset($chairmanship['title'])) { ?>
+                            <td><?= $chairmanship['title'] ?></td>
+                        <?php } else {  ?>
+                            <td><?= $row['role'] ?></td>
+                        <?php }?>
                     <?php } ?>
 
 
@@ -185,7 +186,7 @@ while($row = $result->fetch_assoc()) {
                     required>
                 <?php if($_SESSION["role"] === "staff") { ?>
                 <label for="password-user">Current Password</label>
-                <input type="password" id="current_password" name="current_password" required>
+                <!-- <input type="password" id="current_password" name="current_password" required> -->
                 <?php } ?>
 
                 <label for="password-user">New Password</label>
@@ -193,7 +194,7 @@ while($row = $result->fetch_assoc()) {
 
                 <?php if($_SESSION["role"] === "staff") { ?>
                 <label for="password-user">Confirm Password</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
+                <!-- <input type="password" id="confirm_password" name="confirm_password" required> -->
                 <?php } ?>
 
                 <!-- <label for="usertype-user">User Type</label>

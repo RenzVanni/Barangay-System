@@ -5,14 +5,38 @@
             <h2>Barangay ID</h2>
             <div class="container requestor">
                 <label for="requestor">Applicant</label>
-                <input class="requestorName" type="text" name="applicant_fname" id=""
-                    placeholder="Enter applicant firstname">
+                <!-- <input class="requestorName" type="text" name="applicant_fname" id=""
+                    placeholder="Enter applicant firstname"> 
                 <input class="applicantName" type="text" name="applicant_mname" id=""
                     placeholder="Enter applicant middlename">
                 <input class="applicantName" type="text" name="applicant_lname" id=""
                     placeholder="Enter applicant lastname">
                 <input class="applicantName" type="text" name="applicant_suffix" id=""
-                    placeholder="Enter applicant suffix">
+                    placeholder="Enter applicant suffix"> -->
+                <select name="applicant_fname" id="">
+                    <option disabled selected>Firstname</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['firstname'] ?>"><?= $row['firstname'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="applicant_mname" id="">
+                    <option disabled selected>Middlename</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['middlename'] ?>"><?= $row['middlename'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="applicant_lname" id="">
+                    <option disabled selected>Lastname</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['lastname'] ?>"><?= $row['lastname'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="applicant_suffix" id="">
+                    <option disabled selected>Suffix</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['suffix'] ?>"><?= $row['suffix'] ?></option>
+                    <?php endforeach ?>
+                </select>
             </div>
             <div class="container">
                 <label for="contact-number">Contact Number</label>
@@ -102,14 +126,38 @@
             <h2>Endorsement</h2>
             <div class="container requestor">
                 <label for="requestor">Requestor</label>
-                <input class="requestorName" type="text" name="requestor_fname" id=""
+                <!-- <input class="requestorName" type="text" name="requestor_fname" id=""
                     placeholder="Enter requestor firstname">
                 <input class="requestorName" type="text" name="requestor_mname" id=""
                     placeholder="Enter requestor middlename">
                 <input class="requestorName" type="text" name="requestor_lname" id=""
                     placeholder="Enter requestor lastname">
                 <input class="requestorName" type="text" name="requestor_suffix" id=""
-                    placeholder="Enter requestor suffix">
+                    placeholder="Enter requestor suffix"> -->
+                <select name="requestor_fname" id="">
+                    <option disabled selected>Firstname</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['firstname'] ?>"><?= $row['firstname'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="requestor_mname" id="">
+                    <option disabled selected>Middlename</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['middlename'] ?>"><?= $row['middlename'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="requestor_lname" id="">
+                    <option disabled selected>Lastname</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['lastname'] ?>"><?= $row['lastname'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="requestor_suffix" id="">
+                    <option disabled selected>Suffix</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['suffix'] ?>"><?= $row['suffix'] ?></option>
+                    <?php endforeach ?>
+                </select>
             </div>
             <div class="container">
                 <label for="for">For</label>
@@ -154,14 +202,38 @@
             <h2>Certificate of Indigency</h2>
             <div class="container requestor">
                 <label for="requestor">Requestor</label>
-                <input class="requestorName" type="text" name="requestor_fname" id="requestor"
+                <!-- <input class="requestorName" type="text" name="requestor_fname" id="requestor"
                     placeholder="Enter requestor firstname">
                 <input class="requestorName" type="text" name="requestor_mname" id="requestor"
                     placeholder="Enter requestor middlename">
                 <input class="requestorName" type="text" name="requestor_lname" id="requestor"
                     placeholder="Enter requestor lastname">
                 <input class="requestorName" type="text" name="requestor_suffix" id=""
-                    placeholder="Enter requestor suffix">
+                    placeholder="Enter requestor suffix"> -->
+                <select name="requestor_fname" id="">
+                    <option disabled selected>Firstname</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['firstname'] ?>"><?= $row['firstname'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="requestor_mname" id="">
+                    <option disabled selected>Middlename</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['middlename'] ?>"><?= $row['middlename'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="requestor_lname" id="">
+                    <option disabled selected>Lastname</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['lastname'] ?>"><?= $row['lastname'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <select name="requestor_suffix" id="">
+                    <option disabled selected>Suffix</option>
+                    <?php foreach($residentData as $row): ?>
+                        <option value="<?= $row['suffix'] ?>"><?= $row['suffix'] ?></option>
+                    <?php endforeach ?>
+                </select>
             </div>
             <div class="container">
                 <label for="for">For</label>

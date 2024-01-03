@@ -137,3 +137,22 @@ if (!$result1) {
 
 
 ?>
+
+<?php
+
+	$fname= isset($_SESSION['firstname']) ? $_SESSION['firstname'] : null;
+	$mname= isset($_SESSION['middlename']) ? $_SESSION['middlename'] : null;
+	$lname= isset($_SESSION['lastname']) ? $_SESSION['lastname'] : null;
+	$suffix= isset($_SESSION['suffix']) ? $_SESSION['suffix'] : null;
+    $res = "SELECT * FROM tbl_households WHERE `firstname`='$fname' AND `middlename`='$mname' AND `lastname`='$lname' AND `suffix`='$suffix'";
+    $resResult = $conn->query($res);
+	$resRow = $resResult->fetch_assoc();
+	$hd = isset($resRow['head_name']) ? $resRow['head_name'] : null;
+
+    $startDate = date('Y-m-d', strtotime('-18 years'));
+
+	$selectResident = $conn->prepare("SELECT * FROM tbl_households WHERE date_of_birth <= ? AND `head_name`=?");
+    $selectResident->bind_param("ss", $startDate, $hd);
+    $selectResident->execute();
+    $residentData = $selectResident->get_result();
+?>

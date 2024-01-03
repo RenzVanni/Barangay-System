@@ -40,7 +40,7 @@ if(isset($_POST["submit_admin"])) {
 
 if (!empty($username)) {
     $_SESSION['message'] = $current_password;
-    if ($new_password === $confirm_password) {
+    // if ($new_password === $confirm_password) {
         // Verify the current password against the one stored in the database
         $stmt = $conn->prepare("SELECT password FROM tbl_users WHERE username = ?");
         $stmt->bind_param("s", $username);
@@ -50,7 +50,7 @@ if (!empty($username)) {
 
         echo $user;
 
-        if ($user && password_verify($current_password, $user['password'])) {
+        // if ($user && password_verify($current_password, $user['password'])) {
             // Hash the new password using bcrypt
             $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
 
@@ -64,14 +64,14 @@ if (!empty($username)) {
                 $_SESSION['message'] = 'Something went wrong!';
                 $_SESSION['success'] = 'danger';
             }
-        } else {
-            $_SESSION['message'] = 'Current Password is incorrect!'. $user['password'];
-            $_SESSION['success'] = 'danger';
-        }
-    } else {
-        $_SESSION['message'] = 'Password did not match!';
-        $_SESSION['success'] = 'danger';
-    }
+        // } else {
+        //     $_SESSION['message'] = 'Current Password is incorrect!'. $user['password'];
+        //     $_SESSION['success'] = 'danger';
+        // }
+    // } else {
+    //     $_SESSION['message'] = 'Password did not match!';
+    //     $_SESSION['success'] = 'danger';
+    // }
 } else {
     $_SESSION['message'] = 'No Username found!';
     $_SESSION['success'] = 'danger';

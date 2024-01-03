@@ -28,12 +28,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $checkEmailQuery = "SELECT * FROM tbl_users WHERE firstname = '$firstname' AND lastname = '$lastname' AND email = '$email'";
     $checkEmailResult = mysqli_query($conn, $checkEmailQuery);
 
+    // Check if the firstname, middlename, and lastname exist in tbl_households
+    $checkHouseholdQuery = "SELECT * FROM tbl_households WHERE firstname = '$firstname' AND middlename = '$middlename' AND lastname = '$lastname'";
+    $checkHouseholdResult = mysqli_query($conn, $checkHouseholdQuery);
     if (mysqli_num_rows($checkEmailResult) > 0) {
         // The email already exists, handle accordingly
         $_SESSION['message'] = 'Error: User already exists.';
         $_SESSION['success'] = 'danger';
         header("Location: ../login_page.php");
         // Redirect or handle the error as needed
+    } elseif (mysqli_num_rows($checkHouseholdResult) == 0) {
+        // The household doesn't exist, handle accordingly
+        $_SESSION['message'] = 'Error: Household not found.';
+        $_SESSION['success'] = 'danger';
+        header("Location: ../login_page.php");
     } else {
         // The household already exists, proceed with user registration
 
@@ -75,8 +83,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['message'] = 'Error registering user: ' . mysqli_error($conn);
             $_SESSION['success'] = 'danger';
            
-        }     
-         echo "<script>window.location.href='../login_page.php'</script>";
+        }   
+        header("Location: ../login_page.php");
+
+        //  echo "<script>window.location.href='../login_page.php'</script>";
     }
 }
 ?>
