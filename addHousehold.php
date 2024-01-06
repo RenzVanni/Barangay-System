@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECORD OF BARANGAY INHABITANTS BY HOUSEHOLD</title>
-    <link rel="stylesheet" href="style3.css ">
-    <link rel="stylesheet" href="style4.css ">
+    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ">
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js "></script>
@@ -118,6 +118,41 @@
                             <option value="Widowed">Widowed</option>
                         </select>
                     </div>
+
+                    <div class="inputEducational">
+                        <p>Educational Attainment<span>*</span></p>
+                        <select id="education" name="civil-status" class="civilStatus111" required>
+                            <option value=""></option>
+                            <option value="Single">None</option>
+                            <option value="Married">Elementary Eduaction</option>
+                            <option value="Divorced">High School Education</option>
+                            <option value="Widowed">College</option>
+                            <option value="Widowed">Postgraduate Program</option>
+                            <option value="Widowed">Non-Formal Eduaction</option>
+                            <option value="Widowed">Vocational</option>
+                        </select>
+                    </div>
+
+                    <div class="inputPwd">
+                        <p>PWD  </p>
+                        <input type="checkbox" name="pwd" id="pwd">
+                    </div>
+
+                    <div class="inputPwd">
+                        <p>OSY  </p>
+                        <input type="checkbox" name="osy" id="osy">
+                    </div>
+
+                    <div class="inputPwd">
+                        <p>OSC  </p>
+                        <input type="checkbox" name="osc" id="osc">
+                    </div>
+
+                    <div class="inputPwd">
+                        <p>OFW  </p>
+                        <input type="checkbox" name="ofw" id="ofw">
+                    </div>
+                   
                     
 
                   
@@ -215,8 +250,13 @@
             const occupation = document.getElementById('occupation').value;
             const sex = document.getElementById('sex').value;
             const civilStatus = document.getElementById('civilStatus').value;
-       
-
+            const education = document.getElementById('education').value;
+            const pwd = document.getElementById('pwd').value;
+            const osy = document.getElementById('osy').value;
+            const osc = document.getElementById('osc').value;
+            const ofw = document.getElementById('ofw').value;
+    
+           
             // Phone number validation for the Philippines (10 digits starting with 09)
             const phoneNoValue = document.getElementById('phoneNo').value;
             if (phoneNoValue.trim() !== "") {
@@ -255,7 +295,12 @@
                 'occupational',
                 'sex',
                 'civilStatus',
-                'ext'
+                'ext',
+                'education',
+                'pwd',
+                'osy',
+                'osc',
+                'ofw'
             ];
             // Create a single set of input fields for names
             const nameCell = newRow.insertCell(0);

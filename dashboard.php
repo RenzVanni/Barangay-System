@@ -129,7 +129,7 @@ $auditResult = $conn->query($audit);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style1.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css">
     <script src="sidebar.js"></script>
 
@@ -609,48 +609,62 @@ $auditResult = $conn->query($audit);
                     </div>
                 </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>User ID</th>
-                            <th>Action</th>
-                            <th>Table Name</th>
-                            <th>Timestamp</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        if ($auditResult->num_rows > 0) {
-                            while ($row = $auditResult->fetch_assoc()) {
-                                $admin_id = $row['user_id'];
-                                $query = "SELECT * FROM tbl_users WHERE id='$admin_id'";
-                                $result = $conn->query($query);
-                             // Check if the query was successful and if there are results
-                                if ($result && $result->num_rows > 0) {
-                                    $name = $result->fetch_assoc();
+                <div class="line-container">
+                    <img src="vector/Line 6.png" alt="">
+                </div>
 
-                                    echo "<tr>";
-                                    echo "<td>{$name['firstname']} {$name['middlename']} {$name['lastname']}</td>";
-                                    echo "<td>{$row['action']}</td>";
-                                    echo "<td>{$row['table_name']}</td>";
-                                    echo "<td>{$row['created_at']}</td>";
-                                    echo "</tr>";
-                                } else {
-                                    // Handle the case when no user data is found
-                                    echo "<tr>";
-                                    echo "<td>User Not Found</td>";
-                                    echo "<td>{$row['action']}</td>";
-                                    echo "<td>{$row['table_name']}</td>";
-                                    echo "<td>{$row['created_at']}</td>";
-                                    echo "</tr>";
+                <div class="containerLogs">
+                    <div class="RecentLogs">Activity Logs</div>
+                    <table class="table" id="tableAct">
+                        <thead>
+                            <tr>
+                                <th class="username">User ID</th>
+                                <th class="activity">Action</th>
+                                <th class="date">Table Name</th>
+                                <th class="time">Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            if ($auditResult->num_rows > 0) {
+                                while ($row = $auditResult->fetch_assoc()) {
+                                    $admin_id = $row['user_id'];
+                                    $query = "SELECT * FROM tbl_users WHERE id='$admin_id'";
+                                    $result = $conn->query($query);
+                                // Check if the query was successful and if there are results
+                                    if ($result && $result->num_rows > 0) {
+                                        $name = $result->fetch_assoc();
+
+                                        echo "<tr>";
+                                        echo "<td>{$name['firstname']} {$name['middlename']} {$name['lastname']}</td>";
+                                        echo "<td>{$row['action']}</td>";
+                                        echo "<td>{$row['table_name']}</td>";
+                                        echo "<td>{$row['created_at']}</td>";
+                                        echo "</tr>";
+                                    } else {
+                                        // Handle the case when no user data is found
+                                        echo "<tr>";
+                                        echo "<td>User Not Found</td>";
+                                        echo "<td>{$row['action']}</td>";
+                                        echo "<td>{$row['table_name']}</td>";
+                                        echo "<td>{$row['created_at']}</td>";
+                                        echo "</tr>";
+                                    }
                                 }
+                            } else {
+                                echo "<tr><td colspan='8'>No audit trail records found.</td></tr>";
                             }
-                        } else {
-                            echo "<tr><td colspan='8'>No audit trail records found.</td></tr>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                            ?>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <button id="prevBtn1">Previous</button>
+                        <div id="pageNumbers1" class="page-numbers"></div>
+                        <button id="nextBtn1">Next</button>
+                    </div>
+                </div>
+
+                
 
                 <div class="line-container">
                     <img src="vector/Line 6.png" alt="">
@@ -922,9 +936,9 @@ $auditResult = $conn->query($audit);
 </html>
 
 <script>
-// JavaScript code to handle pagination
+// JavaScript code to handle pagination for Login Logs
 const table = document.getElementById('table');
-const rows = table.querySelectorAll('tbody tr'); // Updated to select rows from tbody
+const rows = table.querySelectorAll('tbody tr');
 const totalRows = rows.length;
 const rowsPerPage = 5;
 let currentPage = 1;
@@ -953,11 +967,11 @@ function updatePaginationButtons() {
     pageNumbers.textContent = currentPage;
 }
 
-// Initial setup
+// Initial setup for Login Logs
 showRows(currentPage);
 updatePaginationButtons();
 
-// Previous button click event
+// Previous button click event for Login Logs
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
@@ -966,7 +980,7 @@ document.getElementById('prevBtn').addEventListener('click', () => {
     }
 });
 
-// Next button click event
+// Next button click event for Login Logs
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
         currentPage++;
@@ -974,4 +988,58 @@ document.getElementById('nextBtn').addEventListener('click', () => {
         updatePaginationButtons();
     }
 });
+
+// JavaScript code to handle pagination for Activity Logs
+const tableAct = document.getElementById('tableAct');
+const rowsAct = tableAct.querySelectorAll('tbody tr');
+const totalRowsAct = rowsAct.length;
+const rowsPerPageAct = 5;
+let currentPageAct = 1;
+
+function showRowsAct(page) {
+    const start = (page - 1) * rowsPerPageAct;
+    const end = start + rowsPerPageAct;
+
+    rowsAct.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+function updatePaginationButtonsAct() {
+    const prevBtn = document.getElementById('prevBtn1');
+    const nextBtn = document.getElementById('nextBtn1');
+    const pageNumbers = document.getElementById('pageNumbers1');
+
+    prevBtn.disabled = currentPageAct === 1;
+    nextBtn.disabled = currentPageAct === Math.ceil(totalRowsAct / rowsPerPageAct);
+
+    pageNumbers.textContent = currentPageAct;
+}
+
+// Initial setup for Activity Logs
+showRowsAct(currentPageAct);
+updatePaginationButtonsAct();
+
+// Previous button click event for Activity Logs
+document.getElementById('prevBtn1').addEventListener('click', () => {
+    if (currentPageAct > 1) {
+        currentPageAct--;
+        showRowsAct(currentPageAct);
+        updatePaginationButtonsAct();
+    }
+});
+
+// Next button click event for Activity Logs
+document.getElementById('nextBtn1').addEventListener('click', () => {
+    if (currentPageAct < Math.ceil(totalRowsAct / rowsPerPageAct)) {
+        currentPageAct++;
+        showRowsAct(currentPageAct);
+        updatePaginationButtonsAct();
+    }
+});
+
 </script>
