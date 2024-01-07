@@ -1,4 +1,21 @@
 <?php include './server/server.php'?>
+<?php
+    $query = "SELECT * FROM tbl_households WHERE `osc`='osc'";
+    $result = $conn->query($query);
+    $total = $result->num_rows;
+
+    $osc = array();
+    while($row = $result->fetch_assoc()) {
+    $osc[] = $row;
+    }
+
+    function calculateAge($dob) {
+        $today = new DateTime();
+        $birthDate = new DateTime($dob);
+        $interval = $today->diff($birthDate);
+        return $interval->y;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,13 +51,13 @@
             <div class="First-Cont">
                 <div class="bigBoxOsc">
                     <div class="text-cont">
-                        <p class="text">TOTAL OUT OF <br> SCHOOL CHILDREN <br>(6-14 years old)</p>
-                        <p class="number">3,000</p>
+                        <p class="text">TOTAL OUT OF <br> SCHOOL CHILDREN</p>
+                        <p class="number"><?= number_format($total) ?></p>
                     </div>
                     <img src="icons/ResidentsSeeMore.png" alt="">
                 </div>
             </div>
-            <div class="Second-Cont">
+            <!-- <div class="Second-Cont">
                 <div class="smallBoxOsc">
                     <div class="text-cont">
                         <p class="text">Male</p>
@@ -55,7 +72,7 @@
                     </div>
                     <img src="icons/people.png" alt="">
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="fourth_layer">
@@ -68,70 +85,20 @@
                         <th>Gender</th>
                         <th>Civil Status</th>
                         <th>Street</th>
-                        <th>Email</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if(!empty($residents)) { ?>
-                    <?php $no=1; foreach($residents as $row): ?>
-                    <tr>
-                        <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
-                        <td><?= $row['age']?></td>
-                        <td><?= $row['date-of-birth'] ?></td>
-                        <td><?= $row['gender'] ?></td>
-                        <td><?= $row['civil-status'] ?></td>
-                        <td><?= $row['street'] ?></td>
-                        <td><?= $row['email'] ?></td>
-                        <td class="actions">
-                            <a href="#" class="edit" id="editResidents" onclick="editResident(this)"
-                                data-id="<?= $row['id'] ?>" data-fname="<?= $row['firstname'] ?>"
-                                data-mname="<?= $row['middlename'] ?>" data-lname="<?= $row['lastname'] ?>"
-                                data-age="<?= $row['age'] ?>" data-gender="<?= $row['gender'] ?>"
-                                data-houseNo="<?= $row['house-no'] ?>" data-street="<?= $row['street'] ?>"
-                                data-subdivision="<?= $row['subdivision'] ?>" data-dbirth="<?= $row['date-of-birth'] ?>"
-                                data-pbirth="<?= $row['place-of-birth'] ?>" data-cstatus="<?= $row['civil-status'] ?>"
-                                data-occupation="<?= $row['occupation'] ?>" data-email="<?= $row['email'] ?>"
-                                data-contactNo="<?= $row['contact-no'] ?>" data-vstatus="<?= $row['voter-status'] ?>"
-                                data-identified="<?= $row['identified'] ?>" data-sector="<?= $row['sector'] ?>"
-                                data-citizenship="<?= $row['citizenship'] ?>"
-                                data-householdNo="<?= $row['household-no'] ?>" data-osy="<?= $row['osy'] ?>"
-                                data-pwd="<?= $row['pwd'] ?>" data-mfname="<?= $row['mother-firstname'] ?>"
-                                data-mmname="<?= $row['mother-middlename'] ?>"
-                                data-mlname="<?= $row['mother-lastname'] ?>" data-mage="<?= $row['mother-age'] ?>"
-                                data-mhouseNo="<?= $row['mother-house-no'] ?>"
-                                data-mstreet="<?= $row['mother-street'] ?>"
-                                data-msubdivision="<?= $row['mother-subdivision'] ?>"
-                                data-mhouseholdNo="<?= $row['mother-household-head'] ?>"
-                                data-ffname="<?= $row['father-firstname'] ?>"
-                                data-fmname="<?= $row['father-middlename'] ?>"
-                                data-flname="<?= $row['father-lastname'] ?>" data-fage="<?= $row['father-age'] ?>"
-                                data-fhouseNo="<?= $row['father-house-no'] ?>"
-                                data-fstreet="<?= $row['father-street'] ?>"
-                                data-fsubdivision="<?= $row['father-subdivision'] ?>"
-                                data-fhouseholdNo="<?= $row['father-household-head'] ?>">Edit</a>
-                            <a href="./model/print_resident.php" class="print">Print</a>
-                            <?php 
-                                $userExists = false;
-                                foreach($users as $user) {
-                                    if ($user['firstname'] === $row['firstname'] && $user['lastname'] === $row['lastname']) {
-                                        $userExists = true;
-                                        break;
-                                    }
-                                }
-                            ?>
-                            <?php if(!$userExists) { ?>
-                            <a href="#" class="accountBtn" onclick="createAccount(this)"
-                                data-fname="<?= $row['firstname'] ?>" data-mname="<?= $row['middlename'] ?>"
-                                data-lname="<?= $row['lastname'] ?>" data-age="<?= $row['age'] ?>"
-                                data-gender="<?= $row['gender'] ?>" data-street="<?= $row['street'] ?>"
-                                data-cstatus="<?= $row['civil-status'] ?>" data-dbirth="<?= $row['date-of-birth'] ?>"
-                                data-email="<?= $row['email'] ?>">Account</a>
-                            <?php } ?>
-                            <a href="./model/remove_resident.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
-                        </td>
-                    </tr>
-                    <?php $no++; endforeach ?>
+                    <?php if(!empty($osc)) { ?>
+                        <?php $no=1; foreach($osc as $row): ?>
+                            <tr>
+                                <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
+                                <td><?= calculateAge($row['date_of_birth']) ?></td>
+                                <td><?= $row['date_of_birth'] ?></td>
+                                <td><?= $row['sex'] ?></td>
+                                <td><?= $row['civil_status'] ?></td>
+                                <td><?= $row['street'] ?></td>
+                            </tr>
+                        <?php $no++; endforeach ?>
                     <?php } ?>
                 </tbody>
                 <!-- Add more rows here -->

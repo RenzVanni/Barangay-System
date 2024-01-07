@@ -1,17 +1,12 @@
 <?php include './server/server.php'?>
 <?php
-    $startDate = date('Y-m-d', strtotime('-24 years'));
-    $endDate = date('Y-m-d', strtotime('-15 years'));
-    // Fetch residents who are 18 years old and below based on their birthday
-    $select = $conn->prepare("SELECT * FROM tbl_households WHERE date_of_birth BETWEEN ? AND ? ");
-    $select->bind_param("ss", $startDate, $endDate);
-    $select->execute();
-    $result = $select->get_result();
+    $query = "SELECT * FROM tbl_households WHERE `osy`='osy'";
+    $result = $conn->query($query);
     $total = $result->num_rows;
 
-    $residents = array();
-    while ($row = $result->fetch_assoc()) {
-        $residents[] = $row;
+    $osy = array();
+    while($row = $result->fetch_assoc()) {
+    $osy[] = $row;
     }
 
     function calculateAge($dob) {
@@ -20,7 +15,7 @@
         $interval = $today->diff($birthDate);
         return $interval->y;
     }
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,13 +51,13 @@
             <div class="First-Cont">
                 <div class="bigBoxOsy">
                     <div class="text-cont">
-                        <p class="text">TOTAL OUT OF <br> SCHOOL YOUTH <br>(15-24 years old)</p>
+                        <p class="text">TOTAL OUT OF <br> SCHOOL YOUTH</p>
                         <p class="number"><?= number_format($total)?></p>
                     </div>
                     <img src="icons/ResidentsSeeMore.png" alt="">
                 </div>
             </div>
-            <div class="Second-Cont">
+            <!-- <div class="Second-Cont">
                 <div class="smallBoxOsy">
                     <div class="text-cont">
                         <p class="text">Male</p>
@@ -77,7 +72,7 @@
                     </div>
                     <img src="icons/people.png" alt="">
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="fourth_layer">
@@ -93,8 +88,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if(!empty($residents)) { ?>
-                    <?php $no=1; foreach($residents as $row): ?>
+                    <?php if(!empty($osy)) { ?>
+                    <?php $no=1; foreach($osy as $row): ?>
                     <tr>
                         <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
                         <td><?= calculateAge($row['date_of_birth']) ?></td>
