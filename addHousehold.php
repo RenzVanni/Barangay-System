@@ -121,7 +121,7 @@
 
                     <div class="inputEducational">
                         <p>Educational Attainment<span>*</span></p>
-                        <select id="education" name="civil-status" class="civilStatus111" required>
+                        <select id="education" name="education[]" class="" required>
                             <option value=""></option>
                             <option value="Single">None</option>
                             <option value="Married">Elementary Eduaction</option>
@@ -135,22 +135,22 @@
 
                     <div class="inputPwd">
                         <p>PWD  </p>
-                        <input type="checkbox" name="pwd" id="pwd">
+                        <input type="checkbox" value="PWD" name="pwd[]" id="pwd">
                     </div>
 
                     <div class="inputPwd">
                         <p>OSY  </p>
-                        <input type="checkbox" name="osy" id="osy">
+                        <input type="checkbox" value="OSY" name="osy[]" id="osy">
                     </div>
 
                     <div class="inputPwd">
                         <p>OSC  </p>
-                        <input type="checkbox" name="osc" id="osc">
+                        <input type="checkbox" value="OSC" name="osc[]" id="osc">
                     </div>
 
                     <div class="inputPwd">
                         <p>OFW  </p>
-                        <input type="checkbox" name="ofw" id="ofw">
+                        <input type="checkbox" value="OFW" name="ofw[]" id="ofw">
                     </div>
                    
                     
@@ -251,10 +251,10 @@
             const sex = document.getElementById('sex').value;
             const civilStatus = document.getElementById('civilStatus').value;
             const education = document.getElementById('education').value;
-            const pwd = document.getElementById('pwd').value;
-            const osy = document.getElementById('osy').value;
-            const osc = document.getElementById('osc').value;
-            const ofw = document.getElementById('ofw').value;
+            const pwd = document.getElementById('pwd');
+            const osy = document.getElementById('osy');
+            const osc = document.getElementById('osc');
+            const ofw = document.getElementById('ofw');
     
            
             // Phone number validation for the Philippines (10 digits starting with 09)
@@ -489,6 +489,65 @@
                     document.getElementById(fieldName).value = '';
                 }
             });
+
+            const educationCell = newRow.insertCell(12);
+            educationCell.style.display = 'none';
+            const educationInput = document.createElement('input');
+            educationInput.type = 'text';
+            educationInput.name = 'education[]';
+            educationInput.value = education
+
+            educationCell.appendChild(educationInput);
+
+            const pwdCell = newRow.insertCell(13);
+            pwdCell.style.display = 'none';
+            const pwdInput = document.createElement('input');
+            pwdInput.type = 'text';
+            pwdInput.name = 'pwd[]';
+
+            // pwdInput.value = "no"
+            // pwdInput.addEventListener("change", () => {
+            // })
+            
+            if(pwd.checked) {
+                pwdInput.value = pwd.value
+            }
+            pwdCell.appendChild(pwdInput);
+
+            const osyCell = newRow.insertCell(14);
+            osyCell.style.display = 'none';
+            const osyInput = document.createElement('input');
+            osyInput.type = 'text';
+            osyInput.name = 'osy[]';
+
+            if(osy.checked) {
+                osyInput.value = osy.value
+            }
+
+            osyCell.appendChild(osyInput);
+
+            const oscCell = newRow.insertCell(15);
+            oscCell.style.display = 'none';
+            const oscInput = document.createElement('input');
+            oscInput.type = 'text';
+            oscInput.name = 'osc[]';
+
+            if(osc.checked) {
+                oscInput.value = osc.value
+            }
+            oscCell.appendChild(oscInput);
+
+            const ofwCell = newRow.insertCell(12);
+            ofwCell.style.display = 'none';
+            const ofwInput = document.createElement('input');
+            ofwInput.type = 'text';
+            ofwInput.name = 'ofw[]';
+
+            if(ofw.checked) {
+                ofwInput.value = ofw.value
+            } 
+
+            ofwCell.appendChild(ofwInput);
 
             // Clear additional fields
             document.getElementById('ext').value = '';

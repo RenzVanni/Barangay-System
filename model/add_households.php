@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Assuming $conn is the connection to your database
     
     // Prepare the statement once for efficiency
-    $stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `citizenship`, `household_head`, `suffix`, `email`, `contact_no`, `voter_status`, `head_name`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `citizenship`, `household_head`, `suffix`, `email`, `contact_no`, `voter_status`, `head_name`, `education`, `osc`, `ofw`, `pwd`, `osy`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     $totalEntries = count($_POST['lastName']); // Assumes every other array has the same count
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $householdHead = ($_POST['householdHead'][$i+1] === 'yes') ? 'yes' : $householdHeadName;
 
 
-        if (!$stmt->bind_param("ssssssssssssssssss", 
+        if (!$stmt->bind_param("sssssssssssssssssssssss", 
             $_POST['firstName'][$i],
             $_POST['middleName'][$i], 
             $_POST['lastName'][$i],
@@ -63,7 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['email'][$i],
             $_POST['contact_no'][$i],
             $_POST['voter_status'][$i],
-            $householdHeadName
+            $householdHeadName,
+            $_POST['education'][$i],
+            $_POST['osc'][$i],
+            $_POST['ofw'][$i],
+            $_POST['pwd'][$i],
+            $_POST['osy'][$i]
             // $imagePath
             )) {
             $_SESSION['message'] = "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
