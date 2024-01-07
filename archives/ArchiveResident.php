@@ -43,7 +43,7 @@ function calculateAge($dob) {
 
         <a href="../residentInfo.php" class="backContainer">
             <img src="../iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back To Indidual Records</p>
         </a>
 
         <div class="second_layer">
@@ -117,25 +117,8 @@ function calculateAge($dob) {
                         <td><?= $row['house_no']. " " .$row['street']. " " .$row['subdivision'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td class="actions">
-                            <a href="../model/recover/recover_resident.php?id=<?= $row['id']?>" class="edit"
+                            <a href="../recoverRecord.php?id=<?= $row['id']?>" class="edit"
                                 id="editResidents">Recover</a>
-
-
-                            <div class="modal-delete">
-                                <div class="form-delete">
-                                    <div class="delete-cont">
-                                        <p>Delete</p>
-                                        <img src="icons/close 1.png" alt="" class="close-delete">
-                                    </div>
-                                    <div class="delete-description">
-                                        <p>Deleting this will remove all data
-                                            and cannot be undone.</p>
-                                    </div>
-                                    <div class="delete-submit">
-                                        <a href="./model/remove/remove_resident.php?id=<?= $row['id']?>">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
                         </td>
                     </tr>
 

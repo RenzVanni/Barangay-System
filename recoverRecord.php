@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDIVIDUAL RECORD OF BARANGAY INHABITANT</title>
+    <title>RECOVER INDIVIDUAL RECORD OF BARANGAY INHABITANT</title>
     <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ">
@@ -21,17 +21,18 @@
 
     <div class="home_residents">
         <div class="first_layer">
-            <p>INDIVIDUAL RECORD OF BARANGAY INHABITANT</p>
+            <p>RECOVER INDIVIDUAL RECORD OF BARANGAY INHABITANT</p>
            
         </div>
-        <a href="residentInfo.php" class="backContainer">
+        <a href="archives/ArchiveResident.php" class="backContainer">
             <img src="iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back To Archive Resident</p>
         </a>
 
-        <form action="./model/add_individual.php" method="post" class="input-form">
+
+        <form action="./model/add_individual.php" method="post" class="input-form" style="margin-top: 30px;">
             <div class="headerInfo">
-                <p>Individual Information</p>
+                <p>Recover Individual Information</p>
             </div>
             <div class="bodyInfo">
                 <div class="leftInfo">
@@ -161,9 +162,10 @@
                 </div>
             </div>
             <div class="footerInfo">
-                <button type="submit" class="addSaTable">Create</button>
+                <button type="submit" class="addSaTable">Recover</button>
             </div>
         </form>
+        <div class="note"><span>*</span>Please verify if your address remains the same; if not, you can update it accordingly.</div>
     </div>
 </body>
 
