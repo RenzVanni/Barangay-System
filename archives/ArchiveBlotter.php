@@ -35,7 +35,7 @@ $residents[] = $row;
         </div>
         <a href="../blotter.php" class="backContainer">
             <img src="../iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back To Blotter Records</p>
         </a>
         <div class="second_layer">
             <div class="search-cont">

@@ -72,8 +72,8 @@ $stmt->close();
             </div>
             <div class="add-cont">
                 
-                <a href="#" class="add" id="addIndigency_forself">+ Forself</a>
-                <a href="#" class="add" id="addIndigency_forsomeone">+ Forsomeone</a>
+                <a href="#" class="add" id="addIndigency_forself">+Forself</a>
+                <a href="#" class="add" id="addIndigency_forsomeone">+Forsomeone</a>
                 <a class="add1" href="?filter=status&value=Pending">Pending</a>
                 <a class="add1" href="?filter=status&value=for pick-up">For Pick-up</a>
                 <a class="add1" href="?filter=status&value=completed">Completed</a>

@@ -26,7 +26,7 @@
         </div>
         <a href="../announcement.php" class="backContainer">
             <img src="../iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back To Announce Records</p>
         </a>
         <div class="second_layer">
             <div class="search-cont">

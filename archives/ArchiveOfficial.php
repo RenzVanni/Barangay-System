@@ -37,7 +37,7 @@ while($row = $result->fetch_assoc()) {
 
             <a href="../barangayOfficials.php" class="backContainer">
                 <img src="../iconsBackend/back.png" alt="">
-                <p>Go Back</p>
+                <p>Go Back To Barangay Official</p>
             </a>
 
             <div class="second_layer">

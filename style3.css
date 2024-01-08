@@ -173,6 +173,22 @@
   margin-right: 40px;
   margin-top: 15px;
 }
+.second_layer .add-cont .add123 {
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #fff;
+  color: #007236;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 130px;
+  padding: 5px 10px;
+  justify-content: center;
+  margin-right: 20px;
+  
+  
+}
 .second_layer .add-cont .add {
   height: 39px;
   border-radius: 20px;
@@ -184,10 +200,10 @@
   align-items: center;
   width: auto;
   padding: 5px 10px;
-  border-radius: 20px;
   justify-content: center;
   margin-right: 20px;
-  display: flex;
+  
+  
 }
 .second_layer .add-cont .add1 {
   height: 39px;
@@ -200,10 +216,22 @@
   align-items: center;
   width: auto;
   padding: 5px 10px;
-  border-radius: 20px;
   justify-content: center;
   margin-right: 20px;
+}
+.second_layer .add-cont .addpen {
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #005072;
+  background: #fff;
+  color: #005072;
+  text-decoration: none;
   display: flex;
+  align-items: center;
+  width: 100px;
+  padding: 5px 10px;
+  justify-content: center;
+  margin-right: 20px;
 }
 .second_layer .add-cont select {
   height: 39px;
@@ -241,6 +269,24 @@
 }
 
 .second_layer .add-cont .add:hover {
+  cursor: pointer;
+  background-color: #007236;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.second_layer .add-cont .addpen:hover {
+  cursor: pointer;
+  background-color: #005072;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.second_layer .add-cont .add1:hover {
+  cursor: pointer;
+  background-color: #005072;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.second_layer .add-cont .add123:hover {
   cursor: pointer;
   background-color: #007236;
   color: #fff;
