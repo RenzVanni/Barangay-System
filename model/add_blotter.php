@@ -9,49 +9,31 @@
         }
     }
     
-    $complainant_fname  = $conn->real_escape_string($_POST['complainant_fname']);
-    $complainant_mname  = $conn->real_escape_string($_POST['complainant_mname']);
-    $complainant_lname  = $conn->real_escape_string($_POST['complainant_lname']);
-    $complainant_suffix  = $conn->real_escape_string($_POST['complainant_suffix']);
+    $incident_type  = $conn->real_escape_string($_POST['incident_type']);
+    $location  = $conn->real_escape_string($_POST['location']);
+    $blotter_date  = $conn->real_escape_string($_POST['blotter_date']);
+    $involved  = $conn->real_escape_string($_POST['involved']);
     
-    $respondent_fname  = $conn->real_escape_string($_POST['respondent_fname']);
-    $respondent_mname 	= $conn->real_escape_string($_POST['respondent_mname']);
-    $respondent_lname 	= $conn->real_escape_string($_POST['respondent_lname']);
-    $respondent_suffix 	= $conn->real_escape_string($_POST['respondent_suffix']);
-    
-    $victim_fname 	    = $conn->real_escape_string($_POST['victim_fname']);
-    $victim_mname 	    = $conn->real_escape_string($_POST['victim_mname']);
-    $victim_lname 	    = $conn->real_escape_string($_POST['victim_lname']);
-    $victim_suffix	    = $conn->real_escape_string($_POST['victim_suffix']);
-  
-    $location 	  = $conn->real_escape_string($_POST['location']);
-    $date         = $conn->real_escape_string($_POST['date']);
-    $time 	      = $conn->real_escape_string($_POST['time']);
-    $details 	    = $conn->real_escape_string($_POST['details']);
+    $details  = $conn->real_escape_string($_POST['details']);
+    $respondent 	= $conn->real_escape_string($_POST['respondent']);
 
-    if(!empty($location) && !empty($date) && !empty($time) && !empty($details)){
-        $insert  = "INSERT INTO tbl_blotter (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `respondent_fname`, `respondent_mname`, `respondent_lname`, `respondent_suffix`, `victim_fname`, `victim_mname`, `victim_lname`, `victim_suffix`, `location`, `date`, `time`, `details`, `seen`) 
-                    VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$respondent_fname', '$respondent_mname', '$respondent_lname', '$respondent_suffix', '$victim_fname', '$victim_mname', '$victim_lname', '$victim_suffix','$location','$date', '$time','$details','read')";
-    
-        $result  = $conn->query($insert);
 
-        if($result === true){
-            $_SESSION['message'] = 'Blotter added!';
-            $_SESSION['success'] = 'success';
+    $insert  = "INSERT INTO tbl_blotter (`incident_type`, `location`, `blotter_date`, `involved`, `details`, `respondent`) 
+                VALUES ('$incident_type', '$location', '$blotter_date', '$involved', '$details', '$respondent')";
 
-            $user_id = $_SESSION['id'];
-            $action = "INSERT";
-            $table_name = "Blotter";
-            logAuditTrail($user_id, $action, $table_name);
+    $result  = $conn->query($insert);
 
-        }else{
-            $_SESSION['message'] = 'Something went wrong!';
-            $_SESSION['success'] = 'danger';
-        }
+    if($result === true){
+        $_SESSION['message'] = 'Blotter added!';
+        $_SESSION['success'] = 'success';
+
+        $user_id = $_SESSION['id'];
+        $action = "INSERT";
+        $table_name = "Blotter";
+        logAuditTrail($user_id, $action, $table_name);
 
     }else{
-
-        $_SESSION['message'] = 'Please fill up the form completely!';
+        $_SESSION['message'] = 'Something went wrong!';
         $_SESSION['success'] = 'danger';
     }
 

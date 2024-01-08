@@ -456,50 +456,20 @@ function editBusinessClosure(that) {
 // ! EDIT BLOTTER
 function editBlotter(that) {
   id = $(that).attr("data-id");
-  complainant_fname = $(that).attr("data-complainant-fname");
-  complainant_mname = $(that).attr("data-complainant-mname");
-  complainant_lname = $(that).attr("data-complainant-lname");
-  complainant_suffix = $(that).attr("data-complainant-suffix");
-
-  respondent_fname = $(that).attr("data-respondent-fname");
-  respondent_mname = $(that).attr("data-respondent-mname");
-  respondent_lname = $(that).attr("data-respondent-lname");
-  respondent_suffix = $(that).attr("data-respondent-suffix");
-
-  victim_fname = $(that).attr("data-victim-fname");
-  victim_mname = $(that).attr("data-victim-mname");
-  victim_lname = $(that).attr("data-victim-lname");
-  victim_suffix = $(that).attr("data-victim-suffix");
-
-  type = $(that).attr("data-type");
+  incident_type = $(that).attr("data-incident_type");
   l = $(that).attr("data-location");
-  date = $(that).attr("data-date");
-  time = $(that).attr("data-time");
+  blotter_date = $(that).attr("data-blotter_date");
+  involved = $(that).attr("data-involved");
   details = $(that).attr("data-details");
-  status = $(that).attr("data-status");
+  respondent = $(that).attr("data-respondent");
 
   $("#blotter_id").val(id);
-  $("#complainant_fname1").val(complainant_fname);
-  $("#complainant_mname1").val(complainant_mname);
-  $("#complainant_lname1").val(complainant_lname);
-  $("#complainant_suffix1").val(complainant_suffix);
-
-  $("#respondent_fname1").val(respondent_fname);
-  $("#respondent_mname1").val(respondent_mname);
-  $("#respondent_lname1").val(respondent_lname);
-  $("#respondent_suffix1").val(respondent_suffix);
-
-  $("#victim_fname1").val(victim_fname);
-  $("#victim_mname1").val(victim_mname);
-  $("#victim_lname1").val(victim_lname);
-  $("#victim_suffix1").val(victim_suffix);
-
-  $("#timeBlotter1").val(time);
-  $("#typeBlotter1").val(type);
-  $("#locationBlotter1").val(l);
-  $("#dateBlotter1").val(date);
-  $("#statusBlotter1").val(status);
-  $("#detailsBlotter1").val(details);
+  $("#incident_type1").val(incident_type);
+  $("#location1").val(l);
+  $("#blotter_date1").val(blotter_date);
+  $("#involved1").val(involved);
+  $("#details1").val(details);
+  $("#respondent1").val(respondent);
 }
 
 // ! EDIT COMPLAIN

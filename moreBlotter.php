@@ -102,22 +102,24 @@ function calculateAge($dob) {
             <table id="table">
                 <thead>
                     <tr>
-                        <th>Complainant</th>
-                        <th>Respondent</th>
-                        <th>Victim(s)</th>
-                        <th>Bloter/Incident</th>
+                        <th>Type of Incident</th>
                         <th>Location</th>
+                        <th>Date</th>
+                        <th>Involved Person/Specific Identification</th>
+                        <th>Narrative Details of Inciden</th>
+                        <th>Respondent</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if(!empty($blotter)) { ?>
                         <?php $no=1; foreach($blotter as $row): ?>
                             <tr>
-                                <td><?= $row['complainant_fname'] ?> <?=$row['complainant_mname'] ?> <?= $row['complainant_lname']?></td>
-                                <td><?= $row['respondent_fname'] ?> <?=$row['respondent_mname'] ?> <?= $row['respondent_lname']?></td>
-                                <td><?= $row['victim_fname'] ?> <?=$row['victim_mname'] ?> <?= $row['victim_lname']?></td>
-                                <td><?= $row['type'] ?></td>
+                                <td><?= $row['incident_type'] ?></td>
                                 <td><?= $row['location'] ?></td>
+                                <td><?= $row['blotter_date'] ?></td>
+                                <td><?= $row['involved'] ?></td>
+                                <td><?= $row['details'] ?></td>
+                                <td><?= $row['respondent'] ?></td>
                             </tr>
                         <?php $no++; endforeach ?>
                     <?php } ?>

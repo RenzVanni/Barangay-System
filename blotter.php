@@ -3,9 +3,9 @@
 $query =  "SELECT * FROM tbl_blotter";
 $result = $conn->query($query);
 
-$residents = array();
+$blotter = array();
 while($row = $result->fetch_assoc()) {
-  $residents[] = $row;
+  $blotter[] = $row;
 }
 ?>
 <!DOCTYPE html>
@@ -68,19 +68,26 @@ while($row = $result->fetch_assoc()) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if(!empty($residents)) { ?>
-                    <?php $no=1; foreach($residents as $row): ?>
+                    <?php if(!empty($blotter)) { ?>
+                    <?php $no=1; foreach($blotter as $row): ?>
                     <tr>
-                        <td>Car Acident</td>
-                        <td>Bayan</td>
-                        <td>09/12/2094</td>
-                        <td>Gonzalo Itulid and Ivan Javier</td>
-                        <td>Naglalakad si Ivan at dinuraan ni Itulid</td>
-                        <td>Renz Bato</td>
+                        <td><?= $row['incident_type'] ?></td>
+                        <td><?= $row['location'] ?></td>
+                        <td><?= $row['blotter_date'] ?></td>
+                        <td><?= $row['involved'] ?></td>
+                        <td><?= $row['details'] ?></td>
+                        <td><?= $row['respondent'] ?></td>
                         <td class="actions">
-                            <a href="#" class="edit" id="editBlotter" onclick="editBlotter(this)">Edit</a>
-                            <!-- <a href="./model/print_blotter.php?id=<?= $row['id']?>" class="print">Print</a> -->
-                            <?php if($_SESSION['role'] === 'admin') { ?>
+                            <a href="#" class="edit" id="editBlotter" onclick="editBlotter(this)"
+                            data-id="<?= $row['id'] ?>"
+                            data-incident_type="<?= $row['incident_type'] ?>"
+                            data-location="<?= $row['location'] ?>"
+                            data-blotter_date="<?= $row['blotter_date'] ?>"
+                            data-involved="<?= $row['involved'] ?>"
+                            data-details="<?= $row['details'] ?>"
+                            data-respondent="<?= $row['respondent'] ?>"
+                            >Edit</a>
+                            <?php if($_SESSION['role'] === '3') { ?>
                             <a href="#" class="delete">Delete</a>
                             <?php } ?>
 
@@ -126,15 +133,15 @@ while($row = $result->fetch_assoc()) {
                 <div class="unang-layerBlotter">
                     <div class="column1">
                         <label for="type_inciden">Type of Incident</label>
-                        <input type="text" id="type_incident class="type_incident">
+                        <input type="text" name="incident_type" id="type_incident" class="type_incident">
                     </div>
                     <div class="column2">
                         <label for="location">Exact Location of Incident</label>
-                        <input type="text" id="location" class="location">
+                        <input type="text" name="location" id="location" class="location">
                     </div>
                     <div class="column3">
                         <label for="dates">Exclusive Dates and Time of Incident</label>
-                        <input type="datetime-local"id="dateBlotter" class="date">
+                        <input type="datetime-local" name="blotter_date" id="dateBlotter" class="date">
                     </div>
                 </div>
             </div>
@@ -150,7 +157,7 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="pangpito-layerBlotter">
                 <label for="respondent">Respondent</label>
-                <input type="text" id="respondent" class="respondent">
+                <input type="text" name="respondent" id="respondent" class="respondent">
             </div>
 
             <input class="submitBlotter" type="submit" value="Submit">
@@ -175,15 +182,15 @@ while($row = $result->fetch_assoc()) {
                 <div class="unang-layerBlotter">
                     <div class="column1">
                         <label for="type_inciden">Type of Incident</label>
-                        <input type="text" id="type_incident1" class="type_incident">
+                        <input type="text" name="incident_type" id="incident_type1" class="type_incident">
                     </div>
                     <div class="column2">
                         <label for="location">Exact Location of Incident</label>
-                        <input type="text" id="location1" class="location">
+                        <input type="text" name="location" id="location1" class="location">
                     </div>
                     <div class="column3">
                         <label for="dates">Exclusive Dates and Time of Incident</label>
-                        <input type="datetime-local"  id="dateBlotter1" class="date">
+                        <input type="datetime-local" name="blotter_date" id="blotter_date1" class="date">
                     </div>
                 </div>
             </div>
@@ -199,7 +206,7 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="pangpito-layerBlotter">
                 <label for="respondent">Respondent</label>
-                <input type="text" id="respondent1" class="respondent">
+                <input type="text" name="respondent" id="respondent1" class="respondent">
             </div>
 
             <input type="hidden" name="blotter_id" id="blotter_id">
