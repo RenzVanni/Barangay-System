@@ -36,8 +36,11 @@
     $vstatus = $conn->real_escape_string(isset($_POST['voter-status']) ? $_POST['voter-status'] : "");
     $citizenship = $conn->real_escape_string($_POST['citizenship']);
     $householdNo = $conn->real_escape_string(isset($_POST['household-no']) ? $_POST['household-no'] : "");
-    $osy = $conn->real_escape_string(isset($_POST['out-of-school-youth']) ? $_POST['out-of-school-youth'] : "");
-    $pwd = $conn->real_escape_string(isset($_POST['person-with-disability']) ? $_POST['person-with-disability'] : "");
+    $osy = $conn->real_escape_string(isset($_POST['osy']) ? $_POST['osy'] : "");
+    $pwd = $conn->real_escape_string(isset($_POST['pwd']) ? $_POST['pwd'] : "");
+	$osc = $conn->real_escape_string(isset($_POST['osc']) ? $_POST['osc'] : "");
+	$ofw = $conn->real_escape_string(isset($_POST['ofw']) ? $_POST['ofw'] : "");
+	$education = $conn->real_escape_string(isset($_POST['education']) ? $_POST['education'] : "");
 
     // $hHead = $conn->real_escape_string($_POST['household-head']);
 
@@ -48,8 +51,8 @@
 	$result = $stmt->get_result();
         $head = "yes";
 	if ($result->num_rows == 0) {
-		$stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `citizenship`, `household_no`, `household_head`, `suffix`, `contact_no`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param("sssssssssssssssss", $fname, $mname, $lname, $sex, $houseNo, $street, $subdivision, $dbirth, $pbirth, $cstatus, $occupation, $email, $citizenship, $householdNo, $head, $suffix, $contact);
+		$stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `citizenship`, `household_no`, `household_head`, `suffix`, `contact_no`, `education`, `pwd`, `osy`, `osc`, `ofw`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param("ssssssssssssssssssssss", $fname, $mname, $lname, $sex, $houseNo, $street, $subdivision, $dbirth, $pbirth, $cstatus, $occupation, $email, $citizenship, $householdNo, $head, $suffix, $contact, $education, $pwd, $osy, $osc, $ofw);
 
 		$username = $fname." ".$mname." ".$lname;
 		

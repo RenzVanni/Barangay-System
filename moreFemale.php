@@ -104,8 +104,8 @@ function calculateAge($dob) {
                     <tr>
                         <th>Full Name</th>
                         <th>Age</th>
+                        <th>Sex</th>
                         <th>Date of Birth</th>
-                        <th>Gender</th>
                         <th>Civil Status</th>
                         <th>Address</th>
                     </tr>
@@ -115,11 +115,11 @@ function calculateAge($dob) {
                     <?php $no=1; foreach($residents as $row): ?>
                     <tr>
                         <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
-                        <td><?= calculateAge($row['date_of_birth'])?></td>
-                        <td><?= $row['date_of_birth'] ?></td>
+                        <td><?= calculateAge($row['date_of_birth']) ?></td>
                         <td><?= $row['sex'] ?></td>
+                        <td><?= $row['date_of_birth'] ?></td>
                         <td><?= $row['civil_status'] ?></td>
-                        <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision'] ?></td>
+                        <td><?= $row['house_no']." ".$row['street']." ".$row['subdivision'] ?></td>
                     </tr>
                     <?php $no++; endforeach ?>
                     <?php } ?>

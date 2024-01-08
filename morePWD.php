@@ -81,22 +81,22 @@
                     <tr>
                         <th>Full Name</th>
                         <th>Age</th>
+                        <th>Sex</th>
                         <th>Date of Birth</th>
-                        <th>Gender</th>
                         <th>Civil Status</th>
-                        <th>Street</th>
+                        <th>Address</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if(!empty($ofw)) { ?>
-                        <?php $no=1; foreach($ofw as $row): ?>
+                    <?php if(!empty($pwd)) { ?>
+                        <?php $no=1; foreach($pwd as $row): ?>
                             <tr>
                                 <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
                                 <td><?= calculateAge($row['date_of_birth']) ?></td>
-                                <td><?= $row['date_of_birth'] ?></td>
                                 <td><?= $row['sex'] ?></td>
+                                <td><?= $row['date_of_birth'] ?></td>
                                 <td><?= $row['civil_status'] ?></td>
-                                <td><?= $row['street'] ?></td>
+                                <td><?= $row['house_no']." ".$row['street']." ".$row['subdivision'] ?></td>
                             </tr>
                         <?php $no++; endforeach ?>
                     <?php } ?>

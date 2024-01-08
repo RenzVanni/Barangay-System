@@ -125,36 +125,36 @@
 
                     <div class="inputEducational">
                         <p>Educational Attainment<span>*</span></p>
-                        <select id="civilStatus" name="civil-status" class="civilStatus111" required>
+                        <select id="civilStatus" name="education" class="civilStatus111" required>
                             <option value=""></option>
-                            <option value="Single">None</option>
-                            <option value="Married">Elementary Eduaction</option>
-                            <option value="Divorced">High School Education</option>
-                            <option value="Widowed">College</option>
-                            <option value="Widowed">Postgraduate Program</option>
-                            <option value="Widowed">Non-Formal Eduaction</option>
-                            <option value="Widowed">Vocational</option>
+                            <option value="None">None</option>
+                            <option value="Elementary">Elementary Eduaction</option>
+                            <option value="High School">High School Education</option>
+                            <option value="College">College</option>
+                            <option value="Postgraduate">Postgraduate Program</option>
+                            <option value="Non-Formal">Non-Formal Eduaction</option>
+                            <option value="Vocational">Vocational</option>
                         </select>
                     </div>
 
                     <div class="inputPwd">
                         <p>PWD  </p>
-                        <input type="checkbox" name="pwd" id="pwd">
+                        <input type="checkbox" value="pwd" name="pwd" id="pwd">
                     </div>
 
                     <div class="inputPwd">
                         <p>OSY  </p>
-                        <input type="checkbox" name="osy" id="osy">
+                        <input type="checkbox" value="osy" name="osy" id="osy">
                     </div>
 
                     <div class="inputPwd">
                         <p>OSC  </p>
-                        <input type="checkbox" name="osc" id="osc">
+                        <input type="checkbox" value="osc" name="osc" id="osc">
                     </div>
 
                     <div class="inputPwd">
                         <p>OFW  </p>
-                        <input type="checkbox" name="ofw" id="ofw">
+                        <input type="checkbox" value="ofw" name="ofw" id="ofw">
                     </div>
                    
                    

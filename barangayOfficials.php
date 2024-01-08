@@ -64,7 +64,7 @@
                             <th>Term Start</th>
                             <th>Term End</th>
                             <th>Status</th>
-                            <?php if($_SESSION['role'] === 'admin') {?>
+                            <?php if($_SESSION['role'] !== 'staff') {?>
                             <th>Action</th>
                             <?php } ?>
                         </tr>
@@ -77,7 +77,7 @@
                         <td><?= $row['termstart'] ?></td>
                         <td><?= $row['termend'] ?></td>
                         <td class="status"><?= $row['status'] ?></td>
-                        <?php if($_SESSION['role'] == 'admin') {?>
+                        <?php if($_SESSION['role'] !== 'staff') {?>
                         <td class="actions">
                             <span class="edit" id="editOfficials" onclick="editOfficial(this)"
                                 data-id="<?= $row['id'] ?>" data-fname="<?= $row['firstname'] ?>"

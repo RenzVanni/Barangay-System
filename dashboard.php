@@ -70,8 +70,9 @@ function calculateAge($dob) {
     $query13 = "SELECT * FROM tbl_households WHERE `pwd`='pwd'";
 	$pwd = $conn->query($query13)->num_rows;
 
-//   $query9 = "SELECT * FROM tblresidents WHERE sector='Student'";
-// 	$students = $conn->query($query9)->num_rows;
+    $options = $options ?? "none";
+    $query14 = "SELECT * FROM tbl_households WHERE `education`!='$options'";
+	$students = $conn->query($query14)->num_rows;
 
   if(isset($_GET['state'])) {
     $state = $_GET['state'];
@@ -469,42 +470,21 @@ $auditResult = $conn->query($audit);
                         </div>
                     </div>
 
-                    <!-- <div class="osc">
+                    <div class="student">
                         <div class="a1">
                             <div class="b1">
-                                <div class="c1">OSC (6-14)</div>
-                                <div class="c2-osc">0</div>
-                                <div class="c3">Total Out of School Children</div>
+                                <div class="c1">Student</div>
+                                <div class="c2-student"><?= number_format($students) ?></div>
+                                <div class="c3">Total Students</div>
                             </div>
                             <div class="b2">
-                                <div class="c4-osc">
+                                <div class="c4-student">
                                     <img src="iconsBackend/people.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="a2-osc" id="more-osc">
-                            <a href="moreOSC.php" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="iconsBackend/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="osy">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">OSY (15-24)</div>
-                                <div class="c2-o"><?= number_format($osy) ?></div>
-                                <div class="c3">Total Out of School Youth</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-o">
-                                    <img src="iconsBackend/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-o" id="more-osy">
-                            <a href="moreOSY.php" class="b3">More info</a>
+                        <div class="a2-student" id="more-student">
+                            <a href="moreStudents.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
@@ -513,7 +493,7 @@ $auditResult = $conn->query($audit);
 
 
 
-                    <div class="soloParent">
+                    <!-- <div class="soloParent">
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">Solo Parent</div>
@@ -528,27 +508,6 @@ $auditResult = $conn->query($audit);
                         </div>
                         <div class="a2-soloP" id="more-soloParent">
                             <a href="moreSoloParent.php" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="iconsBackend/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pwd">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">PWD</div>
-                                <div class="c2-pw"><?= number_format($pwd) ?></div>
-                                <div class="c3">Total Person with Disabilities</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-pw">
-                                    <img src="iconsBackend/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-pw" id="more-pwd">
-                            <a href="morePWD.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
@@ -596,69 +555,6 @@ $auditResult = $conn->query($audit);
                             </div>
                         </div>
                     </div>
-
-                    <div class="ofw">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">OFW</div>
-                                <div class="c2-ofw">0</div>
-                                <div class="c3">Total Overseas Filipino Worker</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-ofw">
-                                    <img src="iconsBackend/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-ofw" id="more-ofw">
-                            <a href="moreOFW.php" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="iconsBackend/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="student">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">Student</div>
-                                <div class="c2-student">0</div>
-                                <div class="c3">Total Students</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-student">
-                                    <img src="iconsBackend/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-student" id="more-student">
-                            <a href="moreStudents.php" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="iconsBackend/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="senior">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">Senior Citizen</div>
-                                <div class="c2-senior">0</div>
-                                <div class="c3">Total Senior Citizens</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-senior">
-                                    <img src="iconsBackend/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-senior" id="more-senior">
-                            <a href="moreSNR.php" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="iconsBackend/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
 
