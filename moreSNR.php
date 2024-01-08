@@ -125,9 +125,100 @@
                 </tbody>
                 <!-- Add more rows here -->
             </table>
-        </div>
 
-     
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
+        </div>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+        <script src="./js//jQuery-3.7.0.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+        <script src="./js/app.js"></script>
+
+        <script>
+           $(document).ready(function() {
+                var dataTable = $('#table').DataTable({
+                    "paging": false, // Disable pagination for simplicity
+                    "searching": true // Enable searching
+                });
+
+                // Enable search functionality for the DataTable
+                $('#searchInput').on('keyup', function() {
+                    dataTable.search($(this).val()).draw();
+                });
+
+                // Custom sorting and filtering
+                $('#sortButton').on('click', function() {
+                    var order = $('#orderSelect').val(); // Get the selected order
+                    var columnsToSort = [];
+
+                    // Collect columns to sort based on checked checkboxes
+                    $('.sort-checkbox:checked').each(function() {
+                        columnsToSort.push(parseInt($(this).data('column')));
+                    });
+
+                    // Perform custom sorting
+                    dataTable.order(columnsToSort.map(column => [column, order])).draw();
+                });
+            });
+        </script>
     </div>
 </body>
 </html>
+<script>
+    // JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
+
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+</script>
