@@ -32,7 +32,7 @@
 
         <a href="../endorsmentCert.php" class="backContainer">
             <img src="../iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back To Endorsment Records</p>
         </a>
 
         <div class="print-title">

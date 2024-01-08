@@ -138,57 +138,33 @@ while($row = $result->fetch_assoc()) {
 
             <div class="hanggang-apatBlotter">
                 <div class="unang-layerBlotter">
-                    <label for="complainant">Complainant</label>
-                    <div class="input-cont-blotter">
-                        <input type="text" name="complainant_fname" id="complainant_fname" placeholder="First Name"
-                            required>
-                        <input type="text" name="complainant_mname" id="complainant_mname" placeholder="Middle Name">
-                        <input type="text" name="complainant_lname" id="complainant_lname" placeholder="Last Name"
-                            required>
-                        <input type="text" name="complainant_suffix" id="complainant_suffix" placeholder="Suffix">
+                    <div class="column1">
+                        <label for="type_inciden">Type of Incident</label>
+                        <input type="text" id="type_incident class="type_incident">
                     </div>
-
-                    <label for="respondent">Respondent</label>
-                    <div class="input-cont-blotter">
-                        <input type="text" name="respondent_fname" id="respondent_fname" placeholder="First Name"
-                            required>
-                        <input type="text" name="respondent_mname" id="respondent_mname" placeholder="Middle Name">
-                        <input type="text" name="respondent_lname" id="respondent_lname" placeholder="Last Name"
-                            required>
-                        <input type="text" name="respondent_suffix" id="respondent_suffix" placeholder="Suffix">
+                    <div class="column2">
+                        <label for="location">Exact Location of Incident</label>
+                        <input type="text" id="location" class="location">
                     </div>
-
-                    <label for="victim">Victim</label>
-                    <div class="input-cont-blotter">
-                        <input type="text" name="victim_fname" id="victim_fname" placeholder="First Name"
-                            required>
-                        <input type="text" name="victim_mname" id="victim_mname" placeholder="Middle Name">
-                        <input type="text" name="victim_lname" id="victim_lname" placeholder="Last Name"
-                            required>
-                        <input type="text" name="victim_suffix" id="victim_suffix" placeholder="Suffix">
+                    <div class="column3">
+                        <label for="dates">Exclusive Dates and Time of Incident</label>
+                        <input type="date"  id="date" class="date">
                     </div>
-                </div>
-
-                <div class="pangalawang-layerBlotter">
-                    <label for="time">Time</label>
-                    <input id="timeBlotter" type="time" name="time" required>
-
-
-                    <label for="location">Location</label>
-                    <input id="locationBlotter" type="text" name="location" placeholder="Street Name" required>
-                </div>
-
-                <div class="pangapat-layerBlotter">
-                    <label for="date">Date</label>
-                    <input id="dateBlotter" type="date" name="date" required>
-
-                    
                 </div>
             </div>
 
             <div class="panglima-layerBlotter">
-                <label class="detailstext" for="occupation">Details:</label>
-                <textarea id="detailsBlotter" name="details" cols="4" rows="50" required></textarea>
+                <label for="involved">Involved Person/Specific Identification</label>
+                <textarea id="involved" name="involved" cols="4" rows="50" required></textarea>
+            </div>
+
+            <div class="panganim-layerBlotter">
+                <label for="details">Narrative Details of Incident</label>
+                <textarea id="details" name="details" cols="4" rows="50" required></textarea>
+            </div>
+            <div class="pangpito-layerBlotter">
+                <label for="respondent">Narrative Details of Incident</label>
+                <input type="text" id="respondent" class="respondent">
             </div>
 
             <input class="submitBlotter" type="submit" value="Submit">
@@ -211,62 +187,37 @@ while($row = $result->fetch_assoc()) {
 
             <div class="hanggang-apatBlotter">
                 <div class="unang-layerBlotter">
-                    <label for="complainant">Complainant</label>
-                    <div class="input-cont-blotter">
-                        <input type="text" name="complainant_fname" id="complainant_fname1" placeholder="First Name"
-                            required>
-                        <input type="text" name="complainant_mname" id="complainant_mname1" placeholder="Middle Name">
-                        <input type="text" name="complainant_lname" id="complainant_lname1" placeholder="Last Name"
-                            required>
-                        <input type="text" name="complainant_suffix" id="complainant_suffix1" placeholder="Suffix">
+                    <div class="column1">
+                        <label for="type_inciden">Type of Incident</label>
+                        <input type="text" id="type_incident1" class="type_incident">
                     </div>
-
-                    <label for="respondent">Respondent</label>
-                    <div class="input-cont-blotter">
-                        <input type="text" name="respondent_fname" id="respondent_fname1" placeholder="First Name"
-                            required>
-                        <input type="text" name="respondent_mname" id="respondent_mname1" placeholder="Middle Name">
-                        <input type="text" name="respondent_lname" id="respondent_lname1" placeholder="Last Name"
-                            required>
-                        <input type="text" name="respondent_suffix" id="respondent_suffix1" placeholder="Suffix">
+                    <div class="column2">
+                        <label for="location">Exact Location of Incident</label>
+                        <input type="text" id="location1" class="location">
                     </div>
-                    
-                    <label for="victim">Victim</label>
-                    <div class="input-cont-blotter">
-                        <input type="text" name="victim_fname" id="victim_fname1" placeholder="First Name"
-                            required>
-                        <input type="text" name="victim_mname" id="victim_mname1" placeholder="Middle Name">
-                        <input type="text" name="victim_lname" id="victim_lname1" placeholder="Last Name"
-                            required>
-                        <input type="text" name="victim_suffix" id="victim_suffix1" placeholder="Suffix">
+                    <div class="column3">
+                        <label for="dates">Exclusive Dates and Time of Incident</label>
+                        <input type="date"  id="date1" class="date">
                     </div>
-                </div>
-
-                <div class="pangalawang-layerBlotter">
-                    <label for="time">Time</label>
-                    <input id="timeBlotter1" step="any" type="time" name="time" required>
-
-                   
-
-                    <label for="location">Location</label>
-                    <input id="locationBlotter1" type="text" name="location" placeholder="Street Name" required>
-                </div>
-
-                <div class="pangapat-layerBlotter">
-                    <label for="date">Date</label>
-                    <input id="dateBlotter1" type="date" name="date" required>
-
-                    
                 </div>
             </div>
 
             <div class="panglima-layerBlotter">
-                <label class="detailstext" for="occupation">Details:</label>
-                <textarea id="detailsBlotter1" name="details" cols="4" rows="50" required></textarea>
+                <label for="involved">Involved Person/Specific Identification</label>
+                <textarea id="involved1" name="involved" cols="4" rows="50" required></textarea>
+            </div>
+
+            <div class="panganim-layerBlotter">
+                <label for="details">Narrative Details of Incident</label>
+                <textarea id="details1" name="details" cols="4" rows="50" required></textarea>
+            </div>
+            <div class="pangpito-layerBlotter">
+                <label for="respondent">Narrative Details of Incident</label>
+                <input type="text" id="respondent1" class="respondent">
             </div>
 
             <input type="hidden" name="blotter_id" id="blotter_id">
-            <input class="submitBlotter" type="submit" value="Create">
+            <input class="submitBlotter" type="submit" value="Update">
             
         </form>
     </div>

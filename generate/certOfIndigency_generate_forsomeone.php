@@ -31,7 +31,7 @@
 
         <a href="../certOfIndigency.php" class="backContainer">
             <img src="../iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back To Certificate of Indigency</p>
         </a>
 
         <div class="print-title">

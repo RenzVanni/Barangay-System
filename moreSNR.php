@@ -45,10 +45,43 @@
             <p>Total Senior Citizen</p>
             <a href="#">Logout</a>
         </div>
-        <div class="second_layer">
+
+        <a href="dashboard.php" class="backContainer">
+            <img src="iconsBackend/back.png" alt="">
+            <p>Go Back Dashboard</p>
+        </a>
+
+      <div class="second_layer1">
             <div class="search-cont">
                 <p>Search:</p>
-                <input type="text" class="searchBar" placeholder=" Enter text here">
+                <input type="text" class="searchBar" placeholder="Enter text here" id="searchInput">
+            </div>
+
+            <div class="sorting-cont">
+                
+                <div class="label-cont">
+                <p>Sort and Filter By:</p>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="0"> Full Name</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="1"> Age</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="2"> Date of Birth</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="3"> Sex</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="4"> Civil Status</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="5"> Addres</label>
+                    <!-- Add more checkboxes for other columns -->
+                </div>
+              
+
+               <div class="order-cont">
+                <p>Order:</p>
+                    <select id="orderSelect">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+
+                <button id="sortButton">Sort</button>   
+               </div>
+
+               
             </div>
         </div>
 
@@ -70,8 +103,8 @@
                     <tr>
                         <th>Full Name</th>
                         <th>Age</th>
-                        <th>Sex</th>
                         <th>Date of Birth</th>
+                        <th>Sex</th>
                         <th>Civil Status</th>
                         <th>Address</th>
                     </tr>
@@ -82,8 +115,8 @@
                     <tr>
                         <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
                         <td><?= calculateAge($row['date_of_birth']) ?></td>
-                        <td><?= $row['sex'] ?></td>
                         <td><?= $row['date_of_birth'] ?></td>
+                        <td><?= $row['sex'] ?></td>
                         <td><?= $row['civil_status'] ?></td>
                         <td><?= $row['house_no']." ".$row['street']." ".$row['subdivision'] ?></td>
                     </tr>
@@ -92,9 +125,100 @@
                 </tbody>
                 <!-- Add more rows here -->
             </table>
-        </div>
 
-     
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
+        </div>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+        <script src="./js//jQuery-3.7.0.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+        <script src="./js/app.js"></script>
+
+        <script>
+           $(document).ready(function() {
+                var dataTable = $('#table').DataTable({
+                    "paging": false, // Disable pagination for simplicity
+                    "searching": true // Enable searching
+                });
+
+                // Enable search functionality for the DataTable
+                $('#searchInput').on('keyup', function() {
+                    dataTable.search($(this).val()).draw();
+                });
+
+                // Custom sorting and filtering
+                $('#sortButton').on('click', function() {
+                    var order = $('#orderSelect').val(); // Get the selected order
+                    var columnsToSort = [];
+
+                    // Collect columns to sort based on checked checkboxes
+                    $('.sort-checkbox:checked').each(function() {
+                        columnsToSort.push(parseInt($(this).data('column')));
+                    });
+
+                    // Perform custom sorting
+                    dataTable.order(columnsToSort.map(column => [column, order])).draw();
+                });
+            });
+        </script>
     </div>
 </body>
 </html>
+<script>
+    // JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
+
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+</script>

@@ -35,7 +35,7 @@ while($row = $result->fetch_assoc()) {
         </div>
         <a href="../businessClearance.php" class="backContainer">
             <img src="../iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back To Business Clearance</p>
         </a>
         <div class="second_layer">
             <div class="search-cont">

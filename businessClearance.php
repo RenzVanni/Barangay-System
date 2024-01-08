@@ -67,10 +67,10 @@ $stmt->close();
             </div>
             <div class="add-cont">
                 
-                <a href="#" class="add" id="addClearance">+ Clearance</a>
-                <a href="#" class="add" id="addClosure">+ Closure</a>
+                <a href="#" class="add" id="addClearance">+Clearance</a>
+                <a href="#" class="add" id="addClosure">+Closure</a>
                 <a class="add1" href="?filter=status&value=Pending">Pending</a>
-                <a class="add1" href="?filter=status&value=for pick-up">For Pick-up</a>
+                <a class="addpen" href="?filter=status&value=for pick-up">For Pick-up</a>
                 <a class="add1" href="?filter=status&value=completed">Completed</a>
                 <a href="archives/ArchiveBusinessClearance.php" class="archiveResidents">Archive</a>
             </div>

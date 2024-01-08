@@ -35,7 +35,7 @@ $awareness[] = $row;
         </div>
         <a href="../awareness.php" class="backContainer">
             <img src="../iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back To Awareness Records</p>
         </a>
         <div class="second_layer">
             <div class="search-cont">

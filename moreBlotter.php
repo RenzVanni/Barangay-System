@@ -48,7 +48,7 @@ function calculateAge($dob) {
 
         <a href="dashboard.php" class="backContainer">
             <img src="iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back Dashboard</p>
         </a>
 
         <div class="second_layer1">
@@ -65,7 +65,7 @@ function calculateAge($dob) {
                     <label><input type="checkbox" class="sort-checkbox" data-column="1"> Respondent</label>
                     <label><input type="checkbox" class="sort-checkbox" data-column="2"> Victim(s)</label>
                     <label><input type="checkbox" class="sort-checkbox" data-column="3"> Bloter/Incident</label>
-                    <label><input type="checkbox" class="sort-checkbox" data-column="4"> Status</label>
+                  
                     
                     <!-- Add more checkboxes for other columns -->
                 </div>
