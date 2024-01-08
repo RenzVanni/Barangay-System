@@ -58,11 +58,12 @@ while($row = $result->fetch_assoc()) {
             <table id="table">
                 <thead>
                     <tr>
-                        <th>Complainant</th>
+                        <th>Type of Incident</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Involved Person/Specific Identification</th>
+                        <th>Narrative Details of Inciden</th>
                         <th>Respondent</th>
-                        <th>Victim(s)</th>
-                    
-                      
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -70,29 +71,14 @@ while($row = $result->fetch_assoc()) {
                     <?php if(!empty($residents)) { ?>
                     <?php $no=1; foreach($residents as $row): ?>
                     <tr>
-                        <td><?= $row['complainant_fname']." ".$row['complainant_mname']." ".$row['complainant_lname']." ".$row['complainant_suffix']?>
-                        </td>
-                        <td><?= $row['respondent_fname']." ".$row['respondent_mname']." ".$row['respondent_lname']." ".$row['respondent_suffix']?>
-                        </td>
-                        <td><?= $row['victim_fname']." ".$row['victim_mname']." ".$row['victim_lname']." ".$row['victim_suffix'] ?>
-                        </td>
-                       
+                        <td>Car Acident</td>
+                        <td>Bayan</td>
+                        <td>09/12/2094</td>
+                        <td>Gonzalo Itulid and Ivan Javier</td>
+                        <td>Naglalakad si Ivan at dinuraan ni Itulid</td>
+                        <td>Renz Bato</td>
                         <td class="actions">
-                            <a href="#" class="edit" id="editBlotter" onclick="editBlotter(this)"
-                                data-id="<?= $row['id'] ?>" data-complainant-fname="<?= $row['complainant_fname'] ?>"
-                                data-complainant-mname="<?= $row['complainant_mname'] ?>"
-                                data-complainant-lname="<?= $row['complainant_lname'] ?>"
-                                data-complainant-suffix="<?= $row['complainant_suffix'] ?>"
-                                data-respondent-fname="<?= $row['respondent_fname'] ?>"
-                                data-respondent-mname="<?= $row['respondent_mname'] ?>"
-                                data-respondent-lname="<?= $row['respondent_lname'] ?>"
-                                data-respondent-suffix="<?= $row['respondent_suffix'] ?>"
-                                data-victim-fname="<?= $row['victim_fname'] ?>"
-                                data-victim-mname="<?= $row['victim_mname'] ?>"
-                                data-victim-lname="<?= $row['victim_lname'] ?>"
-                                data-victim-suffix="<?= $row['victim_suffix'] ?>" 
-                                data-location="<?= $row['location'] ?>" data-date="<?= $row['date'] ?>"
-                                data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>">Edit</a>
+                            <a href="#" class="edit" id="editBlotter" onclick="editBlotter(this)">Edit</a>
                             <!-- <a href="./model/print_blotter.php?id=<?= $row['id']?>" class="print">Print</a> -->
                             <?php if($_SESSION['role'] === 'admin') { ?>
                             <a href="#" class="delete">Delete</a>
@@ -148,7 +134,7 @@ while($row = $result->fetch_assoc()) {
                     </div>
                     <div class="column3">
                         <label for="dates">Exclusive Dates and Time of Incident</label>
-                        <input type="date"  id="date" class="date">
+                        <input type="datetime-local"id="dateBlotter" class="date">
                     </div>
                 </div>
             </div>
@@ -163,7 +149,7 @@ while($row = $result->fetch_assoc()) {
                 <textarea id="details" name="details" cols="4" rows="50" required></textarea>
             </div>
             <div class="pangpito-layerBlotter">
-                <label for="respondent">Narrative Details of Incident</label>
+                <label for="respondent">Respondent</label>
                 <input type="text" id="respondent" class="respondent">
             </div>
 
@@ -197,7 +183,7 @@ while($row = $result->fetch_assoc()) {
                     </div>
                     <div class="column3">
                         <label for="dates">Exclusive Dates and Time of Incident</label>
-                        <input type="date"  id="date1" class="date">
+                        <input type="datetime-local"  id="dateBlotter1" class="date">
                     </div>
                 </div>
             </div>
@@ -212,7 +198,7 @@ while($row = $result->fetch_assoc()) {
                 <textarea id="details1" name="details" cols="4" rows="50" required></textarea>
             </div>
             <div class="pangpito-layerBlotter">
-                <label for="respondent">Narrative Details of Incident</label>
+                <label for="respondent">Respondent</label>
                 <input type="text" id="respondent1" class="respondent">
             </div>
 
