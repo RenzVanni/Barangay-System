@@ -48,7 +48,7 @@ function calculateAge($dob) {
         
         <a href="dashboard.php" class="backContainer">
             <img src="iconsBackend/back.png" alt="">
-            <p>Go Back</p>
+            <p>Go Back Dashboard</p>
         </a>
         
         <div class="second_layer1">
@@ -64,7 +64,7 @@ function calculateAge($dob) {
                     <label><input type="checkbox" class="sort-checkbox" data-column="0"> Full Name</label>
                     <label><input type="checkbox" class="sort-checkbox" data-column="1"> Age</label>
                     <label><input type="checkbox" class="sort-checkbox" data-column="2"> Date of Birth</label>
-                    <label><input type="checkbox" class="sort-checkbox" data-column="3"> Gender</label>
+                    <label><input type="checkbox" class="sort-checkbox" data-column="3"> Sex</label>
                     <label><input type="checkbox" class="sort-checkbox" data-column="4"> Civil Status</label>
                     <label><input type="checkbox" class="sort-checkbox" data-column="5"> Addres</label>
                     <!-- Add more checkboxes for other columns -->
@@ -104,8 +104,8 @@ function calculateAge($dob) {
                     <tr>
                         <th>Full Name</th>
                         <th>Age</th>
-                        <th>Sex</th>
                         <th>Date of Birth</th>
+                        <th>Sex</th>
                         <th>Civil Status</th>
                         <th>Address</th>
                     </tr>
@@ -114,10 +114,10 @@ function calculateAge($dob) {
                     <?php if(!empty($residents)) { ?>
                     <?php $no=1; foreach($residents as $row): ?>
                     <tr>
-                        <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
+                    <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
                         <td><?= calculateAge($row['date_of_birth']) ?></td>
-                        <td><?= $row['sex'] ?></td>
                         <td><?= $row['date_of_birth'] ?></td>
+                        <td><?= $row['sex'] ?></td>
                         <td><?= $row['civil_status'] ?></td>
                         <td><?= $row['house_no']." ".$row['street']." ".$row['subdivision'] ?></td>
                     </tr>

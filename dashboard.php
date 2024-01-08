@@ -554,7 +554,7 @@ $auditResult = $conn->query($audit);
                                 <img src="iconsBackend/down-arrow.png" alt="">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 

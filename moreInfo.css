@@ -1233,7 +1233,8 @@ table {
 
   .sorting-cont {
     display: flex;
-    
+    width: 100%;
+    padding-left: 35px;
   }
   .sorting-cont .label-cont p {
     font-size: 13px;
