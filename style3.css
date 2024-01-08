@@ -652,7 +652,7 @@ tr:nth-child(even) {
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 15% 0 0 20%;
+  padding: 13% 0 0 20%;
   display: none;
 }
 .modal-editBlotter {
@@ -666,7 +666,7 @@ tr:nth-child(even) {
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 15% 0 0 20%;
+  padding: 13% 0 0 20%;
   display: none;
 }
 
@@ -827,7 +827,7 @@ tr:nth-child(even) {
   flex-direction: column;
   background: #f8f8f8;
   width: 900px;
-  height: 410px;
+  height: 480px;
   padding: 20px;
   overflow: hidden;
   border-radius: 20px;
@@ -960,19 +960,40 @@ select {
 .hanggang-apatBlotter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  
   margin-top: 15px;
 
   color: #000;
   font-family: Poppins;
   font-size: 13px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
 }
 .unang-layerBlotter {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+.unang-layerBlotter .column1 input {
+  border: 1px solid gray;
+  height: 32px; 
+  border-radius: 5px;
+  width: 200px;
+  margin: 5px 0px;
+}
+.unang-layerBlotter .column2 input {
+  border: 1px solid gray;
+  height: 32px;
+  border-radius: 5px;
+  width: 200px;
+  margin: 5px 0px;
+}
+.unang-layerBlotter .column3 input {
+  border: 1px solid gray;
+  height: 32px;
+  border-radius: 5px;
+  width: 200px;
+  margin: 5px 0px;
 }
 .unang-layerBlotter .input-cont-blotter {
   display: flex;
@@ -1027,17 +1048,60 @@ select {
 .panglima-layerBlotter {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 5px;
 
   color: #000;
   font-family: Poppins;
   font-size: 13px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
 }
 .panglima-layerBlotter textarea {
   width: 100%;
   height: 80px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+.panganim-layerBlotter {
+  display: flex;
+  flex-direction: column;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.panganim-layerBlotter textarea {
+  width: 100%;
+  height: 80px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+.pangpito-layerBlotter {
+  display: flex;
+  flex-direction: column;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.pangpito-layerBlotter input {
+  width: 30%;
+  height: 32px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 5px;
 }
 
 .input-wrapper {
