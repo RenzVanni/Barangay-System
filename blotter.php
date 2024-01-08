@@ -134,7 +134,7 @@ while($row = $result->fetch_assoc()) {
                     </div>
                     <div class="column3">
                         <label for="dates">Exclusive Dates and Time of Incident</label>
-                        <input type="date"  id="date" class="date">
+                        <input type="datetime-local"id="dateBlotter" class="date">
                     </div>
                 </div>
             </div>
@@ -183,7 +183,7 @@ while($row = $result->fetch_assoc()) {
                     </div>
                     <div class="column3">
                         <label for="dates">Exclusive Dates and Time of Incident</label>
-                        <input type="date"  id="date1" class="date">
+                        <input type="datetime-local"  id="dateBlotter1" class="date">
                     </div>
                 </div>
             </div>
